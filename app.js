@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.set("view engine", "ejs");
 
-app.set("views", ["./views", "./views/admin"]);
+app.set("views", ["views", "/views", "./views", "./views/admin"]);
 
 app.use("/css", express.static(__dirname + "/public/css", { type: 'text/css' }))
 app.use("/js", express.static(__dirname + "/public/js", { type: 'text/javascript' }))
