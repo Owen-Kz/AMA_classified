@@ -1,0 +1,29 @@
+{
+  "name": "ama_classified",
+  "version": "1.0.0",
+  "description": "Front end code for amaslink classifed",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Owen-Kz/AMA_classified.git"
+  },
+  "author": "Benson Michael Owen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Owen-Kz/AMA_classified/issues"
+  },
+  "homepage": "https://github.com/Owen-Kz/AMA_classified#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}

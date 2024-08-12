@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.topSection{
+    display: flex;
+    flex-direction:column ;
+    width: 100%;
+}
+
+.topBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: brown;
+    height: 50px;
+}
+
+.searchContainer{
+    display: flex;
+    background-color: beige;
+    border-radius: 25px;
+}
