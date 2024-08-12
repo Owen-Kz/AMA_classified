@@ -21,6 +21,50 @@
 
 .searchContainer{
     display: flex;
-    background-color: beige;
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color: antiquewhite;
     border-radius: 25px;
+    height: 40px;
+    width: 40%;
+    padding: 10px;
+    overflow: hidden;
+}
+.searchContainer form{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchContainer select{
+    border: none;
+    background-color: transparent;
+    width: 20%;
+}
+
+.searchContainer input{
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 70%;
+    background:transparent;
+}
+
+.searchContainer button{
+    background-color: rgb(223, 200, 200);
+    border: none;
+    color: rgb(170, 170, 170);
+    border-radius: 50%;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    
+}
+
+
+
+/* Start navbar / */
+.navbar{
+    display: flex;
+    /* background-color: blue; */
 }
