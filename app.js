@@ -26,6 +26,9 @@ app.use("/css", express.static(__dirname + "/public/css", { type: 'text/css' }))
 app.use("/js", express.static(__dirname + "/public/js", { type: 'text/javascript' }))
 app.use("/vendor", express.static(__dirname + "/public/vendor", {type: 'text/javacript'}))
 app.use("/assets", express.static(__dirname + "/public/assets/", { type: 'text/folder' }))
+app.use("/uploads", express.static(__dirname + "/public/uploads/", { type: 'text/folder' }))
+
+
 
 app.use("/", require("./routes/pages"));
 
