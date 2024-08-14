@@ -16,7 +16,7 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
         <div class="topBar">
             <div class="topBarLeft">
                 <ul>
-                    <li>Login</li>
+                    <li><a href="/login">Login</a></li>
                     |
                     <li><b><a href="/register">Register</a></b></li>
                 </ul>

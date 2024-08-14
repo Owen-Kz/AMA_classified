@@ -2,6 +2,7 @@ const listings = async (req,res) =>{
     const data = {
         page : req.query.page || 1
     }
+    try{
     const response = await fetch(`https://ama-endpoint.onrender.com/y/allListings`, {
         method: 'POST',
         headers: {
@@ -18,6 +19,9 @@ const listings = async (req,res) =>{
     }else{
         return res.json({error:responseData.error})
     }
+}catch(error){
+    return res.json({error:error})
+}
 }
 
 

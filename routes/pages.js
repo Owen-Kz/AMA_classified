@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require('axios');
 const listings = require("../controllers/lisings");
+const login = require("../controllers/login");
 const router = express.Router();
 router.use(express.json());
 const endpoint = 'https://ama-endpoint.onrender.com/y/'
@@ -14,9 +15,10 @@ router.get("/register", (req,res) =>{
 router.get("/login", (req,res) =>{
     res.render("login")
 })
+
 router.get("/l/:productTitle/", (req,res) => {
 
-    res.render("preview,ejs", {title:req.params.productTitle})
+    res.render("preview.ejs", {title:req.params.productTitle})
 })
 router.post("/signup", async (req,res) =>{
     const { username, password, country, firstname, lastname, phonenumber, email } = req.body;
@@ -74,7 +76,7 @@ router.get('/listings',(req,res)=>{
 })
 router.post("/listings", listings)
 
-
+router.post("/login", login)
 
 router.get("*", (req, res)=> {
     res.redirect('/')

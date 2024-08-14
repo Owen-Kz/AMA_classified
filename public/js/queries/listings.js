@@ -74,6 +74,32 @@ function booksNavigation(totalPagesListings, currentPage) {
 
   
 function NewPage(page){
+    for(let i=0; i<40; i++){
+        listingsContainer.innerHTML += `         <!-- start single_item  -->
+              <div class="product_item loadingItem">
+                    <div class="image_container" style="background:transparent;">
+                      
+                    </div>
+                    <div class="actions" style="background:transparent;">
+                        <div class="viewsCount" style="background:transparent;">
+                          
+                        </div>
+
+                        <div class="save_item" style="background:transparent;">
+
+                        </div>
+                    </div>
+                    <!-- start product info  -->
+                     <div class="product_info" style="background:transparent;">
+                        <div class="product_name" style="background:transparent;">
+                           
+                        </div>
+                        <div class="location" style="background:transparent;"></div>
+                     </div>
+                     <!-- end product info  -->
+                </div>
+                <!-- div.End_single_item  -->`
+    }
 fetch(`/listings?page=${page}`, {
     method:"POST"
 }).then(res=>res.json())
@@ -82,7 +108,6 @@ fetch(`/listings?page=${page}`, {
 
     if(data.success){
         const ListingsList = data.listings
-        console.log(data.listings)
         const totalPages = data.totalPagesListing
         const currentPage = data.currentPage
         if(paginationContainer){ 
@@ -97,7 +122,7 @@ fetch(`/listings?page=${page}`, {
                 country = ListingsList[i].country
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
-                <div class="product_item">
+               <a href="/l/${ListingsList[i].title}"> <div class="product_item">
                     <div class="image_container">
                         <img src="/uploads/${ListingsList[i].image1}" alt="Product image">
                     </div>
@@ -120,6 +145,7 @@ fetch(`/listings?page=${page}`, {
                      </div>
                      <!-- end product info  -->
                 </div>
+                </a> 
                 <!-- div.End_single_item  -->`
         }
 

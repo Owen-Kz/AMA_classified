@@ -5,7 +5,26 @@
 }
 :root{
     --AmasLinkColor: #b70000;
+    --box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
+    --border-radius: 20px;
 }
+/* Loading animation */
+.loadingItem {
+    background: linear-gradient(90deg, #e4e4e491 25%, #e0e0e0ab 50%, #d1d1d193 75%);
+    background-size: 200% 100%;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+/* Keyframes for the animation */
+@keyframes loadingAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 
 a {
     color: inherit;
@@ -17,7 +36,8 @@ a {
     src: url('./fonts/Lato/Lato-Light.ttf');
 }
 body{
-    background-color: rgb(241, 241, 241);
+    /* background-color: rgb(241, 241, 241); */
+    background-color: beige;
     font-family: 'Lato';
 }
 .topSection{
@@ -292,6 +312,7 @@ img{
     width: 100%;
     align-items: center;
     padding: 50px;
+    margin-top: 50px;
 }
 
 .footer_top{

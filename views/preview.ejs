@@ -4,8 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title  %></title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/preview.css">
 </head>
 <body>
-    
+        <!-- Start Top Section  -->
+        <section class="topSection" id="topBarContainer">
+
+        </section>
+        <!-- End top section  -->
+               <!-- Start navbar   -->
+               <div class="navbar" id="navbarContainer">
+                   </div>        <!-- END navbar Section  -->
+   
+        <!-- Start Ads Section  -->
+        <script src="/js/navbar.js"></script>
+        <!-- product Section  -->
+    <section class="products_preview_page">
+        <!-- left side of page -->
+        <div class="product_details">
+            <div class="top_section">
+                <div class="main_image_container">
+                     <!-- Start slides -->
+        <div class="ads-slide">
+            <div class="slide slide-one"></div>
+            <div class="slide slide-two"></div>
+            <div class="slide slide-three"></div>
+            <a href="#">
+                <div class="slide slide-four" style="background-color: gold; background-image: url(/assets/ad_space.png);"></div>
+            </a>
+            <!-- Add more slides as needed -->
+            <button class="arrow left-arrow">&lt;</button>
+            <button class="arrow right-arrow">&gt;</button>
+        </div>
+        
+        <!-- End slides  -->
+                </div>
+
+                <div class="image_previews">
+                    <div class="small_image_container">
+                        <img src="/assets/logo.png" alt="image">
+                    </div>
+                    <div class="small_image_container">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="small_image_container">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="small_image_container">
+                        <img src="" alt="image">
+                    </div>
+                </div>
+            </div>
+            <!-- End top Sections and image containers  -->
+
+            
+            <div class="product_info">
+                <div class="product_title"><%= title %></div>
+                <div class="location">
+                    <div class="mainLocationDetails">
+                        <div class="location_icon"></div> 
+                        <div>Lagos, Nigeria</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Start Category container  -->
+            <div class="category_container">
+                <div class="container_header">Category</div>
+                <ul class="categoriesList">
+                    <li>
+                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="text_container">Category Tesxt</div>
+                    </li>
+                    <li>
+                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="text_container">Category Tesxt</div>
+                    </li>
+                    <li>
+                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="text_container">Category Tesxt</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Vategory container  -->
+                 <!-- Start Category container  -->
+            <div class="category_container">
+                <div class="container_header">Sub Category</div>
+                <ul class="categoriesList">
+                    <li>
+                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="text_container">Sub Category Text</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Vategory container  -->
+
+            <!-- Start condition container  -->
+             <div class="conditionContainer">
+                <div class="container_header">Condition</div>
+                <div class="condition_text">Used</div>
+             </div>
+             <!-- End Condition Container  -->
+                  <!-- Start condition container  -->
+             <div class="conditionContainer">
+                <div class="container_header">Purpose</div>
+                <div class="condition_text">Sale</div>
+             </div>
+             <!-- End Condition Container  -->
+
+             <!-- Start description Container  --> 
+              <div class="description_container">
+                <div class="container_header">Description</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur delectus minima repellendus, fugiat accusantium quia ratione, nostrum exercitationem laboriosam vitae hic doloribus in officia eligendi! Numquam vel asperiores harum tempora.
+                </div>
+              </div>
+        </div>
+        <!-- end left side of page  -->
+
+        <!-- Start tight side of page  -->
+         <div class="right_side">
+            <div class="right_top_div">
+                <div class="small_text">Asking Price</div>
+                <div class="price"><span class="currency">$</span> <span class="amount">1,000</span></div>
+                <button>Make an Offer</button>
+            </div>
+
+            <!-- Edn first div  -->
+
+            <!-- Start seller profile  -->
+             <div class="seller_profile">
+                <div class="seller_profile_top">
+                    <div class="seller_profile_top_left">
+                        <div class="avatar_container">
+                            <img src="/assets/logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="seller_profile_top_right">
+                        <ul>
+                            <li>
+                                <span class="icon_container"></span>
+                                <span class="text_container">Username</span>
+                            </li>
+                            <li>
+                                <span class="icon_container"></span>
+                                <span class="text_container">bennedictcubberbatch@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Start Sellert profile bottom -->
+                 <div class="seller_profile_bottom">
+                    <button>View Profile</button>
+                    <button>Message Seller</button>
+                 </div>
+                 <!-- end seller profile bottom  -->
+             </div>
+             <!-- End seller profile  -->
+         </div>
+        <!-- End right side of page  -->
+    </section>
+    <!-- sned product section  -->
+
+
+    <Footer id="footerContainer">
+
+    </Footer>
+    <script src="/js/footer.js"></script>
+    <script src="/js/productPreviewSlide.js"></script>
+
 </body>
 </html>
