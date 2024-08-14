@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require('axios');
 const listings = require("../controllers/lisings");
 const login = require("../controllers/login");
+const GetProductinfo = require("../controllers/productInfo");
 const router = express.Router();
 router.use(express.json());
 const endpoint = 'https://ama-endpoint.onrender.com/y/'
@@ -16,10 +17,11 @@ router.get("/login", (req,res) =>{
     res.render("login")
 })
 
-router.get("/l/:productTitle/", (req,res) => {
-
+router.get("/l/:productTitle/:id", async (req,res) =>{
     res.render("preview.ejs", {title:req.params.productTitle})
 })
+router.get("/details/:productTitle/:id", GetProductinfo)
+
 router.post("/signup", async (req,res) =>{
     const { username, password, country, firstname, lastname, phonenumber, email } = req.body;
 

@@ -64,7 +64,7 @@
                 <div class="location">
                     <div class="mainLocationDetails">
                         <div class="location_icon"></div> 
-                        <div>Lagos, Nigeria</div>
+                        <div id="locationContainer"></div>
                     </div>
                 </div>
             </div>
@@ -103,21 +103,21 @@
             <!-- Start condition container  -->
              <div class="conditionContainer">
                 <div class="container_header">Condition</div>
-                <div class="condition_text">Used</div>
+                <div class="condition_text" id="conditionContainer"></div>
              </div>
              <!-- End Condition Container  -->
                   <!-- Start condition container  -->
              <div class="conditionContainer">
                 <div class="container_header">Purpose</div>
-                <div class="condition_text">Sale</div>
+                <div class="condition_text" id="purposeContainer"></div>
              </div>
              <!-- End Condition Container  -->
 
              <!-- Start description Container  --> 
               <div class="description_container">
                 <div class="container_header">Description</div>
-                <div class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur delectus minima repellendus, fugiat accusantium quia ratione, nostrum exercitationem laboriosam vitae hic doloribus in officia eligendi! Numquam vel asperiores harum tempora.
+                <div class="description" id="descriptionContainer">
+                   
                 </div>
               </div>
         </div>
@@ -127,7 +127,7 @@
          <div class="right_side">
             <div class="right_top_div">
                 <div class="small_text">Asking Price</div>
-                <div class="price"><span class="currency">$</span> <span class="amount">1,000</span></div>
+                <div class="price"><span class="currency">$</span> <span class="amount" id="priceContainer">1,000</span></div>
                 <button>Make an Offer</button>
             </div>
 
@@ -173,6 +173,7 @@
     </Footer>
     <script src="/js/footer.js"></script>
     <script src="/js/productPreviewSlide.js"></script>
+    <script src="/js/queries/getProductInfo.js"></script>
 
 </body>
 </html>

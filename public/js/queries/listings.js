@@ -122,7 +122,7 @@ fetch(`/listings?page=${page}`, {
                 country = ListingsList[i].country
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
-               <a href="/l/${ListingsList[i].title}"> <div class="product_item">
+               <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
                     <div class="image_container">
                         <img src="/uploads/${ListingsList[i].image1}" alt="Product image">
                     </div>
@@ -150,6 +150,7 @@ fetch(`/listings?page=${page}`, {
         }
 
     }else{
+        listingsContainer.innerHTML = `<div>Cannot Retrieve Data At the moment. Please Refresh</div>`
         console.log(data.error)
     }
 })
