@@ -88,15 +88,7 @@
     
 }
 
-.productsSection{
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    max-width: 1200px;
-    align-items: center;
-    /* background-color: red; */
-    margin: auto;
-}
+
 
 .sponsored_ads{
     /* margin-top: 40px; */
