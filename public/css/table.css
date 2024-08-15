@@ -165,17 +165,13 @@ table .image_container{
   color: #515151;
   font-size: 11px;
 }
-.projects-table th {
-  /* background-color: #313D4F; */
 
-}
+
 .projects-table tr:hover {
   /* background-color: #303d52; */
   background-color: #cfcfcf;
 }
-.projects-table tr:not(:last-of-type) {
-  /* border-bottom: 1px solid #4f3931; */
-}
+
 .projects-table .member figure,
 .projects-table .member .member-info {
   display: inline-block;

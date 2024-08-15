@@ -55,7 +55,7 @@ container.innerHTML = `                <!-- Left  -->
                 
                 <div class="nav_right">
                     <ul class="nav_list">
-                        <a href="/"><li class="navigationLink">Home</li></a>
+                        <li class="navigationLink"><a href="/">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Explore <i class="arrow-down"></i></a>
                             <ul class="dropdown-menu">
