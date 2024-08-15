@@ -80,6 +80,31 @@ router.post("/listings", listings)
 
 router.post("/login", login)
 
+
+router.get("/dashboard", (Req,res) => {
+    res.render("dashboard") 
+})
+
+router.get("/profile", (req,res) =>{
+    res.render("profile")
+})
+
+router.get("/announcements", (req,res)=>{
+    res.render("announcements")
+})
+
+router.get("/messages", (req,res) =>{
+    res.render("messages")
+})
+
+router.get('/bookmarks', (req,res)=>{
+    res.render('bookmarks')
+})
+
+router.get("/mylistings", (req,res) =>{
+    res.render("mylistings")
+})
+
 router.get("*", (req, res)=> {
     res.redirect('/')
 })

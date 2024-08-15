@@ -78,7 +78,24 @@ form{
     width: 100%;
     padding: 10px;
     margin-top: 20px;
+    border-radius: 5px;
     display: flex;
+    color: antiquewhite;
+    align-items: center;
+    /* background: var(--AmasLinkColor); */
+    justify-content: center;
+}
+.submit_btn:hover{
+    color: antiquewhite;
+}
+
+button:disabled, .submit_btn:disabled{
+    background-color: rgb(106, 69, 69);
+}
+
+input:read-only, input:disabled{
+    background-color: rgb(231, 231, 231);
+    border: none;
 }
 
 

@@ -1,0 +1,66 @@
+.profileCard{
+    display: flex;
+    flex-direction: row;
+    max-height: max-content;
+    height: max-content;
+    width: 100%;
+    padding: 10px;
+    /* background-color: red; */
+}
+.profileCard .profile_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+
+.profile_left .buttonsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_left .buttonsContainer button{
+    border: 1px solid var(--AmasLinkColor);
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.profile_left .image_container{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border-radius:50%;
+}
+
+.profile_right{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.profile_right ul{
+    display: flex;
+    flex-direction:  row;
+    /* background-color: yellow; */
+    flex-wrap: wrap;
+    height: 300px;
+    /* justify-content: space-between; */
+}
+
+.profile_right ul li{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+@media screen and (max-width:240px), (max-width:360px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    .profileCard{
+        flex-direction: column;
+    }
+    .profileCard .profile_left, .profile_right, .profile_left ul{
+        width: 100%;
+    }
+    
+}

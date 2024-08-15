@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
     <title><%= title  %></title>
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/preview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body>
         <!-- Start Top Section  -->
@@ -15,7 +19,25 @@
         <!-- End top section  -->
                <!-- Start navbar   -->
                <div class="navbar" id="navbarContainer">
-                   </div>        <!-- END navbar Section  -->
+                   </div>    
+                   
+                         <!-- Start Horizontal Navbar  -->
+                 <div class="containerForNav">
+                    <!-- Left  -->
+               <!-- <div class="navbar-left">
+                   <div class="image_container">
+                       <img src="/assets/logo.png" alt="Amaslink Logo">
+                   </div>
+               </div> -->
+               <!-- End Left  -->
+               <div class="horizontalNavbar navbarContainer">
+                   
+
+               </div>
+                </div>
+             
+                <!-- End Horizontal navbar  -->
+                   <!-- END navbar Section  -->
    
         <!-- Start Ads Section  -->
         <script src="/js/navbar.js"></script>
@@ -127,7 +149,7 @@
          <div class="right_side">
             <div class="right_top_div">
                 <div class="small_text">Asking Price</div>
-                <div class="price"><span class="currency">$</span> <span class="amount" id="priceContainer">1,000</span></div>
+                <div class="price"><span class="currency">$</span> <span class="amount" id="priceContainer"></span></div>
                 <button>Make an Offer</button>
             </div>
 

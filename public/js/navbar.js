@@ -9,7 +9,7 @@
 //     }
 // });
 
-const navbarContainer = document.getElementById("navbarContainer")
+const navbarContainer = document.querySelectorAll(".navbarContainer")
 const topBarContainer = document.getElementById("topBarContainer")
 
 topBarContainer.innerHTML = `        <!-- start top bar  -->
@@ -19,6 +19,7 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
                     <li><a href="/login">Login</a></li>
                     |
                     <li><b><a href="/register">Register</a></b></li>
+                    
                 </ul>
             </div>
             <!-- div.searchContainer  -->
@@ -30,17 +31,23 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
                         <option value="Country">Country</option>
                     </select>
                     <input type="text" name="q" placeholder="Enter Search Query Here">
-                    <button>S</button>
+                    <button><i class="bi bi-search" aria-hidden="true"></i></button>
                 </form>
              </div>
             <!-- End Search container  -->
+            <div class='mobileNav' id="mobileNav">
+            <i class="bi bi-list" aria-hidden="true"></i>
+            </div>
         </div>
         <!-- end topbar -->
   `
-navbarContainer.innerHTML = `                <!-- Left  -->
+
+navbarContainer.forEach(container =>{
+
+container.innerHTML = `                <!-- Left  -->
                 <div class="navbar-left">
                     <div class="image_container">
-                        <img src="/assets/logo.png" alt="Amaslink Logo">
+                        <img src="/plugins/images/logo.png" alt="Amaslink Logo">
                     </div>
                 </div>
                 <!-- End Left  -->
@@ -48,7 +55,7 @@ navbarContainer.innerHTML = `                <!-- Left  -->
                 
                 <div class="nav_right">
                     <ul class="nav_list">
-                        <li>Home</li>
+                        <a href="/"><li class="navigationLink">Home</li></a>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Explore <i class="arrow-down"></i></a>
                             <ul class="dropdown-menu">
@@ -57,12 +64,12 @@ navbarContainer.innerHTML = `                <!-- Left  -->
                               <li><a href="/auctions">Auctions</a></li>
                             </ul>
                           </li>
-                        <li>Fortum</li>
-                        <li>FAQs</li>
-                        <li>Privacy Policy</li>
-                        <li>Contact</li>
-                        <li>Blog</li>
-                        <li><button class="post_add btn-border">Post AD</button></li>
+                        <li class="navigationLink">Forum</li>
+                        <li class="navigationLink">FAQs</li>
+                        <li class="navigationLink">Privacy Policy</li>
+                        <li class="navigationLink">Contact</li>
+                        <li class="navigationLink">Blog</li>
+                        <li class="navigationLink"><button class="post_add btn-border">Post AD</button></li>
                        
     
                     </ul>
@@ -70,3 +77,10 @@ navbarContainer.innerHTML = `                <!-- Left  -->
                 <!-- End right  -->
     
             `
+})
+
+
+document.getElementById('mobileNav').addEventListener('click', function() {
+    var navbar = document.querySelector('.containerForNav');
+    navbar.classList.toggle('expanded');
+});

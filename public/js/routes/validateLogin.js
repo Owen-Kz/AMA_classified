@@ -1,0 +1,8 @@
+function validateLogin(){
+
+}
+
+
+export {
+    validateLogin
+}

@@ -98,3 +98,23 @@
     height: 400px;
     max-height:400px;
 }
+
+@media screen and (max-width:240px), (max-width:360px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    .AdsSection{
+        padding: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: max-content;
+        max-height: max-content;
+    }
+    .ads-slide, .static-ad{
+        margin: 10px;
+        height: 300px;
+    }
+    .ads-slide{
+        width: 90%;
+    }
+    .static-ad{
+        width: 90%;
+    }
+}
