@@ -25,9 +25,9 @@ app.set("views", ["views", "/views", "./views", "./views/admin"]);
 app.use("/css", express.static(__dirname + "/public/css", { type: 'text/css' }))
 app.use("/js", express.static(__dirname + "/public/js", { type: 'text/javascript' }))
 app.use("/vendor", express.static(__dirname + "/public/vendor", {type: 'text/javacript'}))
-app.use("/assets", express.static(__dirname + "/public/assets/", { type: 'text/folder' }))
+app.use("/assets", express.static(__dirname + "/public/assets", { type: 'text/folder' }))
 app.use("/uploads", express.static(__dirname + "/public/uploads/cover_images/listings", { type: 'text/folder' }))
-app.use("/plugins", express.static(__dirname + "/public/plugins/", { type: 'text/folder' }))
+app.use("/plugins", express.static(__dirname + "/public/plugins", { type: 'text/folder' }))
 app.use("/bootstrap", express.static(__dirname + "/public/bootstrap", { type: 'text/folder' }))
 
 
