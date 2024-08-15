@@ -50,7 +50,7 @@ footerContainer.innerHTML = `        <div class="footer">
             </div>
             <div class="footer_bottom">
             
-                    ${date} © ASFI - all rights reserved
+                    ${date} © Amaslink - all rights reserved
                 
             </div>
         </div>`
