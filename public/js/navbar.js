@@ -9,18 +9,41 @@
 //     }
 // });
 
+// const { GetCookie } = require("./routes/setCookie")
+
 const navbarContainer = document.querySelectorAll(".navbarContainer")
 const topBarContainer = document.getElementById("topBarContainer")
+async function ProfileData(){
+    return fetch(`/profile/details/informative`, {
 
-topBarContainer.innerHTML = `        <!-- start top bar  -->
-        <div class="topBar">
-            <div class="topBarLeft">
-                <ul>
+    }).then(res =>res.json())
+    .then(data =>{
+        if(data.userDetails){
+            return data.userDetails
+        }else{
+            return null
+        }
+    })
+}
+const userLogged = await ProfileData()
+let isLoggedINProfile = ""
+if(userLogged.id && userLogged.id != null && userLogged.id !== ""){
+    isLoggedINProfile = ` <ul style="width:max-content;">
+                    <li><a href="/dashboard">Welcome Back, <b> ${userLogged.u_name}</b></a></li>
+                    
+                </ul>`
+}else{
+    isLoggedINProfile = `    <ul>
                     <li><a href="/login">Login</a></li>
                     |
                     <li><b><a href="/register">Register</a></b></li>
                     
-                </ul>
+                </ul>`
+}
+topBarContainer.innerHTML = `        <!-- start top bar  -->
+        <div class="topBar">
+            <div class="topBarLeft">
+            ${isLoggedINProfile}
             </div>
             <!-- div.searchContainer  -->
              <div class="searchContainer">

@@ -28,7 +28,7 @@
 
 .main_image_container{
     display: flex;
-    background-color: yellow;
+    background-color: rgb(53, 53, 53);
     width: 100%;
     /* max-width: 720px; */
     overflow: hidden;
@@ -57,18 +57,6 @@
     background-size: cover;
 }
 
-/* Slide backgrounds */
-.slide-one {
-    background-color: rgb(84, 64, 64);
-}
-
-.slide-two {
-    background-color: green;
-}
-
-.slide-three {
-    background-color: rgb(0, 34, 255);
-}
 
 /* Arrow button styles */
 .arrow {
@@ -144,6 +132,12 @@
     margin-right: 5px;
 }
 
+.location i, .actions i{
+    padding: 2px;
+    color: var(--AmasLinkColor);
+}
+
+
 
 .product_title{
     display: flex;
@@ -207,7 +201,7 @@
 .right_side{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: max-content;
     /* border-radius: 20px; */
 
 }
@@ -301,18 +295,24 @@ button {
     display: flex;
     width: 70%;
     flex-wrap: wrap;
+   
 }
 
 .seller_profile_top_right ul{
     display: flex;
     flex-direction: column;
     list-style: none;
+    width: 100%;
 }
 
 .seller_profile_top_right ul li{
     display: flex;
     flex-direction: row;
     height: 30px;
+    text-wrap: wrap;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
     /* justify-content: space-between; */
 }
 
@@ -320,7 +320,6 @@ button {
     display: flex;
     height: 20px;
     width: 20px;
-    background-color: rgb(62, 62, 62);
 }
 
 .seller_profile_top_right ul li span:nth-child(2){

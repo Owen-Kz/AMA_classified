@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
+
 *{
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +11,8 @@
 
     --box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
     --border-radius: 20px;
+    --font-family-sans-serif: "Nunito Sans", sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
 }
 /* Loading animation */
 .loadingItem {
@@ -32,14 +36,14 @@ a {
     text-decoration: none;
     transition: 300ms ease;
 }
-@font-face {
-    font-family: 'Lato';
+/* @font-face {
     src: url('./fonts/Lato/Lato-Light.ttf');
-}
+} */
 body{
     /* background-color: rgb(241, 241, 241); */
-    background-color: rgb(245, 245, 234);
+    background-color: rgb(255, 255, 255);
     font-family: 'Lato';
+    font-family: var(--font-family-sans-serif);
     /* overflow-y: scroll; */
 }
 .topSection{

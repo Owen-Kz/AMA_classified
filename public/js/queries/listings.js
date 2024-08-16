@@ -128,12 +128,14 @@ fetch(`/listings?page=${page}`, {
                     </div>
                     <div class="actions">
                         <div class="viewsCount">
-                            <i class="eye_icon"></i>
+                            <i class="bi bi-eye"></i>
                             <span>0</span>
                         </div>
 
                         <div class="save_item">
-                            <i class="heart_icon"></i>
+                          
+                            <i class="bi bi-bookmark-heart"></i>
+
                         </div>
                     </div>
                     <!-- start product info  -->
@@ -141,7 +143,7 @@ fetch(`/listings?page=${page}`, {
                         <div class="product_name">
                             ${ListingsList[i].title}
                         </div>
-                        <div class="location"><i class="location_icon"></i>${country}</div>
+                        <div class="location"><i class="bi bi-map-fill"></i>${country}</div>
                      </div>
                      <!-- end product info  -->
                 </div>

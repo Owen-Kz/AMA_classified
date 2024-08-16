@@ -1,7 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initializeSlideshow() {
     const slides = document.querySelectorAll('.ads-slide .slide');
     const totalSlides = slides.length;
     let currentIndex = 0;
+
+    if (totalSlides === 0) {
+        console.error('No slides found.');
+        return;
+    }
 
     // Initialize the first slide
     slides[currentIndex].style.opacity = 1;
@@ -26,8 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentIndex);
     }
 
-    // Auto-slide every 5 seconds
-
     // Arrow button event listeners
     document.querySelector('.left-arrow').addEventListener('click', function() {
         prevSlide();
@@ -36,4 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.right-arrow').addEventListener('click', function() {
         nextSlide();
     });
-});
+}

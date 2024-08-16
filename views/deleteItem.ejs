@@ -9,7 +9,7 @@
 
 
     <meta name="robots" content="noindex,nofollow">
-    <title>Profile | Amaslink</title>
+    <title>Delete | Amaslink</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
@@ -123,7 +123,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Profile</h4>
+                        <h4 class="page-title">Delete</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -174,10 +174,10 @@
                     <i class="bi bi-exclamation-triangle"></i>
                     <span>Plese Note that this action cannot be undone</span>
                 </div>
-                <label for="Username">Type <b>Delete ItemTitle</b></label>
+                <label for="Username">Type <b>Delete <%=itemTitle%></b></label>
 
-                <input type="hidden" id="itemId" value="itemID">
-                <input type="hidden" id="mainTitle" value="mainTitle">
+                <input type="hidden" id="itemId" value="<%=itemID%>">
+                <input type="hidden" id="mainTitle" value="<%=itemTitle%>">
             <input type="text" style="border: 1px solid var(--red);" id="typeTitle" placeholder="" value="" required>
             </div>     
       <!-- </div> -->

@@ -156,6 +156,11 @@
     align-items: center;
 }
 
+.location i, .actions i{
+    padding: 2px;
+    color: var(--AmasLinkColor);
+}
+
 .location_icon {
     width: 16px;
     height: 16px;

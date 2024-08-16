@@ -17,7 +17,10 @@ const GetProductinfo = async (req,res) =>{
 
     const responseData = await response.json(); 
     if(responseData.success){
-        return res.json({success:"ProductDetails", details: responseData.productDetails})
+        const ProductFiles =  responseData.productFiles
+        const subCategories = responseData.subCategories
+
+        return res.json({success:"ProductDetails", details: responseData.productDetails, SubCategories: subCategories, productFiles:ProductFiles})
     }else{
         return res.json({error:responseData.message})
     }

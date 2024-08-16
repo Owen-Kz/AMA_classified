@@ -9,6 +9,7 @@ const LoggedIN = require("../controllers/loggedIn");
 const userListings = require("../controllers/userListings");
 const CarryAction = require("../controllers/carryAction");
 const previewItem = require("../controllers/previewItem");
+const SellerProfileDetails = require("../controllers/sellerProfileDetails");
 const router = express.Router();
 
 router.use(express.json());
@@ -25,12 +26,21 @@ router.get("/", LoggedIN, (req,res) =>{
     }
 })
 
+router.post("/seller/profile/details/", SellerProfileDetails)
+
+router.get("/profile/details/informative", LoggedIN, (req,res) => {
+    res.json({userDetails:req.user})
+})
 
 router.get("/register", (req,res) =>{
     res.render("register")
 })
-router.get("/login", (req,res) =>{
+router.get("/login",LoggedIN, (req,res) =>{
+    if(req.cookies._t && req.user){
+        return res.redirect("/dashboard")
+    }else{
     res.render("login")
+    }
 })
 
 router.get("/l/:productTitle/:id",LoggedIN, previewItem)
@@ -87,8 +97,8 @@ router.post("/signup", async (req,res) =>{
     }
 })
 
-router.get('/listings',(req,res)=>{
-    res.render("listings")
+router.get('/listings', LoggedIN, (req,res)=>{
+    res.render("listings", {username:req.user.u_name})
 })
 router.post("/listings", listings)
 

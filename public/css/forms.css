@@ -74,6 +74,9 @@ form{
     width: 100%;
 }
 
+.form_control textarea{
+    height: 150px;
+}
 .submit_btn{
     width: 100%;
     padding: 10px;
