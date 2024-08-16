@@ -34,6 +34,8 @@
 </head>
 
 <body>
+    <input type="hidden" id="fullnameContainer" value="<%=username%>">
+
     <style>
         #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
             background: var(--AmasLinkColor);
@@ -172,51 +174,51 @@
                                 <div class="profile_right">
                                     <ul>
                                         <li>
-                                            <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
+                                            <div class="header_text">Firstname</div>
+                                            <div class="content_text"><b><%=firstname%></b></div>
                                         </li>
                                         
                                         <li>
-                                            <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
+                                            <div class="header_text">Lastname</div>
+                                            <div class="content_text"><b><%=lastname%></b></div>
                                         </li>
 
                                         <li>
                                             <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
+                                            <div class="content_text"><b><%=email%></b></div>
                                         </li>
 
                                         <li>
                                             <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
+                                            <div class="content_text"><b><%=country%></b></div>
                                         </li>
 
                                         <li>
-                                            <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
+                                            <div class="header_text">Phonenumber</div>
+                                            <div class="content_text"><b><%=phonenumber%></b></div>
                                         </li>
 
                                         <li>
+                                            <div class="header_text">Username</div>
+                                            <div class="content_text"><b><%=username%></b></div>
+                                        </li>
+<!-- 
+                                        <li>
                                             <div class="header_text">Country</div>
                                             <div class="content_text"><b>Nairobi, Kenya</b></div>
-                                        </li>
+                                        </li> -->
 
-                                        <li>
+                                        <!-- <li>
                                             <div class="header_text">Country</div>
                                             <div class="content_text"><b>Nairobi, Kenya</b></div>
-                                        </li>
-
-                                        <li>
-                                            <div class="header_text">Country</div>
-                                            <div class="content_text"><b>Nairobi, Kenya</b></div>
-                                        </li>
-                                        <li>
+                                        </li> -->
+                                        <!-- <li>
                                             <div class="header_text">Country</div>
                                             <div class="content_text"><b>Nairobi, Kenya</b></div>
                                         </li>   <li>
                                             <div class="header_text">Country</div>
                                             <div class="content_text"><b>Nairobi, Kenya</b></div>
-                                        </li>
+                                        </li> -->
 
                                     </ul>
                                 </div>
@@ -232,34 +234,43 @@
                                     <div class="col-md-12 col-lg-12 col-sm-12">
                                               <!-- start form body  -->
          <form action="#" id="registerForm">
+            <div class="formSection">
+              
             <div class="form_control">
                 <label for="Username">Username</label>
-            <input type="text" id="username" placeholder="Enter Your username" required readonly>
+            <input type="text" id="username" placeholder="Enter Your username" value="<%=username%>" required readonly>
             </div>
+
+            <div class="formActions">
+                <i class="bi bi-pen"></i>
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+            </div>
+            
 
             <div class="form_control">
                 <label for="firstname">Firstname</label>
-            <input type="text" id="firstname" placeholder="Enter your firstname" required readonly>
+            <input type="text" id="firstname" placeholder="Enter your firstname" value="<%=firstname%>"" required readonly>
             </div>
 
             <div class="form_control">
                 <label for="lastname">Lastname</label>
-            <input type="text" id="lastname" placeholder="Enter your lastname" required readonly>
+            <input type="text" id="lastname" placeholder="Enter your lastname" value="<%=lastname%>" required readonly>
             </div>
 
             <div class="form_control">
                 <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your Email" required readonly>
+            <input type="email" id="email" placeholder="Enter your Email" value="<%=email%>"required readonly>
             </div>
 
             <div class="form_control">
                 <label for="phonenumber">Phonenumber</label>
-            <input type="text" id="phonenumber" placeholder="Enter your phonnumber" required readonly>
+            <input type="text" id="phonenumber" placeholder="Enter your phonnumber" value="<%=phonenumber%>" required readonly>
             </div>
 
             <div class="form_control">
                 <label for="country">Country</label>
-            <input type="country" id="country" placeholder="Enter your Country" required readonly>
+            <input type="country" id="country" placeholder="Enter your Country" value="<%=country %>" required readonly>
             </div>
 
             <div class="form_control">
@@ -267,14 +278,8 @@
             <input type="password" id="password" placeholder="Enter a password" required readonly>
             </div>
 
-            <div class="form_control">
-                <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" placeholder="Confirm Your password" required readonly>
-
-            </div>
-
             <div class="form_body_footer"></div>
-            <button type="submit" class="submit_btn" disabled>Update Info</button>
+            <!-- <button type="submit" class="submit_btn" disabled>Update Info</button> -->
         </form>
                                     </div>
                                 </div>
@@ -325,7 +330,7 @@
     <!-- <script src="/js/pages/dashboards/dashboard1.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
 
-    <script type="module" src="/js/routes/dashboard/dashboard.js"></script>
+    <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
 </body>
 
 </html>

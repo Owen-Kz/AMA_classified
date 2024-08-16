@@ -1,4 +1,5 @@
 const TopBar = document.getElementById("topbar")
+const fullnameContainer = document.getElementById("fullnameContainer")
  
 TopBar.innerHTML = `            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
@@ -42,7 +43,7 @@ TopBar.innerHTML = `            <nav class="navbar top-navbar navbar-expand-md n
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class=" in text-white ">
-                            Amaslink Classifed Listings and Promotions -
+                            Amaslink Classifed Listings and Promotions - ${fullnameContainer.value}
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->

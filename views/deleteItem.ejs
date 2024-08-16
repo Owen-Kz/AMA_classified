@@ -9,7 +9,7 @@
 
 
     <meta name="robots" content="noindex,nofollow">
-    <title>Bookmarks | Amaslink</title>
+    <title>Profile | Amaslink</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
@@ -28,7 +28,8 @@
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/css/products.css">
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/profile.css">
 
 </head>
 
@@ -37,10 +38,10 @@
 
     <style>
         #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
-            background-color: var(--AmasLinkColor);
+            background: var(--AmasLinkColor);
         }
         .btn-danger{
-            background-color: var(--AmasLinkColor);
+            background: var(--AmasLinkColor);
             border-radius: 50px;
         }
     </style>
@@ -122,7 +123,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Bookmarks</h4>
+                        <h4 class="page-title">Profile</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -157,53 +158,38 @@
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
                             <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">My Wishlist</h3>
+                                <h3 class="box-title mb-0">Delete Item</h3>
                               
-                                
                             </div>
-                            
-                     
-                            <div class="d-md-flex mb-3" >
-   <!-- Start Products Section  -->
-   <section class="productsSection">
-    <!-- start listings  -->
-    <div class="listings">
-        <div class="product_header"></div>
-        <!-- start list  -->
-        <div class="products_list" id="listingsContainer">
-  <!-- Products goes here  -->
+       
+                            <div class="projects mb-4">
+                                <div class="projects-inner">
+                                    <div class="col-md-12 col-lg-12 col-sm-12">
+                                              <!-- start form body  -->
+         <form action="#" id="deleteItem" style="width: 100%; max-width: 700px;">
+            <!-- <div class="formSection"> -->
+              
+            <div class="form_control">
+                <div class="warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>Plese Note that this action cannot be undone</span>
+                </div>
+                <label for="Username">Type <b>Delete ItemTitle</b></label>
+
+                <input type="hidden" id="itemId" value="itemID">
+                <input type="hidden" id="mainTitle" value="mainTitle">
+            <input type="text" style="border: 1px solid var(--red);" id="typeTitle" placeholder="" value="" required>
+            </div>     
+      <!-- </div> -->
         
-        
-        
-        </div>
-        <!-- end list  -->
 
-     
-    </div>
-    <div class="paginationHolder" >
-      
-        <ul class="pagination" id="pagination" >
-            <!-- <a href="#" class="pagination_item"><li>Prev</li></a>
-            <a href="#" class="active pagination_item"><li>1</li></a>
-            <a href="#"class="pagination_item"><li>2</li></a>
-            <a href="#" class="pagination_item"><li>3</li></a>
-            <a href="#" class="pagination_item"><li>4</li></a>
-            <a href="#" class="pagination_item"><li>5</li></a>
-            <a href="#" class="pagination_item"><li>Next</li></a> -->
-
-
-        </ul>
-      
-    </div>
-    <!-- End listings  -->
-     </section>
-
-
-
-
-                              </div>
-
-                      
+            <div class="form_body_footer"></div>
+            <button type="submit" class="submit_btn" disabled>Proceed</button>
+        </form>
+                                    </div>
+                                </div>
+                       
+                            </div>
 
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -250,10 +236,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
 
     <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
-
-
-    <script src="/js/queries/listings.js"></script>
-
 </body>
 
 </html>

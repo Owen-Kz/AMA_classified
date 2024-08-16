@@ -63,7 +63,7 @@ form{
 .form_control label{
     margin-top: 10px;
 }
-.form_control input{
+.form_control input, .form_control textarea, .form_control select{
     margin-top: 6px;
     background-color: transparent;
     display: flex;
@@ -82,6 +82,7 @@ form{
     display: flex;
     color: antiquewhite;
     align-items: center;
+    cursor: pointer;
     /* background: var(--AmasLinkColor); */
     justify-content: center;
 }
@@ -139,3 +140,74 @@ input:read-only, input:disabled{
     text-align: center;
     justify-content: center;
 }
+
+.formSection{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: flex-end;
+}
+
+.formSection .form_control{
+    width: 95%;
+}
+
+.formSectionCategories{
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+}
+.formSectionCategories .form_control{
+    width: max-content;
+    /* background-color: pink; */
+    padding-right: 10px;
+}
+
+.formSection .formActions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+.formSection i{
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.formSection .bi-check-circle-fill{
+    color: teal;
+}
+
+
+        /* Basic styling for the list and buttons */
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+        }
+        .item-list li {
+            margin: 10px 0px 0px 10px;
+        }
+        .subCategoriesContainer select{
+            display: none;
+        }
+        .item-button {
+            padding: 10px 15px;
+            border:1px solid var(--AmasLinkColor);
+            color: rgb(34, 34, 34);
+            border-radius: 25px;
+            cursor: pointer;
+            /* margin: 8px; */
+            font-size: 16px;
+            transition: 300ms ease;
+        }
+        .item-button.active {
+            background-color: #6e6e6e;
+            color: antiquewhite;
+        }
+        .subcategory-select {
+            display: none;
+            margin-top: 10px;
+        }

@@ -249,6 +249,9 @@ table .image_container{
   line-height: 1;
   vertical-align: middle;
 }
+.imagesRow .image_container{
+  overflow: hidden;
+}
 
 @media screen and (max-width:240px), (max-width:360px), (max-width:480px), (max-width:720px), (max-width:1080px){
   table .image_container{

@@ -2,7 +2,7 @@ const registerForm = document.getElementById("registerForm")
 
 registerForm.addEventListener("submit", function(e){
     e.preventDefault();
- 
+  
     const data = {
         username:username.value,
         firstname:firstname.value,

@@ -9,7 +9,7 @@
 
 
     <meta name="robots" content="noindex,nofollow">
-    <title>Bookmarks | Amaslink</title>
+    <title>Profile | Amaslink</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
@@ -28,7 +28,8 @@
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/css/products.css">
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/profile.css">
 
 </head>
 
@@ -37,10 +38,10 @@
 
     <style>
         #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
-            background-color: var(--AmasLinkColor);
+            background: var(--AmasLinkColor);
         }
         .btn-danger{
-            background-color: var(--AmasLinkColor);
+            background: var(--AmasLinkColor);
             border-radius: 50px;
         }
     </style>
@@ -122,7 +123,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Bookmarks</h4>
+                        <h4 class="page-title">Profile</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -157,53 +158,114 @@
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
                             <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">My Wishlist</h3>
+                                <h3 class="box-title mb-0">Edit Item</h3>
                               
-                                
                             </div>
-                            
-                     
-                            <div class="d-md-flex mb-3" >
-   <!-- Start Products Section  -->
-   <section class="productsSection">
-    <!-- start listings  -->
-    <div class="listings">
-        <div class="product_header"></div>
-        <!-- start list  -->
-        <div class="products_list" id="listingsContainer">
-  <!-- Products goes here  -->
-        
-        
-        
-        </div>
-        <!-- end list  -->
+       
+                            <div class="projects mb-4">
+                                <div class="projects-inner">
+                                    <div class="col-md-12 col-lg-12 col-sm-12">
+                                              <!-- start form body  -->
+         <form action="#" id="selectionForm">
+            <div class="formSection">
+              
+            <div class="form_control">
+                <label for="Username">Title</label>
+            <input type="text" id="username" placeholder="Enter Your username" value="<%=username%>" required >
+            </div>
 
-     
-    </div>
-    <div class="paginationHolder" >
-      
-        <ul class="pagination" id="pagination" >
-            <!-- <a href="#" class="pagination_item"><li>Prev</li></a>
-            <a href="#" class="active pagination_item"><li>1</li></a>
-            <a href="#"class="pagination_item"><li>2</li></a>
-            <a href="#" class="pagination_item"><li>3</li></a>
-            <a href="#" class="pagination_item"><li>4</li></a>
-            <a href="#" class="pagination_item"><li>5</li></a>
-            <a href="#" class="pagination_item"><li>Next</li></a> -->
+            <div class="formActions">
+                <i class="bi bi-pen"></i>
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+            </div>
+            
+
+            <div class="form_control">
+                <label for="firstname">Description</label>
+            <!-- <input type="text" id="firstname" placeholder="Enter your firstname" value=""" required > -->
+            <textarea name="description" id="description">Describe this item</textarea>
+            </div>
+
+            <div class="form_control">
+                <label for="lastname">Price</label>
+            <input type="number" id="price" placeholder="Set to Zero if not applicable" value="">
+            </div>
+            <div class="formSectionCategories">
+
+            <div class="form_control">
+                <label for="email">Category</label>
+            <select name="category" id="Category" required>
+                <option value="">Category</option>
+                <option value="">Select  a Category</option>
+                <option value="">Category</option>
+
+                <option value="">Category</option>
+
+            </select>
+            </div>
 
 
-        </ul>
-      
-    </div>
-    <!-- End listings  -->
-     </section>
+            <div class="form_control">
+                <label for="email">Country</label>
+            <select name="category" id="Category" required>
+                <option value="">Counry</option>
+                <option value="">Select  a Country</option>
+                <option value="">kl</option>
+
+                <option value="">wor</option>
+
+            </select>
+            </div>
 
 
+            </div>
+
+            <div class="form_control">
+                <label for="phonenumber">Pictures</label>
+            <input type="file" name="" id="" required>
+            <input type="file" name="" id="">
+            <input type="file" name="" id="">
+            <input type="file" name="" id="">
+            <input type="file" name="" id="">
+
+            </div>
+
+            <div class="form_control">
+                <label for="phonenumber">Choose Sub Categories (optional)</label>
+
+                <div class="subCategoriesContainer">
+                    <ul class="item-list">
+                        <li>
+                            <button type="button" class="item-button" data-subcategories="Subcategory1,Subcategory2,Subcategory3">Category 1</button>
+                            <select name="subcategory1" class="subcategory-select">
+                                <!-- Subcategories will be populated here -->
+                            </select>
+                        </li>
+                        <li>
+                            <button type="button" class="item-button" data-subcategories="SubcategoryA,SubcategoryB,SubcategoryC">Category 2</button>
+                            <select name="subcategory2" class="subcategory-select">
+                                <!-- Subcategories will be populated here -->
+                            </select>
+                        </li>
+                        <li>
+                            <button type="button" class="item-button" data-subcategories="SubcategoryX,SubcategoryY,SubcategoryZ">Category 3</button>
+                            <select name="subcategory3" class="subcategory-select">
+                                <!-- Subcategories will be populated here -->
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
-                              </div>
-
-                      
+            <div class="form_body_footer"></div>
+            <!-- <button type="submit" class="submit_btn">Update Info</button> -->
+        </form>
+                                    </div>
+                                </div>
+                       
+                            </div>
 
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -248,12 +310,8 @@
     <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <!-- <script src="/js/pages/dashboards/dashboard1.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
-
+    <script src="/js/forms/editItem.js" type="module"></script>
     <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
-
-
-    <script src="/js/queries/listings.js"></script>
-
 </body>
 
 </html>

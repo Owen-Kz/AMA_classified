@@ -1,10 +1,13 @@
+const dotenv = require("dotenv").config();
+
+
 const GetProductinfo = async (req,res) =>{
     const productId = req.params.id
     const data = {
         id:productId,
     }
 
-    const response = await fetch(`https://ama-endpoint.onrender.com/y/productInfo/${productId}`, {
+    const response = await fetch(`${process.env.ENDPOINT}/y/productInfo/${productId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

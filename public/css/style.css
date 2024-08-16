@@ -120,6 +120,17 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     object-fit: contain;
 }
 
+.warning{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.warning i{
+  padding: 0px 10px 0px 0px;
+  color:var(--red);
+}
+
 ::-webkit-scrollbar{
   background-color: transparent;
   opacity: 0;

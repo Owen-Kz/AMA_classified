@@ -1,6 +1,3 @@
-import { GetCookie } from "../setCookie.js";
-import { validateLogin } from "../validateLogin.js";
-
 const admin_nav = `<ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
@@ -149,18 +146,3 @@ const editor_nav = `<ul id="sidebarnav">
  const navbar_container = document.getElementById("sidebar_nav")
  navbar_container.innerHTML = editor_nav
 
-const user = GetCookie("editor")
-if(user){
-const AccountData = await validateLogin(user)
-
-
-const userFullname = AccountData.fullname 
-const email = AccountData.email 
-const accoount_type = AccountData.editorial_level
-
-if(accoount_type === "editor_in_chief" || accoount_type === "editorial_assistant"){
-   navbar_container.innerHTML = admin_nav;
-}else if(accoount_type === 'sectional_editor' || accoount_type === "associate_editor"){
-    navbar_container.innerHTML = editor_nav;
-}
-}

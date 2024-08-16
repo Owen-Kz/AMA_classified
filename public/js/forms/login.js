@@ -2,9 +2,10 @@ const registerForm = document.getElementById("loginForm")
 
 registerForm.addEventListener("submit", function(e){
     e.preventDefault();
+    console.log("Login")
  
     const data = {
-        user:username.value,
+        user:user.value,
         pass:password.value,
       
     }
@@ -16,6 +17,11 @@ registerForm.addEventListener("submit", function(e){
         }
     }).then(res=>res.json())
     .then(data=>{
-        alert(data.message)
+        if(data.success){
+            window.location.href = "/dashboard"
+        }else{
+            alert(data.message)
+
+        }
     })
 })
