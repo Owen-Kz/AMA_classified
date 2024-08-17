@@ -92,7 +92,7 @@ const editor_nav = `<ul id="sidebarnav">
                             </a>
                         </li>
                                                          <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/faq"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://amaslink.tawk.help/category/frequently-asked-questions"
                                 aria-expanded="false" target=_blank>
                                 <i class="bi bi-newspaper" aria-hidden="true"></i>
                                 <span class="hide-menu">FAQs</span>
