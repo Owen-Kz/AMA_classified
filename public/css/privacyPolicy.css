@@ -1,0 +1,19 @@
+.policyContainer{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.policyContainer h3, .policyContainer h4{
+    padding: 10px;
+    color: var(--AmasLinkColor);
+}
+.policyContainer span{
+    color: var(--AmasLinkColor);
+    font-weight: bold;
+}
+.policyContainer p {
+    padding: 5px 5px 5px 10px;
+}
+.policyContainer ul{
+    margin-left: 20px;
+}

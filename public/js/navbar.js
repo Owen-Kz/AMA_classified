@@ -88,9 +88,9 @@ container.innerHTML = `                <!-- Left  -->
                             </ul>
                           </li>
                         <li class="navigationLink">Forum</li>
-                        <li class="navigationLink">FAQs</li>
-                        <li class="navigationLink">Privacy Policy</li>
-                        <li class="navigationLink">Contact</li>
+                        <li class="navigationLink"><a href="https://amaslink.tawk.help/">FAQs</a></li>
+                        <li class="navigationLink"><a href="/privacy">Privacy Policy</a></li>
+                        <li class="navigationLink"><a href="/contact">Contact</a></li>
                         <li class="navigationLink">Blog</li>
                         <li class="navigationLink"><button class="post_add btn-border">Post AD</button></li>
                        

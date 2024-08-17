@@ -54,9 +54,19 @@
     transition: opacity 1s ease-in-out;
     background-size: cover;
     background-position: center;
-    background-size: cover;
+    display: flex;
+    background-size: contain;
+    /* filter: blur(109px); */
+    background-repeat: no-repeat;
 }
 
+.slide img {
+    width: 100%;
+    /* display: none; */
+    margin: auto;
+    /* max-height:100%; */
+    object-fit:contain;
+}
 
 /* Arrow button styles */
 .arrow {
@@ -181,6 +191,7 @@
     font-weight: bold;
     font-size: 12px;
     align-items: center;
+    text-align: center;
     justify-content: center;
     background-color: rgb(227, 227, 227);
     height: 100px;

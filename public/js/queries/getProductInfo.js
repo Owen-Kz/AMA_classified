@@ -101,7 +101,7 @@ function GetProductDetails(productId, productTitle) {
                 for (let i = 0; i < subCats.length; i++) {
                     const Cat = subCats[i];
                     SubCategories.innerHTML += `<li>
-                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="icon_container"><i class="bi bi-tags"></i></div>
                         <div class="text_container">${Cat.category_name}</div>
                     </li>`;
                 }

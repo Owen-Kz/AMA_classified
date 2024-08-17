@@ -10,6 +10,11 @@ const userListings = require("../controllers/userListings");
 const CarryAction = require("../controllers/carryAction");
 const previewItem = require("../controllers/previewItem");
 const SellerProfileDetails = require("../controllers/sellerProfileDetails");
+const categories = require("../controllers/categories");
+const AllCategories = require("../controllers/allCategories");
+const fs = require('fs');
+const path = require("path");
+
 const router = express.Router();
 
 router.use(express.json());
@@ -26,14 +31,26 @@ router.get("/", LoggedIN, (req,res) =>{
     }
 })
 
+router.get("/privacy", LoggedIN, (req,res) =>{
+    res.render("privacyPolicy", {username:req.user.u_name})
+})
+
+router.get("/contact", LoggedIN, (req,res) =>{
+    res.render("contact", {username:req.user.u_name})
+})
+
 router.post("/seller/profile/details/", SellerProfileDetails)
 
 router.get("/profile/details/informative", LoggedIN, (req,res) => {
     res.json({userDetails:req.user})
 })
 
-router.get("/register", (req,res) =>{
+router.get("/register",LoggedIN,  (req,res) =>{
+    if(req.cookies._t && req.user){
+        return res.redirect("/dashboard")
+    }else{
     res.render("register")
+    }
 })
 router.get("/login",LoggedIN, (req,res) =>{
     if(req.cookies._t && req.user){
@@ -100,7 +117,10 @@ router.post("/signup", async (req,res) =>{
 router.get('/listings', LoggedIN, (req,res)=>{
     res.render("listings", {username:req.user.u_name})
 })
+
 router.post("/listings", listings)
+
+
 
 router.post("/login", login)
 
@@ -141,6 +161,8 @@ router.get('/bookmarks',LoggedIN, (req,res)=>{
     }
 })
 
+router.get("/categories", LoggedIN, categories)
+router.post("/allCategories",  AllCategories)
 // render listings page 
 router.get("/mylistings", LoggedIN, (req,res) =>{
     if(req.cookies._t){
@@ -157,6 +179,22 @@ router.post("/userListings", userListings)
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
 
+
+// find files to return via http
+router.get("/api/uploads/find/:imageName", async (req,res) =>{
+    const imageFile = req.params.imageName
+    const parentDirectory = path.resolve(__dirname, '..');
+    const DirectoryForImageUploads = parentDirectory+"/public/uploads/cover_images/listings/";
+    const checkImageExists = async (imageFile) => {
+        const localImagePath = DirectoryForImageUploads + imageFile;
+        if (fs.existsSync(localImagePath)) {
+            return res.json({imageExists:"yes"});
+        }else{
+            return res.json({status:404})
+        }
+    }
+    await checkImageExists(imageFile)
+})
 
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')

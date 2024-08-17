@@ -51,13 +51,14 @@ body{
     flex-direction:column ;
   
     width: 100%;
-    z-index: 10000;
+    z-index: 1000120;
 }
 
 .topBar{
     display: flex;
     position: relative;
     align-items: center;
+    /* justify-content: center; */
     /* justify-content: center; */
     flex-direction: row;
     background: var(--AmasLinkColorBg);
@@ -134,6 +135,7 @@ body{
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     align-self: center;
+    align-items: center;
     -webkit-box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
@@ -145,6 +147,12 @@ body{
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
+.navbar ul{
+    align-self: center;
+    height: 100%;
+    display: flex;
+    margin: auto;
+}
 ::-webkit-scrollbar{
     background-color: transparent;
     opacity: 0;
@@ -169,10 +177,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-img{
+img:not(.productImage), img:not(.slide img){
     max-width: 100%;
-    max-height:290%;
-    object-fit: contain;
+    max-height:100%;
+    object-fit:cover;
 }
 .nav_right {
     width: 60%;
@@ -187,6 +195,7 @@ img{
     align-items: center;
     align-self: center;
     color: #373634;
+    
 }
 
 .nav_list a{
@@ -210,10 +219,13 @@ img{
 .dropdown {
     display: flex;
     align-items: center;
+    
 }
 .nav_list .dropdown .dropdown-menu{
     /* display: none; */
+    
     /* transition: ease-in-out 300ms; */
+    height: max-content;
     /* background-color: whitesmoke; */
     list-style-type: none;
 }

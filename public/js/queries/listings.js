@@ -1,5 +1,7 @@
 const listingsContainer = document.getElementById("listingsContainer")
 const paginationContainer = document.getElementById("pagination");
+const maxLength = 200;
+
 
 function booksNavigation(totalPagesListings, currentPage) {
     const booksNavContainer = document.getElementById("pagination");
@@ -9,6 +11,8 @@ function booksNavigation(totalPagesListings, currentPage) {
     let TotalPagesCount = "";
     let nextPageContainer = "";
     let OtherPages = "";
+
+  
   
     if (totalPagesListings > 0) {
       if (currentPage > 1) {
@@ -22,7 +26,9 @@ function booksNavigation(totalPagesListings, currentPage) {
       const startPage = Math.max(currentPage - halfMax, 1);
       const endPage = Math.min(currentPage + halfMax, totalPagesListings);
       const nextPage = currentPage + 1;
-  
+
+    
+
       if (startPage > 1) {
         AfterPrevious = `
         <a href="?page=1" class="pagination_item"><li>1</li></a>
@@ -35,15 +41,15 @@ function booksNavigation(totalPagesListings, currentPage) {
         }
       }
   
-      for (let i = startPage; i <= endPage; i++) {
+      for (let i = startPage; i <= 10; i++) {
         let active = (i == currentPage ? 'active' : '');
         OtherPages += `
          <a href="?page=${i}" class="pagination_item ${active}"><li>${i}</li></a>
         `;
       }
   
-      if (endPage < totalPagesListings) {
-        if (endPage < totalPagesListings - 1) {
+      if (endPage <= totalPagesListings) {
+        if (endPage > totalPagesListings - 1) {
           EndPage = `
            <a href="#" class="pagination_item "><li>...</li></a>`;
         }
@@ -108,7 +114,7 @@ fetch(`/listings?page=${page}`, {
 
     if(data.success){
         const ListingsList = data.listings
-        const totalPages = data.totalPagesListing
+        const totalPages = data.totalPages
         const currentPage = data.currentPage
         if(paginationContainer){ 
             booksNavigation(totalPages, currentPage)
@@ -116,15 +122,26 @@ fetch(`/listings?page=${page}`, {
  
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
+            let ItemPrice = ""
+            let currency = "$"
+
             if(ListingsList[i].country === null){
                 country = "N/A"
             }else{
                 country = ListingsList[i].country
             }
+            
+            if(ListingsList[i].price == null){
+            ItemPrice = ``
+            }else{
+                ItemPrice = `${currency} ${ListingsList[i].price}`
+            }
+
             listingsContainer.innerHTML += `          <!-- start single_item  -->
                <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
                     <div class="image_container">
-                        <img src="/uploads/${ListingsList[i].image1}" alt="Product image">
+                        <img class="productImage" src="/uploads/${ListingsList[i].image1}" alt="Product image">
+                       
                     </div>
                     <div class="actions">
                         <div class="viewsCount">
@@ -140,8 +157,14 @@ fetch(`/listings?page=${page}`, {
                     </div>
                     <!-- start product info  -->
                      <div class="product_info">
+                        <div class="product_name" style="color:var(--AmasLinkColor);">
+                           ${ItemPrice}
+                        </div>
                         <div class="product_name">
                             ${ListingsList[i].title}
+                        </div>
+                         <div class="product_description limited-text">
+                            ${ListingsList[i].description}
                         </div>
                         <div class="location"><i class="bi bi-map-fill"></i>${country}</div>
                      </div>
@@ -150,11 +173,23 @@ fetch(`/listings?page=${page}`, {
                 </a> 
                 <!-- div.End_single_item  -->`
         }
+        const limitedTextElements = document.getElementsByClassName("limited-text")
+
+        // Loop through each element and truncate if necessary
+    if(limitedTextElements){
+      for (var i = 0; i < limitedTextElements.length; i++) {
+          var limitedText = limitedTextElements[i];
+          if (limitedText.textContent.length > maxLength) {
+              limitedText.textContent = limitedText.textContent.substring(0, maxLength) + "...";
+          }
+      }
+      }
 
     }else{
         listingsContainer.innerHTML = `<div>Cannot Retrieve Data At the moment. Please Refresh</div>`
         console.log(data.error)
     }
+
 })
 }
 
