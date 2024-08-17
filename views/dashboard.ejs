@@ -153,11 +153,12 @@
                 </div><div class="row justify-content-space">
 
                     <div class="col-lg-2 col-md-10 ">
-                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                    <a href="/mylistings">    <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
                             <!-- <i class=" fas fa-shopping-basket"></i> -->
                             <i class="bi bi-list-columns-reverse"></i>
-                            <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span >0</span> Total Listings</h6>
+                            <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="totalCount" ></span> Total Listings</h6>
                         </div>
+                        </a>
                     </div>
            
                    
@@ -165,7 +166,7 @@
                         <a href="#">
                         <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
                             <i class="bi bi-ui-checks"></i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span >0</span> Active Listings</h3>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="activeCount"></span> Active Listings</h3>
                         </div>
                         </a>
                     </div>
@@ -175,7 +176,7 @@
                         <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
                            <i class="bi bi-exclamation-circle">
                               </i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span>0</span> Sold / Expired Listings</h3>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="soldOutCount"></span> Sold / Expired Listings</h3>
                         </div>
                     </div>
 
@@ -183,7 +184,7 @@
                        <a href="#">
                         <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
                             <i class="bi bi-hourglass-split"></i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span>0</span> Pending Approval</h3>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="pendingCount"></span> Pending Approval</h3>
                         </div>
                     </a>
                     </div>
@@ -277,6 +278,8 @@
     <!-- <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script> -->
     <!-- <script src="/js/pages/dashboards/dashboard1.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+
+    <script src="/js/queries/countItems.js"></script>
 
     <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
 </body>

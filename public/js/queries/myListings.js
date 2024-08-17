@@ -77,7 +77,18 @@ function booksNavigation(totalPagesListings, currentPage) {
       </ul>
       <span id="bookPageInfo">Page ${currentPage} of ${totalPagesListings}</span>`;
   }
-  
+  async function GetProductDetails(productId, productTitle) {
+   return fetch(`/details/${productTitle}/${productId}`, {
+        method: "GET"
+    }).then(res => res.json())
+    .then(async (data) => {
+        if (data.success) {
+            return data.productFiles
+        }else{
+            return  []
+        }
+    })
+}
 
     function NewPage(page){
     // get a list of listings by this user 
@@ -88,7 +99,7 @@ function booksNavigation(totalPagesListings, currentPage) {
             "Content-type" : "application/JSON"
         }
     }).then(res=>res.json())
-    .then(data=>{
+    .then(async (data)=>{
     listingsContainer.innerHTML = ""
 
         if(data.success){
@@ -102,47 +113,23 @@ function booksNavigation(totalPagesListings, currentPage) {
             const listings = data.mylistings
             for(let i=0; i<listings.length; i++){
                 const listingData = listings[i]
-                const imagesArray = []
+                const imagesArray = await GetProductDetails(listingData.id, listingData.title)
                 let Status = ""
                 let AllImages = ""
 
-                if(listingData.image1 && listingData.image1 != "AMAS.png" && listingData.image1 != null){
-                    imagesArray.push({
-                        image:listingData.image1
-                    })
+                for (let a = 0; a < imagesArray.length; a++) {
+                    const file = imagesArray[a];
+                    if ((file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "old_submission") {
+                        AllImages += `<div class="image_container">
+                                                <img src="/uploads/${imagesArray[a].file_url}" alt="image">
+                                            </div>
+                        </a>`;
+                    } else if (f(file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
+                        AllImages += `<div class="image_container">
+                                                <img src="${imagesArray[a].file_url}" alt="image">
+                                            </div>`;
+                    }
                 }
-                if(listingData.image2 && listingData.image2 != "AMAS.png" && listingData.image2 != null){
-                    imagesArray.push({
-                        image:listingData.image2
-                    })
-                }
-                if(listingData.image3 && listingData.image3 != "AMAS.png" && listingData.image3 != null){
-                    imagesArray.push({
-                        image:listingData.image3
-                    })
-                }
-                if(listingData.image3 && listingData.image3 != "AMAS.png" && listingData.image3 != null){
-                    imagesArray.push({
-                        image:listingData.image3
-                    })
-                }
-                if(listingData.image4 && listingData.image4 != "AMAS.png" && listingData.image4 != null){
-                    imagesArray.push({
-                        image:listingData.image4
-                    })
-                }
-                if(listingData.image5 && listingData.image5 != "AMAS.png" && listingData.image5 != null){
-                    imagesArray.push({
-                        image:listingData.image5
-                    })
-                }
-
-                for(let a=0; a<imagesArray.length; a++){
-                    AllImages += ` <div class="image_container">
-                                                <img src="/uploads/${imagesArray[a].image}" alt="image">
-                                            </div>`
-                }
-               
                 
                 if(listingData.status === "approved"){
                     Status = `<span class="status-text status-green">Approved</span>`

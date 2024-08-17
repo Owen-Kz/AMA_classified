@@ -78,10 +78,16 @@ function GetProductDetails(productId, productTitle) {
                 SellerDetailsContainer.innerHTML = `<div class="seller_profile_top">Seller Information is Unavailable at the moment</div>`
             }
             const productTitle = productDetails.title
+            const priceMain = productDetails.price
             purposeContainer.innerText = productDetails.purpose;
             locationContainer.innerText = productDetails.country;
             conditionContainer.innerText = productDetails.condition;
-            priceContainer.innerText = productDetails.price;
+            
+            if(priceMain && priceMain != null){
+                priceContainer.innerText = `$ ${productDetails.price.toLocaleString()}`
+            }else{
+                priceContainer.innerText = `Price is Not Applicable`
+            }
             const category = productDetails.category;
             const subCats = data.SubCategories;
             const prodFiles = data.productFiles;
@@ -123,13 +129,14 @@ function GetProductDetails(productId, productTitle) {
                                 <img src="/uploads/${file.file_url}" alt="${productTitle}">
                             </div>
                         </a>`;
-                    } else if (f(file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
+                    } else if ((file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
                         imageSlideShowContainer.innerHTML += `<a href="#">
                             <div class="slide slide-four" style="background-color:var(--AmasLlnkColor); background-image: url(${file.file_url});">
                                 <img src="${file.file_url}" alt="${productTitle}">
                             </div>
                         </a>`;
                     }
+                    
                 }
             }
 
@@ -142,7 +149,7 @@ function GetProductDetails(productId, productTitle) {
                        <img src="/uploads/${file.file_url}" alt="${productTitle}">
                     </div>
                         </a>`;
-                    } else if (f(file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
+                    } else if ((file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
                         SmalPreviews.innerHTML += `<a href="#">
                           <div class="small_image_container">
                        <img src="${file.file_url}" alt="${productTitle}">

@@ -41,7 +41,7 @@ function booksNavigation(totalPagesListings, currentPage) {
         }
       }
   
-      for (let i = startPage; i <= 10; i++) {
+      for (let i = startPage; i <= totalPagesListings; i++) {
         let active = (i == currentPage ? 'active' : '');
         OtherPages += `
          <a href="?page=${i}" class="pagination_item ${active}"><li>${i}</li></a>
@@ -106,7 +106,7 @@ function NewPage(page){
                 </div>
                 <!-- div.End_single_item  -->`
     }
-fetch(`/listings?page=${page}`, {
+fetch(`/bookmarks?page=${page}`, {
     method:"POST"
 }).then(res=>res.json())
 .then(data =>{
@@ -119,7 +119,13 @@ fetch(`/listings?page=${page}`, {
         if(paginationContainer){ 
             booksNavigation(totalPages, currentPage)
         }
- 
+
+        if(ListingsList.length > 0){
+            
+        }else{
+            listingsContainer.innerHTML = `<div>You have no Bookmarks Yet.</div>`
+    
+        }
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
             let ItemPrice = ""

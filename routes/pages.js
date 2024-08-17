@@ -14,6 +14,8 @@ const categories = require("../controllers/categories");
 const AllCategories = require("../controllers/allCategories");
 const fs = require('fs');
 const path = require("path");
+const bookmarks = require("../controllers/bookmarks");
+const countMyListings = require("../controllers/countMyListings");
 
 const router = express.Router();
 
@@ -132,6 +134,7 @@ router.get("/dashboard", LoggedIN, (req,res) => {
         res.redirect("/login")
     }
 })
+router.get("/countMyListings", LoggedIN, countMyListings)
 
 router.get("/profile", LoggedIN, (req,res) =>{
     if(req.cookies._t){
@@ -160,6 +163,7 @@ router.get('/bookmarks',LoggedIN, (req,res)=>{
         res.redirect("/login")
     }
 })
+router.post("/bookmarks", LoggedIN, bookmarks)
 
 router.get("/categories", LoggedIN, categories)
 router.post("/allCategories",  AllCategories)
@@ -171,7 +175,7 @@ router.get("/mylistings", LoggedIN, (req,res) =>{
     }else{
         res.redirect("/login")
     }
-})
+}) 
 // get Listings for user 
 router.post("/userListings", userListings)
 
