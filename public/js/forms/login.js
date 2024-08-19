@@ -18,7 +18,8 @@ registerForm.addEventListener("submit", function(e){
     }).then(res=>res.json())
     .then(data=>{
         if(data.success){
-            window.location.href = "/dashboard"
+            // window.location.href = "/dashboard"
+            window.location.reload()
         }else{
             alert(data.message)
 

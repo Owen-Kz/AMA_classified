@@ -119,6 +119,7 @@ function GetProductDetails(productId, productTitle) {
             }
 
             // Set the content for the slide show 
+            if(prodFiles.length > 0){
             
             if (imageSlideShowContainer) {
                 for (let b = 0; b < prodFiles.length; b++) {
@@ -138,6 +139,7 @@ function GetProductDetails(productId, productTitle) {
                     }
                     
                 }
+            
             }
 
             if(SmalPreviews){
@@ -158,7 +160,18 @@ function GetProductDetails(productId, productTitle) {
                     }
                 }
             }
-
+        }else{
+            imageSlideShowContainer.innerHTML = `<a href="#">
+            <div class="slide slide-four" style="background-color:var(--AmasLlnkColor); background-image: url(/uploads/AMAS.png);">
+                <img src="/uploads/AMAS.png" alt="${productTitle}">
+            </div>
+        </a>`;
+                SmalPreviews.innerHTML += `<a href="#">
+                <div class="small_image_container">
+            <img src="/uploads/AMAS.png" alt="${productTitle}">
+        </div>
+            </a>`;
+        }
             // Check if the slides exist before initializing the slideshow
             const slides = document.querySelectorAll('.ads-slide .slide');
             if (slides.length > 0) {

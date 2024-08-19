@@ -28,10 +28,13 @@ async function ProfileData(){
 const userLogged = await ProfileData()
 let isLoggedINProfile = ""
 if(userLogged.id && userLogged.id != null && userLogged.id !== ""){
-    isLoggedINProfile = ` <ul style="width:max-content;">
+    isLoggedINProfile = ` <ul>
                     <li><a href="/dashboard">Welcome Back, <b> ${userLogged.u_name}</b></a></li>
-                    
+                     <li><a href="/annoucements"><i class="bi bi-bell"></i><span>Annoucements</span></a></li>
+                      <li><a href="/messages"><i class="bi bi-chat-right"></i><span>Messages</span></a></li>
+                     <li><a href="/mylistings"><i class="bi bi-list-columns-reverse"></i><span>Listings</span></a></li>
                 </ul>`
+                
 }else{
     isLoggedINProfile = `    <ul>
                     <li><a href="/login">Login</a></li>
@@ -45,7 +48,14 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
             <div class="topBarLeft">
             ${isLoggedINProfile}
             </div>
-            <!-- div.searchContainer  -->
+            
+            <div class='mobileNav' id="mobileNav">
+            <i class="bi bi-list" aria-hidden="true"></i>
+            </div>
+        </div>
+           <div class='secondaryTopBar'>
+           <div class='left'>
+               <!-- div.searchContainer  -->
              <div class="searchContainer">
                 <form action="#">
                     <select name="searchBy" id="searchBy">
@@ -58,10 +68,11 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
                 </form>
              </div>
             <!-- End Search container  -->
-            <div class='mobileNav' id="mobileNav">
-            <i class="bi bi-list" aria-hidden="true"></i>
             </div>
-        </div>
+            <div class="right">
+            <a href=#><i class="bi bi-map"></i> <span>Map</span></a>
+            </div>
+           </div>
         <!-- end topbar -->
   `
 

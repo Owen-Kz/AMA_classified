@@ -169,9 +169,7 @@ fetch(`/bookmarks?page=${page}`, {
                         <div class="product_name">
                             ${ListingsList[i].title}
                         </div>
-                         <div class="product_description limited-text">
-                            ${ListingsList[i].description}
-                        </div>
+                    
                         <div class="location"><i class="bi bi-map-fill"></i>${country}</div>
                      </div>
                      <!-- end product info  -->

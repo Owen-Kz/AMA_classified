@@ -7,7 +7,7 @@
     padding: 10px;
     color: var(--AmasLinkColor);
 }
-.policyContainer span{
+.policyContainer span, .policyContainer a{
     color: var(--AmasLinkColor);
     font-weight: bold;
 }

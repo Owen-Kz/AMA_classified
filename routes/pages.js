@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require("path");
 const bookmarks = require("../controllers/bookmarks");
 const countMyListings = require("../controllers/countMyListings");
+const listingFiles = require("../controllers/listingFiles");
 
 const router = express.Router();
 
@@ -78,7 +79,6 @@ router.post("/signup", async (req,res) =>{
         phonenumber: phonenumber,
         country, country
     };
-    console.log(endpoint)
 
     try {
         // Make the POST request to another endpoint
@@ -131,7 +131,7 @@ router.get("/dashboard", LoggedIN, (req,res) => {
     if(req.cookies._t){
         res.render("dashboard", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
     }else{
-        res.redirect("/login")
+        res.render("login")
     }
 })
 router.get("/countMyListings", LoggedIN, countMyListings)
@@ -140,7 +140,7 @@ router.get("/profile", LoggedIN, (req,res) =>{
     if(req.cookies._t){
     res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
 }else{
-    res.redirect("/login")
+    res.render("login")
 }
 })
 
@@ -148,19 +148,23 @@ router.get("/announcements",LoggedIN, (req,res)=>{
     if(req.cookies._t){
         res.render("announcements",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
     }else{
-        res.redirect("/login")
+        res.render("login")
     }
 })
 
-router.get("/messages", (req,res) =>{
-    res.render("messages")
+router.get("/messages", LoggedIN, (req,res) =>{
+    if(req.cookies._t){
+    res.render("chats", {username: req.user.u_name})
+    }else{
+        res.render("login")
+    }
 })
 
 router.get('/bookmarks',LoggedIN, (req,res)=>{
     if(req.cookies._t){
     res.render('bookmarks', {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
     }else{
-        res.redirect("/login")
+        res.render("login")
     }
 })
 router.post("/bookmarks", LoggedIN, bookmarks)
@@ -173,7 +177,7 @@ router.get("/mylistings", LoggedIN, (req,res) =>{
 
     res.render("mylistings", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
     }else{
-        res.redirect("/login")
+        res.render("login")
     }
 }) 
 // get Listings for user 
@@ -199,6 +203,8 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
     }
     await checkImageExists(imageFile)
 })
+
+router.get("/listingFiles/:id", listingFiles)
 
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')

@@ -43,6 +43,7 @@ body{
     /* background-color: rgb(241, 241, 241); */
     background-color: rgb(255, 255, 255);
     font-family: 'Lato';
+    color: #3e5569;
     font-family: var(--font-family-sans-serif);
     /* overflow-y: scroll; */
 }
@@ -64,21 +65,56 @@ body{
     background: var(--AmasLinkColorBg);
     height: 50px;
 }
+.topBarLeft {
+    width: 50%;
+}
 .topBarLeft ul{
     display: flex;
     list-style-type: none;
     color: beige;
-    width: 140px;
-    justify-content: space-between;
+    justify-content: flex-start;
     /* padding-right: 40px; */
     align-self: flex-start;
     margin-left: 40px;
 }
-
+.topBarLeft ul li{
+    padding: 8px;
+    margin-left: 10px;
+}
+.topBarLeft ul li i{
+    padding: 4px;
+}
+.topBarLeft ul li:first-child{
+    border-right: 1px solid white;
+}
 .topBarLeft a{
     text-decoration: none;
 }
-
+.secondaryTopBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    height: max-content;
+    padding: 2px;
+    border-bottom: 1px solid var(--AmasLinkColor);
+}
+.secondaryTopBar .left{
+    width: 70%;
+    display: flex;
+}
+.secondaryTopBar .right{
+display: flex;
+align-items: center;
+}
+.secondaryTopBar .right i {
+color: var(--AmasLinkColor);
+}
+.secondaryTopBar .left .searchContainer{
+    width: 100%;
+    border: 1px solid var(--AmasLinkColor);
+}
 .searchContainer{
     display: flex;
     margin: auto;
@@ -113,9 +149,9 @@ body{
 }
 
 .searchContainer button{
-    background-color: rgb(223, 200, 200);
+    background-color: rgb(246, 232, 232);
     border: none;
-    color: rgb(170, 170, 170);
+    color: rgb(207, 24, 24);
     border-radius: 50%;
     outline: none;
     height: 30px;
@@ -518,6 +554,16 @@ img:not(.productImage), img:not(.slide img){
         position:sticky;
         top: 0;
         justify-content: space-between;
+    }
+    .topBarLeft{
+        margin-left: 10px;
+        width: 80%;
+    }
+    .topBarLeft ul{
+        margin-left: 0px;
+    }
+    .topBarLeft ul li span{
+        display: none;
     }
     .topBar .searchContainer{
         display: none;
