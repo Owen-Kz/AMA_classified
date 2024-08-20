@@ -104,6 +104,15 @@ body{
     width: 70%;
     display: flex;
 }
+select{
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+select::after, select::before, select::content{
+    display: none;
+}
+
 .secondaryTopBar .right{
 display: flex;
 align-items: center;
@@ -213,7 +222,7 @@ color: var(--AmasLinkColor);
     justify-content: center;
     align-items: center;
 }
-img:not(.productImage), img:not(.slide img){
+.sponsoredAd img, .topBar img, .footer img, .navbar img, .products_list img, .small_image_container img, .formContainer img{
     min-height: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -424,7 +433,9 @@ img:not(.productImage), img:not(.slide img){
     color: var(--AmasLinkColor);
 }
 .footer_top_left .logo_container{
+    display: flex;
     height: 50px;
+    align-items: flex-end;
     width: 200px;
 }
 

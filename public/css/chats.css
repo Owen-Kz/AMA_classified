@@ -10,6 +10,9 @@ body {
     flex-direction: column;
     /* Remove position: relative; */
 }
+#inputFieldContainer{
+    display: none;
+}
 
   #chaListContainer{
     transition: 300ms ease;
@@ -23,13 +26,14 @@ body {
   }
   #messageContainer{
     transition: 300ms ease;
-    width: 80%;
+    width: 90%;
     height: 80vh;
   }
 
   .mainMessageBody{
     height: 100%;
-    overflow: scroll;
+    width: 100%;
+    overflow-y: scroll;
   }
   .expanded{
     width: 0px;
@@ -37,15 +41,14 @@ body {
     overflow: hidden;
   }
   
-  .maxWidthContainer{
-    margin: 0px auto;
-    width: 95%;
-    max-width:95%;
-  }
+
+
+
+  
   .container {
     /* margin: 60px auto; */
     padding: 0;
-    width: 100%;
+    width: 90%;
     max-width: 100%;
     /* margin: 0px; */
     height: 100%;
@@ -105,9 +108,9 @@ body {
   }
   
   input, textarea {
-    border: none;
+    border: 2px solid var(--AmasLinkColor);
     border-radius: 30px;
-    width: 80%;
+    width: 90%;
   }
   input::placeholder, textarea::placeholder {
     color: #e3e3e3;
@@ -181,6 +184,19 @@ body {
     border-left: 0;
     margin-left: -20px;
   }
+  .chat-bubble--left{
+    width: max-content;
+    text-wrap: wrap;
+  }
+  
+  .chat-bubble--right{
+    background-color: var(--AmasLinkColor);
+    color: white;
+    align-self: flex-end;
+    float: right;
+    margin-right: 0px;
+    justify-content: flex-end;
+}
   .chat-bubble--right:after {
     right: 0;
     border-left-color: var(--AmasLinkColor);
@@ -224,4 +240,34 @@ body {
   }
   .chat-box-tray i:last-of-type {
     margin-left: 25px;
+  }
+
+  @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px){
+    .maxWidthContainer{
+      /* display: none; */
+      overflow: hidden;
+      margin: 0px auto;
+      width: 0px;
+      max-width:0px;
+    }
+    .mainMessageBody{
+      width: 100%;
+    }
+    .chatListContainer{
+      position: absolute;
+      width: 100%;
+      z-index: 9393;
+      height: 100vh;
+      background-color: white;
+      /* display: none; */
+    }
+
+
+
+    .expanded, .mobileListClose{
+      position: absolute;
+      z-index: 9393;
+      height: 100vh;
+      width: 0px;
+    }
   }

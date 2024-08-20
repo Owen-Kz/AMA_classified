@@ -55,8 +55,17 @@
     font-weight: bold;
     color: var(--AmasLinkColor);
 }
+@media screen and (max-width:800px), (max-width:900px), (max-width:1080px) {
+    .categoriesList{
+        grid-template-columns: repeat(7, 1fr); /* 5 equal columns */
+    }
+    .categoriesList li{
+        height: 80px;
+        width: 80px;
+    }
+}
 
-@media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+@media screen and (max-width:240px), (max-width:480px), (max-width:720px) {
     .categoriesList{
         grid-template-columns: repeat(4, 1fr); /* 5 equal columns */
     }

@@ -77,7 +77,22 @@ function booksNavigation(totalPagesListings, currentPage) {
       <span id="bookPageInfo">Page ${currentPage} of ${totalPagesListings}</span>`;
   }
   
-
+  async function GetProductFiles(productId) {
+    return fetch(`/listingFiles/${productId}`, {
+         method: "GET"
+     }).then(res => res.json())
+     .then(data => {
+         if(data){
+         if (data.success) {
+             return data.productFiles
+         }else{
+             return  []
+         }
+     }else{
+         return []
+     }
+     })
+ }
   
 function NewPage(page){
     for(let i=0; i<40; i++){
@@ -109,7 +124,7 @@ function NewPage(page){
 fetch(`/bookmarks?page=${page}`, {
     method:"POST"
 }).then(res=>res.json())
-.then(data =>{
+.then(async (data) =>{
     listingsContainer.innerHTML = ""
 
     if(data.success){
@@ -130,6 +145,8 @@ fetch(`/bookmarks?page=${page}`, {
             let country = ""
             let ItemPrice = ""
             let currency = "$"
+            let imageLink = ""
+
 
             if(ListingsList[i].country === null){
                 country = "N/A"
@@ -142,10 +159,26 @@ fetch(`/bookmarks?page=${page}`, {
             }else{
                 ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
             }
+            const imagesArray = await GetProductFiles(ListingsList[i].id)
+            if(imagesArray.length > 0){
+            if(imagesArray[0].file_url === ""){
+                imageLink = "/uploads/AMAS.png"
+            }else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "old_submission" && imagesArray[0].file_type === "" ){
+                imageLink = `/uploads/${imagesArray[0].file_url}`
+            }
+            else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "new_submission" && imagesArray[0].file_type === "image_file"){
+                imageLink = `${imagesArray[0].file_url}`
+            }else{
+                imageLink = "/uploads/AMAS.png"
 
+            }
+        }else{
+            imageLink = "/uploads/AMAS.png"
+
+        }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
                <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
-                    <div class="image_container">
+                    <div class="image_container" style="background-image:url(${imageLink});">
                         <img class="productImage" src="/uploads/${ListingsList[i].image1}" alt="Product image">
                        
                     </div>

@@ -172,7 +172,7 @@ function NewPage(page){
               <div class="product_item loadingItem">
                     <div class="image_container" style="background:transparent;">
                       
-                    </div>
+                   
                     <div class="actions" style="background:transparent;">
                         <div class="viewsCount" style="background:transparent;">
                           
@@ -182,6 +182,7 @@ function NewPage(page){
 
                         </div>
                     </div>
+                     </div>
                     <!-- start product info  -->
                      <div class="product_info" style="background:transparent;">
                         <div class="product_name" style="background:transparent;">
@@ -248,10 +249,10 @@ fetch(`/listings?page=${page}`, {
 
             listingsContainer.innerHTML += `          <!-- start single_item  -->
                <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
-                    <div class="image_container">
+                    <div class="image_container" style="background-image:url(${imageLink});">
                         <img class="productImage" src="${imageLink}" alt="Product image">
                        
-                    </div>
+                   
                     <div class="actions">
                         <div class="viewsCount">
                             <i class="bi bi-eye"></i>
@@ -264,6 +265,7 @@ fetch(`/listings?page=${page}`, {
 
                         </div>
                     </div>
+                     </div>
                     <!-- start product info  -->
                      <div class="product_info">
                         <div class="product_name" style="color:var(--AmasLinkColor);">

@@ -17,6 +17,8 @@ const path = require("path");
 const bookmarks = require("../controllers/bookmarks");
 const countMyListings = require("../controllers/countMyListings");
 const listingFiles = require("../controllers/listingFiles");
+const MyChats = require("../controllers/myChats");
+const chatHistory = require("../controllers/chatHistory");
 
 const router = express.Router();
 
@@ -154,11 +156,13 @@ router.get("/announcements",LoggedIN, (req,res)=>{
 
 router.get("/messages", LoggedIN, (req,res) =>{
     if(req.cookies._t){
-    res.render("chats", {username: req.user.u_name})
+    res.render("chats", {username: req.user.u_name, userId:req.user.id})
     }else{
         res.render("login")
     }
 })
+router.get('/myChats', LoggedIN, MyChats)
+router.post("/chatHistory", chatHistory)
 
 router.get('/bookmarks',LoggedIN, (req,res)=>{
     if(req.cookies._t){

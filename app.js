@@ -8,6 +8,7 @@ const server = require("http").Server(app)
 // const session = require("express-session");
 const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
+const SaveMessage = require("./controllers/sendMessage");
 
 
 app.use(bodyParser.json());
@@ -30,7 +31,58 @@ app.use("/uploads", express.static(__dirname + "/public/uploads/cover_images/lis
 app.use("/plugins", express.static(__dirname + "/public/plugins", { type: 'text/folder' }))
 app.use("/bootstrap", express.static(__dirname + "/public/bootstrap", { type: 'text/folder' }))
 
+const io = require("socket.io")(server, {
+    port: 5000 // Change this to your desired port number
+})
 
+let socketsConnected = new Set();
+
+io.on('connection', onConnected);
+
+function onConnected(socket) {
+  // console.log('Socket connected', socket.id);
+  socketsConnected.add(socket.id);
+  io.emit('clients-total', socketsConnected.size);
+  socket.on('disconnect', () => {
+   
+    socketsConnected.delete(socket.id); 
+    io.emit('clients-total', socketsConnected.size);
+  });
+
+  // Generate a unique room ID for this pair of users
+  socket.on("join-room", async (roomId) =>{
+    socket.join(roomId); // Join the room
+
+  })
+  socket.on("message", async (data, roomId) => {
+    io.to(roomId).emit("chat-message", data);
+
+    try {
+
+        // Wait for the message to be saved
+        await SaveMessage(data, roomId);
+        io.to(roomId).emit("chat-message", data);
+        // If the message is saved successfully, emit the event
+    } catch (error) {
+        console.log("Error saving message:", error);
+    }
+});
+
+
+
+
+  socket.on("feedback", (data) => {
+    socket.broadcast.emit("feedback", data);
+  });
+
+
+
+
+
+
+
+
+}
 
 
 

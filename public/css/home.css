@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .AdsSection{
     display: flex;
     justify-content: space-between;
@@ -88,8 +91,6 @@
     
 }
 
-
-
 .sponsored_ads{
     /* margin-top: 40px; */
     display: flex;
@@ -99,6 +100,24 @@
     max-height:400px;
 }
 
+.fullpageAd{
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 8px;
+    background-color: #333;
+    border: 1px solid var(--AmasLinkColor);
+}
+.fullpageAd img{
+    /* height: 100%; */
+    width: 100%;
+    /* max-width: 100%; */
+    max-height:100%;
+    /* object-fit:cover; */
+    object-fit:scale-down;
+}
+
 @media screen and (max-width:240px), (max-width:360px), (max-width:480px), (max-width:720px), (max-width:1080px) {
     .AdsSection{
         padding: 10px;
@@ -106,6 +125,16 @@
         justify-content: flex-start;
         height: max-content;
         max-height: max-content;
+    }
+    .fullpageAd{
+        width: 100%;
+    }
+    .fullpageAd img{
+        height: 100%;
+        /* width: 100%; */
+        max-width: 100%;
+        max-height:100%;
+        object-fit:cover;
     }
     .ads-slide, .static-ad{
         margin: 10px;
