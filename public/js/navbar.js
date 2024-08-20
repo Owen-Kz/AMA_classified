@@ -38,7 +38,7 @@ if(userLogged.id && userLogged.id != null && userLogged.id !== ""){
 }else{
     isLoggedINProfile = `    <ul>
                     <li><a href="/login">Login</a></li>
-                    |
+                    
                     <li><b><a href="/register">Register</a></b></li>
                     
                 </ul>`
