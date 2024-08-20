@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     const slides = document.querySelectorAll('.ads-slide .slide');
     const totalSlides = slides.length;
     let currentIndex = 0;
@@ -42,3 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         slideInterval = setInterval(nextSlide, 5000); // Restart the auto-slide
     });
 });
+
+
+

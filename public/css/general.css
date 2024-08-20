@@ -542,6 +542,8 @@ color: var(--AmasLinkColor);
 .mobileNav{
     display: none;
 }
+
+
 @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
     .mobileNav{
         display: flex;
