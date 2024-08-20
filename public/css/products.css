@@ -68,7 +68,7 @@ body{
     font-weight: bolder;
 }
 .product_item {
-    background-color: #fdfdfd;
+    background-color: transparent;
     border-radius: 15px;
     height: fit-content;
     min-height: 500px;
