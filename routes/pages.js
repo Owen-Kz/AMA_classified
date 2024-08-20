@@ -208,6 +208,13 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
     await checkImageExists(imageFile)
 })
 
+router.get("/forum", async (req,res) =>{
+    res.render("comingSoon")
+})
+router.get("/map", async (req,res) =>{
+    res.render("comingSoon")
+})
+
 router.get("/listingFiles/:id", listingFiles)
 
 router.get("/Logout", (req,res) => {

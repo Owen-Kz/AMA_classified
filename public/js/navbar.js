@@ -70,7 +70,7 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
             <!-- End Search container  -->
             </div>
             <div class="right">
-            <a href=#><i class="bi bi-map"></i> <span>Map</span></a>
+            <a href="/map"><i class="bi bi-map"></i> <span>Map</span></a>
             </div>
            </div>
         <!-- end topbar -->
@@ -98,7 +98,7 @@ container.innerHTML = `                <!-- Left  -->
                               <li><a href="/auctions">Auctions</a></li>
                             </ul>
                           </li>
-                        <li class="navigationLink">Forum</li>
+                        <li class="navigationLink"><a href="/forum">Forum</a></li>
                         <li class="navigationLink"><a href="https://amaslink.tawk.help/category/frequently-asked-questions">FAQs</a></li>
                         <li class="navigationLink"><a href="/privacy">Privacy Policy</a></li>
                         <li class="navigationLink"><a href="/contact">Contact</a></li>

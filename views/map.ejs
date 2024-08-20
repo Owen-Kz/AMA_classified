@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Current Location</title>
+    <style>
+        #map {
+            height: 100vh; /* Full-screen height */
+            width: 100%; /* Full width */
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP_KSbpzbZ-eOHFOPNIT9DLp8nWe0vmH4&callback=initMap" async defer></script>
+<script>
+    function initMap() {
+        // Map options
+        const mapOptions = {
+            zoom: 15,
+            center: { lat: -34.397, lng: 150.644 }, // Default center
+        };
+        
+        // Create the map object
+        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        
+        // Try HTML5 geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+                    
+                    // Set map center to user's current location
+                    map.setCenter(pos);
+
+                    // Place a marker at the user's location
+                    new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: "You are here!",
+                    });
+                },
+                () => {
+                    handleLocationError(true, map.getCenter());
+                }
+            );
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, map.getCenter());
+        }
+    }
+
+    function handleLocationError(browserHasGeolocation, pos) {
+        alert(browserHasGeolocation
+              ? "Error: The Geolocation service failed."
+              : "Error: Your browser doesn't support geolocation.");
+    }
+</script>
+
+</body>
+</html>

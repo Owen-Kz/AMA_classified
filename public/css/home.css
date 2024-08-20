@@ -4,6 +4,10 @@ body{
 .big{
     font-weight: bold;
 }
+.dropdown-toggle:after{
+    display: none;
+
+}
 .headerContainer{
     display: flex;
     flex-direction: row;

@@ -5,6 +5,7 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 :root{
     --AmasLinkColor: #b70000;
     --AmasLinkColorBg: linear-gradient(40deg, #7f0606 10%, #b70000 40%, #7f0606 90%);
@@ -270,7 +271,6 @@ color: var(--AmasLinkColor);
 }
 .nav_list .dropdown .dropdown-menu{
     /* display: none; */
-    
     /* transition: ease-in-out 300ms; */
     height: max-content;
     /* background-color: whitesmoke; */
@@ -317,7 +317,8 @@ color: var(--AmasLinkColor);
     border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     display: none;
-    min-width: 200px;
+    min-width: 100px;
+    max-width: fit-content;
     z-index: 1;
     opacity: 0;
     transform: translateY(-20px);
