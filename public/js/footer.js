@@ -15,7 +15,7 @@ footerContainer.innerHTML = `        <div class="footer">
                     <form action="#">
                         <input type="text" placeholder="What's your name?" required>
                         <input type="email" placeholder="Email" required>
-                        <button>Subsribe</button>
+                        <button>Subscribe</button>
                     </form>
                 </div>
                 <div class="footer_top_middle">

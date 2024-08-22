@@ -18,7 +18,18 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
     --bodyBackground: rgb(255, 255, 255);
 }
-
+.skiptranslate:not(.goog-te-gadget){
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    min-width: 0px;
+    max-width: 0px;
+    width: 0px !important;
+    display: none !important;
+}
+body{
+    top:0 !important;
+}
 #google_translate_element{
     position:fixed;
     right: 20px;
