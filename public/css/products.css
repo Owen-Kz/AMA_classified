@@ -258,6 +258,7 @@ body{
     margin: auto;
     background-color: var(--AmasLinkColor);
     height: 50px;
+    width: max-content;
     border-radius: 25px;
     color: inherit;
     padding: 20px;

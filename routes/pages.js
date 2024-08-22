@@ -25,6 +25,7 @@ const DeleteItem = require("../controllers/deleteItem");
 const addToBookMarks = require("../controllers/bookmarkItem");
 const ViewsCount = require("../controllers/viewsCount");
 const opentToView = require("../controllers/openToView");
+const getAnnouncements = require("../controllers/getAnnouncements");
 
 const router = express.Router();
 
@@ -159,6 +160,7 @@ router.get("/announcements",LoggedIN, (req,res)=>{
         res.render("login")
     }
 })
+router.post("/getAnnouncements", LoggedIN, getAnnouncements)
 
 router.get("/messages", LoggedIN, (req,res) =>{
     if(req.cookies._t){
@@ -223,8 +225,10 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
 router.get("/forum", async (req,res) =>{
     res.render("comingSoon")
 })
-router.get("/map", async (req,res) =>{
-    res.render("comingSoon")
+router.get("/map", LoggedIN, async (req,res) =>{
+    res.render("map", {username:req.user.u_name})
+
+    // res.render("comingSoon")
 })
 router.get("/mapDev", LoggedIN,  async(req,res) =>{
     res.render("map", {username:req.user.u_name})

@@ -6,6 +6,8 @@
     margin: 0;
 }
 
+
+
 :root{
     --AmasLinkColor: #b70000;
     --AmasLinkColorBg: linear-gradient(40deg, #7f0606 10%, #b70000 40%, #7f0606 90%);
@@ -15,6 +17,19 @@
     --font-family-sans-serif: "Nunito Sans", sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
     --bodyBackground: rgb(255, 255, 255);
+}
+
+#google_translate_element{
+    position:fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: white;
+    border-radius: 24px;
+    border: 1px solid var(--AmasLinkColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 /* Loading animation */
 .loadingItem {
@@ -222,6 +237,7 @@ color: var(--AmasLinkColor);
     height: 100%;
     display: flex;
     margin: auto;
+    width: max-content;
 }
 ::-webkit-scrollbar{
     background-color: transparent;
@@ -272,6 +288,7 @@ color: var(--AmasLinkColor);
 
 .nav_list a{
     text-decoration: none;
+    width: max-content;
     color: #373634;
 }
 
