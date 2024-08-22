@@ -15,7 +15,7 @@ fetch(`/allCategories`, {
         for(let i=0; i<Cats.length; i++){
             const category = Cats[i]
             categoriesContainer.innerHTML += `<li>
-                        <div class="icon_container"><i class="bi bi-tags"></i></div>
+                        <div class="icon_container"><i>${category.icon}</i></div>
                         <div class="text_container">${category.category_name}</div>
                     </li>`
         }

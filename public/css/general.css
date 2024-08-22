@@ -14,6 +14,7 @@
     --border-radius: 20px;
     --font-family-sans-serif: "Nunito Sans", sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
+    --bodyBackground: rgb(255, 255, 255);
 }
 /* Loading animation */
 .loadingItem {
@@ -40,26 +41,41 @@ a {
 /* @font-face {
     src: url('./fonts/Lato/Lato-Light.ttf');
 } */
+html{
+     background-color:  rgb(255, 244, 244);
+}
 body{
     /* background-color: rgb(241, 241, 241); */
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bodyBackground);
     font-family: 'Lato';
     color: #3e5569;
     font-family: var(--font-family-sans-serif);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin: auto;
     /* overflow-y: scroll; */
 }
 .topSection{
     display: flex;
-    flex-direction:column ;
-  
+    flex-direction:column;
     width: 100%;
     z-index: 1000120;
+}
+ .listings, .backgroundParent:not(.topBar){
+    margin-top: 10px;
+    border-radius: 20px;
+}
+footer{
+    margin-top: 10px;
 }
 
 .topBar{
     display: flex;
     position: relative;
     align-items: center;
+    margin-top: 0px;
     /* justify-content: center; */
     /* justify-content: center; */
     flex-direction: row;
@@ -67,12 +83,18 @@ body{
     height: 50px;
 }
 .topBarLeft {
-    width: 50%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 .topBarLeft ul{
     display: flex;
+    margin: auto;
     list-style-type: none;
+    height: fit-content;
     color: beige;
+    
     justify-content: flex-start;
     /* padding-right: 40px; */
     align-self: flex-start;
@@ -99,7 +121,9 @@ body{
     justify-content: space-evenly;
     height: max-content;
     padding: 2px;
-    border-bottom: 1px solid var(--AmasLinkColor);
+    background-color: var(--bodyBackground);
+    border-radius: 0px;
+    /* border-bottom: 1px solid var(--AmasLinkColor); */
 }
 .secondaryTopBar .left{
     width: 70%;
@@ -177,7 +201,7 @@ color: var(--AmasLinkColor);
     display: flex;
     background-color: #fff;
     height: 50px;
-    width: 90%;
+    width: 100%;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     align-self: center;
@@ -499,7 +523,7 @@ color: var(--AmasLinkColor);
     box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
     /* padding: 0px 10px 0px 10px; */
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     background-color: white;
     top: 0;
     z-index: 99999; /* Ensures the navbar stays on top of other content */
@@ -507,8 +531,12 @@ color: var(--AmasLinkColor);
 }
 
 .containerForNav.expanded {
-    width: 80%; /* Expanded width */
+    width: 90%; /* Expanded width */
     height: 100vh;
+    left: 0px;
+    z-index: 999999;
+    align-items: center;
+    margin-left: 0px;
 }
 
 .horizontalNavbar .nav_right {
@@ -546,6 +574,9 @@ color: var(--AmasLinkColor);
 
 
 @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    body{
+        width: 100%;
+    }
     .mobileNav{
         display: flex;
         padding: 10px;
@@ -565,15 +596,24 @@ color: var(--AmasLinkColor);
         height: 50px;
     }
     .topBar{
-        position:sticky;
+        position:fixed;
+        width: 100%;
         top: 0;
         justify-content: space-between;
     }
+    .secondaryTopBar{
+        position: fixed;
+        margin-top:50px;
+
+    }
     .topBarLeft{
         margin-left: 10px;
-        width: 80%;
+        width: 100%;
+        
     }
     .topBarLeft ul{
+        width: 90vw;
+        height: fit-content;
         margin-left: 0px;
     }
     .topBarLeft ul li span{
@@ -594,6 +634,7 @@ color: var(--AmasLinkColor);
         flex-direction: column;
         padding-bottom: 20px;
     }
+    
     .footer_top_left{
         width: 100%;
     }

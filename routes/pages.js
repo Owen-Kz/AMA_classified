@@ -19,6 +19,12 @@ const countMyListings = require("../controllers/countMyListings");
 const listingFiles = require("../controllers/listingFiles");
 const MyChats = require("../controllers/myChats");
 const chatHistory = require("../controllers/chatHistory");
+const adsPacksPage = require("../controllers/adsPacksPage");
+const markAsSold = require("../controllers/marksAsSold");
+const DeleteItem = require("../controllers/deleteItem");
+const addToBookMarks = require("../controllers/bookmarkItem");
+const ViewsCount = require("../controllers/viewsCount");
+const opentToView = require("../controllers/openToView");
 
 const router = express.Router();
 
@@ -65,7 +71,7 @@ router.get("/login",LoggedIN, (req,res) =>{
     }
 })
 
-router.get("/l/:productTitle/:id",LoggedIN, previewItem)
+router.get("/l/:productTitle/:id",LoggedIN, opentToView, previewItem)
 router.get("/details/:productTitle/:id", GetProductinfo)
 
 router.post("/signup", async (req,res) =>{
@@ -172,7 +178,10 @@ router.get('/bookmarks',LoggedIN, (req,res)=>{
     }
 })
 router.post("/bookmarks", LoggedIN, bookmarks)
-
+// Add To bookmarks 
+router.post("/bookMarkItem", LoggedIN, addToBookMarks)
+// Count Views 
+router.get("/countViews/:id", LoggedIN, ViewsCount)
 router.get("/categories", LoggedIN, categories)
 router.post("/allCategories",  AllCategories)
 // render listings page 
@@ -190,7 +199,10 @@ router.post("/userListings", userListings)
 
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
-
+// Mark As Sold out 
+router.post("/markAsSold", LoggedIN, markAsSold )
+// DElete Item 
+router.post("/deleteItem", LoggedIN, DeleteItem)
 
 // find files to return via http
 router.get("/api/uploads/find/:imageName", async (req,res) =>{
@@ -214,6 +226,18 @@ router.get("/forum", async (req,res) =>{
 router.get("/map", async (req,res) =>{
     res.render("comingSoon")
 })
+router.get("/mapDev", LoggedIN,  async(req,res) =>{
+    res.render("map", {username:req.user.u_name})
+})
+
+router.get("/adintro", LoggedIN, async(req,res) =>{
+    res.render("adsIntro.ejs", {username:req.user.u_name})
+})
+
+router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
+    res.render("freeAds", {username:req.user.username})
+})
+router.post("/ad_packs", LoggedIN, adsPacksPage )
 
 router.get("/listingFiles/:id", listingFiles)
 

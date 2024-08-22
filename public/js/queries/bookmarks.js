@@ -188,11 +188,6 @@ fetch(`/bookmarks?page=${page}`, {
                             <span>0</span>
                         </div>
 
-                        <div class="save_item">
-                          
-                            <i class="bi bi-bookmark-heart"></i>
-
-                        </div>
                     </div>
                     <!-- start product info  -->
                      <div class="product_info">

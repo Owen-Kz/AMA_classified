@@ -7,9 +7,15 @@ const PORT = process.env.PORT || 31000;
 const server = require("http").Server(app)
 // const session = require("express-session");
 const bcrypt = require("bcryptjs");
+const session = require('express-session');
 const bodyParser = require("body-parser");
 const SaveMessage = require("./controllers/sendMessage");
-
+app.use(session({
+  secret: process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Set to true if using https
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -103,7 +103,11 @@ container.innerHTML = `                <!-- Left  -->
                         <li class="navigationLink"><a href="/privacy">Privacy Policy</a></li>
                         <li class="navigationLink"><a href="/contact">Contact</a></li>
                         <li class="navigationLink"><a href="https://amaslink.tawk.help/category/amaslink-blog">Blog</a></li>
-                        <li class="navigationLink"><button class="post_add btn-border">Post AD</button></li>
+                        <li class="navigationLink">
+                        <a href="/adintro">
+                        <button class="post_add btn-border">Post AD</button>
+                        </a>
+                        </li>
                        
     
                     </ul>

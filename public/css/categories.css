@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr); /* 5 equal columns */
     grid-auto-rows: min-content; /* Ensures each row height adjusts to content */
-    grid-gap: 8px; /* Adds 10px gap between all items */
+    grid-gap: 4px; /* Adds 10px gap between all items */
     max-width: 100%;
     width: max-content;
     margin: auto;
@@ -37,25 +37,51 @@
 .categoriesList li{
     display: flex;
     margin-left:10px;
-    flex-direction: column;
+    flex-direction: row;
     font-weight: bold;
     font-size: 12px;
     text-align: center;
-    margin: 10px;
+    margin: 5px;
     align-items: center;
     justify-content: center;
     background-color: rgb(227, 227, 227);
-    height: 100px;
-    width: 100px;
+    height: fit-content;
+    width: max-content;
+    min-width: 150px;
     border-radius: var(--border-radius);
 }
 
 .categoriesList li i{
     font-size: 30px;
+    padding-right: 10px;
     font-weight: bold;
     color: var(--AmasLinkColor);
 }
+.categoriesList li i{
+    height: 30px;
+    width: 30px;
+    transition: ease 300ms;
+}
+.categoriesList li i img{
+    object-fit: contain;
+    height:30px;
+    
+ }
 
+.categoriesList li svg{
+    height: 30px;
+    color: var(--AmasLinkColor);
+    fill: var(--AmasLinkColor);
+    width: 30px;
+}
+.categoriesList li svg:hover, .categoriesList li i img:hover{
+    filter: grayscale(100);
+    transition: ease 300ms;
+}
+
+.categoriesList li i:hover{
+    color: #333;
+}
 
 @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:800px), (max-width:900px), (max-width:1080px) {
     .categoriesList{
@@ -64,7 +90,14 @@
 
     }
     .categoriesList li i{
-        font-size: 12px;
+        font-size: 25px;
+        height: 25px;
+        width: 25px;
+     }
+     .categoriesList li i img{
+        object-fit: contain;
+        height: inherit;
+        width: 25px;
      }
      .text_container{
         display: flex;
