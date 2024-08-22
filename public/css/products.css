@@ -408,8 +408,8 @@ body{
     .product_item{
         font-size: 2px;
         margin: 0px;
-        min-width: 180px;
-        width: 180px;
+        min-width: 170px;
+        width: 170px;
         max-width: 50%;
         height: fit-content;
         min-height: 150px;
