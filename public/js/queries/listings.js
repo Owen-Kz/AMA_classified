@@ -1,5 +1,7 @@
 const listingsContainer = document.getElementById("listingsContainer")
 const paginationContainer = document.getElementById("pagination");
+const listingsBottomContainer = document.getElementById("listingsBottomContainer")
+const ListingsTopContainer = document.getElementById("listingsTopContainer")
 const maxLength = 200;
 
 async function GetViewsCount(id){
@@ -113,9 +115,7 @@ function booksNavigation(totalPagesListings, currentPage) {
 ${ListingsList[i].description}
 </div>
    */}
-function NewPage(page){
-    for(let i=0; i<40; i++){
-        listingsContainer.innerHTML += `         <!-- start single_item  -->
+const demoData = `         <!-- start single_item  -->
               <div class="product_item loadingItem">
                     <div class="image_container" style="background:transparent;">
                       
@@ -140,12 +140,27 @@ function NewPage(page){
                      <!-- end product info  -->
                 </div>
                 <!-- div.End_single_item  -->`
+function NewPage(page){
+    if(listingsContainer){
+    for(let i=0; i<40; i++){
+        listingsContainer.innerHTML += `${demoData}`
     }
+}
+if(listingsBottomContainer){
+    for(let i=0; i<20; i++){
+        listingsBottomContainer.innerHTML+= `${demoData}`
+    }
+}
+
+if(ListingsTopContainer){
+    for(let i=0; i<20; i++){
+        ListingsTopContainer.innerHTML+= `${demoData}`
+    }
+}
 fetch(`/listings?page=${page}`, {
     method:"POST"
 }).then(res=>res.json())
 .then(async (data) =>{
-    listingsContainer.innerHTML = ""
 
     if(data.success){
         const ListingsList = data.listings
@@ -154,6 +169,8 @@ fetch(`/listings?page=${page}`, {
         if(paginationContainer){ 
             booksNavigation(totalPages, currentPage)
         }
+        if(listingsContainer){
+        listingsContainer.innerHTML = ""
  
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
@@ -232,6 +249,173 @@ fetch(`/listings?page=${page}`, {
                 </a> 
                 <!-- div.End_single_item  -->`
         }
+         }
+
+        //  For Bottom Listings 
+        if(listingsBottomContainer){
+                listingsBottomContainer.innerHTML = ""
+         
+                for(let i =10; i < 20; i++){
+                    let country = ""
+                    let ItemPrice = ""
+                    let currency = "$"
+                    let imageLink = ""
+                   
+                    const imagesArray = await GetProductFiles(ListingsList[i].id)
+                    if(imagesArray.length > 0){
+                    if(imagesArray[0].file_url === ""){
+                        imageLink = "/uploads/AMAS.png"
+                    }else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "old_submission" && imagesArray[0].file_type === "" ){
+                        imageLink = `/uploads/${imagesArray[0].file_url}`
+                    }
+                    else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "new_submission" && imagesArray[0].file_type === "image_file"){
+                        imageLink = `${imagesArray[0].file_url}`
+                    }else{
+                        imageLink = "/uploads/AMAS.png"
+        
+                    }
+                }else{
+                    imageLink = "/uploads/AMAS.png"
+        
+                }
+                    
+        
+                    if(ListingsList[i].country === null){
+                        country = "N/A"
+                    }else{
+                        country = ListingsList[i].country
+                    }
+        
+                    // if()
+                    
+                    if(ListingsList[i].price == null){
+                    ItemPrice = ``
+                    }else{
+                        ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                    }
+                    listingsBottomContainer.innerHTML += `          <!-- start single_item  -->
+                       <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
+                            <div class="image_container" style="background-image:url(${imageLink});">
+                                <img class="productImage" src="${imageLink}" alt="Product image">
+                               
+                           
+                            <div class="actions">
+                                <div class="viewsCount">
+                                    <i class="bi bi-eye"></i>
+                                    <span>${await GetViewsCount(ListingsList[i].id)}</span>
+                                </div>
+        
+                                <div class="save_item">
+                                  <form class="bookMarkItem">
+                                  <input type="hidden" name="itemID" value="${ListingsList[i].id}">
+                                    <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
+                                    <i class="bi bi-bookmark-heart"></i>
+                                    </button>
+                                </form>
+        
+                                </div>
+                            </div>
+                             </div>
+                            <!-- start product info  -->
+                             <div class="product_info">
+                                <div class="product_name" style="color:var(--AmasLinkColor);">
+                                   ${ItemPrice}
+                                </div>
+                                <div class="product_name">
+                                    ${ListingsList[i].title}
+                                </div>
+                              
+                                <div class="location"><i class="bi bi-map-fill"></i>${country}</div>
+                             </div>
+                             <!-- end product info  -->
+                        </div>
+                        </a> 
+                        <!-- div.End_single_item  -->`
+                }
+        }
+
+        // For listing Top Container 
+        if(ListingsTopContainer){
+            ListingsTopContainer.innerHTML = ""
+     
+            for(let i =0; i < 10; i++){
+                let country = ""
+                let ItemPrice = ""
+                let currency = "$"
+                let imageLink = ""
+               
+                const imagesArray = await GetProductFiles(ListingsList[i].id)
+                if(imagesArray.length > 0){
+                if(imagesArray[0].file_url === ""){
+                    imageLink = "/uploads/AMAS.png"
+                }else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "old_submission" && imagesArray[0].file_type === "" ){
+                    imageLink = `/uploads/${imagesArray[0].file_url}`
+                }
+                else if(imagesArray[0].file_url !== "" && imagesArray[0].file_status === "new_submission" && imagesArray[0].file_type === "image_file"){
+                    imageLink = `${imagesArray[0].file_url}`
+                }else{
+                    imageLink = "/uploads/AMAS.png"
+    
+                }
+            }else{
+                imageLink = "/uploads/AMAS.png"
+    
+            }
+                
+    
+                if(ListingsList[i].country === null){
+                    country = "N/A"
+                }else{
+                    country = ListingsList[i].country
+                }
+    
+                // if()
+                
+                if(ListingsList[i].price == null){
+                ItemPrice = ``
+                }else{
+                    ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                }
+                ListingsTopContainer.innerHTML += `          <!-- start single_item  -->
+                   <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
+                        <div class="image_container" style="background-image:url(${imageLink});">
+                            <img class="productImage" src="${imageLink}" alt="Product image">
+                           
+                       
+                        <div class="actions">
+                            <div class="viewsCount">
+                                <i class="bi bi-eye"></i>
+                                <span>${await GetViewsCount(ListingsList[i].id)}</span>
+                            </div>
+    
+                            <div class="save_item">
+                              <form class="bookMarkItem">
+                              <input type="hidden" name="itemID" value="${ListingsList[i].id}">
+                                <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
+                                <i class="bi bi-bookmark-heart"></i>
+                                </button>
+                            </form>
+    
+                            </div>
+                        </div>
+                         </div>
+                        <!-- start product info  -->
+                         <div class="product_info">
+                            <div class="product_name" style="color:var(--AmasLinkColor);">
+                               ${ItemPrice}
+                            </div>
+                            <div class="product_name">
+                                ${ListingsList[i].title}
+                            </div>
+                          
+                            <div class="location"><i class="bi bi-map-fill"></i>${country}</div>
+                         </div>
+                         <!-- end product info  -->
+                    </div>
+                    </a> 
+                    <!-- div.End_single_item  -->`
+            }
+    }
         const limitedTextElements = document.getElementsByClassName("limited-text")
         const bookMarkForms = document.getElementsByClassName("bookMarkItem")
 
