@@ -200,6 +200,10 @@ a:hover{
         height: max-content;
         max-height: max-content;
     }
+    #main-slider{
+        margin-top: 40px;
+        border-radius: 10px;        
+    }
     .fullpageAd{
         width: 100%;
     }

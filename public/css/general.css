@@ -574,8 +574,14 @@ color: var(--AmasLinkColor);
 
 
 @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    :root{
+        ---border-radius:10px;
+    }
     body{
         width: 100%;
+    }
+    .listings, .backgroundParent:not(.topBar){
+        border-radius: 10px;
     }
     .mobileNav{
         display: flex;
