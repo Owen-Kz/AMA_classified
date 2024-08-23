@@ -104,12 +104,22 @@ File: scss
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-
-  #google_translate_element{
+  .skiptranslate:not(.goog-te-gadget){
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    min-width: 0px;
+    max-width: 0px;
+    width: 0px !important;
+    display: none !important;
+}
+body{
+    top:0 !important;
+}
+#google_translate_element{
     position:fixed;
     right: 20px;
     bottom: 20px;
-    width:max-content;
     background-color: white;
     border-radius: 24px;
     border: 1px solid var(--AmasLinkColor);
@@ -118,6 +128,7 @@ File: scss
     justify-content: center;
     padding: 10px;
 }
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

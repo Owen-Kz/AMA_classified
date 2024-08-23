@@ -15,7 +15,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // Set to true if using https
-}));
+})); 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

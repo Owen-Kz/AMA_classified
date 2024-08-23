@@ -84,6 +84,13 @@ const editor_nav = `<ul id="sidebarnav">
                                 <span class="hide-menu">Announcements</span>
                             </a>
                         </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/forum"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Forums</span>
+                            </a>
+                        </li>
                                  <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/messages"
                                 aria-expanded="false" >

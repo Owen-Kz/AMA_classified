@@ -28,6 +28,10 @@ const opentToView = require("../controllers/openToView");
 const getAnnouncements = require("../controllers/getAnnouncements");
 const SellerProfile = require("../controllers/sellerProfile");
 const saveProfile = require("../controllers/saveProfile");
+const getforums = require("../controllers/getForums");
+const getcomments = require("../controllers/getForumComments");
+const CreateComments = require("../controllers/createComment");
+const CreateForums = require("../controllers/createForum");
 
 const router = express.Router();
 
@@ -165,6 +169,10 @@ router.get("/announcements",LoggedIN, (req,res)=>{
     }
 })
 router.post("/getAnnouncements", LoggedIN, getAnnouncements)
+router.post("/getForums", LoggedIN, getforums)
+router.post('/getForumComments', LoggedIN, getcomments)
+router.post("/createComment", LoggedIN, CreateComments)
+router.post("/createForum", LoggedIN, CreateForums)
 
 router.get("/messages", LoggedIN, (req,res) =>{
     if(req.cookies._t){
@@ -233,8 +241,8 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
     await checkImageExists(imageFile)
 })
 
-router.get("/forum", async (req,res) =>{
-    res.render("comingSoon")
+router.get("/forum", LoggedIN, async (req,res) =>{
+    res.render("forum", {username:req.user.u_name})
 })
 router.get("/map", LoggedIN, async (req,res) =>{
     res.render("map", {username:req.user.u_name})
