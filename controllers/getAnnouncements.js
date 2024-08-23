@@ -1,3 +1,5 @@
+const { configDotenv } = require("dotenv");
+
 const getAnnouncements = async (req,res) =>{
     if(req.cookies._t){
         const response = await fetch(`${process.env.ENDPOINT}/y/announcements`, {
@@ -7,7 +9,6 @@ const getAnnouncements = async (req,res) =>{
             },
             body: JSON.stringify({token:req.cookies._t})
         });
-    
         const responseData = await response.json(); 
      
         if(responseData.success){

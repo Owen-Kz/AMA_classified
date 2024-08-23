@@ -14,6 +14,12 @@ body {
     display: none;
 }
 
+.friend-drawer.highlight {
+  background-color: #f0f8ff; /* Light blue background */
+  transition: background-color 0.5s;
+}
+
+
   #chaListContainer{
     transition: 300ms ease;
     overflow-y: scroll;

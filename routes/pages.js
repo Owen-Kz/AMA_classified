@@ -26,6 +26,8 @@ const addToBookMarks = require("../controllers/bookmarkItem");
 const ViewsCount = require("../controllers/viewsCount");
 const opentToView = require("../controllers/openToView");
 const getAnnouncements = require("../controllers/getAnnouncements");
+const SellerProfile = require("../controllers/sellerProfile");
+const saveProfile = require("../controllers/saveProfile");
 
 const router = express.Router();
 
@@ -152,6 +154,8 @@ router.get("/profile", LoggedIN, (req,res) =>{
     res.render("login")
 }
 })
+// Save Profile Info 
+router.post("/saveProfile/:field/:value", LoggedIN, saveProfile)
 
 router.get("/announcements",LoggedIN, (req,res)=>{
     if(req.cookies._t){
@@ -164,7 +168,14 @@ router.post("/getAnnouncements", LoggedIN, getAnnouncements)
 
 router.get("/messages", LoggedIN, (req,res) =>{
     if(req.cookies._t){
-    res.render("chats", {username: req.user.u_name, userId:req.user.id})
+    res.render("chats", {username: req.user.u_name, userId:req.user.id, chatWith:"N/A"})
+    }else{
+        res.render("login")
+    }
+})
+router.get("/messages/:id", LoggedIN, (req,res) =>{
+    if(req.cookies._t){
+    res.render("chats", {username: req.user.u_name, userId:req.user.id, chatWith:req.params.id})
     }else{
         res.render("login")
     }
@@ -244,6 +255,13 @@ router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
 router.post("/ad_packs", LoggedIN, adsPacksPage )
 
 router.get("/listingFiles/:id", listingFiles)
+
+// Seller Profile 
+router.get("/seller/:id", LoggedIN,async(req,res) =>{
+    res.render("sellerProfile", {username:req.user.username, sellerId:req.params.id})
+})
+router.get("/sellerListings/:id", LoggedIN, SellerProfile)
+
 
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')

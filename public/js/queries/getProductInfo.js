@@ -48,7 +48,7 @@ function GetProductDetails(productId, productTitle) {
                 <div class="seller_profile_top">
                     <div class="seller_profile_top_left">
                         <div class="avatar_container">
-                            <img src="/assets/logo.png" alt="profileImage">
+                            <img src="/plugins/images/users1.jpg" alt="profileImage">
                         </div>
                     </div>
                     <div class="seller_profile_top_right">
@@ -70,8 +70,9 @@ function GetProductDetails(productId, productTitle) {
                 </div>
                 <!-- Start Sellert profile bottom -->
                  <div class="seller_profile_bottom">
-                    <button>View Profile</button>
-                    <button>Message Seller</button>
+                   <button><a href="/seller/${sellerDetails.id}">View Profile</a></button>
+                  
+                <button class="btn"><a href="/messages/${SellerInfo.id}?s=${SellerInfo.id}">Message Seller</a></button>
                  </div>
                  <!-- end seller profile bottom  -->`
             }else{

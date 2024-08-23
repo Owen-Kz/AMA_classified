@@ -1,3 +1,5 @@
+const { configDotenv } = require("dotenv");
+
 const ViewsCount = async (req,res) =>{
     try {
         const response = await fetch(`${process.env.ENDPOINT}/y/viewsCount`, {

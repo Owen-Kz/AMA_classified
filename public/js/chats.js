@@ -29,7 +29,21 @@ const messagesPerLoad = 40; // Number of messages to load per scroll
   const displayedMessageIds = new Set();
   const displayedMessages_ = messageContainer.querySelectorAll('.chat-bubble');
 
-  
+  function GetParameters(href){
+    // Get the URL string
+    const urlString = href;
+    
+    // Create a URL object
+    const url = new URL(urlString);
+    
+    // Get the search parameters from the URL
+    const searchParams = new URLSearchParams(url.search);
+    return searchParams
+    
+}
+
+const TOChat = GetParameters(window.location.href).get("s")
+
 const socket = io()
 async function GetChatHistory(room){
     return fetch(`/chatHistory`, {
@@ -130,7 +144,18 @@ socket.emit("join-room", dataId, userId);
     
 
       });
+      if(TOChat && TOChat != ""){
+        CreateNewMessage(TOChat)
+      }
 }
+
+function generateRandomSixDigitNumber() {
+  return Math.floor(100000 + Math.random() * 900000);
+}
+
+
+
+
 
 ChatExpansion.forEach(icon =>{
     icon.addEventListener("click", function(){
@@ -176,7 +201,7 @@ function GetAllChats() {
                 let userInfo = []
                 let rule = ""
 
-                if(i >= AllChats.length){
+                if(i < AllChats.length){
                     rule = "<hr>"
                 }else{
                     rule = ""
@@ -400,4 +425,35 @@ function clearFeedback() {
 
 
 
-// ADD RECENT MESSAGES 
+// ADD NEw Chat MESSAGES 
+// CReate New Message if query parameter exists 
+async function CreateNewMessage(TOChat){
+  const newUserData = await GetSellerDetails(TOChat);
+  const randomNumber = generateRandomSixDigitNumber();
+  let rule = "<hr>";
+
+  // Check if the chat already exists
+  const existingChat = document.querySelector(`.friend-drawer--onhover[data-user-id="${newUserData.id}"]`);
+
+  if (!existingChat) {
+      chatListContainer.innerHTML += `
+          <div class="friend-drawer friend-drawer--onhover" data-id="${randomNumber}" data-user-id="${newUserData.id}">
+              <img class="profile-image" src="/plugins/images/users1.jpg" alt="">
+              <div class="text">
+                  <h6>${newUserData.u_name}</h6>
+                  <p class="text-muted">Click Here to send Message</p>
+              </div>
+              <span class="time text-muted small"></span>
+          </div>
+          ${rule}
+      `;
+      CheckForChatList();
+  } else {
+      // Optionally, bring the existing chat to focus
+      existingChat.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      existingChat.classList.add('highlight'); // Add a highlight effect
+      setTimeout(() => existingChat.classList.remove('highlight'), 2000); // Remove highlight after 2 seconds
+  }
+}
+
+

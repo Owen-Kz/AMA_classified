@@ -3,7 +3,7 @@ const { configDotenv } = require("dotenv")
 const LoggedIN = async (req,res, next) =>{
     const userToken = req.cookies._t
     const emptyArray = {
-        id: "",
+        id: "2209102",
         u_name: "",
         email: "",
         name: "",

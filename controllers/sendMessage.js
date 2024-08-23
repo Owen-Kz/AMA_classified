@@ -1,3 +1,5 @@
+const { configDotenv } = require("dotenv");
+
 const SaveMessage = async (data, roomId, userId) => {
     const recipientId = data.receiver;
     const content = data.message;

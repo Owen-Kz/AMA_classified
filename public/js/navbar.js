@@ -27,7 +27,7 @@ async function ProfileData(){
 }
 const userLogged = await ProfileData()
 let isLoggedINProfile = ""
-if(userLogged.id && userLogged.id != null && userLogged.id !== ""){
+if(userLogged.id && userLogged.id != null && userLogged.id !== "" && userLogged.id != "2209102"){
     isLoggedINProfile = ` <ul>
                     <li><a href="/dashboard">Welcome Back, <b> ${userLogged.u_name}</b></a></li>
                      <li><a href="/annoucements"><i class="bi bi-bell"></i><span>Annoucements</span></a></li>

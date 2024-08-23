@@ -445,11 +445,16 @@ color: var(--AmasLinkColor);
 .footer_top_left{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 30%;
 }
 .footer_top_left ul, .footer_top_right ul{
     list-style-type: none;
     margin-top: 10px;
+    /* background-color: red;
+    display: flex;
+    flex-direction: ;
+    align-items: flex-start; */
 }
 .footer_top_left form{
     display: flex;

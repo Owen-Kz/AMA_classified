@@ -59,13 +59,14 @@ function booksNavigation(totalPagesListings, currentPage) {
       }
   
       for (let i = startPage; i <= totalPagesListings; i++) {
-        if(i > 8){
+        let active = (i == currentPage ? 'active' : '');
+        if(i > 10){
             break;
         }
-        let active = (i == currentPage ? 'active' : '');
         OtherPages += `
          <a href="?page=${i}" class="pagination_item ${active}"><li>${i}</li></a>
         `;
+        
       }
   
       if (endPage <= totalPagesListings) {
@@ -143,7 +144,7 @@ const demoData = `         <!-- start single_item  -->
                      <!-- end product info  -->
                 </div>
                 <!-- div.End_single_item  -->`
-function NewPage(page){
+function NewPage(page, userId){
     if(listingsContainer){
     for(let i=0; i<40; i++){
         listingsContainer.innerHTML += `${demoData}`
@@ -160,8 +161,8 @@ if(ListingsTopContainer){
         ListingsTopContainer.innerHTML+= `${demoData}`
     }
 }
-fetch(`/listings?page=${page}`, {
-    method:"POST"
+fetch(`/sellerListings/${userId}?page=${page}`, {
+    method:"GET"
 }).then(res=>res.json())
 .then(async (data) =>{
 
@@ -479,11 +480,8 @@ function GetParameters(href){
     
 }
 
-const page = GetParameters(window.location.href).get("page")
 
-if(page && page >0){
-    NewPage(page)
-}else{
-    NewPage(1)
 
+export{
+    NewPage
 }

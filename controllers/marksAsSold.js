@@ -1,3 +1,5 @@
+const { configDotenv } = require("dotenv")
+
 const markAsSold = async (req,res) =>{
     const {item_id} = req.body
     console.log(req.body)
