@@ -24,7 +24,7 @@ const CreateForums = async (req,res) =>{
             body: JSON.stringify(forumData)
         });
         const responseData = await response.json(); 
-        console.log(responseData)
+       
         if(responseData.success){
 
            return res.json({success:responseData.success})
