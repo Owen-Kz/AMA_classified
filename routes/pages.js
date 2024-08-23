@@ -242,7 +242,11 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
 })
 
 router.get("/forum", LoggedIN, async (req,res) =>{
+    if(req.cookies._t){
     res.render("forum", {username:req.user.u_name})
+    }else{
+        res.render("login")
+    }
 })
 router.get("/map", LoggedIN, async (req,res) =>{
     res.render("map", {username:req.user.u_name})
