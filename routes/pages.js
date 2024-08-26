@@ -113,7 +113,15 @@ router.get("/dashboard", LoggedIN, (req,res) => {
 })
 router.get("/countMyListings", LoggedIN, countMyListings)
 
-router.get("/profile", LoggedIN, AdminLoggedIn, (req,res) =>{
+router.get("/profile", LoggedIN, (req,res) =>{
+    if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
+    res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
+}else{
+    res.render("login")
+}
+})
+
+router.get("/s/profile", AdminLoggedIn, (req,res) =>{
     if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
     res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
 }else{

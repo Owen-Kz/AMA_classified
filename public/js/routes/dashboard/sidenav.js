@@ -24,7 +24,7 @@ const admin_nav = `<ul id="sidebarnav">
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/profile"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/profile"
                                 aria-expanded="false">
                                 <!-- <i class="fas fa-hands" aria-hidden="true"></i> -->
                                 <i class="bi bi-person-lines-fill"></i>
@@ -91,14 +91,14 @@ const admin_nav = `<ul id="sidebarnav">
           <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/all"
                                 aria-expanded="false" >
-                                <i class="bi bi-list" aria-hidden="true"></i>
+                                <i class="bi bi-list-columns-reverse" aria-hidden="true"></i>
                                 <span class="hide-menu">All Listings</span>
                             </a>
                         </li>
                                 <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/pending"
                                 aria-expanded="false" >
-                                <i class="bi bi-list" aria-hidden="true"></i>
+                                <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">Pending Listings</span>
                             </a>
                         </li>
