@@ -1,14 +1,13 @@
 const { configDotenv, config } = require("dotenv")
 
-const userListings = async (req,res) =>{
+const AllListings = async (req,res) =>{
     const {uid, page} = req.body
     const data = {
         page: page,
         uid:uid
     }
-    console.log(uid)
     if(uid){
-        const response = await fetch(`${process.env.ENDPOINT}/y/userListings/${uid}`, {
+        const response = await fetch(`${process.env.ENDPOINT}/y/allListings/${uid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,4 +28,4 @@ const userListings = async (req,res) =>{
     }
 }
 
-module.exports = userListings
+module.exports = AllListings

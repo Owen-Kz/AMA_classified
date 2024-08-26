@@ -26,14 +26,17 @@ function saveItem(field, value){
 for (let i = 0; i < editButton.length; i++) {
     const edit = editButton[i];
     const field = inputFields[i+1];  // Adjust based on your HTML structure
+    const submitB = submitButton[i];
 
     edit.addEventListener('click', () => {
         field.removeAttribute("readonly");
+        submitB.style.display = "block"
     });
 }
 
 for (let i = 0; i < submitButton.length; i++) {
     const submitB = submitButton[i];
+    submitB.style.display = "none"
     const field = inputFields[i+1];  // Adjust based on your HTML structure
 
     submitB.addEventListener('click', () => {

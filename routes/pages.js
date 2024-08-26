@@ -32,6 +32,16 @@ const getforums = require("../controllers/getForums");
 const getcomments = require("../controllers/getForumComments");
 const CreateComments = require("../controllers/createComment");
 const CreateForums = require("../controllers/createForum");
+const adminLogin = require("../controllers/admin/login");
+const AdminLoggedIn = require("../controllers/admin/loggedIn");
+const adminDashboard = require("../controllers/admin/dashboard");
+const countAdminListings = require("../controllers/admin/counItems");
+const CreateAnnoucements = require("../controllers/admin/createAnnoucements");
+const AllListingsPage = require("../controllers/admin/allListginsPage");
+const adminForum = require("../controllers/admin/forum");
+const AllListings = require("../controllers/admin/allListings");
+const signup = require("../controllers/signup");
+const adminActions = require("../controllers/admin/actions");
 
 const router = express.Router();
 
@@ -81,55 +91,7 @@ router.get("/login",LoggedIN, (req,res) =>{
 router.get("/l/:productTitle/:id",LoggedIN, opentToView, previewItem)
 router.get("/details/:productTitle/:id", GetProductinfo)
 
-router.post("/signup", async (req,res) =>{
-    const { username, password, country, firstname, lastname, phonenumber, email } = req.body;
-
-    // Prepare the data to send in the POST request
-    const data = {
-        username: username,
-        password: password,
-        email: email,
-        firstname: firstname, 
-        lastname: lastname,
-        phonenumber: phonenumber,
-        country, country
-    };
-
-    try {
-        // Make the POST request to another endpoint
-        const response = await fetch(`${process.env.ENDPOINT}/y/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(req.body)
-        });
-
-        const responseData = await response.json();
-        // console.log(responseData)
-        // Handle the response from the external endpoint
-        if(responseData.error){
-            res.json({
-                message: responseData.error,
-                externalResponse: responseData
-            });
-        }else{
-            res.json({
-                success: responseData.success,
-                message: 'User registered successfully!',
-                externalResponse: responseData
-            });
-        }
-     
-    } catch (error) {
-        console.log(error)
-        // Handle any errors that occur during the request
-        res.status(500).json({
-            message: 'Error registering user',
-            error: error.message
-        });
-    }
-})
+router.post("/signup", signup)
 
 router.get('/listings', LoggedIN, (req,res)=>{
     res.render("listings", {username:req.user.u_name})
@@ -151,8 +113,8 @@ router.get("/dashboard", LoggedIN, (req,res) => {
 })
 router.get("/countMyListings", LoggedIN, countMyListings)
 
-router.get("/profile", LoggedIN, (req,res) =>{
-    if(req.cookies._t){
+router.get("/profile", LoggedIN, AdminLoggedIn, (req,res) =>{
+    if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
     res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
 }else{
     res.render("login")
@@ -161,8 +123,8 @@ router.get("/profile", LoggedIN, (req,res) =>{
 // Save Profile Info 
 router.post("/saveProfile/:field/:value", LoggedIN, saveProfile)
 
-router.get("/announcements",LoggedIN, (req,res)=>{
-    if(req.cookies._t){
+router.get("/announcements",LoggedIN, AdminLoggedIn, (req,res)=>{
+    if(req.cookies._t || req.cookies._ama){
         res.render("announcements",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
     }else{
         res.render("login")
@@ -174,8 +136,8 @@ router.post('/getForumComments', LoggedIN, getcomments)
 router.post("/createComment", LoggedIN, CreateComments)
 router.post("/createForum", LoggedIN, CreateForums)
 
-router.get("/messages", LoggedIN, (req,res) =>{
-    if(req.cookies._t){
+router.get("/messages", LoggedIN, AdminLoggedIn,  (req,res) =>{
+    if(req.cookies._t || req.cookies._ama){
     res.render("chats", {username: req.user.u_name, userId:req.user.id, chatWith:"N/A"})
     }else{
         res.render("login")
@@ -206,8 +168,8 @@ router.get("/countViews/:id", LoggedIN, ViewsCount)
 router.get("/categories", LoggedIN, categories)
 router.post("/allCategories",  AllCategories)
 // render listings page 
-router.get("/mylistings", LoggedIN, (req,res) =>{
-    if(req.cookies._t){
+router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
+    if(req.cookies._t || req.cookies._ama){
 
     res.render("mylistings", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
     }else{
@@ -248,6 +210,7 @@ router.get("/forum", LoggedIN, async (req,res) =>{
         res.render("login")
     }
 })
+
 router.get("/map", LoggedIN, async (req,res) =>{
     res.render("map", {username:req.user.u_name})
 
@@ -274,13 +237,38 @@ router.get("/seller/:id", LoggedIN,async(req,res) =>{
 })
 router.get("/sellerListings/:id", LoggedIN, SellerProfile)
 
-
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')
     res.clearCookie("_usid")
     res.redirect("/")
 })
-router.get("*", (req, res)=> {
+router.get("/logout", (req,res) => {
+    res.clearCookie('_t')
+    res.clearCookie("_usid")
+    res.redirect("/")
+})
+
+
+// FOr Admin 
+router.get("/superadmin", AdminLoggedIn, adminDashboard)
+router.post("/adminlogin", adminLogin)
+router.get("/s/forum", AdminLoggedIn, adminForum)
+
+router.get("/admin/countAdminListings", AdminLoggedIn, countAdminListings)
+router.post("/CreateAnnouncements", AdminLoggedIn, CreateAnnoucements)
+router.get("/s/all", AdminLoggedIn, AllListingsPage)
+router.post("/allListings", AdminLoggedIn, AllListings)
+// Approve or Delete Items 
+router.post("/s/:action/:id", AdminLoggedIn, adminActions)
+
+
+router.get("/superadmin/logout", (req,res) => {
+    res.clearCookie('_ama')
+    res.clearCookie("_superID")
+    res.clearCookie("_usid")
+    res.redirect("/superadmin")
+})
+router.get("*", (req, res)=> { 
     res.redirect('/')
 })
 module.exports = router

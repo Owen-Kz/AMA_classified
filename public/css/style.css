@@ -116,6 +116,11 @@ File: scss
 body{
     top:0 !important;
 }
+aside{
+  position:fixed;
+  height: 100vh; 
+  overflow: scroll;
+}
 #google_translate_element{
     position:fixed;
     right: 20px;
@@ -9872,6 +9877,7 @@ sidebar navigation
 /*******************
  common m-p removed
 ******************/
+
 .sidebar-nav ul {
   margin: 0px;
   padding: 0px; }

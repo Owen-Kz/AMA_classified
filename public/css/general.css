@@ -30,6 +30,10 @@
 body{
     top:0 !important;
 }
+
+.bi-list{
+    font-weight: bold;
+}
 #google_translate_element{
     position:fixed;
     right: 20px;

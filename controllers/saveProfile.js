@@ -3,10 +3,10 @@ const { configDotenv } = require("dotenv")
 
 const saveProfile = async(req,res) =>{
     try {
-    if(req.cookies._t){
+    if(req.cookies._t || req.cookies._ama){
     const field = req.params.field
     const value = req.params.value
-    const userId = req.user.id 
+    const userId = req.cookies._usid 
     const data = {
         u_id: userId, 
         field:field,

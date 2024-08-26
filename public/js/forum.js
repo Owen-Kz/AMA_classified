@@ -20,6 +20,8 @@ function formatTimestamp(timestamp) {
 const ForumListContainer = document.getElementById("emailListContainer")
 const annoceumentBOdy = document.getElementById("email-content")
 
+
+
 fetch(`/getForums`, {
     method:"POST", 
     headers:{
@@ -73,7 +75,11 @@ fetch(`/getForums`, {
           var contentValue = element.querySelector(".content")
           
          thisContent.addEventListener("click", async function(){
-        
+              
+                ForumListContainer.classList.toggle('small');
+                annoceumentBOdy.classList.toggle("wide")
+     
+            
             const ForumComments = await GetComments(contentValue.id)
             let ForumCommentsBody = ""
 
@@ -171,7 +177,7 @@ CreateForum.addEventListener("submit", function(e){
     }).then(res=>res.json())
     .then(data=>{
         if(data){
-            if(data.success){
+            if(data.success){ 
                 alert(data.success)
                 window.location.reload()
             }else{
@@ -181,4 +187,15 @@ CreateForum.addEventListener("submit", function(e){
             alert("Could not create forum at the moment, try agin later")
         }
     })
+})
+
+
+
+const expandForum = document.querySelectorAll(".expand-forum")
+
+expandForum.forEach(expandForum =>{
+expandForum.addEventListener("click", function(){
+    ForumListContainer.classList.toggle('small');
+    annoceumentBOdy.classList.toggle("wide")
+})
 })

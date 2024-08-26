@@ -1,13 +1,22 @@
 const { configDotenv } = require("dotenv");
 
 const getAnnouncements = async (req,res) =>{
-    if(req.cookies._t){
+     const admin = req.cookies._ama 
+     const user = req.cookies._t 
+     let ValidToken = ""
+
+     if(admin){
+        ValidToken = admin
+     }else if(user){
+        ValidToken = user
+     }
+    if(ValidToken !== ""){
         const response = await fetch(`${process.env.ENDPOINT}/y/announcements`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({token:req.cookies._t})
+            body: JSON.stringify({token:ValidToken})
         });
         const responseData = await response.json(); 
      

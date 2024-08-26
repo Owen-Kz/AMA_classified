@@ -17,8 +17,9 @@
 
 .email-list {
     width: 30%;
+    transition: 300ms ease;
     border-right: 1px solid #ccc;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     /* background-color: #f9f9f9; */
     /* height: 700px; */
     overflow: scroll;
@@ -51,10 +52,21 @@
 .email-content {
     width: 70%;
     padding: 20px;
-    /* overflow: scroll; */
+    overflow: scroll;
     height: 80vh;
+    transition: ease 300ms;
 }
-
+.expand-forum {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.wide{
+    width: 100%;
+}
+.small{
+    width: 0px;
+}
 /* .email-details {
     display: none;
 } */
@@ -82,4 +94,25 @@
 
 .readMessage{
     background-color: transparent;
+}
+
+
+@media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    .email-list{
+        width: 100%;
+    }
+    .email-content{
+        visibility: hidden;
+        width: 0px;
+        display: none;
+    }
+    .small{
+        width: 0px;
+    }
+    .wide{
+        width: 100%;
+        transition: 300ms ease;
+        visibility: visible;
+        display: unset;
+    }
 }

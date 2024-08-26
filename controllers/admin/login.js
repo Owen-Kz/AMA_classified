@@ -1,8 +1,9 @@
-const dotenv = require("dotenv").config();
+const { configDotenv } = require("dotenv");
 
-const login = async (req,res) =>{
 
-    const response = await fetch(`${process.env.ENDPOINT}/y/login`, {
+const adminLogin = async (req,res) =>{
+
+    const response = await fetch(`${process.env.ENDPOINT}/y/admin/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -17,7 +18,8 @@ const login = async (req,res) =>{
         expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
         httpOnly: false
         }
-        res.cookie("_t", responseData.userToken, cookieOptions)
+        res.cookie("_ama", responseData.userToken, cookieOptions)
+        res.cookie('_superID', responseData.userId, cookieOptions)
         res.cookie('_usid', responseData.userId, cookieOptions)
         // res.redirect("/profile")
         return res.json({success:"UserLoggedIn", token:responseData.cookie, message:responseData.success})
@@ -28,4 +30,4 @@ const login = async (req,res) =>{
 }
 
 
-module.exports = login
+module.exports = adminLogin

@@ -80,3 +80,28 @@ fetch(`/getAnnouncements`, {
 }
 })
 
+const CreateAnnouncements = document.getElementById("CreateAnnouncements")
+CreateAnnouncements.addEventListener("submit", function(e){
+    e.preventDefault()
+    const title = CreateAnnouncements.querySelector("input")
+    const content = CreateAnnouncements.querySelector("textarea")
+    fetch(`/CreateAnnouncements`, {
+        method:"POST",
+        body:JSON.stringify({topic:title.value, description:content.value}),
+        headers:{
+            "Content-type":"application/JSON"
+        }
+    }).then(res=>res.json())
+    .then(data=>{
+        if(data){
+            if(data.success){ 
+                alert(data.success)
+                window.location.reload()
+            }else{
+                alert(data.error)
+            }
+        }else{
+            alert("Could not create forum at the moment, try agin later")
+        }
+    })
+})

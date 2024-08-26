@@ -2,10 +2,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta charset="utf-8">
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -13,10 +11,34 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
+	<meta name="author" content="Benson Michael Owen - OwenKz">
+    <title>Dashboard | Amaslink</title>
+    <meta name="title" Content="Amaslink Classified - Dashboard">
 
+    <link rel="shortcut icon" href="/plugins/images/favicon.png" type="image/x-icon">
+    
+    <link rel="apple-touch-icon" href="/plugins/images/favicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaslink Classifed - Home">
+
+    <meta itemprop="image" content="/assets/logo.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amaslink Classified">
+   
+    <meta property="og:image" content="/assets/logo.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="www.amaslink.com/dashboard">
+    
+    <meta name="twitter:card" content="summary_large_image">
 
     <meta name="robots" content="noindex,nofollow">
-    <title>Announcements | Amaslink</title>
+   
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
@@ -35,15 +57,10 @@
 
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/css/inbox.css">
-<link rel="stylesheet" href="/css/chats.css">
-<link rel="stylesheet" href="/css/forms.css">
-<link rel="stylesheet" href="/css/forum.css">
 </head>
 
 <body>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
-
     <style>
         #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
             background-color: var(--AmasLinkColor);
@@ -112,7 +129,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out 300ms;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" >
                 <!-- Sidebar navigation-->
 
                 <nav class="sidebar-nav" id="sidebar_nav">
@@ -131,16 +148,18 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Forums</h4>
+    
+    <h4 class="page-title">Dashboard</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
+                                <li><a href="/Logout/" class="fw-normal">Dashboard</a></li>
                             </ol>
 
                             
-                            <a href="/logout" class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Logout</a>
+                            <a href="/Logout/" target="_blank"
+                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -156,67 +175,106 @@
                 <!-- ============================================================== -->
                 <!-- Three charts -->
                 <!-- ============================================================== -->
-             
+                <div class="admin col">
+                    <h3><b>Welcome, <span class="userFullnameContainer"><%=username%></span></b>
+                
+                </h3>
+                </div><div class="row justify-content-space">
+
+                    <div class="col-lg-2 col-md-10 ">
+                    <a href="/allListings">    <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                            <!-- <i class=" fas fa-shopping-basket"></i> -->
+                            <i class="bi bi-list-columns-reverse"></i>
+                            <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="totalCount" ></span> Total Listings</h6>
+                        </div>
+                        </a>
+                    </div>
+           
+                   
+                    <div class="col-lg-2 col-md-10">
+                        <a href="#">
+                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                            <i class="bi bi-ui-checks"></i>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="activeCount"></span> Active Listings</h3>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-md-10">
+                       
+                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                           <i class="bi bi-exclamation-circle">
+                              </i>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="awaitingApprovalCount"></span> Awaiting Approval</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-10">
+                       <a href="#">
+                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                            <i class="bi bi-hourglass-split"></i>
+                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="allUsersCount"></span> All users</h3>
+                        </div>
+                    </a>
+                    </div>
+                    
+                        <!-- <div class="col-lg-2 col-md-10">
+                            
+                        <div class="white-box analytics-info box-shadow align-center">
+                            <i class="fas fa-book"></i>
+                             <h3 class="box-title"><span>0</span> Published</h3>
+                        </div>
+                    </div> -->
+
+                </div>
              
                 <!-- ============================================================== -->
                 <!-- RECENT SALES -->
                 <!-- ============================================================== -->
-                <div class="row">
-                  
-                       
-                  
+                <!-- <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
-                       
-                            
                         <div class="white-box">
-                            <div class="d-md-flex mb-3" style="align-items: center; width: 100%; flex-direction: row; display: flex;">
-                                <div class="expand-forum"><i class="bi bi-list"></i></div>
-                                <h3 class="box-title mb-0">Forum Topics</h3>
-                              
-                            
-                            </div>
-                    
-                            
-                                <form id="CreateForum">
-                                    <div class="form_control">
-                                        <!-- <label for="forumTopic">Create a Forum</label> -->
-                                        <input type="text" id="forumTopic" placeholder=" Create a Forum" required>
-                                        <button class="btn d-grid btn-danger text-white"> Create Forum</button>
-                                    </div>
-                                </form>
-                           
-                            <div class="d-md-flex mb-3" >
-
-                                <div class="container" style="width: 100%; max-width: 100%;">
-                                  <div class="email-list" id="emailListContainer">
-                                  
-                                  
-                                    <!-- Add more email items as needed -->
-                                  </div>
-                                  <div class="email-content" id="email-content">
-                                    <!-- Email content will be displayed here -->
-                                    <div id="email1" class="email-details">
-                                      <h4>Click On a Topic To open</h4>
-                                      <p>Content Will appear here</p>
-                                    </div>
-                             
-                                  </div>
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Recent Submissions</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    <select class="form-select shadow-none row border-top">
+                                        <option>March 2021</option>
+                                        <option>April 2021</option>
+                                        <option>May 2021</option>
+                                        <option>June 2021</option>
+                                        <option>July 2021</option>
+                                    </select> 
                                 </div>
-                              </div>
+                            </div>
+                            <div class="projects mb-4">
+                                <div class="projects-inner">
+                              
+                                    <table class="projects-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-right">Submissions</th>
+                                                <th class="text-right">Date</th>
+                                                <th class="text-right">Status</th>
+                                                <th class="text-right">Reviewer Invitations</th>
+                                                <th class="text-right">Editor Invitations</th>
 
-                      
 
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-         
-            <!-- ============================================================== -->
+                                        
+                                                
+                                                <th class="text-right">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="submissionsContainer">
+                                  
+                                        </tbody>
+                                    </table>
+                                </div>
+                       
+                            </div>
+
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
+     
+    </div> -->
        <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center" id="footer"> 
@@ -231,8 +289,8 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/app-style-switcher.js"></script>
@@ -245,11 +303,14 @@
     <script src="/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <!-- <script src="/plugins/bower_components/chartist/dist/chartist.min.js"></script> -->
+    <!-- <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script> -->
     <!-- <script src="/js/pages/dashboards/dashboard1.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
-<script src="/js/forum.js"></script>
+
+    <script src="/js/admin/countItems.js"></script>
+
+    <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
   <div id="google_translate_element"></div>
 </body>
 

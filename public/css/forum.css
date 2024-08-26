@@ -32,3 +32,12 @@ hr{
 #CreateForum button{
     margin-left: 10px;
 }
+
+@media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+    #CreateForum input{
+        width: 80%;
+    }
+    #CreateForum {
+        width: 100%;
+    }
+}

@@ -1,65 +1,137 @@
+const GetCookie = function getCookie(cookieName) {
+    const name = cookieName + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+    return null; // Cookie not found
+}
+
 const admin_nav = `<ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../Dashboard/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/superadmin"
                                 aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <i class="bi bi-speedometer2" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../Authors/"
-                                aria-expanded="false">
-                                <i class="bi bi-person" aria-hidden="true"></i>
-                                <span class="hide-menu">Authors</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../Inbox/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/profile"
                                 aria-expanded="false">
                                 <!-- <i class="fas fa-hands" aria-hidden="true"></i> -->
-                                <i class="fas fa-envelope"></i>
-                                <span class="hide-menu">Inbox</span>
+                                <i class="bi bi-person-lines-fill"></i>
+                                <span class="hide-menu">View / Edit Profile</span>
                             </a>
                         </li>
-                              <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../Mail/"
-                                aria-expanded="false">
-                                <!-- <i class="fas fa-hands" aria-hidden="true"></i> -->
-                                <i class="fas fa-envelope"></i>
-                                <span class="hide-menu">News Letter</span>
-                            </a>
-                        </li>
-                           <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../EditorInvitations/"
-                                aria-expanded="false">
-                                <!-- <i class="fas fa-hands" aria-hidden="true"></i> -->
-                                <i class="bi bi-person-plus"></i>
-                                <span class="hide-menu">Editor Invitations</span>
-                            </a>
-                        </li>
-                            <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://asfirj.org/dashboard/"
+                                  <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/members"
                                 aria-expanded="false" >
-                                <i class="bi bi-person" aria-hidden="true"></i>
-                                <span class="hide-menu">Author's Dashboard</span>
+                                <i class="bi bi-megaphone" aria-hidden="true"></i>
+                                <span class="hide-menu">Members List</span>
+                            </a>
+                        </li>
+                               <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/announcements"
+                                aria-expanded="false" >
+                                <i class="bi bi-megaphone" aria-hidden="true"></i>
+                                <span class="hide-menu">Announcements</span>
+                            </a>
+                        </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/subscribers"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Subscribed Users</span>
+                            </a>
+                        </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/email"
+                                aria-expanded="false" >
+                                <i class="bi bi-envelope" aria-hidden="true"></i>
+                                <span class="hide-menu">Send Bulk Email</span>
+                            </a>
+                        </li>
+                        
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/forum"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Forums</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://asfirj.org/manuscriptPortal/manage" target="_blank"
-                                aria-expanded="false">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                                <span class="hide-menu">Manage Supplements</span>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://dashboad.tawk.to"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Blog and Correspondence</span>
                             </a>
                         </li>
-                  
-                        
+                                 <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/messages"
+                                aria-expanded="false" >
+                                <i class="bi bi-chat-right" aria-hidden="true"></i>
+                                <span class="hide-menu">Messages</span>
+                            </a>
+                        </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/allListings"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Forums</span>
+                            </a>
+                        </li>
+          <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/all"
+                                aria-expanded="false" >
+                                <i class="bi bi-list" aria-hidden="true"></i>
+                                <span class="hide-menu">All Listings</span>
+                            </a>
+                        </li>
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/pending"
+                                aria-expanded="false" >
+                                <i class="bi bi-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Pending Listings</span>
+                            </a>
+                        </li>
+
+                                                                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/mylistings"
+                                aria-expanded="false" >
+                                <i class="bi bi-list-columns-reverse" aria-hidden="true"></i>
+                                <span class="hide-menu">My Listings</span>
+                            </a>
+                        </li>
+
+                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/forum"
+                                aria-expanded="false" >
+                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <span class="hide-menu">Recent Transactions</span>
+                            </a>
+                        </li>
+                
+                                                                                <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                                aria-expanded="false" >
+                                <i class="bi bi-house" aria-hidden="true"></i>
+                                <span class="hide-menu">Back To Home</span>
+                            </a>
+                        </li>
                         <li class="text-center p-20 upgrade-btn">
-                            <a href="../Logout/"
+                            <a href="/superadmin/logout"
                                 class="btn d-grid btn-danger text-white">
                                 Logout</a>
                         </li>
-                    </ul> `
+                    </ul>  `
 const editor_nav = `<ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
@@ -143,7 +215,7 @@ const editor_nav = `<ul id="sidebarnav">
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
-                            <a href="../Logout/"
+                            <a href="/logout"
                                 class="btn d-grid btn-danger text-white">
                                 Logout</a>
                         </li>
@@ -153,3 +225,11 @@ const editor_nav = `<ul id="sidebarnav">
  const navbar_container = document.getElementById("sidebar_nav")
  navbar_container.innerHTML = editor_nav
 
+const isAdminToken = GetCookie("_ama")
+const isAupser = GetCookie("_superID")
+
+if(isAdminToken && isAupser){
+    
+
+navbar_container.innerHTML = admin_nav
+}

@@ -1,9 +1,9 @@
 import { GetCookie } from "../routes/setCookie.js"
 
-const userID = GetCookie("_usid")
+const userID = GetCookie("_superID")
 const superId = GetCookie("_superID")
 
-if(userID || superId){
+if(superId){
 
 const listingsContainer = document.getElementById("listingsContainer")
 
@@ -93,16 +93,16 @@ function booksNavigation(totalPagesListings, currentPage) {
 
     function NewPage(page){
     // get a list of listings by this user 
-    fetch(`/userListings`, {
+    fetch(`/allListings`, {
         method:"POST",
-        body:JSON.stringify({uid:userID, page:page}),
+        body:JSON.stringify({uid:superId, page:page}),
         headers:{
             "Content-type" : "application/JSON"
         }
     }).then(res=>res.json())
     .then(async (data)=>{
     listingsContainer.innerHTML = ""
-
+ 
         if(data.success){
             // const ListingsList = data.listings
             const totalPages = data.totalPagesListing
@@ -160,10 +160,8 @@ function booksNavigation(totalPagesListings, currentPage) {
                                    
                                         <select class="action-box submitAction"  name="do">
                                             <option value="">Actions</option>
-                                            <option value="view">View</option>
-                                            <option value="edit">Edit</option>
-                                            <option value="boost">Boost</option>
-                                            <option value="soldout">Mark As Sold</option> 
+                                            <option value="view">Approve</option>
+                                            <option value="edit">Reject</option>
                                             <option value="delete">Delete</option>
                                            
                                         </select>
@@ -216,7 +214,20 @@ document.addEventListener("change", function(event) {
           if(action === "view"){
             window.location.href = `/l/${title}/${id}`
         }else{
-            window.location.href = `/${action}/item/${id}`
+            fetch(`/s/${action}/item/${id}`, {
+                method:"POST", 
+                headers:{
+                    "Content-type" : "application/JSON"
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                if(data.success){
+                    alert(data.success)
+                }else{
+                    alert(data.error)
+                }
+            })
+            // window.location.href = `/s/${action}/item/${id}`
         }
     }
 });

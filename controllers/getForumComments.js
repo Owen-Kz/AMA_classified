@@ -4,13 +4,22 @@ const getcomments = async (req,res) =>{
     const {id} = req.body
    
     try{
-    if(req.cookies._t){
+        const admin = req.cookies._ama 
+        const user = req.cookies._t 
+        let ValidToken = ""
+   
+        if(admin){
+           ValidToken = admin
+        }else if(user){
+           ValidToken = user
+        }
+       if(ValidToken !== ""){
         const response = await fetch(`${process.env.ENDPOINT}/y/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({token:req.cookies._t,  forumID:id})
+            body: JSON.stringify({token:ValidToken,  forumID:id})
         });
         const responseData = await response.json(); 
      
