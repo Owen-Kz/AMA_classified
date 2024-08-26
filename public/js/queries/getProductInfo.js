@@ -83,7 +83,9 @@ function GetProductDetails(productId, productTitle) {
             purposeContainer.innerText = productDetails.purpose;
             locationContainer.innerText = productDetails.country;
             conditionContainer.innerText = productDetails.condition;
-            
+            const titleContainer = document.querySelector(".product_title")
+
+            titleContainer.innerText = productTitle
             if(priceMain && priceMain != null){
                 priceContainer.innerText = `$ ${productDetails.price.toLocaleString()}`
             }else{

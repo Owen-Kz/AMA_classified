@@ -117,6 +117,7 @@ function booksNavigation(totalPagesListings, currentPage) {
                 const imagesArray = await GetProductDetails(listingData.id, listingData.title)
                 let Status = ""
                 let AllImages = ""
+                let moreActions = ""
 
                 for (let a = 0; a < imagesArray.length; a++) {
                     const file = imagesArray[a];
@@ -134,13 +135,20 @@ function booksNavigation(totalPagesListings, currentPage) {
                 
                 if(listingData.status === "approved"){
                     Status = `<span class="status-text status-green">Approved</span>`
+                    moreActions = `<option value="reject">Reject</option>`
                 }else if(listingData.status === "rejected"){
                     Status = `<span class="status-text status-red">Rejected</span>`
+                    moreActions = `
+                    <option value="approve">Approve</option>`
 
                 }else if(listingData.status === "pending"){
                     Status = `<span class="status-text status-orange">Awaiting Approval</span>`
+                    moreActions = `
+                    <option value="approve">Approve</option>
+                    <option value="reject">Reject</option>`
                 }else if(listingData.status === "sold/expired"){
                     Status = `<span class="status-text status-orange">Sold Out / Expired</span>`
+                    moreActions = ``
                     
                 }
 
@@ -160,9 +168,9 @@ function booksNavigation(totalPagesListings, currentPage) {
                                    
                                         <select class="action-box submitAction"  name="do">
                                             <option value="">Actions</option>
-                                            <option value="view">Approve</option>
-                                            <option value="edit">Reject</option>
-                                            <option value="delete">Delete</option>
+                                            <option value="view">View</option>
+                                           ${moreActions}
+                        
                                            
                                         </select>
                                         
@@ -211,7 +219,7 @@ document.addEventListener("change", function(event) {
         const id = event.target.closest("tr").id
         const action = event.target.value
        
-          if(action === "view"){
+        if(action === "view"){
             window.location.href = `/l/${title}/${id}`
         }else{
             fetch(`/s/${action}/item/${id}`, {
@@ -223,6 +231,7 @@ document.addEventListener("change", function(event) {
             .then(data=>{
                 if(data.success){
                     alert(data.success)
+                    window.location.reload()
                 }else{
                     alert(data.error)
                 }

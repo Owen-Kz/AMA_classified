@@ -201,18 +201,19 @@
                     </div>
 
                     <div class="col-lg-2 col-md-10">
-                       
+                        <a href="/s/pending">
                         <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                           <i class="bi bi-exclamation-circle">
+                           <i class="bi bi-hourglass-split">
                               </i>
                              <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="awaitingApprovalCount"></span> Awaiting Approval</h3>
                         </div>
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-10">
                        <a href="#">
                         <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                            <i class="bi bi-hourglass-split"></i>
+                            <i class="bi bi-people"></i>
                              <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="allUsersCount"></span> All users</h3>
                         </div>
                     </a>
@@ -311,7 +312,12 @@
     <script src="/js/admin/countItems.js"></script>
 
     <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
-  <div id="google_translate_element"></div>
+  <div id="google_translate_element2">
+        <div id="google_translate_element"></div>
+      </div>
+      <%- include ("googleTranslate") %>
+      <script src="/js/jquery-1.12.4.min.js"></script>
+      <script src="/js/googleTranslate.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,28 @@
 const adminActions = async (req,res)=>{
     if(req.cookies._ama && req.cookies._superID){
-        // const uid = req.cookies._superID
-        // const response = await fetch(`${process.env.ENDPOINT}/y/allListings/${uid}`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // });
+        const action  = req.params.action
+        const itemId = req.params.id 
     
-        // const responseData = await response.json(); 
+        const uid = req.cookies._superID
+       const data = {
+            action:action,
+            itemID: itemId
+        } 
+        const response = await fetch(`${process.env.ENDPOINT}/y/action/item/${uid}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+    
+        const responseData = await response.json(); 
 
-        // if(responseData.success){
-        //     return res.json({success:responseData.success})
-        // }else{
-            return res.json({error:"This Page is under Construction"})
-        // }
+        if(responseData.success){
+            return res.json({success:responseData.success})
+        }else{
+            return res.json({error:responseData.error})
+        }
     }else{
         res.json({error:"UnAuthorized"})
     }

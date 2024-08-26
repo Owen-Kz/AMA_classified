@@ -77,7 +77,7 @@
 
             
             <div class="product_info">
-                <div class="product_title"><%= title %></div>
+                <div class="product_title"></div>
                 <div class="location">
                     <div class="mainLocationDetails">
                         <div><i class="bi bi-map-fill"></i></div> 
@@ -161,6 +161,11 @@
 
 
 
-  <div id="google_translate_element"></div>
+  <div id="google_translate_element2">
+        <div id="google_translate_element"></div>
+      </div>
+      <%- include ("googleTranslate") %>
+      <script src="/js/jquery-1.12.4.min.js"></script>
+      <script src="/js/googleTranslate.js"></script>
 </body>
 </html>

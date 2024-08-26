@@ -60,6 +60,10 @@
 <link rel="stylesheet" href="/css/categories.css">
 
 <link rel="stylesheet" href="/css/homeSlide.css">
+
+<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#lgd1vnrv4g0o1724681507247.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#lgd1vnrv4g0o1724681507247.closed{animation: tawkMaxClose .25s ease!important}</style>
+</head>
+    <body class="content" style="position: relative; min-height: 100%; top: 0px;">
 </head>
 <body>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
@@ -476,8 +480,11 @@
       </Footer>
       <!-- </div> -->
       <script src="/js/footer.js"></script>
-      <div id="google_translate_element"></div>
-      <!-- <div id="google_translate_element"></div> -->
+      <div id="google_translate_element2">
+        <div id="google_translate_element"></div>
+      </div>
+      <%- include ("googleTranslate") %>
+      
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -501,5 +508,6 @@
       <script src="/js/navbar.js" type="module"></script>
       <script src="/js/queries/listings.js"></script>
       <script src="/js/queries/categories.js"></script>
+      <script src="/js/googleTranslate.js"></script>
 </body>
 </html>

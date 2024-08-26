@@ -42,6 +42,10 @@ const adminForum = require("../controllers/admin/forum");
 const AllListings = require("../controllers/admin/allListings");
 const signup = require("../controllers/signup");
 const adminActions = require("../controllers/admin/actions");
+const Pending = require("../controllers/admin/pendingListings");
+const auctionsPage = require("../controllers/auctionsPage");
+const pendingPage = require("../controllers/admin/pendigPage");
+const Members = require("../controllers/admin/members");
 
 const router = express.Router();
 
@@ -238,7 +242,7 @@ router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
 router.post("/ad_packs", LoggedIN, adsPacksPage )
 
 router.get("/listingFiles/:id", listingFiles)
-
+router.get("/auctions", LoggedIN, auctionsPage)
 // Seller Profile 
 router.get("/seller/:id", LoggedIN,async(req,res) =>{
     res.render("sellerProfile", {username:req.user.username, sellerId:req.params.id})
@@ -267,7 +271,13 @@ router.post("/CreateAnnouncements", AdminLoggedIn, CreateAnnoucements)
 router.get("/s/all", AdminLoggedIn, AllListingsPage)
 router.post("/allListings", AdminLoggedIn, AllListings)
 // Approve or Delete Items 
-router.post("/s/:action/:id", AdminLoggedIn, adminActions)
+router.post("/s/:action/item/:id", AdminLoggedIn, adminActions)
+router.get("/s/pending", AdminLoggedIn, pendingPage)
+router.post("/pendingListings", AdminLoggedIn, Pending)
+router.get("/members-dev", AdminLoggedIn, Members)
+router.get("/members", async (req,res) =>{
+    res.render("comingSoon")
+})
 
 
 router.get("/superadmin/logout", (req,res) => {
