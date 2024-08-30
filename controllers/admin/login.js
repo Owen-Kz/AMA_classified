@@ -2,7 +2,7 @@ const { configDotenv } = require("dotenv");
 
 
 const adminLogin = async (req,res) =>{
-
+    try{
     const response = await fetch(`${process.env.ENDPOINT}/y/admin/login`, {
         method: 'POST',
         headers: {
@@ -12,6 +12,7 @@ const adminLogin = async (req,res) =>{
     });
  
     const responseData = await response.json(); 
+    
     if(responseData.success){
         // create cookie expiry date 
         const cookieOptions = {
@@ -26,7 +27,9 @@ const adminLogin = async (req,res) =>{
     }else{
         return res.json({error:"CouldNotLogin", message:responseData.error})
     }
-
+    }catch(error){
+        res.json({error:error})
+    }
 }
 
 
