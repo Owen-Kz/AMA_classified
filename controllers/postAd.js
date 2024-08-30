@@ -136,7 +136,7 @@ const data = {
         if (responseData.success) {
           return res.json({ success: responseData.success });
         } else {
-          return res.json({ error: responseData.error });
+          return res.json({ error: responseData });
         }
     //   res.status(200).send({ success: 'Files  uploaded successfully' });   
     } catch (error) { 
