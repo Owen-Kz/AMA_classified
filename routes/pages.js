@@ -46,6 +46,13 @@ const Pending = require("../controllers/admin/pendingListings");
 const auctionsPage = require("../controllers/auctionsPage");
 const pendingPage = require("../controllers/admin/pendigPage");
 const Members = require("../controllers/admin/members");
+const ItemsInCategory = require("../controllers/itemsInCategory");
+const AnnoucePage = require("../controllers/admin/announcementPage");
+const EmailPage = require("../controllers/admin/emailPage");
+const AllUsers = require("../controllers/admin/allUsers");
+const createAdPage = require("../controllers/createAdPage");
+const AllSubCategories = require("../controllers/allSubCategories");
+const postAd = require("../controllers/postAd");
 
 const router = express.Router();
 
@@ -179,6 +186,7 @@ router.post("/bookMarkItem", LoggedIN, addToBookMarks)
 router.get("/countViews/:id", LoggedIN, ViewsCount)
 router.get("/categories", LoggedIN, categories)
 router.post("/allCategories",  AllCategories)
+router.post("/allSubCategories", AllSubCategories)
 // render listings page 
 router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
     if(req.cookies._t || req.cookies._ama){
@@ -190,7 +198,9 @@ router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
 }) 
 // get Listings for user 
 router.post("/userListings", userListings)
-
+ 
+// Create ADs 
+router.post("/postAd", LoggedIN, postAd)
 
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
@@ -254,19 +264,20 @@ router.get("/Logout", (req,res) => {
     res.clearCookie("_usid")
     res.redirect("/")
 })
-router.get("/logout", (req,res) => {
-    res.clearCookie('_t')
-    res.clearCookie("_usid")
-    res.redirect("/")
-})
 
+router.get("/cat", LoggedIN, (req, res) =>{
+    res.render("itemsInCat", {username:req.user.u_name})
+})
+router.post("/itemsInCat", LoggedIN, ItemsInCategory)
+router.get("/createAd", LoggedIN, createAdPage)
 
 // FOr Admin 
 router.get("/superadmin", AdminLoggedIn, adminDashboard)
 router.post("/adminlogin", adminLogin)
 router.get("/s/forum", AdminLoggedIn, adminForum)
-
+router.get("/email", AdminLoggedIn, EmailPage)
 router.get("/admin/countAdminListings", AdminLoggedIn, countAdminListings)
+router.get("/s/announcements", AdminLoggedIn, AnnoucePage)
 router.post("/CreateAnnouncements", AdminLoggedIn, CreateAnnoucements)
 router.get("/s/all", AdminLoggedIn, AllListingsPage)
 router.post("/allListings", AdminLoggedIn, AllListings)
@@ -278,6 +289,7 @@ router.get("/members-dev", AdminLoggedIn, Members)
 router.get("/members", async (req,res) =>{
     res.render("comingSoon")
 })
+router.post("/allusers", AdminLoggedIn, AllUsers)
 
 
 router.get("/superadmin/logout", (req,res) => {

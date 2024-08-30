@@ -14,7 +14,7 @@ const GetCookie = function getCookie(cookieName) {
     return null; // Cookie not found
 }
 
-const admin_nav = `<ul id="sidebarnav">
+const admin_nav = `<ul id="sidebarnav" >
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/superadmin"
@@ -39,7 +39,7 @@ const admin_nav = `<ul id="sidebarnav">
                             </a>
                         </li>
                                <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/announcements"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/announcements"
                                 aria-expanded="false" >
                                 <i class="bi bi-megaphone" aria-hidden="true"></i>
                                 <span class="hide-menu">Announcements</span>
@@ -81,13 +81,7 @@ const admin_nav = `<ul id="sidebarnav">
                                 <span class="hide-menu">Messages</span>
                             </a>
                         </li>
-                                <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/allListings"
-                                aria-expanded="false" >
-                                <i class="bi bi-people" aria-hidden="true"></i>
-                                <span class="hide-menu">Forums</span>
-                            </a>
-                        </li>
+                     
           <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/all"
                                 aria-expanded="false" >

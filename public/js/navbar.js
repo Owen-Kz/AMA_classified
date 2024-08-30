@@ -71,6 +71,7 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
             </div>
             <div class="right">
             <a href="/map"><i class="bi bi-map"></i> <span>Map</span></a>
+            
             </div>
            </div>
         <!-- end topbar -->

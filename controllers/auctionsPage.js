@@ -1,5 +1,5 @@
 const auctionsPage = async (req,res) =>{
-    res.render("cominSooun")
+    res.render("comingSoon")
 }
 
 module.exports = auctionsPage

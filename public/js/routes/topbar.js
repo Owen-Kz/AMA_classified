@@ -16,7 +16,7 @@ TopBar.innerHTML = `            <nav class="navbar top-navbar navbar-expand-md n
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="/plugins/images/logo-text.png" alt="homepage" width="180px" />
+                            <img src="/plugins/images/logo-text.png" alt="dashboard" width="180px" />
                         
                         </span>
                     </a>

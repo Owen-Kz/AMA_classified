@@ -126,7 +126,7 @@ function booksNavigation(totalPagesListings, currentPage) {
                                                 <img src="/uploads/${imagesArray[a].file_url}" alt="image">
                                             </div>
                         </a>`;
-                    } else if (f(file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
+                    } else if ((file.file_type === "image_file" || file.file_type === "" ) && file.file_status === "new_submission") {
                         AllImages += `<div class="image_container">
                                                 <img src="${imagesArray[a].file_url}" alt="image">
                                             </div>`;

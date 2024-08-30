@@ -72,9 +72,9 @@ function GetProductDetails(productId, productTitle) {
                  <div class="seller_profile_bottom">
                    <button><a href="/seller/${sellerDetails.id}">View Profile</a></button>
                   
-                <button class="btn"><a href="/messages/${SellerInfo.id}?s=${SellerInfo.id}">Message Seller</a></button>
+                <button class="btn"><a href="/messages/${sellerDetails.id}?s=${sellerDetails.id}">Message Seller</a></button>
                  </div>
-                 <!-- end seller profile bottom  -->`
+                 <!-- end seller profile bottom  -->` 
             }else{
                 SellerDetailsContainer.innerHTML = `<div class="seller_profile_top">Seller Information is Unavailable at the moment</div>`
             }
@@ -83,8 +83,39 @@ function GetProductDetails(productId, productTitle) {
             purposeContainer.innerText = productDetails.purpose;
             locationContainer.innerText = productDetails.country;
             conditionContainer.innerText = productDetails.condition;
-            const titleContainer = document.querySelector(".product_title")
+            // for product description 
+            if(productDetails.is_recent_item === "yes"){
+                // Parse the Quill content from the JSON data
+                const quillContent = JSON.parse(productDetails.description);
 
+                function renderQuillAsHTML(divId, deltaContent) {
+                    // Create a Quill instance in a temporary div
+                    const tempDiv = document.createElement('div');
+                    const quill = new Quill(tempDiv, {
+                        theme: 'snow',
+                        modules: { toolbar: false },
+                        readOnly: true,
+                    });
+
+                    // Set the content as Quill Delta and extract the HTML
+                    quill.setContents(deltaContent);
+
+                    // Get the innerHTML from the Quill editor
+                    const htmlContent = tempDiv.innerHTML;
+
+                       // Render the extracted HTML into the specified div
+                descriptionContainer.innerHTML =  htmlContent
+                }
+
+                // Render the Quill content as HTML in the "content" div
+                renderQuillAsHTML('content', quillContent);
+
+                
+            }else{
+                descriptionContainer.innerHTML = `<p>${productDetails.description}</p>`
+            }
+
+            const titleContainer = document.querySelector(".product_title")
             titleContainer.innerText = productTitle
             if(priceMain && priceMain != null){
                 priceContainer.innerText = `$ ${productDetails.price.toLocaleString()}`

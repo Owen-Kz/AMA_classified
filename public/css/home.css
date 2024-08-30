@@ -1,6 +1,4 @@
-html{
-    background-color: transparent;
-}
+
 body{
     overflow-x: hidden;
 }
@@ -144,7 +142,7 @@ section{
 }
 
 .backgroundParent{
-    background-color: var(--bodyBackground);
+    background: white;
     width: 100%;
     -webkit-box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 1px 3px 20px -5px rgba(0, 0, 0, 0.3);

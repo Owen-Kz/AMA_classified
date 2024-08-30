@@ -16,7 +16,7 @@
     --border-radius: 20px;
     --font-family-sans-serif: "Nunito Sans", sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
-    --bodyBackground: rgb(255, 255, 255);
+    --bodyBackground: white;
 }
 .skiptranslate:not(.goog-te-gadget){
     height: 0px !important;
@@ -79,11 +79,14 @@ a {
     src: url('./fonts/Lato/Lato-Light.ttf');
 } */
 html{
-     background-color:  rgb(255, 244, 244);
+     /* background-color:  rgb(170, 0, 0); */
+
+     background-color:  rgb(245, 245, 245);
+
 }
 body{
     /* background-color: rgb(241, 241, 241); */
-    background-color: var(--bodyBackground);
+    background: transparent;
     font-family: 'Lato';
     color: #3e5569;
     font-family: var(--font-family-sans-serif);
@@ -616,8 +619,19 @@ color: var(--AmasLinkColor);
     display: none;
 }
 
-
-@media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
+@media screen  and (max-width:240px), (max-width:480px) {
+    .topBarLeft{
+        font-size: 12px;
+    }
+    .topBarLeft ul li{
+        padding: 4px;
+        margin-left: 5px;
+    }
+    .topBarLeft ul li i{
+        padding: 2px;
+    }
+}
+@media screen and (max-width:720px), (max-width:1080px) {
     :root{
         ---border-radius:10px;
     }
@@ -630,6 +644,7 @@ color: var(--AmasLinkColor);
     .mobileNav{
         display: flex;
         padding: 10px;
+        margin-right: 20px;
         font-weight: bold;
         color: antiquewhite;
     }
@@ -657,12 +672,12 @@ color: var(--AmasLinkColor);
 
     }
     .topBarLeft{
-        margin-left: 10px;
-        width: 100%;
+        margin-left: 0px;
+        width: 60%;
         
     }
     .topBarLeft ul{
-        width: 90vw;
+        width: 80vw;
         height: fit-content;
         margin-left: 0px;
     }

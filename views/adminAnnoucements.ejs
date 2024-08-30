@@ -17,7 +17,6 @@
 
     <meta name="robots" content="noindex,nofollow">
     <title>Announcements | Amaslink</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
     <!-- Custom CSS -->
@@ -36,6 +35,9 @@
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="/css/inbox.css">
+<link rel="stylesheet" href="/css/chats.css">
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/forum.css">
 
 </head>
 
@@ -72,43 +74,14 @@
 
         </header>
         <script src="/js/routes/topbar.js"></script>
-        <style>
-      
-            .box-shadow{
-                box-shadow: 0px 10px 30px 0px rgba(37, 37, 37, 0.10);
-            }
-            .align-center{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                color:rgb(81, 81, 81);
-                /* position: relative; */
-            }
-            .align-center i{
-                font-size:50px;
-            }
-            .analytics-info{
-                transition: 200ms ease-in-out;
-                cursor: pointer;
-                user-select: none;
-            }
-            .analytics-info:hover{
-                transform: scale(1.1);
-            }
-            .align-items-center{
-                    align-items: center;
-                    justify-content: center;
-                    float: center;
-                    margin: auto;
-                  }
-        </style>
+     
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out 300ms;">
+        <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out; position: fixed; overflow: scroll;">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -131,6 +104,7 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Announcements</h4>
                     </div>
+                    
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
@@ -163,17 +137,19 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
+                       
+                         
                             <div class="d-md-flex mb-3" style="align-items: center; width: 100%; flex-direction: row; display: flex;">
                                 <div class="expand-forum"><i class="bi bi-list"></i></div>
                                 <h3 class="box-title mb-0">Recent Announcements</h3>
                               
-                                
-                            </div>
-                            
+                            </div> 
                      
                             <div class="d-md-flex mb-3" >
-
+                             
+                           
                                 <div class="container" style="width: 100%; max-width: 100%;">
+                               
                                   <div class="email-list" id="emailListContainer">
                                   
                                   
@@ -187,6 +163,18 @@
                                     </div>
                              
                                   </div>
+                                  
+                                  <form id="CreateAnnouncements" style="align-items: flex-start; justify-content: flex-start;">
+                                    <h4>Create Announcement</h4>
+                                    <div class="form_control" style="flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+                                        <label for="forumTopic">Topic</label>
+                                        <input type="text" id="topic" placeholder="Make Announcement" required>
+                                        <label for="description">Description</label>
+                                        <textarea name="discription" id="description"></textarea>
+                                      
+                                        <button class="btn d-grid btn-danger text-white" style="width:30%; margin-top: 10px;"> Post</button>
+                                    </div>
+                                </form>
                                 </div>
                               </div>
 

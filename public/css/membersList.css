@@ -1,0 +1,28 @@
+.left-sidebar span{
+    color:#212529;
+}
+
+.btn-primary, .btn-primary:hover{
+    background: var(--AmasLinkColor);
+    outline: none;
+    border: none;
+    border-radius: 25px;
+}
+
+#image-preview {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#image-preview img {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: cover;
+}

@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
+    <meta name="author" content="Benson Michael Owen - OwenKz">
+    <title>Email | Amaslink</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="/css/style.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/css/general.css"> -->
+     <link rel="stylesheet" href="/css/style.css">
+    <link href="/css/table.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+
+  <!-- Core Css -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="/css/membersList.css">
+
+
+
+</head>
+
+<body class="link-sidebar">
+    <input type="hidden" id="fullnameContainer" value="<%=username%>">
+
+    <style>
+        #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
+            background-color: var(--AmasLinkColor);
+        }
+        .btn-danger{
+            background-color: var(--AmasLinkColor);
+            border-radius: 50px;
+        }
+    </style>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5" id="topbar">
+
+        </header>
+        <script src="/js/routes/topbar.js"></script>
+     
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out 300ms;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+
+                <nav class="sidebar-nav" id="sidebar_nav">
+                    
+
+                </nav>
+                <script type="module" src="/js/routes/dashboard/sidenav.js"></script>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside> 
+    <!-- Sidebar Start -->
+
+    <!--  Sidebar End -->
+    <div class="page-wrapper">
+      <!--  Header Start -->
+      <header class="topbar card rounded-0 border-0">
+        <div class="with-vertical"><!-- ---------------------------------- -->
+          <!-- Start Vertical Layout Header -->
+          <!-- ---------------------------------- -->
+
+          <!-- ---------------------------------- -->
+          <!-- End Vertical Layout Header -->
+          <!-- ---------------------------------- -->
+
+          <!-- ------------------------------- -->
+          <!-- apps Dropdown in Small screen -->
+          <!-- ------------------------------- -->
+          <!--  Mobilenavbar -->
+          <div class="offcanvas offcanvas-start dropdown-menu-nav-offcanvas" data-bs-scroll="true" tabindex="-1" id="mobilenavbar" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <nav class="sidebar-nav scroll-sidebar">
+              <div class="offcanvas-header justify-content-between">
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/index.html" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                    <b class="logo-icon">
+                      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                      <!-- Dark Logo icon -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="homepage" class="dark-logo" />
+                      <!-- Light Logo icon -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg" alt="homepage" class="light-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    <span class="logo-text">
+                      <!-- dark Logo text -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg" alt="homepage" class="dark-logo" />
+                      <!-- Light Logo text -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg" class="light-logo" alt="homepage" />
+                    </span>
+                  </a>
+                </div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body h-n80" data-simplebar>
+                <ul id="sidebarnav" class="px-0">
+                  <li class="sidebar-item">
+                    <a class="sidebar-link gap-2 has-arrow" href="javascript:void(0)" aria-expanded="false">
+                      <iconify-icon icon="solar:list-bold-duotone" class="fs-7"></iconify-icon>
+                      <span class="hide-menu">Apps</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level my-3">
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-chat.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-chat.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Chat Application</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">New messages arrived</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-invoice.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-invoice.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Invoice App</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">Get latest invoice</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-cotact.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-mobile.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Contact Application</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">2 Unsaved Contacts</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="app-email.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-message-box.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Email App</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">Get new emails</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-user-profile.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-cart.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">User Profile</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">learn more information</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-calendar.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-date.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Calendar App</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">Get dates</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-contact2.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-lifebuoy.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Contact List Table</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">Add new contact</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-notes.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-application.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Notes Application</h6>
+                            <span class="fs-2 d-block fw-normal text-muted">To-do and Daily tasks</span>
+                          </div>
+                        </a>
+                      </li>
+                      <ul class="px-8 mt-6 mb-4">
+                        <li class="sidebar-item mb-3">
+                          <h5 class="fs-5 fw-semibold">Quick Links</h5>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-pricing.html">Pricing Page</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html">Authentication
+                            Design</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-register.html">Register Now</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-error.html">404 Error Page</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-notes.html">Notes App</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-user-profile.html">User Application</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html">Account Settings</a>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link gap-2" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-chat.html" aria-expanded="false">
+                      <iconify-icon icon="solar:chat-round-unread-line-duotone" class="fs-6 text-dark"></iconify-icon>
+                      <span class="hide-menu">Chat</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link gap-2" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-calendar.html" aria-expanded="false">
+                      <iconify-icon icon="solar:calendar-add-line-duotone" class="fs-6 text-dark"></iconify-icon>
+                      <span class="hide-menu">Calendar</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link gap-2" href="app-email.html" aria-expanded="false">
+                      <iconify-icon icon="solar:mailbox-line-duotone" class="fs-6 text-dark"></iconify-icon>
+                      <span class="hide-menu">Email</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="app-header with-horizontal">
+          <nav class="navbar navbar-expand-xl container-fluid">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item nav-icon-hover-bg rounded-circle d-flex d-xl-none">
+                <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse" href="javascript:void(0)">
+                  <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+                </a>
+              </li>
+              <li class="nav-item d-none d-xl-block">
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/index.html" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                    <b class="logo-icon">
+                      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                      <!-- Dark Logo icon -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="homepage" class="dark-logo" />
+                      <!-- Light Logo icon -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg" alt="homepage" class="light-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    <span class="logo-text">
+                      <!-- dark Logo text -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg" alt="homepage" class="dark-logo" />
+                      <!-- Light Logo text -->
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg" class="light-logo" alt="homepage" />
+                    </span>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                <div class="hover-dd">
+                  <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                    <iconify-icon icon="solar:bell-bing-line-duotone"></iconify-icon>
+                    <div class="notify">
+                      <span class="heartbit"></span>
+                      <span class="point"></span>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu py-0 content-dd  dropdown-menu-start overflow-hidden" aria-labelledby="drop2">
+                    <div class="py-3 px-4 bg-primary">
+                      <div class="fs-6 fw-bold text-white">Notifications</div>
+                      <div class="fs-2 fw-medium text-white">You have 4 Notifications</div>
+                    </div>
+                    <div class="message-body" data-simplebar>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center justify-content-between dropdown-item gap-3   justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-secondary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-secondary">
+                          <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Luanch Admin</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:30 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3  justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-primary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-primary">
+                          <iconify-icon icon="solar:calendar-mark-line-duotone"></iconify-icon>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Event today</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:10 AM</span>
+                          </div>
+
+                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3  justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-info-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-info">
+                          <iconify-icon icon="solar:settings-minimalistic-line-duotone"></iconify-icon>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Settings</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:08 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you want</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3  justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-warning-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-warning">
+                          <iconify-icon icon="solar:link-circle-line-duotone"></iconify-icon>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Luanch Admin</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:30 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3  justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-success-subtle rounded round-40 d-flex align-items-center justify-content-center">
+                          <i data-feather="calendar" class="feather-sm fill-white text-success"></i>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Event today</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:10 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3  justify-content-between border-bottom">
+                        <span class="flex-shrink-0 bg-primary-subtle rounded round-40 d-flex align-items-center justify-content-center">
+                          <i data-feather="settings" class="feather-sm fill-white text-primary"></i>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 ">Settings</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted ">9:08 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you want</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a class="d-flex btn btn-primary rounded align-items-center justify-content-center gap-2" href="javascript:void(0);">
+                        <span>Check all Notifications</span>
+                        <iconify-icon icon="solar:alt-arrow-right-outline" class="iconify-sm"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                <div class="hover-dd">
+                  <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                    <iconify-icon icon="solar:inbox-line-line-duotone"></iconify-icon>
+                    <div class="notify">
+                      <span class="heartbit"></span>
+                      <span class="point"></span>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden" aria-labelledby="drop2">
+                    <div class="py-3 px-4 bg-secondary">
+                      <div class="fs-6 fw-bold text-white">Messages</div>
+                      <div class="fs-2 fw-medium text-white">You have 5 new messages</div>
+                    </div>
+                    <div class="message-body" data-simplebar>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-2.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Genelia Roshan</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Bianca Anderson</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                          </div>
+
+                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-4.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Andrew Johnson</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you want</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-5.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Mark Strokes</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-6.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Mark, Stoinus & Rishvi..</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
+                        </div>
+                      </a>
+                      <a href="javascript:void(0)" class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                        <span class="user-img position-relative d-inline-block">
+                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-7.jpg" alt="user" class="rounded w-100 round-40" />
+                          <span class="profile-status bg-success position-absolute rounded"></span>
+                        </span>
+                        <div class="w-80">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="mb-0 lh-base">Settings</h6>
+                            <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                          </div>
+                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you want</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a class="d-flex btn btn-secondary rounded align-items-center justify-content-center gap-2" href="javascript:void(0);">
+                        <span>Check all Messages</span>
+                        <iconify-icon icon="solar:alt-arrow-right-outline" class="iconify-sm"></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex dropdown">
+                <div class="hover-dd">
+                  <a class="nav-link" id="drop2" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+                    <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-nav" aria-labelledby="drop2">
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="ps-3 pt-3">
+                          <div class="border-bottom">
+                            <div class="row">
+                              <div class="col-6">
+                                <div class="position-relative">
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-chat.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-chat.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        Chat Application
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">New messages arrived</span>
+                                    </div>
+                                  </a>
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-invoice.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-invoice.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">Invoice App</h6>
+                                      <span class="fs-2 d-block text-body-secondary">Get latest invoice</span>
+                                    </div>
+                                  </a>
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-contact2.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-mobile.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        Contact Application
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">2 Unsaved Contacts</span>
+                                    </div>
+                                  </a>
+                                  <a href="app-email.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-message-box.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">Email App</h6>
+                                      <span class="fs-2 d-block text-body-secondary">Get new emails</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="position-relative">
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-user-profile.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-cart.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        User Profile
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">learn more information</span>
+                                    </div>
+                                  </a>
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-calendar.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-date.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        Calendar App
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">Get dates</span>
+                                    </div>
+                                  </a>
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-contact.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-lifebuoy.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        Contact List Table
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">Add new contact</span>
+                                    </div>
+                                  </a>
+                                  <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-notes.html" class="d-flex align-items-center pb-9 position-relative">
+                                    <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-dd-application.svg" alt="ample-img" class="img-fluid" width="24" height="24" />
+                                    </div>
+                                    <div>
+                                      <h6 class="mb-1 fw-semibold fs-3">
+                                        Notes Application
+                                      </h6>
+                                      <span class="fs-2 d-block text-body-secondary">To-do and Daily tasks</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row align-items-center py-3">
+                            <div class="col-8">
+                              <a class="fw-semibold d-flex align-items-center lh-1" href="javascript:void(0)">
+                                <i class="ti ti-help fs-6 me-2"></i>Frequently Asked Questions
+                              </a>
+                            </div>
+                            <div class="col-4">
+                              <div class="d-flex justify-content-end pe-4">
+                                <button class="btn btn-primary">Check</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 ms-n4">
+                        <div class="position-relative p-7 border-start h-100">
+                          <h5 class="fs-5 mb-9 fw-semibold">Quick Links</h5>
+                          <ul class="">
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-pricing.html">Pricing Page</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html">Authentication
+                                Design</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-register.html">Register Now</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-error.html">404 Error Page</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-notes.html">Notes App</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-user-profile.html">User Application</a>
+                            </li>
+                            <li class="mb-3">
+                              <a class="fw-semibold bg-hover-primary" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html">Account Settings</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+
+            <a class="navbar-toggler nav-icon-hover-bg rounded-circle p-0 border-0" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="p-2">
+                <i class="ti ti-dots fs-7"></i>
+              </span>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div class="d-flex align-items-center justify-content-between">
+                <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                  <li class="nav-item nav-icon-hover-bg rounded-circle">
+                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                      <iconify-icon icon="solar:moon-line-duotone" class="moon"></iconify-icon>
+                    </a>
+                    <a class="nav-link sun light-layout" href="javascript:void(0)">
+                      <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
+                    </a>
+                  </li>
+
+                  <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
+                    <a class="nav-link d-none d-md-flex" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
+                    </a>
+                  </li>
+                  <!-- ------------------------------- -->
+                  <!-- end notification Dropdown -->
+                  <!-- ------------------------------- -->
+                  <!-- ------------------------------- -->
+                  <!-- start language Dropdown -->
+                  <!-- ------------------------------- -->
+                  <li class="nav-item dropdown nav-icon-hover-bg rounded-circle">
+                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg" alt="ample-img" width="20px" height="20px" class="round-20" />
+                    </a>
+                    <div class="dropdown-menu pt-0 dropdown-menu-end" aria-labelledby="drop2">
+                      <div class="message-body">
+                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                          <div class="position-relative">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg" alt="ample-img" width="20px" height="20px" class="round-20" />
+                          </div>
+                          <p class="mb-0 fs-3">English</p>
+                        </a>
+                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                          <div class="position-relative">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-cn.svg" alt="ample-img" width="20px" height="20px" class="round-20" />
+                          </div>
+                          <p class="mb-0 fs-3">Chinese</p>
+                        </a>
+                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                          <div class="position-relative">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-fr.svg" alt="ample-img" width="20px" height="20px" class="round-20" />
+                          </div>
+                          <p class="mb-0 fs-3">French</p>
+                        </a>
+                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                          <div class="position-relative">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-sa.svg" alt="ample-img" width="20px" height="20px" class="round-20" />
+                          </div>
+                          <p class="mb-0 fs-3">Arabic</p>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ------------------------------- -->
+                  <!-- end language Dropdown -->
+                  <!-- ------------------------------- -->
+
+                  <!-- ------------------------------- -->
+                  <!-- start profile Dropdown -->
+                  <!-- ------------------------------- -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg" alt="user" width="30" class="profile-pic rounded" />
+                    </a>
+                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd" aria-labelledby="drop2">
+                      <div class="profile-dropdown position-relative" data-simplebar>
+                        <div class=" py-3 border-bottom">
+                          <div class="d-flex align-items-center px-3">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg" class="rounded" width="50" height="50" alt="ample-img" />
+                            <div class="ms-3">
+                              <h5 class="mb-0 fs-4">James White</h5>
+                              <p class="mb-0 d-flex align-items-center text-muted">
+                                info@ampleadmin.com
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="message-body pb-3">
+                          <div class="px-3 pt-3">
+                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-user-profile.html" class=" d-flex  align-items-center ">
+                                My Profile
+                              </a>
+                            </div>
+                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                              <a href="javascript:void(0)" class=" d-flex  align-items-center ">
+                                My Projects
+                              </a>
+                            </div>
+                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                              <a href="app-email.html" class=" d-flex  align-items-center ">
+                                Inbox
+                              </a>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="px-3">
+                            <div class="py-8 px-3 d-flex justify-content-between dropdown-item align-items-center h6 mb-0  rounded-2 link">
+                              <a href="javascript:void(0)" class="">
+                                Mode
+                              </a>
+                              <div>
+                                <a class="moon dark-layout" href="javascript:void(0)">
+                                  <iconify-icon icon="solar:moon-line-duotone" class="moon"></iconify-icon>
+                                </a>
+                                <a class="sun light-layout" href="javascript:void(0)">
+                                  <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html" class=" d-flex  align-items-center  ">
+                                Account Settings
+                              </a>
+                            </div>
+                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html" class=" d-flex  align-items-center ">
+                                Sign Out
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- ------------------------------- -->
+                  <!-- end profile Dropdown -->
+                  <!-- ------------------------------- -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!--  Header End -->
+
+
+
+      <div class="body-wrapper">
+        <div class="container-fluid">
+          <div class="shadow-none position-relative overflow-hidden mb-4">
+            <div class="d-sm-flex d-block justify-content-between align-items-center">
+              <h5 class="mb-0 fw-semibold text-uppercase"> Email</h5>
+              <nav aria-label="breadcrumb" class="d-flex align-items-center">
+          
+
+              </nav>
+            </div>
+          </div>
+          <div class="card overflow-hidden chat-application">
+            <div class="d-flex align-items-center justify-content-between gap-6 m-3 d-lg-none">
+              <button class="btn btn-primary d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-sidebar" aria-controls="chat-sidebar">
+                <i class="ti ti-menu-2 fs-5"></i>
+              </button>
+              <form class="position-relative w-100">
+                <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search Contact" />
+                <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
+              </form>
+            </div>
+            <div class="d-flex w-100">
+              <div class="left-part border-end w-20 flex-shrink-0 d-none d-lg-block h-auto">
+                <div class="px-9 pt-4 pb-3">
+                  <button type="button" class="btn btn-primary fw-semibold py-8 w-100" data-bs-toggle="modal" data-bs-target="#compose">
+                    Compose
+                  </button>
+                </div>
+                <ul class="list-group mh-n100" data-simplebar>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-inbox fs-5"></i>Inbox
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-brand-telegram fs-5"></i>Sent
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-file-text fs-5"></i>Draft
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-inbox fs-5"></i>Spam
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-trash fs-5"></i>Trash
+                    </a>
+                  </li>
+                  <li class="border-bottom my-3"></li>
+                  <li class="fw-semibold text-dark text-uppercase mx-9 my-2 px-3 fs-2">
+                    IMPORTANT
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-star fs-5"></i>Starred
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)" class="d-block">
+                      <i class="ti ti-badge fs-5"></i>Important
+                    </a>
+                  </li>
+                  <li class="border-bottom my-3"></li>
+                  <li class="fw-semibold text-dark text-uppercase mx-9 my-2 px-3 fs-2">
+                    LABELS
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-primary"></i>Promotional
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-warning"></i>Social
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-success"></i>Health
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex w-100">
+                <div class="min-width-340">
+                  <div class="border-end user-chat-box h-100">
+                    <div class="px-4 pt-9 pb-6 d-none d-lg-block">
+                      <form class="position-relative">
+                        <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search" />
+                        <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
+                      </form>
+                    </div>
+                    <div class="app-chat">
+                      <ul class="chat-users mh-n100" data-simplebar>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start chat-user bg-light-subtle" id="chat_user_1" data-user-id="1">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">James Smith</h6>
+                                <span class="badge text-bg-primary">Promotional</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Kindly check this latest updated
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-dark"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_2" data-user-id="2">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Katherine Flintoff</h6>
+                                <span class="badge text-bg-danger">Social</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Newsletter from AdminMart Team
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-warning"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_3" data-user-id="3">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Bianca Macdowells</h6>
+                                <span class="badge text-bg-success">Health</span>
+                              </div>
+                              <h6 class="text-dark">
+                                Kindly check this latest updated
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-warning"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_4" data-user-id="4">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Michael Knight</h6>
+                                <span class="badge text-bg-primary">Social</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Developer Community needs help
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_5" data-user-id="5">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Jonathan Higgings</h6>
+                                <span class="badge text-bg-primary">Promotional</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Kindly check this latest updated
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_6" data-user-id="6">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Mike Torello</h6>
+                                <span class="badge text-bg-primary">Health</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                From your hosting provider - action
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_7" data-user-id="7">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Bianca Macdowells</h6>
+                                <span class="badge text-bg-success">Health</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Kindly check this latest updated
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-warning"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start justify-content-between chat-user" id="chat_user_8" data-user-id="8">
+                            <div class="form-check mb-0">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" />
+                            </div>
+                            <div class="position-relative w-100 ms-2">
+                              <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Michael Knight</h6>
+                                <span class="badge text-bg-primary">Social</span>
+                              </div>
+                              <h6 class="fw-semibold text-dark">
+                                Developer Community
+                              </h6>
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                  <span>
+                                    <i class="ti ti-star fs-4 me-2 text-muted"></i>
+                                  </span>
+                                  <span class="d-block">
+                                    <i class="ti ti-alert-circle text-muted"></i>
+                                  </span>
+                                </div>
+                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-100">
+                  <div class="chat-container h-100 w-100">
+                    <div class="chat-box-inner-part h-100">
+                      <div class="chatting-box app-email-chatting-box">
+                        <div class="p-9 py-3 border-bottom chat-meta-user">
+                          <ul class="list-unstyled mb-0 d-flex align-items-center">
+                            <li class="d-lg-none d-block">
+                              <a class="text-dark back-btn px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
+                                <i class="ti ti-arrow-left"></i>
+                              </a>
+                            </li>
+                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Star">
+                              <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
+                                <i class="ti ti-star"></i>
+                              </a>
+                            </li>
+                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="important">
+                              <a class="d-block text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
+                                <i class="ti ti-alert-circle"></i>
+                              </a>
+                            </li>
+                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                              <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
+                                <i class="ti ti-trash"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="position-relative overflow-hidden">
+                          <div class="position-relative">
+                            <div class="chat-box email-box mh-n100 p-9" data-simplebar="init">
+                              <div class="chat-list chat active-chat" data-user-id="1">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-8.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        James Smith
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-primary">Promotional</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    James Smith
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="2">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-5.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Katherine Flintoff
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-danger">Social</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Katherine Flintoff
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="3">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-3.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Bianca Macdowells
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-success">Health</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Bianca Macdowells
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="4">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-3.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Michael Knight
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-primary">Social</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Michael Knight
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="5">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-11.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Jonathan Higgings
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-primary">Promotional</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Jonathan Higgings
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="6">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-5.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Mike Torello
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-primary">Health</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Mike Torello
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="7">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-6.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Bianca Macdowells
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-success">Health</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Bianca Macdowells
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="chat-list chat" data-user-id="8">
+                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="/assets/images/profile/user-7.jpg" alt="user8" width="48" height="48" class="rounded-circle" />
+                                    <div>
+                                      <h6 class="fw-semibold mb-0">
+                                        Michael Knight
+                                      </h6>
+                                      <p class="mb-0">hello@loremipsum.com</p>
+                                    </div>
+                                  </div>
+                                  <span class="badge text-bg-primary">Social</span>
+                                </div>
+                                <div class="border-bottom pb-7 mb-7">
+                                  <h4 class="fw-semibold text-dark mb-3">
+                                    Kindly check this latest updated
+                                  </h4>
+                                  <p class="mb-3 text-dark">Hello Andrew,</p>
+                                  <p class="mb-3 text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque bibendum
+                                    hendrerit lobortis. Nullam ut lacus eros.
+                                    Sed at luctus urna, eu fermentum diam. In
+                                    et tristique mauris.
+                                  </p>
+                                  <p class="mb-3 text-dark">
+                                    Ut id ornare metus, sed auctor enim.
+                                    Pellentesque nisi magna, laoreet a augue
+                                    eget, tempor volutpat diam.
+                                  </p>
+                                  <p class="mb-0 text-dark">Regards,</p>
+                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
+                                    Michael Knight
+                                  </h6>
+                                </div>
+                                <div class="mb-3">
+                                  <h6 class="fw-semibold mb-0 text-dark mb-3">
+                                    Attachments
+                                  </h6>
+                                  <div class="d-block d-sm-flex align-items-center gap-4">
+                                    <a href="javascript:void(0)" class="hstack gap-3 mb-2 mb-sm-0">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-adobe.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            service-task.pdf
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a href="javascript:void(0)" class="hstack gap-3 file-chat-hover">
+                                      <div class="d-flex align-items-center gap-3">
+                                        <div class="rounded-1 text-bg-light p-6">
+                                          <img src="/assets/images/chat/icon-zip-folder.svg" alt="matdash-img" width="24" height="24" />
+                                        </div>
+                                        <div>
+                                          <h6 class="fw-semibold">
+                                            work-project.zip
+                                          </h6>
+                                          <div class="d-flex align-items-center gap-3 fs-2 text-muted">
+                                            <span>2 MB</span>
+                                            <span>2 Dec 2024</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="px-9 py-3 border-top chat-send-message-footer">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <ul class="list-unstyled mb-0 d-flex align-items-center gap-7">
+                                  <li>
+                                    <a class="text-dark bg-hover-primary d-flex align-items-center gap-1" href="javascript:void(0)">
+                                      <i class="ti ti-arrow-back-up fs-5"></i>
+                                      Reply
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a class="text-dark bg-hover-primary d-flex align-items-center gap-1" href="javascript:void(0)">
+                                      <i class="ti ti-arrow-forward-up fs-5"></i>
+                                      Forward
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="offcanvas offcanvas-start user-chat-box" tabindex="-1" id="chat-sidebar" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                    Email
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="px-9 pt-4 pb-3">
+                  <button class="btn btn-primary fw-semibold py-8 w-100" data-bs-toggle="modal" data-bs-target="#compose">
+                    Compose
+                  </button>
+                </div>
+                <ul class="list-group h-n150" data-simplebar>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-inbox fs-5"></i>Inbox
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-brand-telegram fs-5"></i>Sent
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-file-text fs-5"></i>Draft
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-inbox fs-5"></i>Spam
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-trash fs-5"></i>Trash
+                    </a>
+                  </li>
+                  <li class="border-bottom my-3"></li>
+                  <li class="fw-semibold text-dark text-uppercase mx-9 my-2 px-3 fs-2">
+                    IMPORTANT
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-star fs-5"></i>Starred
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)" class="d-block">
+                      <i class="ti ti-badge fs-5"></i>Important
+                    </a>
+                  </li>
+                  <li class="border-bottom my-3"></li>
+                  <li class="fw-semibold text-dark text-uppercase mx-9 my-2 px-3 fs-2">
+                    LABELS
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-primary"></i>Promotional
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-warning"></i>Social
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 p-0 mx-9">
+                    <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
+                      <i class="ti ti-bookmark fs-5 text-success"></i>Health
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!----Footer--->
+        <!-- -------------------------------------------------------------- -->
+        <!-- footer -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- <footer class="footer py-3 bg-white border-top text-center">
+         
+        </footer> -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End footer -->
+        <!-- -------------------------------------------------------------- -->
+        <!----Footer End--->
+      </div>
+      <script>
+  function handleColorTheme(e) {
+    document.documentElement.setAttribute("data-color-theme", e);
+  }
+</script>
+      <button class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="icon ti ti-settings fs-7 text-white"></i>
+      </button>
+
+      <div class="offcanvas customizer offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
+          <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">
+            Settings
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body h-n80" data-simplebar>
+          <h6 class="fw-semibold fs-4 mb-2">Theme</h6>
+
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <input type="radio" class="btn-check light-layout" name="theme-layout" id="light-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary " for="light-layout"> <iconify-icon icon="solar:sun-2-outline" class="icon fs-7 me-2"></iconify-icon>Light</label>
+            <input type="radio" class="btn-check dark-layout" name="theme-layout" id="dark-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="dark-layout"><iconify-icon icon="solar:moon-outline" class="icon fs-7 me-2"></iconify-icon>Dark</label>
+          </div>
+
+          <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <input type="radio" class="btn-check" name="direction-l" id="ltr-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="ltr-layout"><iconify-icon icon="solar:align-left-linear" class="icon fs-7 me-2"></iconify-icon>LTR</label>
+
+            <input type="radio" class="btn-check" name="direction-l" id="rtl-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="rtl-layout">
+              <iconify-icon icon="solar:align-right-linear" class="icon fs-7 me-2"></iconify-icon>RTL
+            </label>
+          </div>
+
+          <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Colors</h6>
+
+          <div class="d-flex flex-row flex-wrap gap-3 customizer-box color-pallete" role="group">
+            <input type="radio" class="btn-check" name="color-theme-layout" id="Red_Theme" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Red_Theme')" for="Red_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="RED_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-1">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+
+            <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="AQUA_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-2">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+
+            <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="PURPLE_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-3">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+
+            <input type="radio" class="btn-check" name="color-theme-layout" id="green-theme-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Green_Theme')" for="green-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GREEN_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-4">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+
+            <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CYAN_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-5">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+
+            <input type="radio" class="btn-check" name="color-theme-layout" id="orange-theme-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center" onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ORANGE_THEME">
+              <div class="color-box rounded-circle d-flex align-items-center justify-content-center skin-6">
+                <i class="ti ti-check text-white d-flex icon fs-5"></i>
+              </div>
+            </label>
+          </div>
+
+          <h6 class="mt-5 fw-semibold fs-4 mb-2">Layout Type</h6>
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <div>
+              <input type="radio" class="btn-check" name="page-layout" id="vertical-layout" autocomplete="off" />
+              <label class="btn p-9 btn-outline-primary" for="vertical-layout">
+                <iconify-icon icon="solar:slider-vertical-minimalistic-linear" class="icon fs-7 me-2"></iconify-icon>Vertical
+              </label>
+            </div>
+            <div>
+              <input type="radio" class="btn-check" name="page-layout" id="horizontal-layout" autocomplete="off" />
+              <label class="btn p-9 btn-outline-primary" for="horizontal-layout">
+                <iconify-icon icon="solar:slider-minimalistic-horizontal-outline" class="icon fs-7 me-2"></iconify-icon>
+                Horizontal
+              </label>
+            </div>
+          </div>
+
+          <h6 class="mt-5 fw-semibold fs-4 mb-2">Container Option</h6>
+
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <input type="radio" class="btn-check" name="layout" id="boxed-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="boxed-layout">
+              <iconify-icon icon="solar:cardholder-linear" class="icon fs-7 me-2"></iconify-icon>
+              Boxed
+            </label>
+
+            <input type="radio" class="btn-check" name="layout" id="full-layout" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="full-layout">
+              <iconify-icon icon="solar:scanner-linear" class="icon fs-7 me-2"></iconify-icon> Full
+            </label>
+          </div>
+
+          <h6 class="fw-semibold fs-4 mb-2 mt-5">Sidebar Type</h6>
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <a href="javascript:void(0)" class="fullsidebar">
+              <input type="radio" class="btn-check" name="sidebar-type" id="full-sidebar" autocomplete="off" />
+              <label class="btn p-9 btn-outline-primary" for="full-sidebar"><iconify-icon icon="solar:sidebar-minimalistic-outline" class="icon fs-7 me-2"></iconify-icon> Full</label>
+            </a>
+            <div>
+              <input type="radio" class="btn-check " name="sidebar-type" id="mini-sidebar" autocomplete="off" />
+              <label class="btn p-9 btn-outline-primary" for="mini-sidebar">
+                <iconify-icon icon="solar:siderbar-outline" class="icon fs-7 me-2"></iconify-icon>Collapse
+              </label>
+            </div>
+          </div>
+
+          <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
+
+          <div class="d-flex flex-row gap-3 customizer-box" role="group">
+            <input type="radio" class="btn-check" name="card-layout" id="card-with-border" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="card-with-border"><iconify-icon icon="solar:library-broken" class="icon fs-7 me-2"></iconify-icon>Border</label>
+
+            <input type="radio" class="btn-check" name="card-layout" id="card-without-border" autocomplete="off" />
+            <label class="btn p-9 btn-outline-primary" for="card-without-border">
+              <iconify-icon icon="solar:box-outline" class="icon fs-7 me-2"></iconify-icon>Shadow
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="compose" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-light">
+              <h5 class="modal-title fs-3" id="exampleModalLabel">
+                New Message
+              </h5>
+              <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3 input-group">
+                  <input type="email" class="form-control" id="text-email" placeholder="Recipients" />
+                  <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked />
+                  <label class="btn btn-primary" for="option1">Cc</label>
+                  <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+                  <label class="btn btn-primary" for="option2">Bcc</label>
+                </div>
+                <div>
+                  <textarea class="form-control" id="text-subject" rows="6" placeholder="Subject"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer justify-content-start">
+              <button type="button" class="btn btn-primary d-none d-md-inline" data-bs-dismiss="modal">
+                Send
+              </button>
+              <div class="ms-6 d-flex flex-wrap gap-1">
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:link-circle-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:gallery-send-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:text-square-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:eraser-square-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:text-underline-cross-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:text-bold-square-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded-1">
+                  <iconify-icon icon="solar:text-italic-square-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+              </div>
+              <div class="ms-md-auto d-flex align-items-center justify-content-between">
+                <button type="button" class="btn btn-primary d-inline d-md-none" data-bs-dismiss="modal">
+                  Send
+                </button>
+                <a href="javascript:void(0)" class="d-flex nav-icon-hover-bg rounded ms-6 ms-md-0">
+                  <iconify-icon icon="solar:trash-bin-minimalistic-line-duotone" class="fs-7"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="dark-transparent sidebartoggler"></div>
+  <script src="/assets/js/vendor.min.js"></script>
+  <!-- Import Js Files -->
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/simplebar/dist/simplebar.min.js"></script>
+  <script src="/assets/js/theme/app.init.js"></script>
+  <script src="/assets/js/theme/theme.js"></script>
+  <script src="/assets/js/theme/app.min.js"></script>
+  <script src="/assets/js/theme/sidebarmenu.js"></script>
+  <script src="/assets/js/theme/feather.min.js"></script>
+
+  <!-- solar icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/js/apps/chat.js"></script>
+</body>
+
+</html>

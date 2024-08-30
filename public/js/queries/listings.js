@@ -2,7 +2,7 @@ const listingsContainer = document.getElementById("listingsContainer")
 const paginationContainer = document.getElementById("pagination");
 const listingsBottomContainer = document.getElementById("listingsBottomContainer")
 const ListingsTopContainer = document.getElementById("listingsTopContainer")
-const maxLength = 200;
+const maxLength = 50;
 
 async function GetViewsCount(id){
   return  fetch(`/countViews/${id}`, {
@@ -229,7 +229,7 @@ fetch(`/listings?page=${page}`, {
                           <form class="bookMarkItem">
                           <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                             <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                            <i class="bi bi-bookmark-heart"></i>
+                            <i class="bi bi-heart-fill"></i>
                             </button>
                         </form>
 
@@ -241,7 +241,7 @@ fetch(`/listings?page=${page}`, {
                         <div class="product_name" style="color:var(--AmasLinkColor);">
                            ${ItemPrice}
                         </div>
-                        <div class="product_name">
+                        <div class="product_name limited-text">
                             ${ListingsList[i].title}
                         </div>
                       
@@ -312,7 +312,7 @@ fetch(`/listings?page=${page}`, {
                                   <form class="bookMarkItem">
                                   <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                                     <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                                    <i class="bi bi-bookmark-heart"></i>
+                                    <i class="bi bi-heart-fill"></i>
                                     </button>
                                 </form>
         
@@ -324,7 +324,7 @@ fetch(`/listings?page=${page}`, {
                                 <div class="product_name" style="color:var(--AmasLinkColor);">
                                    ${ItemPrice}
                                 </div>
-                                <div class="product_name">
+                                <div class="product_name limited-text">
                                     ${ListingsList[i].title}
                                 </div>
                               
@@ -395,7 +395,7 @@ fetch(`/listings?page=${page}`, {
                               <form class="bookMarkItem">
                               <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                                 <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                                <i class="bi bi-bookmark-heart"></i>
+                                <i class="bi bi-heart-fill"></i>
                                 </button>
                             </form>
     
@@ -407,7 +407,7 @@ fetch(`/listings?page=${page}`, {
                             <div class="product_name" style="color:var(--AmasLinkColor);">
                                ${ItemPrice}
                             </div>
-                            <div class="product_name">
+                            <div class="product_name limited-text">
                                 ${ListingsList[i].title}
                             </div>
                           

@@ -11,13 +11,19 @@ fetch(`/allCategories`, {
     if(data.success){
         const Cats = data.categories
 
-       
+       categoriesContainer.innerHTML = `<a href="/adIntro" >
+       <li style="background:var(--AmasLinkColor); color:white;">
+                        <div class="icon_container"><i class="bi bi-link-45deg" style="color:white;"></i></div>
+                        <div class="text_container">Post Ad</div>
+                    </li>`
         for(let i=0; i<Cats.length; i++){
             const category = Cats[i]
-            categoriesContainer.innerHTML += `<li>
+            categoriesContainer.innerHTML += `<a href="/cat?c=${category.category_name}"><li>
                         <div class="icon_container"><i>${category.icon}</i></div>
                         <div class="text_container">${category.category_name}</div>
-                    </li>`
+                    </li>
+                  
+                    `
         }
     }else{
         categoriesContainer.innerHTML = `<div>Could Not Get Categories</div>`

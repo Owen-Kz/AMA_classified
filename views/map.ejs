@@ -60,6 +60,11 @@
 
 </head>
 <body>
+    <style>
+        a:hover{
+            color: inherit;
+        }
+    </style>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
 
 
@@ -75,13 +80,7 @@
             <!-- </div> -->
                 <!-- Start Horizontal Navbar  -->
                  <div class="containerForNav">
-                     <!-- Left  -->
-                <!-- <div class="navbar-left">
-                    <div class="image_container">
-                        <img src="/assets/logo.png" alt="Amaslink Logo">
-                    </div>
-                </div> -->
-                <!-- End Left  -->
+              
                 <div class="horizontalNavbar navbarContainer">
                     
 
@@ -91,19 +90,31 @@
                  <!-- End Horizontal navbar  -->
          <!-- END navbar Section  -->
 
-<seciton>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-            border-radius: 25px;
-            margin: auto;
-            border: 1px solid var(--AmasLinkColor);
+         <style>
+            #map {
+                height: 400px;
+                width: 100%;
+                border-radius: 25px;
+                /* margin: auto; */
+               
+                border: 1px solid var(--AmasLinkColor);
+            }
+            
+        @media screen and (max-width:720px) {
+            #map{
+                /* margin-top: 100px; */
+                height: 80vh;
+            }
+            .mapContainer{
+                margin-top:150px;
+            }
+            
         }
-    
-    </style>
+        </style>
+<section style="display: flex; align-items: center; justify-content: center; height: 70vh; width: 100%;" class="mapContainer">
+
 <!-- <div id="map"></div> -->
- <section>
+
 <div id="map"></div>
 </section>
 

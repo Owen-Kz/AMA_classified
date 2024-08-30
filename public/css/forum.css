@@ -23,10 +23,10 @@ hr{
     flex-direction: row;
     align-items: center;
 }
-#CreateForum input{
+#CreateForum input, #CreateAnnouncements, input{
     width: 40%;
 }
-#CreateForum input::placeholder{
+#CreateForum input::placeholder, #CreateAnnouncements, input::placeholder{
     color:#333;
 }
 #CreateForum button{
@@ -34,7 +34,7 @@ hr{
 }
 
 @media screen and (max-width:240px), (max-width:480px), (max-width:720px), (max-width:1080px) {
-    #CreateForum input{
+    #CreateForum input, #CreateAnnouncements input{
         width: 80%;
     }
     #CreateForum {

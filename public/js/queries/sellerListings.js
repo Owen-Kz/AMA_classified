@@ -230,7 +230,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
                           <form class="bookMarkItem">
                           <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                             <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                            <i class="bi bi-bookmark-heart"></i>
+                            <i class="bi bi-heart-fill"></i>
                             </button>
                         </form>
 
@@ -313,7 +313,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
                                   <form class="bookMarkItem">
                                   <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                                     <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                                    <i class="bi bi-bookmark-heart"></i>
+                                    <i class="bi bi-heart-fill"></i>
                                     </button>
                                 </form>
         
@@ -396,7 +396,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
                               <form class="bookMarkItem">
                               <input type="hidden" name="itemID" value="${ListingsList[i].id}">
                                 <button style="width:fit-content; height:fit-content; background:transparent; outline:none; border:none;">
-                                <i class="bi bi-bookmark-heart"></i>
+                                <i class="bi bi-heart-fill"></i>
                                 </button>
                             </form>
     
