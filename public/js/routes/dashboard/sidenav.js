@@ -106,7 +106,7 @@ const admin_nav = `<ul id="sidebarnav" >
                         </li>
 
                                 <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/forum"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/transactions"
                                 aria-expanded="false" >
                                 <i class="bi bi-people" aria-hidden="true"></i>
                                 <span class="hide-menu">Recent Transactions</span>
@@ -181,7 +181,7 @@ const editor_nav = `<ul id="sidebarnav">
                         </li>
 
                                   <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/contact"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/adintro"
                                 aria-expanded="false" >
                                 <i class="bi bi-badge-ad-fill" aria-hidden="true"></i>
                                 <span class="hide-menu">Post AD</span>

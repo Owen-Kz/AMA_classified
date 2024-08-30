@@ -53,6 +53,8 @@ const AllUsers = require("../controllers/admin/allUsers");
 const createAdPage = require("../controllers/createAdPage");
 const AllSubCategories = require("../controllers/allSubCategories");
 const postAd = require("../controllers/postAd");
+const getTransactions = require("../controllers/admin/getAllTransactions");
+const transactionsPage = require("../controllers/admin/transactionsPage");
 
 const router = express.Router();
 
@@ -281,6 +283,8 @@ router.get("/s/announcements", AdminLoggedIn, AnnoucePage)
 router.post("/CreateAnnouncements", AdminLoggedIn, CreateAnnoucements)
 router.get("/s/all", AdminLoggedIn, AllListingsPage)
 router.post("/allListings", AdminLoggedIn, AllListings)
+router.post("/getTransactions", AdminLoggedIn, getTransactions)
+router.get("/s/transactions", AdminLoggedIn, transactionsPage)
 // Approve or Delete Items 
 router.post("/s/:action/item/:id", AdminLoggedIn, adminActions)
 router.get("/s/pending", AdminLoggedIn, pendingPage)
