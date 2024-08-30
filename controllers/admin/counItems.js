@@ -11,7 +11,7 @@ const countAdminListings = async (req,res) =>{
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({userId:req.user.id})
+            body: JSON.stringify({userId:req.cookies._superID})
         });
 
         const responseData = await response.json();
