@@ -49,6 +49,7 @@ fetch(`/allCategories`, {
     }
 }).then(res => res.json())
 .then(data => {
+    if(data){
     if(data.success){
         const Cats = data.categories
 
@@ -57,6 +58,9 @@ fetch(`/allCategories`, {
             category.innerHTML += `<option value='${categoryMain.category_name}'>${categoryMain.category_name}</option>`
         }
     }
+}else{
+    console.log("Could Not Fetch CAtegories")
+}
 })
 
 
@@ -69,13 +73,17 @@ fetch(`/allSubCategories`, {
     }
 }).then(res => res.json())
 .then(data => {
-    if(data.success){
+    if(data){
+        if(data.success){
         const Cats = data.categories
 
         for(let i=0; i<Cats.length; i++){
             const categoryMain = Cats[i]
             subCategories.innerHTML += `<option value='${categoryMain.category_name}'>${categoryMain.category_name}</option>`
         }
+    }
+    }else{
+        console.log("Could not Fetch SubCategories")
     }
 })
 
