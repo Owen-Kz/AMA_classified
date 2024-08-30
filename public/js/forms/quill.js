@@ -4,8 +4,8 @@ const quill = new Quill("#editor", {
       ["bold", "italic", "underline"],
       ["link", "blockquote", "code-block", "image"],
       [{ list: "ordered" }, { list: "bullet" }],
-      [{ header: [1, 2, false] }],
-      [{ align: [] }],
+      // [{ header: [1, 2, false] }],
+      // [{ align: [] }],
      
     ],
     
