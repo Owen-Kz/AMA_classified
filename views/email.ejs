@@ -118,13 +118,11 @@
           </div>
           <div class="card overflow-hidden chat-application">
             <div class="d-flex align-items-center justify-content-between gap-6 m-3 d-lg-none">
-              <button class="btn btn-primary d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-sidebar" aria-controls="chat-sidebar">
-                <i class="ti ti-menu-2 fs-5"></i>
-              </button>
-              <form class="position-relative w-100">
+  
+              <!-- <form class="position-relative w-100">
                 <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search Contact" />
                 <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-              </form>
+              </form> -->
             </div>
     
               <div class="d-flex w-100">
@@ -136,36 +134,13 @@
                       </div>
                   <div class="border-end user-chat-box h-100">
                     <div class="px-4 pt-9 pb-6 d-none d-lg-block">
-                      <form class="position-relative">
+                      <!-- <form class="position-relative">
                         <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search" />
                         <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                      </form>
+                      </form> -->
                     </div>
                     <div class="app-chat">
-                      <ul class="chat-users mh-n100" data-simplebar>
-                        <li>
-                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-start chat-user bg-light-subtle" id="chat_user_1" data-user-id="1">
-                            
-                            <div class="position-relative w-100 ms-2">
-                              <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">James Smith</h6>
-                                
-                              </div>
-                              <h6 class="fw-semibold text-dark">
-                                Kindly check this latest updated
-                              </h6>
-                              <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-flex align-items-center">
-                              
-                            
-                                </div>
-                                <p class="mb-0 fs-2 text-muted">04:00pm</p>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                  
-      
+                      <ul class="chat-users mh-n100" data-simplebar id="emailListContainer">
                       </ul>
                     </div>
                   </div>
@@ -181,21 +156,8 @@
                                 <i class="ti ti-arrow-left"></i>
                               </a>
                             </li>
-                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Star">
-                              <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
-                                <i class="ti ti-star"></i>
-                              </a>
-                            </li>
-                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="important">
-                              <a class="d-block text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
-                                <i class="ti ti-alert-circle"></i>
-                              </a>
-                            </li>
-                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
-                              <a class="text-dark px-2 fs-5 bg-hover-primary nav-icon-hover position-relative z-index-5" href="javascript:void(0)">
-                                <i class="ti ti-trash"></i>
-                              </a>
-                            </li>
+                      
+                    
                           </ul>
                         </div>
                         <div class="position-relative overflow-hidden">
@@ -208,35 +170,17 @@
                                   <div class="d-flex align-items-center gap-2">
                                
                                     <div>
-                                      <h6 class="fw-semibold mb-0">
+                                      <!-- <h6 class="fw-semibold mb-0">
                                         James Smith
                                       </h6>
-                                      <p class="mb-0">hello@loremipsum.com</p>
+                                      <p class="mb-0">hello@loremipsum.com</p> -->
                                     </div>
                                   </div>
                                   
                                 </div>
-                                <div class="border-bottom pb-7 mb-7">
-                                  <h4 class="fw-semibold text-dark mb-3">
-                                    Kindly check this latest updated
-                                  </h4>
-                                  <p class="mb-3 text-dark">Hello Andrew,</p>
-                                  <p class="mb-3 text-dark">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque bibendum
-                                    hendrerit lobortis. Nullam ut lacus eros.
-                                    Sed at luctus urna, eu fermentum diam. In
-                                    et tristique mauris.
-                                  </p>
-                                  <p class="mb-3 text-dark">
-                                    Ut id ornare metus, sed auctor enim.
-                                    Pellentesque nisi magna, laoreet a augue
-                                    eget, tempor volutpat diam.
-                                  </p>
-                                  <p class="mb-0 text-dark">Regards,</p>
-                                  <h6 class="fw-semibold mb-0 text-dark pb-1">
-                                    James Smith
-                                  </h6>
+                                <div class="border-bottom pb-7 mb-7"  id="emailContentContainer">
+                             
+                             
                                 </div>
                          
                               </div>
@@ -289,22 +233,22 @@
               </h5>
               <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form id="sendEmailForm">
+            <form id="emailForm" enctype="multipart/form-data">
             <div class="modal-body">
               
                 <div class="mb-3 input-group">
                   <!-- <input type="email" class="form-control" id="text-email" placeholder="Recipients" /> -->
-                <select class="form-control"  name="recipients" id="recipients"required>
+                <select class="form-control"  name="to" id="to"required>
                     <option value="">Select Recipients</option>
-                    <option value="all">All Users</option>
-                    <option value="news">News Letter Subscribers</option>
+                    <option value="users">All Users</option>
+                    <option value="subscribers">News Letter Subscribers</option>
                 </select>
                 </div>
                 <div>
-                  <input type="text" class="form-control" name="subject" placeholder="subject">
+                  <input type="text" class="form-control" name="subject" placeholder="subject" id="subject">
                   </div>
                   <div>
-                  <textarea class="form-control" id="text-subject" rows="6" placeholder="Message Body" name="message"required></textarea>
+                  <textarea class="form-control" id="text-subject" rows="6" placeholder="Message Body" name="message" required></textarea>
                 </div>
               
             </div>
@@ -341,10 +285,11 @@
   <script src="/js/theme/theme.js"></script>
   <script src="/js/sidebarmenu.js"></script>
   <script src="/js/theme/feather.min.js"></script>
+  <script src="/js/admin/sendMail.js" type="module"></script>
 
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
  
-</body>
+</body> 
 
 </html>

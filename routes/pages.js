@@ -55,6 +55,8 @@ const AllSubCategories = require("../controllers/allSubCategories");
 const postAd = require("../controllers/postAd");
 const getTransactions = require("../controllers/admin/getAllTransactions");
 const transactionsPage = require("../controllers/admin/transactionsPage");
+const sendMail = require("../controllers/admin/sendMail");
+const sentMail = require("../controllers/admin/sentMails");
 
 const router = express.Router();
 
@@ -278,6 +280,8 @@ router.get("/superadmin", AdminLoggedIn, adminDashboard)
 router.post("/adminlogin", adminLogin)
 router.get("/s/forum", AdminLoggedIn, adminForum)
 router.get("/email", AdminLoggedIn, EmailPage)
+router.post("/mail/send", AdminLoggedIn, sendMail)
+router.post("/mail/sent", AdminLoggedIn, sentMail)
 router.get("/admin/countAdminListings", AdminLoggedIn, countAdminListings)
 router.get("/s/announcements", AdminLoggedIn, AnnoucePage)
 router.post("/CreateAnnouncements", AdminLoggedIn, CreateAnnoucements)
