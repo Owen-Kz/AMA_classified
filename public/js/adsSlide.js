@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.ads-slide .slide');
     const totalSlides = slides.length;
     let currentIndex = 0;
-
+ 
     // Initialize the first slide
     slides[currentIndex].style.opacity = 1;
 
