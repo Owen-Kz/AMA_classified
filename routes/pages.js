@@ -57,6 +57,7 @@ const getTransactions = require("../controllers/admin/getAllTransactions");
 const transactionsPage = require("../controllers/admin/transactionsPage");
 const sendMail = require("../controllers/admin/sendMail");
 const sentMail = require("../controllers/admin/sentMails");
+const fullpageAd = require("../controllers/fullPageAd");
 
 const router = express.Router();
 
@@ -73,6 +74,8 @@ router.get("/", LoggedIN, (req,res) =>{
 
     }
 })
+router.get("/fullpageAd", fullpageAd)
+
 
 router.get("/privacy", LoggedIN, (req,res) =>{
     res.render("privacyPolicy", {username:req.user.u_name})
