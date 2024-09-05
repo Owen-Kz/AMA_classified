@@ -46,7 +46,7 @@ const admin_nav = `<ul id="sidebarnav" >
                             </a>
                         </li>
                                 <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/subscribers"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/subscribers"
                                 aria-expanded="false" >
                                 <i class="bi bi-people" aria-hidden="true"></i>
                                 <span class="hide-menu">Subscribed Users</span>
@@ -87,6 +87,20 @@ const admin_nav = `<ul id="sidebarnav" >
                                 aria-expanded="false" >
                                 <i class="bi bi-list-columns-reverse" aria-hidden="true"></i>
                                 <span class="hide-menu">All Listings</span>
+                            </a>
+                        </li>
+                                  <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/brands"
+                                aria-expanded="false" >
+                                <i class="bi bi-list-columns-reverse" aria-hidden="true"></i>
+                                <span class="hide-menu">Brand Adverts</span>
+                            </a>
+                        </li>
+                                  <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/fullpage"
+                                aria-expanded="false" >
+                                <i class="bi bi-list-columns-reverse" aria-hidden="true"></i>
+                                <span class="hide-menu">Full Page Advert</span>
                             </a>
                         </li>
                                 <li class="sidebar-item">

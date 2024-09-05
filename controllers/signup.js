@@ -23,17 +23,17 @@ const signup =  async (req,res) =>{
         });
 
         const responseData = await response.json();
-        // console.log(responseData)
         // Handle the response from the external endpoint
         if(responseData.error){
             res.json({
                 message: responseData.error,
                 externalResponse: responseData
             });
+            
         }else{
             res.json({
                 success: responseData.success,
-                message: 'User registered successfully!',
+                message: 'User registered successfully! Check you email to verify and Login',
                 externalResponse: responseData
             });
         }

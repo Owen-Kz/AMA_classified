@@ -12,22 +12,16 @@ footerContainer.innerHTML = `        <div class="footer">
                     </ul>
 
                     <h3>Subscribe to our News Letter</h3>
-                    <form action="#">
-                        <input type="text" placeholder="What's your name?" required>
-                        <input type="email" placeholder="Email" required>
+                    <form id="newletterForm">
+                        <input type="text" placeholder="What's your name?" required id="nameField">
+                        <input type="email" placeholder="Email" required id="emailField">
                         <button>Subscribe</button>
                     </form>
                 </div>
                 <div class="footer_top_middle">
                     <h3>Latest Ads</h3>
                     <div class="latest_ads_Container">
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
-                        <div class="ad"><img src="/uploads/AMAS.png" alt=""></div>
+                    
 
                     </div>
                  
@@ -54,3 +48,54 @@ footerContainer.innerHTML = `        <div class="footer">
                 
             </div>
         </div>`
+    
+const newletterForm = document.getElementById("newletterForm")
+
+newletterForm.addEventListener("submit", function(e){
+    e.preventDefault()
+    const nameField = document.getElementById("nameField")
+    const emailField = document.getElementById("emailField")
+
+    fetch(`/newsLetter/subscribe`, {
+        method:"POST", 
+        body:JSON.stringify({email:emailField.value, name:nameField.value}),
+        headers:{
+            "Content-type":"application/JSON"
+        }
+    }).then(res => res.json())
+    .then(data=>{
+        if(data.success){
+            alert(data.success)
+        }else{
+            alert(data.error)
+        }
+    })
+})
+
+const AdsContainer = document.querySelector(".latest_ads_Container")
+
+fetch(`/listings?page=1`, {
+    method:"POST"
+}).then(res=>res.json())
+.then(async (data) =>{
+    if(data.success){
+        const ListingsList = data.listings
+        for(i=10; i<19; i++){
+          
+            let image = ""
+        if(ListingsList[i].is_recent_item === "yes"){
+            image = ListingsList[i].image1
+        }else{
+            image = `/uploads/${ListingsList[i].image1}`
+        }
+
+            AdsContainer.innerHTML += `
+            <a href='/l/${ListingsList[i].title}/${ListingsList[i].id}'><div class="ad">
+            
+            <img src="${image}" alt="Image">
+            </div></a>`
+        }
+    }else{
+        console.log(data.error)
+    }
+})

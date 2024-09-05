@@ -21,5 +21,6 @@ registerForm.addEventListener("submit", function(e){
     }).then(res=>res.json())
     .then(data=>{
         alert(data.message)
+        window.location.href = "/login"
     })
 })

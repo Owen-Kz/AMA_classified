@@ -120,8 +120,8 @@
                                 </ul>
                             <hr class="hrr">
                             <p class="text-center">
-                                </p><form method="POST" action="https://amaslink.com/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="0CNNKKJytTNhes1EjXDQA3BRwrNqS1VxILnN5ggK">
-                                 <input name="amount" type="hidden" value="1.00">
+                                </p><form method="POST" action="/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="<%=token%>">
+                                 <input name="amount" type="hidden" value="<%=amount_one%>">
                                  <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Package">
                                 </form>
                             <p></p>
@@ -147,8 +147,8 @@
                                 </ul>
                             <hr class="hrr">
                             <p class="text-center">
-                                </p><form method="POST" action="https://amaslink.com/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="0CNNKKJytTNhes1EjXDQA3BRwrNqS1VxILnN5ggK">
-                                 <input name="amount" type="hidden" value="3.00">
+                                </p><form method="POST" action="https://amaslink.com/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="<%=token%>">
+                                 <input name="amount" type="hidden" value="<%=amount_two%>">
                                  <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Package">
                                 </form>
                             <p></p>
@@ -183,10 +183,9 @@
 <script src="/js/venobox.min.js"></script>
 <script src="/js/slideMain.js"></script>
 <!--End of Tawk.to Script-->
-  <script src="/js/adsSlide.js"></script>
   <script src="/js/navbar.js" type="module"></script>
 
-  <script src="/js/footer.js"></script>
+
   <div id="google_translate_element2">
     <div id="google_translate_element"></div>
   </div>

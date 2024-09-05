@@ -57,13 +57,13 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
            <div class='left'>
                <!-- div.searchContainer  -->
              <div class="searchContainer">
-                <form action="#">
-                    <select name="searchBy" id="searchBy">
+                <form action="/q/listings">
+                    <select name="by" id="searchBy">
                         <option value="Category">Category</option>
                         <option value="Keywords">Keywords</option>
                         <option value="Country">Country</option>
                     </select>
-                    <input type="text" name="q" placeholder="Enter Search Query Here">
+                    <input type="text" name="q" placeholder="Enter Search Query Here" required>
                     <button><i class="bi bi-search" aria-hidden="true"></i></button>
                 </form>
              </div>

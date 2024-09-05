@@ -1,8 +1,8 @@
 const { configDotenv } = require("dotenv")
 
 const AdminLoggedIn = async (req,res, next) =>{
+    try{
     const userToken = req.cookies._ama
-
     if(userToken){
     const data = {
         token: userToken
@@ -30,6 +30,9 @@ const AdminLoggedIn = async (req,res, next) =>{
     req.user = []
     next()
 }
+    }catch(error){
+        res.json({error:error})
+    }
 }
 
 module.exports = AdminLoggedIn

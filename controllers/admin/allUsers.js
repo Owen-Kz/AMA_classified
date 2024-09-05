@@ -3,6 +3,9 @@ const { configDotenv } = require("dotenv");
 const AllUsers = async (req,res) =>{
     if(req.cookies._ama && req.cookies._superID){
     try{
+        const data = {
+            uid:req.cookies._superID
+        }
         const response = await fetch(`${process.env.ENDPOINT}/y/allUsers`, {
             method: 'POST',
             headers: {
@@ -13,11 +16,12 @@ const AllUsers = async (req,res) =>{
         
         const responseData = await response.json(); 
         if(responseData.success){
-            return res.json({success:"Useres", users:responseData.users})
+            return res.json({success:"Users", users:responseData.users})
         }else{
             return res.json({error:responseData.error})
         }
     }catch(error){
+        console.log(error)
         return res.json({error:error})
     }
 }else{

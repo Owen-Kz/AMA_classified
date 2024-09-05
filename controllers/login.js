@@ -1,7 +1,7 @@
 const dotenv = require("dotenv").config();
 
 const login = async (req,res) =>{
-
+try{
     const response = await fetch(`${process.env.ENDPOINT}/y/login`, {
         method: 'POST',
         headers: {
@@ -24,7 +24,9 @@ const login = async (req,res) =>{
     }else{
         return res.json({error:"CouldNotLogin", message:responseData.error})
     }
-
+}catch(error){
+    res.json({error:error})
+}
 }
 
 

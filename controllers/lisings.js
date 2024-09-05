@@ -7,10 +7,18 @@ const listings = async (req, res) => {
     const page = parseInt(req.query.page) || 1; // Ensure page is an integer
     const items_per_page = 20; // Number of items per page
     const OFFSET = (page - 1) * items_per_page;
-
-    const data = {
-        page: req.query.page || 1
-    };
+    let data = {}
+    if(req.query.q){
+        data = {
+            page: req.query.page || 1,
+            search:req.query.q
+        };
+    }else{
+        data = {
+            page: req.query.page || 1
+        };
+    }
+   
 
     try {
         const response = await fetch(`${process.env.ENDPOINT}/y/allListings`, {

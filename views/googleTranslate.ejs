@@ -1,33 +1,33 @@
 
 
-    <div style="position:fixed;bottom:0px;right:8%;z-index:999999; width: fit-content;" id="gtranslate_wrapper"><!-- GTranslate: https://gtranslate.io/ -->
+    <div style="position:fixed;bottom:0px;right:8%;z-index:999999; width: max-content;" id="gtranslate_wrapper"><!-- GTranslate: https://gtranslate.io/ -->
         <style type="text/css">
         .switcher {
             font-family:Arial;font-size:10pt;text-align:left;cursor:pointer;overflow:hidden;
             line-height:17px;
-            width: max-content;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            /* width: max-content; */
+            /* border-top-left-radius: 15px;
+            border-top-right-radius: 15px; */
 
             border: 2px solid var(--AmasLinkColor);
         }
         .switcher a {text-decoration:none;display:block;font-size:10pt;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box; }
         .switcher a img {vertical-align:middle;display:inline;border:0;padding:0;margin:0;opacity:0.8;}
         .switcher a:hover img {opacity:1;}
-        .switcher .selected {background:#fefefe url(//resolvenet.org/modules/contrib/gtranslate/gtranslate-files/switcher.png) repeat-x;position:relative;z-index:9999; width: 51px;}
+        .switcher .selected {background:#fefefe url(//resolvenet.org/modules/contrib/gtranslate/gtranslate-files/switcher.png) repeat-x;position:relative;z-index:9999;}
 
         .switcher .selected a {
             background:url(//resolvenet.org/modules/contrib/gtranslate/gtranslate-files/arrow_down.png) 146px center no-repeat;
             color:#666666;padding:3px 5px;
-            width:51px;
-            border-radius: inherit;
+            width:max-content;
+            /* border-radius: inherit; */
         }
         
         .switcher .selected a.open {background-image:url(//resolvenet.org/modules/contrib/gtranslate/gtranslate-files/arrow_up.png)}
         .switcher .selected a:hover {
             background:#F0F0F0 url(//resolvenet.org/modules/contrib/gtranslate/gtranslate-files/arrow_down.png) 146px center no-repeat;
         }
-        .switcher .option {position:relative;z-index:9998;border-bottom:1px solid #CCCCCC;background-color:#EEEEEE;display:none;width:61px;max-height:198px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;overflow-y:auto;overflow-x:hidden;}
+        .switcher .option {position:relative;z-index:9998;border-bottom:1px solid #CCCCCC;background-color:#EEEEEE;display:none;width:max-content;max-height:198px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;overflow-y:auto;overflow-x:hidden;}
         .switcher .option a {color:#000;padding:3px 5px;}
         .switcher .option a:hover {background:#FFC;}
         .switcher .option a.selected {background:#FFC;}
@@ -151,17 +151,17 @@
 
 
 <script>
-        const limitedTextElements = document.querySelectorAll("a span")
-    const maxLengthTran = 2
-        // Loop through each element and truncate if necessary
-    if(limitedTextElements){
-      for (var i = 0; i < limitedTextElements.length; i++) {
-          var limitedText = limitedTextElements[i];
-          if (limitedText.textContent.length > maxLengthTran) {
-              limitedText.textContent = limitedText.textContent.substring(0, maxLengthTran).toUpperCase();
-          }
-      }
-      }
+    //     const limitedTextElements = document.querySelectorAll("a span")
+    // const maxLengthTran = 2
+    //     // Loop through each element and truncate if necessary
+    // if(limitedTextElements){
+    //   for (var i = 0; i < limitedTextElements.length; i++) {
+    //       var limitedText = limitedTextElements[i];
+    //       if (limitedText.textContent.length > maxLengthTran) {
+    //           limitedText.textContent = limitedText.textContent.substring(0, maxLengthTran).toUpperCase();
+    //       }
+    //   }
+    //   }
       const options = document.querySelector(".option")
       options.setAttribute("style", "display:none;")
 </script>

@@ -119,13 +119,7 @@
               <h5 class="mb-0 fw-semibold text-uppercase"> Members List</h5>
               <nav aria-label="breadcrumb" class="d-flex align-items-center">
                 <ol class="breadcrumb d-flex align-items-center">
-                  <li class="breadcrumb-item">
-                    <a class="text-decoration-none" href="/supreadmin">Home
-                    </a>
-                  </li>
-                  <li class="breadcrumb-item text-primary" aria-current="page">
-                    Members List
-                  </li>
+             
                 </ol>
 
               </nav>
@@ -133,13 +127,13 @@
           </div>
           <div class="card overflow-hidden chat-application">
             <div class="d-flex align-items-center justify-content-between gap-6 m-3 d-lg-none">
-              <button class="btn btn-primary d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-sidebar" aria-controls="chat-sidebar">
+              <!-- <button class="btn btn-primary d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat-sidebar" aria-controls="chat-sidebar">
                 <i class="ti ti-menu-2 fs-5"></i>
-              </button>
-              <form class="position-relative w-100">
+              </button> -->
+              <!-- <form class="position-relative w-100">
                 <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search Contact">
                 <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-              </form>
+              </form> -->
             </div>
             <div class="d-flex w-100">
             
@@ -153,19 +147,9 @@
                       </form>
                     </div>
                     <div class="app-chat">
-                      <ul class="chat-users mh-n100" data-simplebar id="usersList">
+                      <ul class="chat-users mh-n100" id="usersList">
                     
-                        <li>
-                          <a href="javascript:void(0)" class="px-4 py-3 bg-hover-light-black d-flex align-items-center chat-user" id="chat_user_9" data-user-id="1">
-                            <span class="position-relative">
-                              <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-9.jpg" alt="user1" width="40" height="40" class="rounded-circle">
-                            </span>
-                            <div class="ms-6 d-inline-block w-75">
-                              <h6 class="mb-1 fw-semibold chat-title" data-username="James Anderson">Michael Knight</h6>
-                              <span class="fs-2 text-body-color d-block">michael_knight@modernize.com</span>
-                            </div>
-                          </a>
-                        </li>
+                      
                       </ul>
                     </div>
                   </div>
@@ -192,60 +176,9 @@
                         </div>
                         <div class="position-relative overflow-hidden">
                           <div class="position-relative">
-                            <div class="chat-box email-box mh-n100 p-9" data-simplebar="init">
-
-                              <div class="chat-list chat active-chat" data-user-id="1">
-                                <div class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between">
-                                  <div class="d-flex align-items-center gap-3">
-                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg" alt="user4" width="72" height="72" class="rounded-circle">
-                                    <div>
-                                      <h6 class="fs-4 mb-0">Dr. Bonnie Barstow </h6>
-                                      <p class="mb-0">Sales Manager</p>
-                                      <p class="mb-0">Digital Arc Pvt. Ltd.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-4 mb-7">
-                                    <p class="mb-1 fs-2">Phone number</p>
-                                    <h6 class="fw-semibold mb-0">+1 (203) 3458</h6>
-                                  </div>
-                                  <div class="col-8 mb-7">
-                                    <p class="mb-1 fs-2">Email address</p>
-                                    <h6 class="fw-semibold mb-0">alexandra@modernize.com</h6>
-                                  </div>
-                                  <div class="col-12 mb-9">
-                                    <p class="mb-1 fs-2">Address</p>
-                                    <h6 class="fw-semibold mb-0">312, Imperical Arc, New western corner</h6>
-                                  </div>
-                                  <div class="col-4 mb-7">
-                                    <p class="mb-1 fs-2">City</p>
-                                    <h6 class="fw-semibold mb-0">New York</h6>
-                                  </div>
-                                  <div class="col-8 mb-7">
-                                    <p class="mb-1 fs-2">Country</p>
-                                    <h6 class="fw-semibold mb-0">United Stats</h6>
-                                  </div>
-                                </div>
-                                <div class="border-bottom pb-7 mb-4">
-                                  <p class="mb-2 fs-2">Notes</p>
-                                  <p class="mb-3 text-dark">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque bibendum
-                                    hendrerit lobortis. Nullam ut lacus eros. Sed at luctus urna, eu fermentum
-                                    diam.
-                                    In et tristique mauris.
-                                  </p>
-                                  <p class="mb-0 text-dark">Ut id ornare metus, sed auctor enim. Pellentesque
-                                    nisi magna, laoreet a augue eget, tempor volutpat diam.</p>
-                                </div>
-                                <div class="d-flex align-items-center gap-6">
+                            <div class="chat-box email-box mh-n100 p-9" data-simplebar="init" id="userInfoContainer">
+                              <div>Click On a User to view more details</div>
                              
-                              </div>
-                    
-                   
-                      
-
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -292,6 +225,7 @@
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <script src="./assets/extra/js/apps/chat.js"></script>
+  <script src="/js/admin/allUsers.js"></script>
 </body>
 
 </html>

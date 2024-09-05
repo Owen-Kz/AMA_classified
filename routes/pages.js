@@ -58,6 +58,16 @@ const transactionsPage = require("../controllers/admin/transactionsPage");
 const sendMail = require("../controllers/admin/sendMail");
 const sentMail = require("../controllers/admin/sentMails");
 const fullpageAd = require("../controllers/fullPageAd");
+const SubscribeToNewsLetter = require("../controllers/subscribeToNewsLetter");
+const subscribers = require("../controllers/admin/subscribers");
+const subscribersPage = require("../controllers/admin/subscribersPage");
+const BrandAdsPage = require("../controllers/admin/brandAds");
+const AllBrandAds = require("../controllers/admin/getBrandAds");
+const BrandActions = require("../controllers/admin/brandActions");
+const GetBrandInfo = require("../controllers/admin/getBrandInfo");
+const brandPreviewPage = require("../controllers/brandPreviewPage");
+const sponsoredAdverts = require("../controllers/sponsoredAds");
+const verifyAccount = require("../controllers/verifyAccount");
 
 const router = express.Router();
 
@@ -113,6 +123,9 @@ router.post("/signup", signup)
 
 router.get('/listings', LoggedIN, (req,res)=>{
     res.render("listings", {username:req.user.u_name})
+})
+router.get('/q/listings', LoggedIN, (req,res)=>{
+    res.render("searchListings", {username:req.user.u_name})
 })
 
 router.post("/listings", listings)
@@ -256,8 +269,11 @@ router.get("/adintro", LoggedIN, async(req,res) =>{
 router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
     res.render("freeAds", {username:req.user.username})
 })
-router.post("/ad_packs", LoggedIN, adsPacksPage )
+router.post("/ad_packs", LoggedIN, adsPacksPage)
 
+router.post("/auction_item", async (req,res) =>{
+    res.render("comingSoon")
+})
 router.get("/listingFiles/:id", listingFiles)
 router.get("/auctions", LoggedIN, auctionsPage)
 // Seller Profile 
@@ -277,6 +293,8 @@ router.get("/cat", LoggedIN, (req, res) =>{
 })
 router.post("/itemsInCat", LoggedIN, ItemsInCategory)
 router.get("/createAd", LoggedIN, createAdPage)
+router.post("/newsLetter/subscribe", SubscribeToNewsLetter)
+router.post("/sponsoredAdverts", sponsoredAdverts)
 
 // FOr Admin 
 router.get("/superadmin", AdminLoggedIn, adminDashboard)
@@ -296,12 +314,17 @@ router.get("/s/transactions", AdminLoggedIn, transactionsPage)
 router.post("/s/:action/item/:id", AdminLoggedIn, adminActions)
 router.get("/s/pending", AdminLoggedIn, pendingPage)
 router.post("/pendingListings", AdminLoggedIn, Pending)
-router.get("/members-dev", AdminLoggedIn, Members)
-router.get("/members", async (req,res) =>{
-    res.render("comingSoon")
-})
+// router.get("/members-dev", AdminLoggedIn, Members)
+router.get("/members", AdminLoggedIn, Members)
 router.post("/allusers", AdminLoggedIn, AllUsers)
-
+router.get("/s/subscribers", AdminLoggedIn, subscribersPage)
+router.post("/subscribers", AdminLoggedIn, subscribers)
+router.get("/s/brands", AdminLoggedIn, BrandAdsPage)
+router.post("/allBrands", AdminLoggedIn, AllBrandAds)
+router.post("/s/:action/brand/:id", AdminLoggedIn, BrandActions)
+router.get("/brand/:title/:id", LoggedIN, brandPreviewPage)
+router.get("/details/brand/:productTitle/:id", GetBrandInfo)
+router.get("/verify", verifyAccount)
 
 router.get("/superadmin/logout", (req,res) => {
     res.clearCookie('_ama')
