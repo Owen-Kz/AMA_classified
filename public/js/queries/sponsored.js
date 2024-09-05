@@ -93,9 +93,9 @@ fetch(`/sponsoredAdverts`,{
                            <!-- start product info  -->
                            <div class="product_info">
                             <div class="product_name">
-                                This is a demo product that has 20 chrac......
+                                
                             </div>
-                            <div class="location"><i class="location_icon"></i>Nigeria</div>
+                            <div class="location"></div>
                          </div>
                          <!-- end product info  -->
                 </div>`
@@ -120,9 +120,9 @@ fetch(`/sponsoredAdverts`,{
                            <!-- start product info  -->
                            <div class="product_info">
                             <div class="product_name">
-                                This is a demo product that has 20 chrac......
+                               
                             </div>
-                            <div class="location"><i class="location_icon"></i>Nigeria</div>
+                            <div class="location"></div>
                          </div>
                          <!-- end product info  -->
                 </div>`
