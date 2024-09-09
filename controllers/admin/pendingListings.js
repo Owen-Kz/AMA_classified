@@ -1,6 +1,7 @@
 const { configDotenv, config } = require("dotenv")
 
 const Pending = async (req,res) =>{
+    try{
     const {uid, page} = req.body
     const data = {
         page: page,
@@ -26,6 +27,9 @@ const Pending = async (req,res) =>{
     }else{
         return res.json({error:"Incomplete Parameters Provided"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 module.exports = Pending

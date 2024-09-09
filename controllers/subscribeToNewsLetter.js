@@ -1,8 +1,9 @@
 const { configDotenv } = require("dotenv");
 
 const SubscribeToNewsLetter = async (req,res) =>{
-    const {name, email} = req.body 
     try{
+    const {name, email} = req.body 
+  
     if(name && email){
         const data = {
             name: name, 

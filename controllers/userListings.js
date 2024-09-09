@@ -1,12 +1,13 @@
 const { configDotenv, config } = require("dotenv")
 
 const userListings = async (req,res) =>{
+    try{
     const {uid, page} = req.body
     const data = {
         page: page,
         uid:uid
     }
-    console.log(uid)
+  
     if(uid){
         const response = await fetch(`${process.env.ENDPOINT}/y/userListings/${uid}`, {
             method: 'POST',
@@ -27,6 +28,9 @@ const userListings = async (req,res) =>{
     }else{
         return res.json({error:"Incomplete Parameters Provided"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 module.exports = userListings

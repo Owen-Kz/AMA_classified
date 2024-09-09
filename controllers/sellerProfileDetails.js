@@ -1,6 +1,7 @@
 const { configDotenv } = require("dotenv");
 
 const SellerProfileDetails = async (req,res) =>{
+    try{
     const {u_id} = req.body
     const data = {
         id:u_id,
@@ -20,6 +21,9 @@ const SellerProfileDetails = async (req,res) =>{
     }else{
         res.json({error:responseData.error})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 

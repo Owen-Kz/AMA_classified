@@ -4,7 +4,7 @@ const getforums = async (req,res) =>{
     const admin = req.cookies._ama 
     const user = req.cookies._t 
     let ValidToken = ""
-
+try{
     if(admin){
        ValidToken = admin
     }else if(user){
@@ -29,6 +29,9 @@ const getforums = async (req,res) =>{
     }else{
        return res.json({error:"InvalidParametersProvided"})
     }
+   }catch(error){
+      return res.json({error:error.message})
+   }
 }
 
 module.exports = getforums

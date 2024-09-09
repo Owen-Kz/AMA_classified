@@ -1,6 +1,7 @@
 const { configDotenv } = require("dotenv");
 
 const sendMail = async (req,res) =>{
+    try{
     const {to, subject, message} = req.body
 
     if(req.cookies._superID && req.cookies._ama){
@@ -31,6 +32,9 @@ const sendMail = async (req,res) =>{
     }else{
         res.json({error:"Invalid Token Provided for admin"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 

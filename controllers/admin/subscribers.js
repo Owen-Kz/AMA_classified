@@ -2,6 +2,7 @@ const { configDotenv, config } = require("dotenv")
 
 const subscribers = async (req,res) =>{
     const {uid, page} = req.body
+    try{
     const data = {
         page: page,
         uid:uid
@@ -26,6 +27,9 @@ const subscribers = async (req,res) =>{
     }else{
         return res.json({error:"Incomplete Parameters Provided"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 module.exports = subscribers

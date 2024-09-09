@@ -1,9 +1,10 @@
 const listingFiles = async (req, res) =>{
+    try{
     const productId = req.params.id
     const data = {
         id:productId,
     }
-    try{
+   
     const response = await fetch(`${process.env.ENDPOINT}/y/getProductFiles`, {
         method: 'POST',
         headers: {

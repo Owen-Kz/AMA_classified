@@ -1,4 +1,5 @@
 const CreateAnnoucements = async (req,res) =>{
+    try{
     if(req.cookies._ama && req.cookies._superID){
         const {topic, description} = req.body
 
@@ -28,6 +29,9 @@ try{
     }else{
         return res.json({error:"Unauthorized Access Token"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 module.exports = CreateAnnoucements

@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config();
 
 
 const GetProductinfo = async (req,res) =>{
+    try{
     const productId = req.params.id
     const data = {
         id:productId,
@@ -22,6 +23,9 @@ const GetProductinfo = async (req,res) =>{
     }else{
         return res.json({error:responseData.message})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 
 }
 

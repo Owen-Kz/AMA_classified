@@ -1,7 +1,7 @@
 const { configDotenv } = require("dotenv")
 
 const AllCategories = async (req,res) =>{
-
+    try{
     const response = await fetch(`${process.env.ENDPOINT}/y/allCategories`, {
         method: 'POST',
         headers: {
@@ -17,5 +17,8 @@ const AllCategories = async (req,res) =>{
     }else{
         return res.json({error:"Could Not retrieve Categories"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 module.exports = AllCategories

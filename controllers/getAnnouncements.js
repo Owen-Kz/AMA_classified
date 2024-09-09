@@ -1,6 +1,7 @@
 const { configDotenv } = require("dotenv");
 
 const getAnnouncements = async (req,res) =>{
+   try{
      const admin = req.cookies._ama 
      const user = req.cookies._t 
      let ValidToken = ""
@@ -28,6 +29,9 @@ const getAnnouncements = async (req,res) =>{
     }else{
        return res.json({error:"InvalidParametersProvided"})
     }
+   }catch(error){
+      return res.json({error:error.message})
+   }
 }
 
 module.exports = getAnnouncements

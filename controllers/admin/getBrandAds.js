@@ -1,6 +1,7 @@
 const { configDotenv, config } = require("dotenv")
 
 const AllBrandAds = async (req,res) =>{
+    try{
     const {uid, page} = req.body
     const data = {
         page: page,
@@ -26,6 +27,10 @@ const AllBrandAds = async (req,res) =>{
     }else{
         return res.json({error:"Incomplete Parameters Provided"})
     }
+}catch(error){
+    console.log(error)
+    return res.json({error:error.message})
+}
 }
 
 module.exports = AllBrandAds

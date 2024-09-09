@@ -1,8 +1,9 @@
 const { configDotenv } = require("dotenv");
 
 const MyChats = async (req,res) =>{
-    const userId = req.user.id 
     try{
+    const userId = req.user.id 
+    
         const response = await fetch(`${process.env.ENDPOINT}/y/chatList`, {
             method: 'POST',
             headers: {
@@ -20,7 +21,8 @@ const MyChats = async (req,res) =>{
         }
     }
     catch(error){
-        console.log(error.message)
+        console.log(error)
+      return res,json({error:error.message})
     }
 }
 

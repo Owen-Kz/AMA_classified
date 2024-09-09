@@ -1,4 +1,5 @@
 const BrandActions = async (req,res)=>{
+    try{
     if(req.cookies._ama && req.cookies._superID){
         const action  = req.params.action
         const itemId = req.params.id 
@@ -26,6 +27,9 @@ const BrandActions = async (req,res)=>{
     }else{
         res.json({error:"UnAuthorized"})
     }
+}catch(error){
+    return res.json({error:error.message})
+}
 }
 
 

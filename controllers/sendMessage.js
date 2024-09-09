@@ -1,6 +1,7 @@
 const { configDotenv } = require("dotenv");
 
 const SaveMessage = async (data, roomId, userId) => {
+    try {
     const recipientId = data.receiver;
     const content = data.message;
     const senderId = data.name;
@@ -14,7 +15,7 @@ const SaveMessage = async (data, roomId, userId) => {
         sender: senderId
     };
 
-    try {
+  
         const response = await fetch(`${process.env.ENDPOINT}/y/sendMessage`, {
             method: 'POST',
             headers: {

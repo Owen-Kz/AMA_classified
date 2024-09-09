@@ -5,6 +5,7 @@ const path = require("path");
 
 
 const SellerProfileListings = async (req,res) =>{
+    try {
     const sellerId = req.params.id
     const page = parseInt(req.query.page) || 1; // Ensure page is an integer
     const items_per_page = 20; // Number of items per page
@@ -14,7 +15,7 @@ const SellerProfileListings = async (req,res) =>{
         page: req.query.page || 1
     };
 
-    try {
+  
         const response = await fetch(`${process.env.ENDPOINT}/y/sellerListings/${sellerId}`, {
             method: 'POST',
             headers: {

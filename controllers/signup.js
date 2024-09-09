@@ -1,4 +1,5 @@
 const signup =  async (req,res) =>{
+    try {
     const { username, password, country, firstname, lastname, phonenumber, email } = req.body;
 
     // Prepare the data to send in the POST request
@@ -12,7 +13,7 @@ const signup =  async (req,res) =>{
         country, country
     };
 
-    try {
+    
         // Make the POST request to another endpoint
         const response = await fetch(`${process.env.ENDPOINT}/y/register`, {
             method: 'POST',

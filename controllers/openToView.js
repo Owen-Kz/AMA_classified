@@ -1,4 +1,5 @@
 const opentToView = async(req,res, next) =>{
+    try{
     const productTitle = req.params.productTitle
     const productId = req.params.id
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -6,7 +7,7 @@ const opentToView = async(req,res, next) =>{
     const sessionId = req.sessionID;
 
 if(productTitle && productId){
-    try{
+  
     const data = {
         item_id: productId,
         userIp: ip,
@@ -31,9 +32,10 @@ if(productTitle && productId){
         console.log(responseData.error)
         next()
     }
+
+}
 }catch(error){
     console.log(error.message)
-}
 }
 }
  
