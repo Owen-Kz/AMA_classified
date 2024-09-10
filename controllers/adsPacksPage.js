@@ -18,7 +18,7 @@ const adsPacksPage = async (req,res) =>{
         }else if(_token === businessToken){
             res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:businessToken, adPack:package, username:req.user.username})
         }else if(_token === brandsToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:brandsToken, adPackpackage, username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:brandsToken, adPack:package, username:req.user.username})
         }
         else{
             res.render("comingSoon")
