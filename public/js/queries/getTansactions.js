@@ -39,7 +39,7 @@ function formatTimestamp(timestamp) {
                         const AccountStatus = Transaction.payment_status;
                         let StatusColor = "";
             
-                        if (AccountStatus === 'verified') {
+                        if (AccountStatus === 'paid') {
                             StatusColor = "status-green";
                         } else {
                             StatusColor = "status-orange";
@@ -48,10 +48,10 @@ function formatTimestamp(timestamp) {
                         TransactionsContainer.innerHTML += `       
                             <tr>
                                 <td>${Transaction.payment_id}</td>
-                                <td>${Transaction.payer_id}</td>
+                               
                                 <td>${Transaction.payer_email}</td>
                                 <td>
-                                    <p>${Transaction.currency} ${Transaction.amount.toLocaleString()}</p> 
+                                    <p>$ ${(Transaction.amount/100).toFixed(2).toLocaleString()} ${Transaction.currency} </p> 
                                                                       
                                 </td>
                                 <td><p>${formatTimestamp(Transaction.updated_at)}</p></td>

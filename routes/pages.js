@@ -68,6 +68,14 @@ const GetBrandInfo = require("../controllers/admin/getBrandInfo");
 const brandPreviewPage = require("../controllers/brandPreviewPage");
 const sponsoredAdverts = require("../controllers/sponsoredAds");
 const verifyAccount = require("../controllers/verifyAccount");
+const getKeys = require("../controllers/getKey");
+
+const paymentintent = require("../controllers/makePaymentIntent");
+const charge = require("../controllers/charge");
+const paidAdvertPage = require("../controllers/paidAdvertPage");
+const forgotPassword = require("../controllers/utils/forgotPassword");
+const verifyCode = require("../controllers/utils/verifyCode");
+const createPassword = require("../controllers/utils/createPassword");
 
 const router = express.Router();
 
@@ -285,6 +293,7 @@ router.get("/sellerListings/:id", LoggedIN, SellerProfile)
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')
     res.clearCookie("_usid")
+    // res.clearCookie("paymentId")
     res.redirect("/")
 })
 
@@ -325,6 +334,31 @@ router.post("/s/:action/brand/:id", AdminLoggedIn, BrandActions)
 router.get("/brand/:title/:id", LoggedIN, brandPreviewPage)
 router.get("/details/brand/:productTitle/:id", GetBrandInfo)
 router.get("/verify", verifyAccount)
+router.post("/stripe/key", LoggedIN, getKeys)
+
+router.post("/create-payment-intent", LoggedIN, paymentintent)
+router.post("/charge", LoggedIN, charge)
+router.get("/post/advert", LoggedIN, paidAdvertPage)
+
+router.get("/forgot-password", (req,res) =>{
+    res.render("forgotPassword")
+})
+router.get("/verifyCode", async (req,res) =>{
+    if(req.cookies._sessionCode && req.cookies._user){
+        res.render("createPassword")
+    }else if(req.cookies._user && !req.cookies._sessionCode){
+        res.render("verifyCode")
+    }else{
+        res.render("forgotPassword")
+    }
+})
+
+
+router.post("/forgot-password", forgotPassword)
+
+router.post("/verify-code", verifyCode)
+router.post("/create-password", createPassword)
+
 
 router.get("/superadmin/logout", (req,res) => {
     res.clearCookie('_ama')

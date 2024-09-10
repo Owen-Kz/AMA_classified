@@ -120,7 +120,9 @@
                                 </ul>
                             <hr class="hrr">
                             <p class="text-center">
-                                </p><form method="POST" action="/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="<%=token%>">
+                                </p><form method="POST" action="/charge" accept-charset="UTF-8">
+                                    <input name="_token" type="hidden" value="<%=token%>">
+                                <input type="hidden" name="package" value="<%= adPack %>">
                                  <input name="amount" type="hidden" value="<%=amount_one%>">
                                  <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Package">
                                 </form>
@@ -147,7 +149,8 @@
                                 </ul>
                             <hr class="hrr">
                             <p class="text-center">
-                                </p><form method="POST" action="https://amaslink.com/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="<%=token%>">
+                                </p><form method="POST" action="/charge" accept-charset="UTF-8"><input name="_token" type="hidden" value="<%=token%>">
+                                    <input type="hidden" name="package" value="<%= adPack %>">
                                  <input name="amount" type="hidden" value="<%=amount_two%>">
                                  <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Package">
                                 </form>
