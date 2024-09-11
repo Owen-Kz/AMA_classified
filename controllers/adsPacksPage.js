@@ -10,15 +10,15 @@ const adsPacksPage = async (req,res) =>{
 
     if(req.cookies._t){
         if(_token === inventoryToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:inventoryToken, adPack:package, username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:inventoryToken, adPack:package, username:req.user.u_name})
         }else if(_token === sportsToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:sportsToken, adPack:package,username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:sportsToken, adPack:package,username:req.user.u_name})
         }else if(_token === auctionToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:auctionToken, adPack:package, username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:auctionToken, adPack:package, username:req.user.u_name})
         }else if(_token === businessToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:businessToken, adPack:package, username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:businessToken, adPack:package, username:req.user.u_name})
         }else if(_token === brandsToken){
-            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:brandsToken, adPack:package, username:req.user.username})
+            res.render("inventoryAd", {amount_one:amount1, amount_two:amount2,token:brandsToken, adPack:package, username:req.user.u_name})
         }
         else{
             res.render("comingSoon")
