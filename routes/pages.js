@@ -271,12 +271,21 @@ router.get("/mapDev", LoggedIN,  async(req,res) =>{
 })
 
 router.get("/adintro", LoggedIN, async(req,res) =>{
+    if(req.cookies._t && req.cookies._usid){
     res.render("adsIntro.ejs", {username:req.user.u_name})
+    }else{
+        res.render("login")
+    }
 })
 
 router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
+    if(req.cookies._t && req.cookies._usid){
     res.render("freeAds", {username:req.user.username})
+    }else{
+        res.render("login")
+    }
 })
+
 router.post("/ad_packs", LoggedIN, adsPacksPage)
 
 router.post("/auction_item", async (req,res) =>{
