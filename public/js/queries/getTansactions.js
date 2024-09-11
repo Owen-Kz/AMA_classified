@@ -13,7 +13,7 @@ function formatTimestamp(timestamp) {
     const hours = ('0' + date.getHours()).slice(-2);
     const minutes = ('0' + date.getMinutes()).slice(-2);
   
-    return `${day} ${monthName}, ${year}`;
+    return `${day} ${monthName}, ${year} at ${hours}:${minutes}`;
   }
 
     fetch(`/getTransactions`, {
