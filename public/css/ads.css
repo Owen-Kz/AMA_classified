@@ -12,7 +12,9 @@ body{
     justify-content: space-between;
     /* background-color: transparent; */
 }
-
+.container-fluid .col-sm-2, .container .col-sm-2 h6{
+    color:var(--AmasLinkColor)
+}
 .container-fluid .col-sm-2, .container .col-sm-2{
     background-color: white;
     display: flex;
@@ -24,6 +26,7 @@ body{
     min-width: 300px;
     min-height: 400px;
     height: 50%;
+    margin-top: 10px;
     box-shadow: 2px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .container-fluid .in, .container-fluid .btn:not(.btn-info){

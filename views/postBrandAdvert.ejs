@@ -206,6 +206,8 @@
                   </div>
                   <!-- start Basic Area Chart -->
                    <form id="postAdForm" enctype="multipart/form-data">
+                    <input type="hidden" readonly value="<%=advertType%>" name="advert_type">
+                    <input type="hidden" name="advert_duration" value="<%=advertDuration%>" readonly>
                   <div class="row">
                     <div class="col-lg-8 ">
                       <div class="card">
@@ -235,27 +237,27 @@
                           </div>
                         </div>
                       </div>
-                      <!-- <div class="card">
+                            - <div class="card">
                         <div class="card-body">
-                   
-                 
+                            <h4 class="card-title mb-7">Additional Links</h4>
+                            <label for="url">Website Link (optional)</label>                   
+                          <input type="url" class="form-control" name="url" placeholder="Enter a link to your website or social media page">
+            
                         </div>
-                      </div> -->
-                   
+                      </div> 
                       <div class="card">
                         <div class="card-body">
-                          <h4 class="card-title mb-7">Pricing ($)</h4>
-        
-                          <div>
-                            <div class="mb-7">
-                              <label class="form-label">Price<span class="text-danger">*</span>
-                              </label>
-                              <input type="text" class="form-control" placeholder="Item Price" name="price">
-                              <p class="fs-2">Enter the dollar quivalent of your price.</p>
-                            </div>
-                          </div>
+                          <h4 class="card-title mb-7">Media</h4>
+                          <label for="imageFile">Image File(s)</label>
+                        <input type="file" accept=".jpg, .png, .jpeg" class="form-control" name="imageFile[]">
+                        <label for="videoFile">Video File (optional)</label>
+                        <input type="file", accept=".mp4" class="form-control" name="videoFile" id="videoFile">
+                        <label for="VideoURL">Video URL</label>
+                        <input type="url" class="form-control" name="videoURL">
                         </div>
                       </div>
+                   
+                
                       <div class="form-actions mb-5">
                         <button type="submit" class="btn btn-primary">
                           Save changes
@@ -288,57 +290,9 @@
                             </p>
                           </div>
                         </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-7">
-                              <h4 class="card-title">Location</h4>
-                           
-                            </div>
-                            <div  class="form-horizontal">
-                              <div>
-                                <input class="form-control " name="country" placeholder="Enter item Location">
-                                 
-                                <p class="fs-2 mb-0">
-                                  Enter the items country or city.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                              <div class="d-flex align-items-center justify-content-between mb-7">
-                                <h4 class="card-title">Purpose</h4>
-                             
-                              </div>
-                              <div  class="form-horizontal">
-                                <div>
-                                  <input class="form-control " name="purpose" placeholder="Enter Purpose of Listing">
-                                   
-                                  <p class="fs-2 mb-0">
-                                    In one word, Why do you want to list this item.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-body">
-                              <div class="d-flex align-items-center justify-content-between mb-7">
-                                <h4 class="card-title">Condition</h4>
-                             
-                              </div>
-                              <div  class="form-horizontal">
-                                <div>
-                                  <input class="form-control " name="condition" placeholder="Enter item Condition">
-                                   
-                                  <p class="fs-2 mb-0">
-                                    What's the condition of the Item, leave blank if not applicable.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                   
+                   
+                       
                         <div class="card">
                           <div class="card-body">
                             <h4 class="card-title mb-7">Listing Details</h4>
@@ -430,7 +384,7 @@
   <script src="/assets/libs/jquery.repeater/jquery.repeater.min.js"></script>
 
   <script src="/js/forms/repeater-init.js"></script>
-  <script src="/js/postAd.js"></script>
+  <script src="/js/postBrandAdvert.js"></script>
 </body>
 
 </html>

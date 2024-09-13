@@ -45,7 +45,9 @@ const upload = multer({
   }
 });
 
-const PostAd = (req, res) => {
+
+const PostBrandAd = (req, res) => {
+    
     if (req.cookies._t && req.cookies._usid) {
   upload.fields([
     { name: 'imageFile[]', maxCount: 10 },
@@ -57,6 +59,7 @@ const PostAd = (req, res) => {
       if (err.code === 'LIMIT_FILE_SIZE') {
         return res.status(400).json({ error: 'One or more files exceed the maximum allowed size of 5MB' });
       }
+      console.log(err)
       return res.status(500).json({ error: 'File upload failed' });
     }
 
@@ -104,25 +107,27 @@ const PostAd = (req, res) => {
       // You can now save the file URLs or other data to your database
  
     //   Send Data to backedn for processing 
-    const { title, description, price, category, subCategories, videoURL, country, condition, purpose} = req.body;
+    const { title, description, category, subCategories, videoURL, country, url, advert_type, advert_duration} = req.body;
 
 const data = {
           title,
           uid:req.cookies._usid,
           description,
-          price, 
           category,
           subCategories,
           videoURL,
-          condition:condition,
+          url,
+          advert_type,
+          advert_duration,
+      
           country:country, 
-          purpose:purpose,
+   
           imageFiles: uploadedImageUrls,
           videoFile: videoFile ? uploadedVideoUrl : null,
           thumbnail: thumbnail ? uploadedThumbnailUrl : null,
         }; 
 
-        const response = await fetch(`${process.env.ENDPOINT}/y/postAd`, {
+        const response = await fetch(`${process.env.ENDPOINT}/y/postBrandAd`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -132,7 +137,6 @@ const data = {
 
         const responseData = await response.json();
 
-
         if (responseData.success) {
           return res.json({ success: responseData.success });
         } else {
@@ -140,6 +144,7 @@ const data = {
         }
     //   res.status(200).send({ success: 'Files  uploaded successfully' });   
     } catch (error) { 
+        console.log(error)
       return res.json({error:error.message});
     //   res.status(500).send('An error occurred during file upload');
     }
@@ -149,4 +154,4 @@ const data = {
   }
 };
 
-module.exports = PostAd;
+module.exports = PostBrandAd;

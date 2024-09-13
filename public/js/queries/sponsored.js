@@ -1,6 +1,22 @@
 const sponsoredAdvertsContainer = document.getElementById("sponsoredAdverts")
 
-
+{/* <div class="location"><i class="location_icon"></i>${advert.country}</div> */}
+async function GetProductFiles(productId) {
+    return fetch(`/listingFiles/${productId}`, {
+         method: "GET"
+     }).then(res => res.json())
+     .then(data => {
+         if(data){
+         if (data.success) {
+             return data.productFiles
+         }else{
+             return  []
+         }
+     }else{
+         return []
+     }
+     })
+ }
 fetch(`/sponsoredAdverts`,{
     method:"POST",
     header:{
@@ -9,11 +25,11 @@ fetch(`/sponsoredAdverts`,{
 }).then(res =>res.json())
 .then(data=>{
     if(data){
-  
+        
         if(data.success){
             const sponsoredAdverts = data.adverts
             if(sponsoredAdverts.length > 0){
-      
+
             
             for(let i=0; i<sponsoredAdverts.length; i++){
                 const advert = sponsoredAdverts[i]
@@ -48,7 +64,8 @@ fetch(`/sponsoredAdverts`,{
                 }
                 
                 sponsoredAdvertsContainer.innerHTML += `
-                <a href="/advert/${advert.title}/${advert.id}"<div class="sponsoredAd">
+                <a href="/brand/${advert.title}/${advert.item_id}">
+                <div class="sponsoredAd">
                     <div class="image_container">
                     ${ImageContainer}
 
@@ -66,15 +83,15 @@ fetch(`/sponsoredAdverts`,{
                             <div class="product_name">
                                 ${advert.title}
                             </div>
-                            <div class="location"><i class="location_icon"></i>${advert.country}</div>
+                        
                          </div>
                          <!-- end product info  -->
-                </div>`
+                </div></a>`
             }
         })
             }
 
-            for(let i=0; i<4; i++){
+            for(let i=0; i<2; i++){
                 sponsoredAdvertsContainer.innerHTML += `
                  <div class="sponsoredAd">
                     <div class="image_container">

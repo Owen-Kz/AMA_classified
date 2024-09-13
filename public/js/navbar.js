@@ -9,8 +9,12 @@
 //     }
 // });
 
-// const { GetCookie } = require("./routes/setCookie")
-
+// // const { GetCookie } = require("./routes/setCookie")
+// <select name="by" id="searchBy">
+// <option value="Category">Category</option>
+// <option value="Keywords">Keywords</option>
+// <option value="Country">Country</option>
+// </select>
 const navbarContainer = document.querySelectorAll(".navbarContainer")
 const topBarContainer = document.getElementById("topBarContainer")
 async function ProfileData(){
@@ -58,12 +62,8 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
                <!-- div.searchContainer  -->
              <div class="searchContainer">
                 <form action="/q/listings">
-                    <select name="by" id="searchBy">
-                        <option value="Category">Category</option>
-                        <option value="Keywords">Keywords</option>
-                        <option value="Country">Country</option>
-                    </select>
-                    <input type="text" name="q" placeholder="Enter Search Query Here" required>
+               
+                    <input type="text" name="q" placeholder="Search for an item by name, keyword or category" required>
                     <button><i class="bi bi-search" aria-hidden="true"></i></button>
                 </form>
              </div>

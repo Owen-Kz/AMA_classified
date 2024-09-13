@@ -159,7 +159,9 @@
                         <div class="slide-caption small">
                             <div class="inner-layer">
                                 <div data-animation="fade-in-bottom" data-delay="3s">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae deserunt libero veritatis perspiciatis asperiores <br />voluptate dicta illo consequuntur aperiam, fuga soluta dolore eos nulla dolorum accusamus modi. Quae, ab impedit. 
+                                    Need help? Our experts are ready to provide personalized support and guidance.
+                                    <br>
+                                    From troubleshooting to expert advice, we're committed to helping you achieve your goals.
                                     
                                 </div>
                             </div>
@@ -204,9 +206,7 @@
                         <div class="slide-caption small">
                             <div class="inner-layer">
                                 <div data-animation="fade-in-bottom" data-delay="3s">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Incidunt sapiente optio veniam vel doloribus modi facere?
-                                    <br />Nam deleniti rem reiciendis officia. Eveniet doloremque sequi assumenda quod rerum quibusdam sed expedita.
-                                    
+                                    Explore a vast selection of products, from electronics and fashion to home goods and more. <br>We source the best deals from trusted sellers worldwide, ensuring you find what you need, when you need it.
                                 </div>
                             </div>
                         </div>
@@ -261,13 +261,11 @@
      <!-- Start Ads Section  -->
       <section class="AdsSection backgroundParent">
         <!-- Start slides -->
-        <div class="ads-slide">
-            <div class="slide slide-one"></div>
-            <div class="slide slide-two"></div>
+        <div class="ads-slide" id="slideAdvertContainer">
+           <!-- <div class="slide slide-one"></div> -->
+            <!-- <div class="slide slide-two"></div>
             <div class="slide slide-three"></div>
-            <a href="#">
-                <div class="slide slide-four" style="background-color: rgb(40, 40, 40); background-image: url(/assets/ad_space.png);"></div>
-            </a>
+       -->
             <!-- Add more slides as needed -->
             <button class="arrow left-arrow"><i class="bi bi-arrow-left"></i></button>
             <button class="arrow right-arrow"><i class="bi bi-arrow-right"></i></button>
@@ -276,8 +274,8 @@
         <!-- End slides  -->
 
         <!-- Start static banner  -->
-         <div class="static-ad">
-            <img src="/assets/ad_space.png" alt="Vacant Ad Space">
+         <div class="static-ad" id="staticAdvertContainer" style="background: #333;">
+            
          </div>
         <!-- End Ad Static Banner  -->
       </section>
@@ -367,13 +365,17 @@
     <script src="/js/slick.min.js"></script>
     <script src="/js/venobox.min.js"></script>
     <script src="/js/slideMain.js"></script>
+
     <!--End of Tawk.to Script-->
       <script src="/js/adsSlide.js"></script>
+<script src="/js/queries/getSlideShowAdverts.js"></script>
+
       <script src="/js/navbar.js" type="module"></script>
       <script src="/js/queries/listings.js"></script>
       <script src="/js/queries/categories.js"></script>
       <script src="/js/queries/fullpageadvert.js"></script>
       <script src="/js/queries/sponsored.js"></script>
+      <script src="/js/queries/getStaticAd.js"></script>
       <script src="/js/googleTranslate.js"></script>
 </body>
 </html>

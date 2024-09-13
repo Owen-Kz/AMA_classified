@@ -45,11 +45,11 @@ const upload = multer({
   }
 });
 
-const PostAd = (req, res) => {
+
+const postFullpageAd = (req, res) => {
+    
     if (req.cookies._t && req.cookies._usid) {
   upload.fields([
-    { name: 'imageFile[]', maxCount: 10 },
-    { name: 'videoFile', maxCount: 1 },
     { name: 'thumbnail', maxCount: 1 },
   ])(req, res, async (err) => {
     if (err) {
@@ -57,12 +57,12 @@ const PostAd = (req, res) => {
       if (err.code === 'LIMIT_FILE_SIZE') {
         return res.status(400).json({ error: 'One or more files exceed the maximum allowed size of 5MB' });
       }
+      console.log(err)
       return res.status(500).json({ error: 'File upload failed' });
     }
 
     try {
-      const imageFiles = req.files['imageFile[]'] || [];
-      const videoFile = req.files['videoFile'] ? req.files['videoFile'][0] : null;
+
       const thumbnail = req.files['thumbnail'] ? req.files['thumbnail'][0] : null;
 
       // Upload files to Cloudinary and save them to your database or process them
@@ -70,10 +70,7 @@ const PostAd = (req, res) => {
         return new Promise((resolve, reject) => {
             let uploadOptions = {};
         
-            // Check if the file is a video
-            if (file.mimetype.startsWith('video/')) {
-              uploadOptions.resource_type = 'video';
-            }
+   
         
             cloudinary.uploader.upload(file.path, uploadOptions, (error, result) => {
               if (error) {
@@ -96,33 +93,26 @@ const PostAd = (req, res) => {
           });
       };
 
-      // Process all files
-      const uploadedImageUrls = await Promise.all(imageFiles.map(file => uploadToCloudinary(file)));
-      const uploadedVideoUrl = videoFile ? await uploadToCloudinary(videoFile) : null;
+
+  
       const uploadedThumbnailUrl = thumbnail ? await uploadToCloudinary(thumbnail) : null;
 
       // You can now save the file URLs or other data to your database
  
     //   Send Data to backedn for processing 
-    const { title, description, price, category, subCategories, videoURL, country, condition, purpose} = req.body;
+    const { advert_type, advert_duration} = req.body;
 
 const data = {
-          title,
+     
           uid:req.cookies._usid,
-          description,
-          price, 
-          category,
-          subCategories,
-          videoURL,
-          condition:condition,
-          country:country, 
-          purpose:purpose,
-          imageFiles: uploadedImageUrls,
-          videoFile: videoFile ? uploadedVideoUrl : null,
+
+          advert_type,
+          advert_duration,
           thumbnail: thumbnail ? uploadedThumbnailUrl : null,
         }; 
+        console.log(advert_duration)
 
-        const response = await fetch(`${process.env.ENDPOINT}/y/postAd`, {
+        const response = await fetch(`${process.env.ENDPOINT}/y/postFullpageAd`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -132,7 +122,6 @@ const data = {
 
         const responseData = await response.json();
 
-
         if (responseData.success) {
           return res.json({ success: responseData.success });
         } else {
@@ -140,6 +129,7 @@ const data = {
         }
     //   res.status(200).send({ success: 'Files  uploaded successfully' });   
     } catch (error) { 
+        console.log(error)
       return res.json({error:error.message});
     //   res.status(500).send('An error occurred during file upload');
     }
@@ -149,4 +139,4 @@ const data = {
   }
 };
 
-module.exports = PostAd;
+module.exports = postFullpageAd;

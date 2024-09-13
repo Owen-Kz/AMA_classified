@@ -174,7 +174,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
     
-    <h4 class="page-title">Post Ad</h4>
+    <h4 class="page-title">Post Ad - Full Page Advert</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -206,56 +206,33 @@
                   </div>
                   <!-- start Basic Area Chart -->
                    <form id="postAdForm" enctype="multipart/form-data">
+                    <input type="hidden" readonly value="<%=advertType%>" name="advert_type">
+                    <input type="hidden" name="advert_duration" value="<%=advertDuration%>" readonly>
                   <div class="row">
                     <div class="col-lg-8 ">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between align-items-center mb-7">
-                            <h4 class="card-title">General</h4>
-        
-                            <button class="navbar-toggler border-0 shadow-none d-md-none btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                              <!-- <i class="ti-menu ti-close"></i> -->
-                            Add Cover Image
-                            </button>
-                          </div>
-                          <div  class="form-horizontal">
-                            <div class="mb-4">
-                              <label class="form-label">Title <span class="text-danger">*</span>
-                              </label>
-                              <input type="text" class="form-control" placeholder="Product Name" name="title"
-                              required>
-                              <p class="fs-2">A title is required and recommended to be unique.</p>
-                            </div>
-                            <div>
-                              <label class="form-label">Description</label>
-                              <div id="editor">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title mb-7">Thumbnail</h4>
+                              <div action="eco-add-product.html#" class="dropzone dz-clickable mb-2">
+                                <div class="dz-default dz-message">
+                                  <button class="dz-button" type="button">Click to select an Image</button>
+          
+                                  <input type="file" id="thumbnail" name="thumbnail" accept="image/*" hidden required>
+                                  <div id="image-preview">
+                                      <p>No image selected</p>
+                                  </div>
+                                  <div id="removeImageContainer" style="padding: 10px;">
+                                      <button type="button" class="btn btn-danger" style="border: none; outline: none;">Remove Image</button>
+                                  </div>
+                                </div>
                               </div>
-                              <p class="fs-2 mb-0">Set a description to the item for better visibility.</p>
+                              <p class="fs-2 text-center mb-0">
+                                Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted.
+                              </p>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <!-- <div class="card">
-                        <div class="card-body">
-                   
-                 
-                        </div>
-                      </div> -->
-                   
-                      <div class="card">
-                        <div class="card-body">
-                          <h4 class="card-title mb-7">Pricing ($)</h4>
-        
-                          <div>
-                            <div class="mb-7">
-                              <label class="form-label">Price<span class="text-danger">*</span>
-                              </label>
-                              <input type="text" class="form-control" placeholder="Item Price" name="price">
-                              <p class="fs-2">Enter the dollar quivalent of your price.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                     
+                
                       <div class="form-actions mb-5">
                         <button type="submit" class="btn btn-primary">
                           Save changes
@@ -265,111 +242,7 @@
                         </button>
                       </div>
                     </div>
-                    <div class="col-lg-4">
-                      <div class="offcanvas-md offcanvas-end overflow-auto" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title mb-7">Thumbnail</h4>
-                            <div action="eco-add-product.html#" class="dropzone dz-clickable mb-2">
-                              <div class="dz-default dz-message">
-                                <button class="dz-button" type="button">Click to select an Image</button>
-        
-                                <input type="file" id="thumbnail" name="thumbnail" accept="image/*" hidden required>
-                                <div id="image-preview">
-                                    <p>No image selected</p>
-                                </div>
-                                <div id="removeImageContainer" style="padding: 10px;">
-                                    <button type="button" class="btn btn-danger" style="border: none; outline: none;">Remove Image</button>
-                                </div>
-                              </div>
-                            </div>
-                            <p class="fs-2 text-center mb-0">
-                              Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-7">
-                              <h4 class="card-title">Location</h4>
-                           
-                            </div>
-                            <div  class="form-horizontal">
-                              <div>
-                                <input class="form-control " name="country" placeholder="Enter item Location">
-                                 
-                                <p class="fs-2 mb-0">
-                                  Enter the items country or city.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                              <div class="d-flex align-items-center justify-content-between mb-7">
-                                <h4 class="card-title">Purpose</h4>
-                             
-                              </div>
-                              <div  class="form-horizontal">
-                                <div>
-                                  <input class="form-control " name="purpose" placeholder="Enter Purpose of Listing">
-                                   
-                                  <p class="fs-2 mb-0">
-                                    In one word, Why do you want to list this item.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-body">
-                              <div class="d-flex align-items-center justify-content-between mb-7">
-                                <h4 class="card-title">Condition</h4>
-                             
-                              </div>
-                              <div  class="form-horizontal">
-                                <div>
-                                  <input class="form-control " name="condition" placeholder="Enter item Condition">
-                                   
-                                  <p class="fs-2 mb-0">
-                                    What's the condition of the Item, leave blank if not applicable.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title mb-7">Listing Details</h4>
-                            <div class="mb-3">
-                              <label class="form-label">Categories</label>
-                              
-                              <select class="select2 form-control" single="single" name="category" id="category" required>
-                                <option value="">Select a Category</option>
-                              </select>
-                              <p class="fs-2 mb-0">
-                                Add product to a category.
-                              </p>
-                            </div>
-                            <!-- <button type="button" class="btn bg-primary-subtle text-primary ">
-                              <span class="fs-4 me-1">+</span>
-                              Create New Category
-                            </button> -->
-                            <div class="mt-7">
-                              <label class="form-label">Sub Categories</label>
-                              <select class="select2 form-control" multiple="multiple" name="subCategories" id="subCats">
-                               
-                              </select>
-                              <p class="fs-2 mb-0">
-                                Add product to a category.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-               
-                      </div>
-                    </div>
+                  
                   </div>
                   </form>
                   <!-- end Basic Area Chart -->
@@ -421,7 +294,7 @@
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <!-- <script src="/assets/libs/quill/dist/quill.min.js"></script> -->
-  <script src="/js/forms/quill.js"></script>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js" integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -430,7 +303,7 @@
   <script src="/assets/libs/jquery.repeater/jquery.repeater.min.js"></script>
 
   <script src="/js/forms/repeater-init.js"></script>
-  <script src="/js/postAd.js"></script>
+  <script src="/js/postFullPageAdvert.js"></script>
 </body>
 
 </html>

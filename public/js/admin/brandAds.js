@@ -173,6 +173,8 @@ function booksNavigation(totalPagesBrandAds, currentPage) {
                                         <td class="imagesRow">
                                        ${AllImages}
                                        </td>
+                                       <td>${BrandAdsData.type}</td>
+
 
                                        <td class="status">
                                         ${Status}

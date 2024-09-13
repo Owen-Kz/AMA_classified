@@ -76,11 +76,19 @@ const paidAdvertPage = require("../controllers/paidAdvertPage");
 const forgotPassword = require("../controllers/utils/forgotPassword");
 const verifyCode = require("../controllers/utils/verifyCode");
 const createPassword = require("../controllers/utils/createPassword");
+const sponsoredAdvertPage = require("../controllers/specialAdverts/sponsoredAdvertPage");
+const FullPageAdvertPage = require("../controllers/specialAdverts/fullPageAdvertPage");
+const StaticAdvertPage = require("../controllers/specialAdverts/staticAdvertPage");
+const slideshowAdvertPage = require("../controllers/specialAdverts/slideshowAdvertPage");
+const PostBrandAd = require("../controllers/postBrandAd");
+const getStaticAds = require("../controllers/specialAdverts/getStaticAds");
+const getSlideShowAdverts = require("../controllers/specialAdverts/getSlideshowAdvert");
+const postFullpageAd = require("../controllers/postFullPageAdvert");
+const fullpageActions = require("../controllers/admin/fullpageActions");
 
 const router = express.Router();
 
 router.use(express.json());
-const endpoint = `${process.env.ENDPOINT}/`
 
 
 
@@ -229,6 +237,8 @@ router.post("/userListings", userListings)
  
 // Create ADs 
 router.post("/postAd", LoggedIN, postAd)
+router.post("/postBrandAdvert", LoggedIN, PostBrandAd)
+router.post("/postFullpageAdvert", LoggedIN, postFullpageAd)
 
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
@@ -328,6 +338,13 @@ router.get("/s/all", AdminLoggedIn, AllListingsPage)
 router.post("/allListings", AdminLoggedIn, AllListings)
 router.post("/getTransactions", AdminLoggedIn, getTransactions)
 router.get("/s/transactions", AdminLoggedIn, transactionsPage)
+router.get("/s/fullpage", AdminLoggedIn, async (req,res) =>{
+    if(req.cookies._superID && req.cookies._ama){
+        res.render("adminFullPageAdvert", {username:req.user.u_name})
+    }else{
+        res.render("adminLogin")
+    }
+})
 // Approve or Delete Items 
 router.post("/s/:action/item/:id", AdminLoggedIn, adminActions)
 router.get("/s/pending", AdminLoggedIn, pendingPage)
@@ -344,11 +361,17 @@ router.get("/brand/:title/:id", LoggedIN, brandPreviewPage)
 router.get("/details/brand/:productTitle/:id", GetBrandInfo)
 router.get("/verify", verifyAccount)
 router.post("/stripe/key", LoggedIN, getKeys)
+router.post("/s/:action/fullpage/:id", AdminLoggedIn, fullpageActions)
 
 router.post("/create-payment-intent", LoggedIN, paymentintent)
 router.post("/charge", LoggedIN, charge)
 router.get("/post/advert", LoggedIN, paidAdvertPage)
-
+router.get("/post/advert/slideshow", LoggedIN, slideshowAdvertPage)
+router.get("/post/advert/sponsored", LoggedIN, sponsoredAdvertPage)
+router.get("/post/advert/fullpage", LoggedIN, FullPageAdvertPage)
+router.get("/post/advert/static", LoggedIN, StaticAdvertPage)
+router.post("/staticAdverts", getStaticAds)
+router.get("/SlideShowAdverts", getSlideShowAdverts)
 router.get("/forgot-password", (req,res) =>{
     res.render("forgotPassword")
 })
