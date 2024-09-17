@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta charset="utf-8">
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -11,13 +11,42 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
+	<meta name="author" content="Benson Michael Owen - OwenKz">
+    <title>Dashboard | Amaslink</title>
+    <meta name="title" Content="Amaslink Classified - Dashboard">
+
+    <link rel="shortcut icon" href="/plugins/images/favicon.png" type="image/x-icon">
+    
+    <link rel="apple-touch-icon" href="/plugins/images/favicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaslink Classifed - Home">
+
+    <meta itemprop="image" content="/assets/logo.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amaslink Classified">
+   
+    <meta property="og:image" content="/assets/logo.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="www.amaslink.com/dashboard">
+    
+    <meta name="twitter:card" content="summary_large_image">
 
 
-    <meta name="robots" content="noindex,nofollow">
-    <title>Edit | Amaslink</title>
-        <!-- Favicon icon -->
+       <!-- Core Css -->
+       <link rel="stylesheet" href="/assets/css/styles.css" />
+
+   
+       <link rel="stylesheet" href="/assets/libs/dropzone/dist/min/dropzone.min.css">
+       <link rel="stylesheet" href="/assets/libs/select2/dist/css/select2.min.css">
+   
+
+    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" />
@@ -27,34 +56,49 @@
     <!-- Custom CSS -->
     <link href="/css/style.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/css/general.css"> -->
-     <link rel="stylesheet" href="/css/style.css">
-    <link href="/css/table.css" rel="stylesheet">
+
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/css/forms.css">
-<link rel="stylesheet" href="/css/profile.css">
+
+<link rel="stylesheet" href="/css/style.css">
+<link href="/css/table.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/membersList.css">
+
+<!-- QUILL JS  -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<!-- END QUILL JS  -->
 
 </head>
 
 <body>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
-
     <style>
         #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
-            background: var(--AmasLinkColor);
+            background-color: var(--AmasLinkColor);
         }
         .btn-danger{
-            background: var(--AmasLinkColor);
+            background-color: var(--AmasLinkColor);
             border-radius: 50px;
+        }
+        .dz-button{
+            background-color: transparent !important;
+            border: none;
+            outline: none;
+            height: 100px;
+            padding: 10px;
+        }
+        .select2-dropdown li:hover, .select2-results__option--highlighted{
+            background: var(--AmasLinkColor) !important;
         }
     </style>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <div class="preloader" style="display: initial;">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
@@ -110,7 +154,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out; position: fixed; overflow: scroll;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" >
                 <!-- Sidebar navigation-->
 
                 <nav class="sidebar-nav" id="sidebar_nav">
@@ -129,16 +173,17 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Edit</h4>
+    
+    <h4 class="page-title">Post Ad</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="/dashboard/" class="fw-normal">Dashboard</a></li>
+                                <li><a href="/Logout/" class="fw-normal">Logout</a></li>
                             </ol>
 
                             
-                            <a href="/logout/" 
+                            <a href="/Logout/" target="_blank"
                                 class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Logout</a>
                         </div>
                     </div>
@@ -152,143 +197,189 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-             
-             
-                <!-- ============================================================== -->
-                <!-- RECENT SALES -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">Edit Item</h3>
-                              
+
+                <div class="shadow-none position-relative overflow-hidden mb-4">
+                    <div class="d-sm-flex d-block justify-content-between align-items-center">
+                      <h5 class="mb-0 fw-semibold text-uppercase"> Post Ad</h5>
+                 
+                    </div>
+                  </div>
+                  <!-- start Basic Area Chart -->
+                   <form id="postAdForm" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-lg-8 ">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-7">
+                            <h4 class="card-title">General</h4>
+        
+                            <button class="navbar-toggler border-0 shadow-none d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                              <i class="ti-menu ti-close"></i>
+                            </button>
+                          </div>
+                          <div  class="form-horizontal">
+                            <div class="mb-4">
+                              <label class="form-label">Title <span class="text-danger">*</span>
+                              </label>
+                              <input type="hidden" id="itemID" readonly value="<%=itemID%>">
+                              <input type="text" class="form-control" placeholder="Product Name" name="title" id="titleContainer"
+                              required value="<%=itemTitle%>">
+                              <p class="fs-2">A title is required and recommended to be unique.</p>
                             </div>
-       
-                            <div class="projects mb-4">
-                                <div class="projects-inner">
-                                    <div class="col-md-12 col-lg-12 col-sm-12">
-                                              <!-- start form body  -->
-         <form action="#" id="selectionForm">
-            <div class="formSection">
-              
-            <div class="form_control">
-                <label for="Username">Title</label>
-            <input type="text" id="username" placeholder="Enter Your username" value="<%=itemTitle%>" required >
-            </div>
-
-            <div class="formActions">
-                <i class="bi bi-pen"></i>
-                <i class="bi bi-check-circle-fill"></i>
-            </div>
-            </div>
-            
-
-            <div class="form_control">
-                <label for="firstname">Description</label>
-            <!-- <input type="text" id="firstname" placeholder="Enter your firstname" value=""" required > -->
-            <textarea name="description" id="description"><%=itemDescription%></textarea>
-            </div>
-
-            <div class="form_control">
-                <label for="lastname">Price</label>
-            <input type="number" id="price" value="<%=itemPrice%>" placeholder="Set to Zero if not applicable" value="">
-            </div>
-            <div class="formSectionCategories">
-
-            <div class="form_control">
-                <label for="email">Category</label>
-            <select name="category" id="Category" required>
-                <option value="">Category</option>
-                <option value="">Select  a Category</option>
-                <option value="">Category</option>
-
-                <option value="">Category</option>
-
-            </select>
-            </div>
-
-
-            <div class="form_control">
-                <label for="email">Country</label>
-            <select name="category" id="Category" required>
-                <option value="">Counry</option>
-                <option value="">Select  a Country</option>
-                <option value="">kl</option>
-
-                <option value="">wor</option>
-
-            </select>
-            </div>
-
-
-            </div>
-
-            <div class="form_control">
-                <label for="phonenumber">Pictures</label>
-            <input type="file" name="" id="" required>
-            <input type="file" name="" id="">
-            <input type="file" name="" id="">
-            <input type="file" name="" id="">
-            <input type="file" name="" id="">
-
-            </div>
-
-            <div class="form_control">
-                <label for="phonenumber">Choose Sub Categories (optional)</label>
-
-                <div class="subCategoriesContainer">
-                    <ul class="item-list">
-                        <li>
-                            <button type="button" class="item-button" data-subcategories="Subcategory1,Subcategory2,Subcategory3">Category 1</button>
-                            <select name="subcategory1" class="subcategory-select">
-                                <!-- Subcategories will be populated here -->
-                            </select>
-                        </li>
-                        <li>
-                            <button type="button" class="item-button" data-subcategories="SubcategoryA,SubcategoryB,SubcategoryC">Category 2</button>
-                            <select name="subcategory2" class="subcategory-select">
-                                <!-- Subcategories will be populated here -->
-                            </select>
-                        </li>
-                        <li>
-                            <button type="button" class="item-button" data-subcategories="SubcategoryX,SubcategoryY,SubcategoryZ">Category 3</button>
-                            <select name="subcategory3" class="subcategory-select">
-                                <!-- Subcategories will be populated here -->
-                            </select>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="form_body_footer"></div>
-            <!-- <button type="submit" class="submit_btn">Update Info</button> -->
-        </form>
-                                    </div>
+                            <div>
+                              <label class="form-label">Description</label>
+                              <div id="editor">
+                              </div>
+                              <p class="fs-2 mb-0">Set a description to the item for better visibility.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title mb-7">Media</h4>
+                          <label for="imageFile">Image File(s)</label>
+                          <div id="imagesList"></div>
+                
+                        <label for="videoFile">Video File (optional)</label>
+                        <input type="file", accept=".mp4" class="form-control" name="videoFile" id="videoFile">
+                        <label for="VideoURL">Video URL</label>
+                        <input type="url" class="form-control" name="videoURL">
+                        </div>
+                      </div>
+                   
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title mb-7">Pricing ($)</h4>
+        
+                          <div>
+                            <div class="mb-7">
+                              <label class="form-label">Price<span class="text-danger">*</span>
+                              </label>
+                              <input type="text" class="form-control" placeholder="Item Price" name="price" value="<%=itemPrice%>">
+                              <p class="fs-2">Enter the dollar quivalent of your price.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions mb-5">
+                        <button type="submit" class="btn btn-primary">
+                          Save changes
+                        </button>
+                        <button type="button" class="btn bg-danger-subtle text-danger ms-6">
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="offcanvas-md offcanvas-end overflow-auto" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title mb-7">Thumbnail</h4>
+                            <div action="eco-add-product.html#" class="dropzone dz-clickable mb-2">
+                              <div class="dz-default dz-message">
+                                <button class="dz-button" type="button">Click to select an Image</button>
+        
+                                <input type="file" id="thumbnail" name="thumbnail" accept="image/*" hidden required>
+                                <div id="image-preview">
+                                    <p>No image selected</p>
                                 </div>
-                       
+                                <div id="removeImageContainer" style="padding: 10px;">
+                                    <button type="button" class="btn btn-danger" style="border: none; outline: none;">Remove Image</button>
+                                </div>
+                              </div>
                             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-         
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-        <div id="google_translate_element2">
-            <div id="google_translate_element"></div>
-          </div>
-          <%- include ("googleTranslate") %>
-    </div>
-       <!-- footer -->
+                            <p class="fs-2 text-center mb-0">
+                              Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-7">
+                              <h4 class="card-title">Location</h4>
+                           
+                            </div>
+                            <div  class="form-horizontal">
+                              <div>
+                                <input class="form-control " name="country" placeholder="Enter item Location" value="<%=country%>">
+                                 
+                                <p class="fs-2 mb-0">
+                                  Enter the items country or city.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center justify-content-between mb-7">
+                                <h4 class="card-title">Purpose</h4>
+                             
+                              </div>
+                              <div  class="form-horizontal">
+                                <div>
+                                  <input class="form-control " name="purpose" placeholder="Enter Purpose of Listing" value="<%=purpose%>">
+                                   
+                                  <p class="fs-2 mb-0">
+                                    In one word, Why do you want to list this item.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center justify-content-between mb-7">
+                                <h4 class="card-title" >Condition</h4>
+                             
+                              </div>
+                              <div  class="form-horizontal">
+                                <div>
+                                  <input class="form-control " name="condition" placeholder="Enter item Condition" value="<%=condition%>">
+                                   
+                                  <p class="fs-2 mb-0">
+                                    What's the condition of the Item, leave blank if not applicable.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title mb-7">Listing Details</h4>
+                            <div class="mb-3">
+                              <label class="form-label">Categories</label>
+                              
+                              <select class="select2 form-control" single="single" name="category" id="category" required>
+                                <option value="<%=category%>"><%=category%></option>
+                                <option value="">Select a Category</option>
+                              </select>
+                              <p class="fs-2 mb-0">
+                                Add product to a category.
+                              </p>
+                            </div>
+                            <!-- <button type="button" class="btn bg-primary-subtle text-primary ">
+                              <span class="fs-4 me-1">+</span>
+                              Create New Category
+                            </button> -->
+                            <div class="mt-7">
+                              <label class="form-label">Sub Categories</label>
+                              <select class="select2 form-control" multiple="multiple" name="subCategories" id="subCats">
+                               
+                              </select>
+                              <p class="fs-2 mb-0">
+                                Add product to a category.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+               
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+                  <!-- end Basic Area Chart -->
             <!-- ============================================================== -->
             <footer class="footer text-center" id="footer"> 
                 
@@ -302,29 +393,51 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/app-style-switcher.js"></script>
-    <script src="/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js" integrity="sha512-3PRVLmoBYuBDbCEojg5qdmd9UhkPiyoczSFYjnLhFb2KAFsWWEMlAPt0olX1Nv7zGhDfhGEVkXsu51a55nlYmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--Wave Effects -->
     <script src="/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="/js/custom.js"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    <script src="/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <!-- <script src="/js/pages/dashboards/dashboard1.js"></script> -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
-    <script src="/js/forms/editItem.js" type="module"></script>
-    <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+
+  <div id="google_translate_element2">
+        <div id="google_translate_element"></div>
+      </div>
+      <%- include ("googleTranslate") %>
       <script src="/js/jquery-1.12.4.min.js"></script>
       <script src="/js/googleTranslate.js"></script>
+
+<div class="dark-transparent sidebartoggler"></div>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+  <!-- Import Js Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.2.7/simplebar.min.js" integrity="sha512-NkLfoy5pkmAKUxk/OXl9vi1PDSFnEEJ3bDFdX0ln1L0pto6jM7On0lLsjhNC62i2ifyXhPWjPpcGEXawBfErtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/theme/app.init.js"></script>
+
+  <script src="/js/theme/app.min.js"></script>
+
+
+  <!-- solar icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <!-- <script src="/assets/libs/quill/dist/quill.min.js"></script> -->
+  <script src="/js/forms/quill.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js" integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="/js/forms/select2.init.js"></script>
+  <script src="/assets/libs/jquery.repeater/jquery.repeater.min.js"></script>
+
+  <script src="/js/forms/repeater-init.js"></script>
+  <script src="/js/updateItem.js" type="module"></script>
 </body>
 
 </html>

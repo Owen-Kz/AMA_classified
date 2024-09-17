@@ -117,10 +117,12 @@ postAdForm.addEventListener("submit", function(e) {
     .then(data =>{
         console.log(data)
         if(data.success){
-            alert(data.success)
-            DeleteCookie("sessionId")
-            DeleteCookie("paymentId")
-            window.location.href = "/dashboard"
+            // alert(data.success)
+            // DeleteCookie("sessionId")
+            // DeleteCookie("paymentId")
+            // window.location.href = "/dashboard"
+            window.location.href = data.url
+
             
         }else{
             preloader.removeAttribute("style")

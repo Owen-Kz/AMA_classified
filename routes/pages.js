@@ -85,6 +85,7 @@ const getStaticAds = require("../controllers/specialAdverts/getStaticAds");
 const getSlideShowAdverts = require("../controllers/specialAdverts/getSlideshowAdvert");
 const postFullpageAd = require("../controllers/postFullPageAdvert");
 const fullpageActions = require("../controllers/admin/fullpageActions");
+const updateItem = require("../controllers/specialAdverts/updateItem");
 
 const router = express.Router();
 
@@ -362,6 +363,7 @@ router.get("/details/brand/:productTitle/:id", GetBrandInfo)
 router.get("/verify", verifyAccount)
 router.post("/stripe/key", LoggedIN, getKeys)
 router.post("/s/:action/fullpage/:id", AdminLoggedIn, fullpageActions)
+router.get("/paid/:itemId", LoggedIN, updateItem)
 
 router.post("/create-payment-intent", LoggedIN, paymentintent)
 router.post("/charge", LoggedIN, charge)

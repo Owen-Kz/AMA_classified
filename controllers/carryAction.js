@@ -42,7 +42,7 @@ const CarryAction = async (req,res) =>{
 
         if(action === "edit"){
             if(ItemStatus === "approved"){
-        res.render("editItem", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, itemTitle:productName, itemID:responseData.productDetails.id, itemDescription:mainDescription, itemPrice:mainPrice})
+        res.render("editItem", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, itemTitle:productName, itemID:responseData.productDetails.id, itemDescription:mainDescription, itemPrice:mainPrice, purpose:responseData.productDetails.purpose, condition:responseData.productDetails.condition, country:responseData.productDetails.country, category:responseData.productDetails.category})
     }else{
         res.redirect("/mylistings")
     }

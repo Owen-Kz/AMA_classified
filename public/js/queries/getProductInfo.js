@@ -174,6 +174,21 @@ function GetProductDetails(productId, productTitle) {
                                 <img src="${file.file_url}" alt="${productTitle}">
                             </div>
                         </a>`;
+                    }else if(file.file_type === "video_file"){
+                        imageSlideShowContainer.innerHTML += `<a href="#">
+                        <div class="slide slide-four" style="background-color:var(--AmasLlnkColor);">
+                          
+                            <video controls width="100%">
+                            <source src="${file.file_url}" type="video/webm" />
+
+                            <source src="${file.file_url}" type="video/mp4" />
+
+                           
+                            </video>
+                        </div>
+                    </a>`;
+                    }else if(file.file_type === "video_url"){
+
                     }
                     
                 }
@@ -195,7 +210,26 @@ function GetProductDetails(productId, productTitle) {
                        <img src="${file.file_url}" alt="${productTitle}">
                     </div>
                         </a>`;
+                    }else if(file.file_type === "video_file"){
+                        SmalPreviews.innerHTML += `
+                        <div class="small_image_container">
+                        <video controls width="100%">
+                            <source src="${file.file_url}" type="video/webm" />
+
+                            <source src="${file.file_url}" type="video/mp4" />
+
+                       
+                            <a href="${file.file_url}">WEBM</a>
+                            or
+                            <a href="${file.file_url}">MP4</a>
+                            video.
+                            </video>
+                     </div>
+                    `;
+                    }else if(file.file_type === "video_url"){
+                        
                     }
+                    
                 }
             }
         }else{

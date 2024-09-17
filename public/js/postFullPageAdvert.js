@@ -49,6 +49,7 @@ removebutton.addEventListener("click", function(){
 // const postAdForm = document.getElementById("postAdForm")
 const postAdForm = document.getElementById("postAdForm");
 const preloader = document.querySelector(".preloader")
+
 postAdForm.addEventListener("submit", function(e) {
     e.preventDefault();
     preloader.removeAttribute("style")
@@ -65,12 +66,13 @@ postAdForm.addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(data =>{
-        console.log(data)
+    
         if(data.success){
-            alert(data.success)
-            DeleteCookie("sessionId")
-            DeleteCookie("paymentId")
-            window.location.href = "/dashboard"
+            // alert(data.success)
+            window.location.href = data.url
+            // DeleteCookie("sessionId")
+            // DeleteCookie("paymentId")
+            // window.location.href = "/dashboard"
             
         }else{
             preloader.removeAttribute("style")

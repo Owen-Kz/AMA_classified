@@ -1,3 +1,5 @@
+import { GetProductFiles } from "./queries/getProductFiles.js";
+import { productDetails } from "./queries/productDetails.js";
 
 const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');
@@ -6,6 +8,39 @@ const removeImageContainer = document.querySelector("#removeImageContainer")
 imagePreview.style.display = "none"
 removeImageContainer.style.display = "none"
 
+const DeleteCookie = function deleteCookie(cookieName) {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    window.location.reload()
+}
+
+// Get the current URL pathname
+const pathname = window.location.pathname;
+
+// Split the pathname by slashes to get the individual segments
+const segments = pathname.split('/');
+
+// Get the parent directory name (second to last segment)
+const ItemId = segments[3]
+const titleContainer = document.getElementById("titleContainer")
+
+const productInfo = await productDetails(ItemId, titleContainer.value)
+
+const Description = productInfo.description 
+
+quill.setContents(JSON.parse(Description))
+
+
+const ProductFIles = await GetProductFiles(ItemId)
+// liet out all available items 
+const imagesList = document.getElementById("imagesList")
+
+for(let i=0; i<ProductFIles.length; i++){
+    imagesList.innerHTML += ` <span><a href=$"{ProductFIles.file_url}"></a> <span>`
+}
+
+for(let z=0; z<5 - ProductFIles.length; z++){
+    imagesList.innerHTML = ` <input type="file" accept=".jpg, .png, .jpeg" class="form-control" name="imageFile[]">`
+}
 dzbutton.addEventListener("click", function() {
     imageInput.click()
 })
@@ -64,6 +99,7 @@ fetch(`/allCategories`, {
 })
 
 
+
 // get Avaliabel Sub Categories  
 fetch(`/allSubCategories`, {
     method:"POST",
@@ -83,7 +119,7 @@ fetch(`/allSubCategories`, {
         }
     }
     }else{
-        console.log("Could not Fetch SubCategories")
+        subCategories.innerHTML = `<i>Could not Fetch SubCategories</i>`
     }
 })
 
@@ -96,26 +132,31 @@ postAdForm.addEventListener("submit", function(e) {
     preloader.removeAttribute("style")
     preloader.setAttribute("style", "display:block; opacity:0.4;")
     const newData = new FormData(postAdForm);
-    const videoFile = document.getElementById("videoFile")
-    const thumbnail = document.getElementById("thumbnail")
+
     let error = false
-   const imageFile = document.querySelectorAll('input[name="imageFile[]"]')
 
     newData.append('description', JSON.stringify(quill.getContents().ops));
 
     if(!error){
-            fetch(`/postAd`, {
+            fetch(`/postBrandAdvert`, {
         method: "POST",
         body: newData, // Send FormData directly
         // No need to set Content-Type header
     })
     .then(response => response.json())
     .then(data =>{
+        console.log(data)
         if(data.success){
-            alert("Item Saved, Proceed to payment")
-            window.location.href = "/mylistings"
+            // alert(data.success)
+            // DeleteCookie("sessionId")
+            // DeleteCookie("paymentId")
+            // window.location.href = "/dashboard"
+            window.location.href = data.url
+
+            
         }else{
             preloader.removeAttribute("style")
+            preloader.setAttribute("style", "display:none;")
             alert(data.error)
         }
          })

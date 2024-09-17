@@ -9,6 +9,7 @@ fetch(`/fullpageAd`)
 .then(data =>{
     try{
     if(data.success){
+        if(data.fullpageAd[0].status === "approved"){
         if(data.fullpageAd.length >0){
             fullpageAd.forEach(advertContainer =>{
                 advertContainer.style.display = "flex"
@@ -21,6 +22,7 @@ fetch(`/fullpageAd`)
     }else{
         console.log(data.error)
     }
+}
 }catch(error){
     console.error(error)
 }

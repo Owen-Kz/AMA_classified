@@ -2,6 +2,7 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const { configDotenv } = require("dotenv");
+const ChargeForItem = require("./chargeForItem");
 const cloudinary = require('cloudinary').v2;
 
 // Load environment variables
@@ -134,7 +135,16 @@ const data = {
 
 
         if (responseData.success) {
-          return res.json({ success: responseData.success });
+          const itemId = responseData.item_id
+          
+
+          const url = await ChargeForItem(req,res, itemId)
+ 
+          if(url){
+            return res.json({ success: responseData.success, url:url });
+          }else{
+           console.log(url)
+          }
         } else {
           return res.json({ error: responseData.error });
         }

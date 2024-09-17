@@ -1,3 +1,4 @@
+const CheckForStaticAdvert = require('../CheckForStatic');
 const getFutureDate = require('./fuureDates');
 
 const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY)
@@ -10,6 +11,13 @@ const StaticAdvertPage = async (req,res) =>{
     }
   
     try {
+      
+      const hasStaticAdvert = await CheckForStaticAdvert()
+      if(hasStaticAdvert.length > 0){
+      
+        const expiration_date = await FormatDate(hasFullPageAdvert[0].expiry_date)
+        return res.render("advertAlreadyExists", {username:req.user.u_name, expiry_date:expiration_date, advertfor:"Static Advert"})
+      }else{
       const session = await stripe.checkout.sessions.retrieve(sessionId);
       const paymentIntentId = session.payment_intent;
       const paymentStatus = session.payment_status 
@@ -30,6 +38,7 @@ const StaticAdvertPage = async (req,res) =>{
       }else{
         return res.json({error:"Invalid Transaction / Payment not confirmed"})
       }
+    }
 
     } catch (err) {
       console.error(err);
