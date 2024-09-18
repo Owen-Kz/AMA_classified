@@ -22,6 +22,17 @@ imageInput.addEventListener('change', function() {
     dzbutton.style.display = "none"
 
     if (file) {
+        const fileType = this.files[0].type 
+        const fileSize = this.files[0].size
+        if(fileType  !== 'image/jpeg' && fileType !== 'image/jpg' && fileType !== 'image/png'){
+            alert("Wrong file type, Choose a JPEG or PNG file")
+            this.files[0] = []
+            file.value = ""
+        }else if(this.files[0].size > 5000000){
+           alert("File is too large, Choose a file below less than 5MB")
+           this.value = ""
+           this.files[0] = []
+       }else{
         const reader = new FileReader();
         reader.onload = function(e) {
             const img = document.createElement('img');
@@ -30,11 +41,38 @@ imageInput.addEventListener('change', function() {
             imagePreview.appendChild(img);
         }
         reader.readAsDataURL(file);
+    }
     } else {
         imagePreview.innerHTML = '<p>No image selected</p>';
     }
 });
+const videoFile = document.getElementById("videoFile")
+if(videoFile){
+    videoFile.addEventListener("change", function(){
+        if(this.files[0]){
+            console.log(this.files[0].size)
 
+            if(this.files[0].size > 5000000){
+                alert("File is too large, Choose a file below less than 5MB")
+                this.value = ""
+                this.files[0] = []
+            }
+        }
+    })
+}
+const imageFile = document.querySelectorAll('input[name="imageFile[]"]')
+
+imageFile.forEach(image =>{
+ image.addEventListener("change", function(){
+     const fileType = this.files[0].type 
+
+     if(fileType  !== 'image/jpeg' && fileType !== 'image/jpg' && fileType !== 'image/png'){
+         alert("Wrong file type, Choose a JPEG or PNG file")
+         image.files[0] = []
+         image.value = ""
+     }
+ })
+})
 const removebutton = removeImageContainer.querySelector("button")
 removebutton.addEventListener("click", function(){
     imagePreview.style.display = "none"

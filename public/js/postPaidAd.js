@@ -15,13 +15,57 @@ const DeleteCookie = function deleteCookie(cookieName) {
 dzbutton.addEventListener("click", function() {
     imageInput.click()
 })
+// 94371884 
+const videoFile = document.getElementById("videoFile")
+if(videoFile){
+    videoFile.addEventListener("change", function(){
+        if(this.files[0]){
+            console.log(this.files[0].size)
+
+            if(this.files[0].size > 5000000){
+                alert("File is too large, Choose a file below less than 5MB")
+                this.value = ""
+                this.files[0] = []
+            }
+        }
+    })
+}
+const imageFile = document.querySelectorAll('input[name="imageFile[]"]')
+
+imageFile.forEach(image =>{
+ image.addEventListener("change", function(){
+     const fileType = this.files[0].type 
+     const fileSize = this.files[0].size
+     if(fileType  !== 'image/jpeg' && fileType !== 'image/jpg' && fileType !== 'image/png'){
+         alert("Wrong file type, Choose a JPEG or PNG file")
+         image.files[0] = []
+         image.value = ""
+     }else if(this.files[0].size > 5000000){
+        alert("File is too large, Choose a file below less than 5MB")
+        this.value = ""
+        this.files[0] = []
+    }
+ })
+})
 imageInput.addEventListener('change', function() {
     const file = this.files[0];
+    const fileType = this.files[0].type 
+    const fileSize = this.files[0].size
     imagePreview.style.display = "flex"
     removeImageContainer.style.display = "block"
     dzbutton.style.display = "none"
 
     if (file) {
+       
+        if(fileType  !== 'image/jpeg' && fileType !== 'image/jpg' && fileType !== 'image/png'){
+            alert("Wrong file type, Choose a JPEG or PNG file")
+            this.files[0] = []
+            file.value = ""
+        }else if(fileSize> 5000000){
+           alert("File is too large, Choose a file below less than 5MB")
+           file.value = ""
+           file = []
+       }else{
         const reader = new FileReader();
         reader.onload = function(e) {
             const img = document.createElement('img');
@@ -30,6 +74,7 @@ imageInput.addEventListener('change', function() {
             imagePreview.appendChild(img);
         }
         reader.readAsDataURL(file);
+    }
     } else {
         imagePreview.innerHTML = '<p>No image selected</p>';
     }
@@ -93,7 +138,10 @@ fetch(`/allSubCategories`, {
     }
 })
 
+console.log("ADvert")
 // Sumit the Ad 
+const thumbnail = document.getElementById("thumbnail")
+console.log(thumbnail)
 // const postAdForm = document.getElementById("postAdForm")
 const postAdForm = document.getElementById("postAdForm");
 const preloader = document.querySelector(".preloader")
@@ -103,9 +151,13 @@ postAdForm.addEventListener("submit", function(e) {
     preloader.setAttribute("style", "display:block; opacity:0.4;")
     const newData = new FormData(postAdForm);
     const videoFile = document.getElementById("videoFile")
-    const thumbnail = document.getElementById("thumbnail")
+ 
     let error = false
-   const imageFile = document.querySelectorAll('input[name="imageFile[]"]')
+    console.log(thumbnail)
+    console.log(thumbnail.files[0])
+    if(thumbnail.files[0].size < 1){
+        alert("Add an Thumbnail file to continue")
+    }
 
     newData.append('description', JSON.stringify(quill.getContents().ops));
 

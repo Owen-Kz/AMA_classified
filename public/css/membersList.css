@@ -9,6 +9,10 @@
     border-radius: 25px;
 }
 
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none;
+}
+
 #image-preview {
     width: 200px;
     height: 200px;

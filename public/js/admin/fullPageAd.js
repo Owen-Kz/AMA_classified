@@ -60,7 +60,8 @@ async function GetSellerDetails(uid){
                 }else if(BrandAdsData.status === "rejected"){
                     Status = `<span class="status-text status-red">Rejected</span>`
                     moreActions = `
-                    <option value="approve">Approve</option>`
+                    <option value="approve">Approve</option>
+                    `
 
                 }else if(BrandAdsData.status === "pending"){
                     Status = `<span class="status-text status-orange">Awaiting Approval</span>`
@@ -94,6 +95,7 @@ async function GetSellerDetails(uid){
                                             <option value="">Actions</option>
                                             <option value="view">View</option>
                                            ${moreActions}
+                                           <option value="delete">Delete</option>
                         
                                            
                                         </select>
