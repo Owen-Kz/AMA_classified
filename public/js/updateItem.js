@@ -5,6 +5,7 @@ const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');
 const dzbutton = document.querySelector(".dz-button")
 const removeImageContainer = document.querySelector("#removeImageContainer")
+
 imagePreview.style.display = "none"
 removeImageContainer.style.display = "none"
 
@@ -26,20 +27,52 @@ const titleContainer = document.getElementById("titleContainer")
 const productInfo = await productDetails(ItemId, titleContainer.value)
 
 const Description = productInfo.description 
+const thumbnail = productInfo.image1
+const submissionType = productInfo.is_recent_item
 
 quill.setContents(JSON.parse(Description))
 
+if(thumbnail) {
+    imagePreview.style.display = "flex"
+    removeImageContainer.style.display = "block"
+    dzbutton.style.display = "none"
+    const img = document.createElement('img');
+    
 
+    if(submissionType === "yes"){
+    img.src = thumbnail;
+    }else {
+        img.src = `/uploads/${thumbnail}`
+    }
+    imagePreview.innerHTML = '';
+    imagePreview.appendChild(img);
+    imagePreview.innerHTML += `<input name='oldThumbnail' value="${img.src}" hidden>`
+    imageInput.removeAttribute("required")
+}
 const ProductFIles = await GetProductFiles(ItemId)
 // liet out all available items 
 const imagesList = document.getElementById("imagesList")
+const videoContainer  = document.getElementById("videoList")
+const videoURL = document.getElementById("videoURL")
 
 for(let i=0; i<ProductFIles.length; i++){
-    imagesList.innerHTML += ` <span><a href=$"{ProductFIles.file_url}"></a> <span>`
+
+    if(ProductFIles[i].file_type === "image_file" && ProductFIles[i].file_status === "new_submission"){
+    imagesList.innerHTML += ` <span><a href=${ProductFIles[i].file_url}>${ProductFIles[i].file_url}</a> <span><br>`
+    }else if(ProductFIles[i].file_type === "image_file"){
+        imagesList.innerHTML += ` <span><a href=/uploads${ProductFIles[i].file_url}>/uploads/${ProductFIles[i].file_url}</a> <span><br>`
+    }
+    if(ProductFIles[i].file_type === "video_file"){
+        videoContainer.innerHTML = `<span><a href=${ProductFIles[i].file_url}>${ProductFIles[i].file_url}</a> <span><br>`
+        videoContainer.innerHTML = `<input name="oldVIdeoFile" value="${ProductFIles[i].file_url}" hidden readonly>`
+    }
+    if(ProductFIles[i].file_type === "video_url"){
+        videoURL.value = ProductFIles[i].file_url
+    }
 }
 
-for(let z=0; z<5 - ProductFIles.length; z++){
-    imagesList.innerHTML = ` <input type="file" accept=".jpg, .png, .jpeg" class="form-control" name="imageFile[]">`
+for(let z=0; z< (1); z++){
+    imagesList.innerHTML += ` <input type="file" accept=".jpg, .png, .jpeg" class="form-control" name="imageFile[]" hidden>`
 }
 dzbutton.addEventListener("click", function() {
     imageInput.click()
@@ -69,6 +102,10 @@ removebutton.addEventListener("click", function(){
     imagePreview.style.display = "none"
     removeImageContainer.style.display = "none"
     dzbutton.style.display = "flex"
+    if(imageInput.hasAttribute("required")){
+    }else{
+    imageInput.setAttribute("required", true)
+    }
 })
 
 const category = document.getElementById("category")
@@ -138,7 +175,7 @@ postAdForm.addEventListener("submit", function(e) {
     newData.append('description', JSON.stringify(quill.getContents().ops));
 
     if(!error){
-            fetch(`/postBrandAdvert`, {
+            fetch(`/updateAdvert`, {
         method: "POST",
         body: newData, // Send FormData directly
         // No need to set Content-Type header
@@ -147,11 +184,11 @@ postAdForm.addEventListener("submit", function(e) {
     .then(data =>{
         console.log(data)
         if(data.success){
-            // alert(data.success)
+            alert(data.success)
             // DeleteCookie("sessionId")
             // DeleteCookie("paymentId")
-            // window.location.href = "/dashboard"
-            window.location.href = data.url
+            window.location.href = "/mylistings"
+            // window.location.href = data.url
 
             
         }else{

@@ -211,7 +211,9 @@ function GetProductDetails(productId, productTitle) {
                     </div>
                         </a>`;
                     }else if(file.file_type === "video_file"){
-                        SmalPreviews.innerHTML += `
+                    const SmallVideoPreview = document.getElementById("smalllVideoPreview")
+                    
+                       SmallVideoPreview.innerHTML += `
                         <div class="small_image_container">
                         <video controls width="100%">
                             <source src="${file.file_url}" type="video/webm" />

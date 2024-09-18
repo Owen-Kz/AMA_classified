@@ -9,6 +9,7 @@ fetch(`/fullpageAd`)
 .then(data =>{
     try{
     if(data.success){
+      
         if(data.fullpageAd[0].status === "approved"){
         if(data.fullpageAd.length >0){
             fullpageAd.forEach(advertContainer =>{
@@ -20,9 +21,11 @@ fetch(`/fullpageAd`)
             console.log("no Full Page advert to display")
         }
     }else{
+        console.log("Advert Has not been approved")
+    }
+    }else{
         console.log(data.error)
     }
-}
 }catch(error){
     console.error(error)
 }

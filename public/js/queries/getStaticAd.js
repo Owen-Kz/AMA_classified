@@ -62,7 +62,7 @@ fetch(`/staticAdverts`,{
         }
     }else{
 
-        staticAdvertsContainer.innerHTML += `Nothing To display yet`
+        staticAdvertsContainer.innerHTML += `<a href="/adintro"><img src="/uploads/AMAS.png" alt="No  Static ADvert available"/></a>`
     }
     }
 })

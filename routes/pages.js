@@ -86,6 +86,7 @@ const getSlideShowAdverts = require("../controllers/specialAdverts/getSlideshowA
 const postFullpageAd = require("../controllers/postFullPageAdvert");
 const fullpageActions = require("../controllers/admin/fullpageActions");
 const updateItem = require("../controllers/specialAdverts/updateItem");
+const UpdateAdvert = require("../controllers/updateAdvert");
 
 const router = express.Router();
 
@@ -240,6 +241,8 @@ router.post("/userListings", userListings)
 router.post("/postAd", LoggedIN, postAd)
 router.post("/postBrandAdvert", LoggedIN, PostBrandAd)
 router.post("/postFullpageAdvert", LoggedIN, postFullpageAd)
+
+router.post("/updateAdvert", LoggedIN, UpdateAdvert)
 
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
