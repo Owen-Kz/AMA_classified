@@ -51,8 +51,40 @@ const CarryAction = async (req,res) =>{
             res.render("comingSoon")
 
         }else if(action === "delete"){
+            const item_id = responseData.productDetails.id
+    
+            if(req.cookies._t){
+                try{
+                    const userId = req.user.id
+                    const data = {
+                        userId: userId, 
+                        itemId: item_id
+                    }
+             
+                    const response = await fetch(`${process.env.ENDPOINT}/y/DeleteItem`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                
+                    const responseData = await response.json(); 
+                    if(responseData.success){
+                        // res.json({success:responseData.success})
+                        res.redirect("/mylistings")
+                    }else{
+                        res.json({error:responseData.error})
+                    }
+            }catch(error){
+                res.json({error:error})
+            }
+        
+            }else{
+                res.json({error:"NotLoggedIn"})
+            }
 
-            res.render("deleteItem", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, itemTitle:productName, itemID:responseData.productDetails.id})
+            // res.render("deleteItem", {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, itemTitle:productName, itemID:responseData.productDetails.id})
       
 
         }else if(action === "soldout"){
