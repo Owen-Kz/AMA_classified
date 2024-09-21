@@ -1,4 +1,15 @@
 const registerForm = document.getElementById("loginForm")
+const PasswordContainer = document.querySelectorAll(".password")
+const ViewPassword = document.getElementById("viewIcon")
+
+ViewPassword.addEventListener("click", function(){
+    console.log(PasswordContainer)
+    PasswordContainer.forEach(pass =>{
+       const type = pass.getAttribute('type') === 'password' ? 'text' : 'password';
+       pass.setAttribute('type', type);
+       ViewPassword.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>';
+    })
+})
 
 registerForm.addEventListener("submit", function(e){
     e.preventDefault();
