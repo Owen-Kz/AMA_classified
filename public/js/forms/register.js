@@ -44,7 +44,7 @@ registerForm.addEventListener("submit", function(e){
         password:password.value,
         country:country.value
     }
-    if(password2.value !== password1.value){
+    if(password2.value !== password.value){
         errorContainer.textContent = "Passwords Do not Match"
     }else{
     fetch(`/signup`, {
