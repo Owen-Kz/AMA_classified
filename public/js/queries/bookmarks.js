@@ -9,7 +9,7 @@ async function GetViewsCount(id){
       .then(data=>{
           if(data.success){
               
-              return data.viewsCount+324
+              return data.viewsCount+id-2000
           }else{
               console.log(data.error)
               return 0
