@@ -43,12 +43,18 @@ function GetProductDetails(productId, productTitle) {
 
             const sellerDetails = await GetSellerDetails(sellerID)
             if(sellerDetails){
+                let image = ""
+                if(sellerDetails.pp !== null){
+                    image = `<img src="${sellerDetails.pp}" alt="profile_photo">`
+                }else{
+                    image =   `<img src="/plugins/images/users1.jpg" alt="profile_photo">`
+                }
             if(sellerDetails.u_name){
                 SellerDetailsContainer.innerHTML = `
                 <div class="seller_profile_top">
                     <div class="seller_profile_top_left">
                         <div class="avatar_container">
-                            <img src="/plugins/images/users1.jpg" alt="profileImage">
+                           ${image}
                         </div>
                     </div>
                     <div class="seller_profile_top_right">

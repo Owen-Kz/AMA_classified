@@ -1,7 +1,21 @@
 const listingsContainer = document.getElementById("listingsContainer")
 const paginationContainer = document.getElementById("pagination");
 const maxLength = 200;
-
+async function GetViewsCount(id){
+    return  fetch(`/countViews/${id}`, {
+          method:"GET"
+      })
+      .then(res=>res.json())
+      .then(data=>{
+          if(data.success){
+              
+              return data.viewsCount+324
+          }else{
+              console.log(data.error)
+              return 0
+          }
+      })
+  }
 
 function booksNavigation(totalPagesListings, currentPage) {
     const booksNavContainer = document.getElementById("pagination");
@@ -185,7 +199,7 @@ fetch(`/bookmarks?page=${page}`, {
                     <div class="actions">
                         <div class="viewsCount">
                             <i class="bi bi-eye"></i>
-                            <span>0</span>
+                            <span>${await GetViewsCount(ListingsList[i].id)}</span>
                         </div>
 
                     </div>

@@ -12,7 +12,7 @@ async function GetViewsCount(id){
     .then(data=>{
         if(data.success){
             
-            return data.viewsCount
+            return data.viewsCount+324
         }else{
             console.log(data.error)
             return 0
@@ -300,7 +300,7 @@ fetch(`/listings?page=${page}`, {
                        <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
                             <div class="image_container" style="background-image:url(${imageLink});">
                                 <img class="productImage" src="${imageLink}" alt="Product image">
-                               
+                               </div>
                            
                             <div class="actions">
                                 <div class="viewsCount">
@@ -318,7 +318,7 @@ fetch(`/listings?page=${page}`, {
         
                                 </div>
                             </div>
-                             </div>
+                             
                             <!-- start product info  -->
                              <div class="product_info">
                                 <div class="product_name" style="color:var(--AmasLinkColor);">
@@ -384,7 +384,7 @@ fetch(`/listings?page=${page}`, {
                         <div class="image_container" style="background-image:url(${imageLink});">
                             <img class="productImage" src="${imageLink}" alt="Product image">
                            
-                       
+                       </div>
                         <div class="actions">
                             <div class="viewsCount">
                                 <i class="bi bi-eye"></i>
@@ -401,7 +401,7 @@ fetch(`/listings?page=${page}`, {
     
                             </div>
                         </div>
-                         </div>
+                         
                         <!-- start product info  -->
                          <div class="product_info">
                             <div class="product_name" style="color:var(--AmasLinkColor);">

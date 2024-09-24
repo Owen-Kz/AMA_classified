@@ -170,7 +170,7 @@ postAdForm.addEventListener("submit", function(e) {
     .then(response => response.json())
     .then(data =>{
         if(data.success){
-            alert(data.success)
+            // alert(data.success)
             // DeleteCookie("sessionId")
             // DeleteCookie("paymentId")
             window.location.href = data.url

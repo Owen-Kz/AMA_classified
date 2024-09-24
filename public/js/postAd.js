@@ -154,10 +154,10 @@ postAdForm.addEventListener("submit", function(e) {
     .then(response => response.json())
     .then(data =>{
         if(data.success){
-            alert("Item Saved, Proceed to payment")
+            alert("Item Saved")
             window.location.href = "/mylistings"
         }else{
-            preloader.removeAttribute("style")
+            preloader.setAttribute("style", "display:none")
             alert(data.error)
         }
          })

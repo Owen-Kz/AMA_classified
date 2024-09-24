@@ -170,11 +170,26 @@
                             
                             <div class="profileCard">
                                 <div class="profile_left">
-                                    <div class="image_container">
-                                        <img src="/plugins/images/users1.jpg" alt="">
-                                    </div>
+        
                                     <div class="buttonsContainer">
-                                        <button class="btn">Edit Profile Picture</button>
+                                        
+                                     
+                                        <form id="profilePictureForm" enctype="multipart/form-data" style="display: flex; align-items: center;">
+                                            <input type="file" id="thumbnail" name="thumbnail" accept="image/*" hidden required>
+                                <div id="image-preview" class="image_container">
+
+                                    <% if(profilePhoto  !== null){ %>
+                                    <img src="<%=profilePhoto %>">
+                                    <% }else{ %>
+                                        <img src="/plugins/images/users1.jpg" alt="profile_photo">
+                                        <% } %>
+                                </div>
+                                <div id="removeImageContainer" style="padding: 10px;">
+                                    <button type="button" class="btn btn-danger" style="border: none; outline: none;">Remove Image</button>
+                                </div>
+                                 <input type="submit" id="submitProfilePicture" class="btn btn-success" value="Done">
+                                        </form>
+                                        <button class="btn dz-button">Edit Profile Picture</button>
                                     </div>
                                 </div>
                                 <div class="profile_right">
@@ -190,7 +205,7 @@
                                         </li>
 
                                         <li>
-                                            <div class="header_text">Country</div>
+                                            <div class="header_text">Email</div>
                                             <div class="content_text"><b><%=email%></b></div>
                                         </li>
 

@@ -44,9 +44,15 @@ if(SellerInfo){
         NewPage(1, sellerId.value)
     
     }
+    let image = ""
+    if(SellerInfo.pp !== null){
+        image = `<img src="${SellerInfo.pp}" alt="profile_photo">`
+    }else{
+        image =   `<img src="/plugins/images/users1.jpg" alt="profile_photo">`
+    }
     profileCard.innerHTML = ` <div class="profile_left">
             <div class="image_container">
-                <img src="/plugins/images/users1.jpg" alt="">
+               
             </div>
             <div class="buttonsContainer">
                 <button class="btn"><a href="/messages/${SellerInfo.id}?s=${SellerInfo.id}">Message Seller</a></button>

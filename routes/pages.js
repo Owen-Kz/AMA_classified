@@ -87,6 +87,7 @@ const postFullpageAd = require("../controllers/postFullPageAdvert");
 const fullpageActions = require("../controllers/admin/fullpageActions");
 const updateItem = require("../controllers/specialAdverts/updateItem");
 const UpdateAdvert = require("../controllers/updateAdvert");
+const UpdateProfileImage = require("../controllers/updateProfileImage");
 
 const router = express.Router();
 
@@ -179,6 +180,7 @@ router.get("/s/profile", AdminLoggedIn, (req,res) =>{
 })
 // Save Profile Info 
 router.post("/saveProfile/:field/:value", LoggedIN, saveProfile)
+router.post("/updateProfileImage", LoggedIN, UpdateProfileImage)
 
 router.get("/announcements",LoggedIN, AdminLoggedIn, (req,res)=>{
     if(req.cookies._t || req.cookies._ama){

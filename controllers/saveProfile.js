@@ -11,7 +11,7 @@ const saveProfile = async(req,res) =>{
         u_id: userId, 
         field:field,
         value:value
-    } 
+    }  
 
         const response = await fetch(`${process.env.ENDPOINT}/y/saveProfile`, {
             method: 'POST',

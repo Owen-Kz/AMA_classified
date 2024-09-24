@@ -4,6 +4,10 @@ const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY)
 
 const ChargeForItem = async (req,res, itemId) =>{
     let package = ""
+    try{
+      
+    
+    if(req.cookies.__amnt){
     
     const amountEncrypted = req.cookies.__amnt;
     const amountKey = req.cookies.__amnt_key;
@@ -61,7 +65,14 @@ const ChargeForItem = async (req,res, itemId) =>{
     // res.cookie("_pkg", package, {maxAge: 1 * 24 * 60 * 60 * 1000 })
 //    console.log(session.url)
     return session.url
+  }else{
+    return null
   }
+}catch(error){
+    return error
+  }
+  }
+
 
 
   module.exports = ChargeForItem
