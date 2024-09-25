@@ -218,7 +218,7 @@ fetch(`/listings?page=${page}`, {
                     <div class="image_container" style="background-image:url(${imageLink});">
                         <img class="productImage" src="${imageLink}" alt="Product image">
                        
-                   
+                    </div>
                     <div class="actions">
                         <div class="viewsCount">
                             <i class="bi bi-eye"></i>
@@ -235,7 +235,7 @@ fetch(`/listings?page=${page}`, {
 
                         </div>
                     </div>
-                     </div>
+                    
                     <!-- start product info  -->
                      <div class="product_info">
                         <div class="product_name" style="color:var(--AmasLinkColor);">

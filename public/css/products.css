@@ -30,9 +30,9 @@
     gap: 10px;
 
     overflow: scroll;
-    width: 100%;
+    width: 80%;
     padding: 0px;
-    max-width: 100%;
+    max-width: 80%;
     align-self: space-between;
 }
 .products_list{
