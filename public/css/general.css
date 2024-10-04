@@ -107,7 +107,7 @@ body{
 }
  .listings, .backgroundParent:not(.topBar){
     margin-top: 10px;
-    width: 80%;
+    width: 100%;
     border-radius: 20px;
 }
 footer{
