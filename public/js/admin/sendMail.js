@@ -1,3 +1,4 @@
+import { quill } from "../forms/quill.js";
 import { formatTimestamp } from "/js/routes/formatDate.js";
 
 const emailForm = document.getElementById("emailForm");
@@ -7,19 +8,20 @@ emailForm.addEventListener("submit", function (e) {
   const message = document.getElementById("text-subject");
   const to = document.getElementById("to");
   const subject = document.getElementById("subject");
+  const quillMessage = JSON.stringify(quill.getContents().ops); // Quill Delta format
 
   const formData = {
     to: to.value,
     subject: subject.value,
-    message: message.value,
+    message: quillMessage
   };
 
   fetch(`/mail/send`, {
     method: "POST",
-    body: JSON.stringify(formData),
     headers: {
-      "Content-type": "application/JSON",
+      'Content-Type': 'application/json'  // Ensure JSON format
     },
+    body: JSON.stringify(formData),  // Send formData as JSON
   })
     .then((res) => res.json())
     .then((data) => {

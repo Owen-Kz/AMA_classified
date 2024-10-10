@@ -3,17 +3,16 @@ const { configDotenv } = require("dotenv");
 const sendMail = async (req,res) =>{
     try{
     const {to, subject, message} = req.body
-
     if(req.cookies._superID && req.cookies._ama){
     const data = {
         a_id: req.cookies._superID,
         to:to,
         subject:subject, 
-        message:message 
+        message: message
     }
     const response = await fetch(`${process.env.ENDPOINT}/y/admin/sendMail`, {
         method: 'POST',
-        headers: {
+        headers: {  
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
@@ -22,8 +21,10 @@ const sendMail = async (req,res) =>{
   
     if(responseData){
         if(responseData.success){
+         
             return res.json({success:responseData.success})
         }else if(responseData.error){
+          
             return res.json({error: responseData.error})
         }
     }else{
@@ -33,6 +34,7 @@ const sendMail = async (req,res) =>{
         res.json({error:"Invalid Token Provided for admin"})
     }
 }catch(error){
+    console.log(error)
     return res.json({error:error.message})
 }
 }

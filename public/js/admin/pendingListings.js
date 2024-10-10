@@ -162,7 +162,7 @@ function booksNavigation(totalPagesListings, currentPage) {
                                             <option value="">Actions</option>
                                              <option value="view">View</option>
                                             <option value="approve">Approve</option>
-                                            <option value="edit">Reject</option>
+                                            <option value="reject">Reject</option>
                                         </select>
                                         
                                         </form>

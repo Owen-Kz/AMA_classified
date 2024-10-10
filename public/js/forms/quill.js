@@ -1,8 +1,8 @@
-const quill = new Quill("#editor", {
+const quill = new Quill("#quill", {
   modules: {
     toolbar: [
       ["bold", "italic", "underline"],
-      ["link", "blockquote", "code-block", "image"],
+      ["link", "blockquote", "code-block"],
       [{ list: "ordered" }, { list: "bullet" }],
       // [{ header: [1, 2, false] }],
       // [{ align: [] }],
@@ -12,3 +12,7 @@ const quill = new Quill("#editor", {
   },
   theme: "snow",
 });
+
+export {
+  quill
+}

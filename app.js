@@ -17,12 +17,13 @@ app.use(session({
   cookie: { secure: false } // Set to true if using https
 })); 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '100mb' })); // For JSON payloads
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 app.use(cookie());
-app.use(express.json());
+ // For URL-encoded forms
+app.use(express.json({ limit: '100mb' })); // For JSON bodies
+app.use(express.urlencoded({ limit: '100mb', extended: true })); // For URL-encoded bodies
+ 
 
 
 app.set("view engine", "ejs");

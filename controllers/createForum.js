@@ -5,7 +5,7 @@ const CreateForums = async (req,res) =>{
     try{
       
 
-    if(req.cookies._t){
+    if(req.user.id){
         const {topic} = req.body 
         const userId = req.user.id
         const username = req.user.u_name
