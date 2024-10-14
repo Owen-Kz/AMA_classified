@@ -23,7 +23,7 @@ body{
     align-items: center;
     padding: 50px;
     margin: auto;
-    width: 100%;
+    width: 80% !important;
     overflow: hidden;
 }
 

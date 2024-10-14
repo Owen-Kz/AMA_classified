@@ -194,6 +194,13 @@ router.post("/getForums", LoggedIN, getforums)
 router.post('/getForumComments', LoggedIN, getcomments)
 router.post("/createComment", LoggedIN, CreateComments)
 router.post("/createForum", LoggedIN, CreateForums)
+router.get("/category_result", async (req,res) =>{
+    if(req.query.category){
+        res.redirect(`/cat?c=${req.query.category}`)
+    }else{
+        res.redirect("/")
+    }
+})
 
 router.get("/messages", LoggedIN, AdminLoggedIn,  (req,res) =>{
     if(req.cookies._t || req.cookies._ama){
