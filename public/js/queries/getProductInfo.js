@@ -130,7 +130,7 @@ function GetProductDetails(productId, productTitle) {
             if(priceMain && priceMain != null){
                 priceContainer.innerText = `$ ${productDetails.price.toLocaleString()}`
             }else{
-                priceContainer.innerText = `Price is Not Applicable`
+                priceContainer.innerText = `Contact Seller For Price`
             }
             const category = productDetails.category;
             const subCats = data.SubCategories;
