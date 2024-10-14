@@ -78,16 +78,22 @@ function booksNavigation(totalPagesListings, currentPage) {
       </ul>
       <span id="bookPageInfo">Page ${currentPage} of ${totalPagesListings}</span>`;
   }
-  async function GetProductDetails(productId, productTitle) {
-   return fetch(`/details/${productTitle}/${productId}`, {
+  async function GetProductDetails(productId) {
+    console.log(productId)
+   return fetch(`/details/${productId}`, {
         method: "GET"
     }).then(res => res.json())
     .then(async (data) => {
+        console.log(data)
+        if(data){
         if (data.success) {
             return data.productFiles
         }else{
             return  []
         }
+    }else{
+        return []
+    }
     })
 }
 
@@ -101,6 +107,7 @@ function booksNavigation(totalPagesListings, currentPage) {
         }
     }).then(res=>res.json())
     .then(async (data)=>{
+        console.log(data)
     listingsContainer.innerHTML = ""
  
         if(data.success){
@@ -114,7 +121,8 @@ function booksNavigation(totalPagesListings, currentPage) {
             const listings = data.mylistings
             for(let i=0; i<listings.length; i++){
                 const listingData = listings[i]
-                const imagesArray = await GetProductDetails(listingData.id, listingData.title)
+                const imagesArray = await GetProductDetails(listingData.id)
+                console.log(imagesArray)
                 let Status = ""
                 let AllImages = ""
 

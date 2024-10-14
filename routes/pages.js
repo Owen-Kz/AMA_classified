@@ -136,7 +136,9 @@ router.get("/login",LoggedIN, (req,res) =>{
 })
 
 router.get("/l/:productTitle/:id",LoggedIN, opentToView, previewItem)
+router.get("/details/:id", GetProductinfo)
 router.get("/details/:productTitle/:id", GetProductinfo)
+
 
 router.post("/signup", signup)
 
