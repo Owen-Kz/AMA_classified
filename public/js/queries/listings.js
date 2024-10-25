@@ -258,7 +258,7 @@ fetch(`/listings?page=${page}`, {
         if(ListingsTopContainer){
                 ListingsTopContainer.innerHTML = ""
          
-                for(let i =10; i < 20; i++){
+                for(let i =0; i < 10; i++ ){
                     let country = ""
                     let ItemPrice = ""
                     let currency = "$"
@@ -341,7 +341,7 @@ fetch(`/listings?page=${page}`, {
         if(listingsBottomContainer){
             listingsBottomContainer.innerHTML = ""
      
-            for(let i =0; i < 10; i++){
+            for(let i =10; i < 20; i++){
                 let country = ""
                 let ItemPrice = ""
                 let currency = "$"
