@@ -62,7 +62,13 @@ fetch(`/staticAdverts`,{
         }
     }else{
 
-        staticAdvertsContainer.innerHTML += `<a href="/adintro"><img src="/uploads/AMAS.png" alt="No  Static ADvert available"/></a>`
+        staticAdvertsContainer.innerHTML += `<a href="/adintro"><video width="600" height="350"  autoplay muted>
+    <source src="https://res.cloudinary.com/dswliutlf/video/upload/v1729831711/t2xel3qhfui3oncuv5qo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    </a>`
+        // https://res.cloudinary.com/dswliutlf/video/upload/v1729831711/t2xel3qhfui3oncuv5qo.mp4
+        
     }
     }
 })
