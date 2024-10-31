@@ -121,3 +121,20 @@ removebutton.addEventListener("click", function(){
     dzbutton.style.display = "flex"
     submitPhoto.style.display = "none"
 })
+
+
+
+// Copy referral Link 
+const input = document.querySelector(".linkContainer"),
+copy = document.querySelector(".copy");
+
+copy.onclick = ()=>{
+  input.select(); //select input value
+  if(document.execCommand("copy")){ //if the selected text is copied
+    copy.innerText = "Copied";
+    setTimeout(()=>{
+      window.getSelection().removeAllRanges(); //remove selection from page
+      copy.innerText = "Copy";
+    }, 3000);
+  }
+}

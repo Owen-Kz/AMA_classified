@@ -1,6 +1,6 @@
 const signup =  async (req,res) =>{
     try {
-    const { username, password, country, firstname, lastname, phonenumber, email } = req.body;
+    const { username, password, country, firstname, lastname, phonenumber, email, referralCode } = req.body;
 
     // Prepare the data to send in the POST request
     const data = {
@@ -10,7 +10,8 @@ const signup =  async (req,res) =>{
         firstname: firstname, 
         lastname: lastname,
         phonenumber: phonenumber,
-        country, country
+        country: country,
+        referralCode:referralCode        
     };
 
     

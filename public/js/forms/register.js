@@ -42,7 +42,8 @@ registerForm.addEventListener("submit", function(e){
         email:email.value,
         phonenumber: phonenumber.value,
         password:password.value,
-        country:country.value
+        country:country.value,
+        referralCode: referral_code.value
     }
     if(password2.value !== password.value){
         errorContainer.textContent = "Passwords Do not Match"

@@ -92,6 +92,16 @@
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
+
+            <div class="form_control">
+                <label for="country">Referral Id (Optional)</label>
+
+            <% if(refID !== "") { %>
+            <input type="text" id="referral_code" placeholder="Enter your Referral Id" value="<%= refID %>" readonly>
+            <% } else { %>
+            <input type="text" id="referral_code" placeholder="Enter your Referral Id">
+                <% } %>
+            </div>
             </div>
 
             <div class="form_body_footer"></div>

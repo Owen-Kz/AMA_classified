@@ -4,7 +4,6 @@ const userID = GetCookie("_superID")
 const superId = GetCookie("_superID")
 
 if(superId){
-
 const BrandAdsContainer = document.getElementById("BrandAdsContainer")
 
 const paginationContainer = document.getElementById("pagination");

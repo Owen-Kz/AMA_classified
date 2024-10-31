@@ -209,6 +209,14 @@ const editor_nav = `<ul id="sidebarnav">
                                 <span class="hide-menu">Contact</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/referrals"
+                            aria-expanded="false" >
+                            <i class="bi bi-people" aria-hidden="true"></i>
+                            <span class="hide-menu">Referrals</span>
+                        </a>
+                    </li>
                                                                                 <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
                                 aria-expanded="false" >

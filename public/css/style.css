@@ -10460,3 +10460,14 @@ File: scss
 .btn-grey{
   background: #333333;
 }
+
+
+.copy{
+  display:flex;
+  background: var(--AmasLinkColor);
+  border-radius:25px;
+  outline:none;
+  border:none;
+  padding:5px;
+  color:white;
+}

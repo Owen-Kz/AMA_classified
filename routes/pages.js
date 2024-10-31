@@ -88,6 +88,8 @@ const fullpageActions = require("../controllers/admin/fullpageActions");
 const updateItem = require("../controllers/specialAdverts/updateItem");
 const UpdateAdvert = require("../controllers/updateAdvert");
 const UpdateProfileImage = require("../controllers/updateProfileImage");
+const getReferrals = require("../controllers/utils/getReferrals");
+const referralsPage = require("../controllers/pages/referralsPage");
 
 const router = express.Router();
 
@@ -124,7 +126,11 @@ router.get("/register",LoggedIN,  (req,res) =>{
     if(req.cookies._t && req.user){
         return res.redirect("/dashboard")
     }else{
-    res.render("register")
+        let referralId = ""
+        if(req.query.ref){
+            referralId = req.query.ref
+        }
+    res.render("register", {refID:referralId})
     }
 })
 router.get("/login",LoggedIN, (req,res) =>{
@@ -167,7 +173,7 @@ router.get("/countMyListings", LoggedIN, countMyListings)
 
 router.get("/profile", LoggedIN, (req,res) =>{
     if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
-    res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web})
+    res.render("profile",  {email:req.user.email, username:req.user.u_name, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web, referral_id:req.user.referral_code})
 }else{
     res.render("login")
 }
@@ -245,6 +251,9 @@ router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
         res.render("login")
     }
 }) 
+
+router.get("/referrals", LoggedIN, referralsPage)
+
 // get Listings for user 
 router.post("/userListings", userListings)
  
@@ -407,6 +416,8 @@ router.post("/forgot-password", forgotPassword)
 router.post("/verify-code", verifyCode)
 router.post("/create-password", createPassword)
 
+// Get Referrals 
+router.post("/getReferrals", LoggedIN, getReferrals)
 
 router.get("/superadmin/logout", (req,res) => {
     res.clearCookie('_ama')

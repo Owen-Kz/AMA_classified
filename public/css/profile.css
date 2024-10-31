@@ -69,3 +69,12 @@
     }
     
 }
+
+.linkContainer{
+    display: flex;
+    background:transparent !important;
+    border:none;
+    outline: none;
+    min-width: 400px;
+    width:max-content !important;
+}
