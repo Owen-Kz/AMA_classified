@@ -80,7 +80,7 @@ fetch(`/listings?page=1`, {
 .then(async (data) =>{
     if(data.success){
         const ListingsList = data.listings
-        for(i=10; i<19; i++){
+        for(i=0; i<9; i++){
           
             let image = ""
         if(ListingsList[i].is_recent_item === "yes"){
