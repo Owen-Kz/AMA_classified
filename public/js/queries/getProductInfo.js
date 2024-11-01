@@ -164,7 +164,11 @@ function GetProductDetails(productId, productTitle) {
 
             // Set the content for the slide show 
             if(prodFiles.length > 0){
-            
+            const head = document.getElementById("head")
+            head.innerHTML += ` 
+             <meta property="og:title" content="${productTitle}'s Profile" />
+    
+              <meta property="og:image" content="${prodFiles[0].file_url}" />`
             if (imageSlideShowContainer) {
                 for (let b = 0; b < prodFiles.length; b++) {
                     const file = prodFiles[b];
