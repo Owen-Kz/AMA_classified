@@ -1,3 +1,4 @@
+import { quill } from "./forms/quil.jsl";
 
 const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');

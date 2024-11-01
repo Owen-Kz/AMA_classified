@@ -1,3 +1,4 @@
+import { quill } from "./forms/quill.js";
 
 const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');
@@ -142,6 +143,7 @@ postAdForm.addEventListener("submit", function(e) {
      })
     })
     let error = false
+    
 
     newData.append('description', JSON.stringify(quill.getContents().ops));
 
