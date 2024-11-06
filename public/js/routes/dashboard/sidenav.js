@@ -122,12 +122,21 @@ const admin_nav = `<ul id="sidebarnav" >
                                 <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/transactions"
                                 aria-expanded="false" >
-                                <i class="bi bi-people" aria-hidden="true"></i>
+                                <i class="bi bi-bar-chart" aria-hidden="true"></i>
                                 <span class="hide-menu">Recent Transactions</span>
                             </a>
                         </li>
-                
-                                                                                <li class="sidebar-item">
+
+
+                        <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s/analytics"
+                            aria-expanded="false" >
+                            <i class="bi bi-graph-up" aria-hidden="true"></i>
+                            <span class="hide-menu">Analytics</span>
+                        </a>
+                    </li>
+            
+                      <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
                                 aria-expanded="false" >
                                 <i class="bi bi-house" aria-hidden="true"></i>
