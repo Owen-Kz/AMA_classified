@@ -90,6 +90,9 @@ const UpdateAdvert = require("../controllers/updateAdvert");
 const UpdateProfileImage = require("../controllers/updateProfileImage");
 const getReferrals = require("../controllers/utils/getReferrals");
 const referralsPage = require("../controllers/pages/referralsPage");
+const SaveAnalytics = require("../controllers/analytics/saveAnalytics");
+const getAnalytics = require("../controllers/analytics/getAnalytics");
+const analyticsPage = require("../controllers/admin/analyticsPage");
 
 const router = express.Router();
 
@@ -418,6 +421,12 @@ router.post("/create-password", createPassword)
 
 // Get Referrals 
 router.post("/getReferrals", LoggedIN, getReferrals)
+
+// External Advert Analytics
+router.get("/promo/:source", SaveAnalytics)
+router.post("/s/getAnalytics", AdminLoggedIn, getAnalytics)
+router.get("/s/analytics", AdminLoggedIn, analyticsPage)
+
 
 router.get("/superadmin/logout", (req,res) => {
     res.clearCookie('_ama')
