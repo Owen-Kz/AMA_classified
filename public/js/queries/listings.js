@@ -214,7 +214,7 @@ fetch(`/listings?page=${page}`, {
                 ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
-               <a href="/l/${encodeURIComponent(ListingsList[i].title)}/${ListingsList[i].id}"> <div class="product_item">
+               <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
                     <div class="image_container" style="background-image:url(${imageLink});">
                         <img class="productImage" src="${imageLink}" alt="Product image">
                        
