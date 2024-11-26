@@ -216,7 +216,7 @@ document.addEventListener("change", function(event) {
         const action = event.target.value
        
           if(action === "view"){
-            window.location.href = `/l/${title}/${id}`
+            window.location.href = `/l/${id}`
         }else{
             fetch(`/s/${action}/item/${id}`, {
                 method:"POST", 

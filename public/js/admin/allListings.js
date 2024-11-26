@@ -78,8 +78,8 @@ function booksNavigation(totalPagesListings, currentPage) {
       </ul>
       <span id="bookPageInfo">Page ${currentPage} of ${totalPagesListings}</span>`;
   }
-  async function GetProductDetails(productId, productTitle) {
-   return fetch(`/details/${productTitle}/${productId}`, {
+  async function GetProductDetails(productId) {
+   return fetch(`/details/${productId}`, {
         method: "GET"
     }).then(res => res.json())
     .then(async (data) => {
@@ -114,7 +114,7 @@ function booksNavigation(totalPagesListings, currentPage) {
             const listings = data.mylistings
             for(let i=0; i<listings.length; i++){
                 const listingData = listings[i]
-                const imagesArray = await GetProductDetails(listingData.id, listingData.title)
+                const imagesArray = await GetProductDetails(listingData.id)
                 let Status = ""
                 let AllImages = ""
                 let moreActions = ""
@@ -220,7 +220,7 @@ document.addEventListener("change", function(event) {
         const action = event.target.value
        
         if(action === "view"){
-            window.location.href = `/l/${title}/${id}`
+            window.location.href = `/l/${id}`
         }else{
             fetch(`/s/${action}/item/${id}`, {
                 method:"POST", 

@@ -2,8 +2,8 @@ const url = new URL(window.location.href);
 const pathname = url.pathname; // '/l/Videography/7231'
 const segments = pathname.split('/').filter(Boolean);
 
-const productTitle= segments[1]; // 'Videography'
-const id = segments[2];       // '7231'
+// const productTitle= segments[1]; // 'Videography'
+const id = segments[1];       // '7231'
 
 const priceContainer = document.getElementById("priceContainer")
 const locationContainer = document.getElementById("locationContainer")
@@ -32,8 +32,8 @@ async function GetSellerDetails(uid){
     })
 }
 
-function GetProductDetails(productId, productTitle) {
-    fetch(`/details/${productTitle}/${productId}`, {
+function GetProductDetails(productId) {
+    fetch(`/details/${productId}`, {
         method: "GET"
     }).then(res => res.json())
     .then(async (data) => {
@@ -275,11 +275,12 @@ function GetProductDetails(productId, productTitle) {
 
 
 
-if(productTitle && id){
-    console.log(productTitle, id)
-    GetProductDetails(id, productTitle)
+if(id){
+
+    GetProductDetails(id)
 
 }else{
+    alert("Invalid ID")
     window.location.href = '/'
 }
 

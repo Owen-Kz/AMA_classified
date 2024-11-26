@@ -15,9 +15,9 @@ const SmalPreviews = document.getElementById("small_image_previews")
 
 
 
-function GetProductDetails(productId, productTitle) {
+function GetProductDetails(productId) {
 
-    fetch(`/details/brand/${productTitle}/${productId}`, {
+    fetch(`/details/brand/${productId}`, {
         method: "GET"
     }).then(res => res.json())
     .then(async (data) => {
@@ -161,7 +161,7 @@ function GetProductDetails(productId, productTitle) {
 
 if(productTitle && id){
    
-    GetProductDetails(id, productTitle)
+    GetProductDetails(id)
 
 }else{
     window.location.href = '/'

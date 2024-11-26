@@ -144,7 +144,7 @@ router.get("/login",LoggedIN, (req,res) =>{
     }
 })
 
-router.get("/l/:productTitle/:id",LoggedIN, opentToView, previewItem)
+router.get("/l/:id",LoggedIN, opentToView, previewItem)
 router.get("/details/:id", GetProductinfo)
 router.get("/details/:productTitle/:id", GetProductinfo)
 
@@ -384,8 +384,8 @@ router.post("/subscribers", AdminLoggedIn, subscribers)
 router.get("/s/brands", AdminLoggedIn, BrandAdsPage)
 router.post("/allBrands", AdminLoggedIn, AllBrandAds)
 router.post("/s/:action/brand/:id", AdminLoggedIn, BrandActions)
-router.get("/brand/:title/:id", LoggedIN, brandPreviewPage)
-router.get("/details/brand/:productTitle/:id", GetBrandInfo)
+router.get("/brand/:id", LoggedIN, brandPreviewPage)
+router.get("/details/brand/:id", GetBrandInfo)
 router.get("/verify", verifyAccount)
 router.post("/stripe/key", LoggedIN, getKeys)
 router.post("/s/:action/fullpage/:id", AdminLoggedIn, fullpageActions)

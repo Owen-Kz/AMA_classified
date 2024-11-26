@@ -227,7 +227,7 @@ fetch(`/listings?page=${page}&q=${query}`, {
                 ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
-               <a href="/l/${encodeURIComponent(ListingsList[i].title)}/${ListingsList[i].id}"> <div class="product_item">
+               <a href="/l/${ListingsList[i].id}"> <div class="product_item">
                     <div class="image_container" style="background-image:url(${imageLink});">
                         <img class="productImage" src="${imageLink}" alt="Product image">
                        
@@ -310,7 +310,7 @@ fetch(`/listings?page=${page}&q=${query}`, {
                         ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
                     }
                     ListingsTopContainer.innerHTML += `          <!-- start single_item  -->
-                       <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
+                       <a href="/l/${ListingsList[i].id}"> <div class="product_item">
                             <div class="image_container" style="background-image:url(${imageLink});">
                                 <img class="productImage" src="${imageLink}" alt="Product image">
                                
@@ -393,7 +393,7 @@ fetch(`/listings?page=${page}&q=${query}`, {
                     ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
                 }
                 listingsBottomContainer.innerHTML += `          <!-- start single_item  -->
-                   <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
+                   <a href="/l/${ListingsList[i].id}"> <div class="product_item">
                         <div class="image_container" style="background-image:url(${imageLink});">
                             <img class="productImage" src="${imageLink}" alt="Product image">
                            

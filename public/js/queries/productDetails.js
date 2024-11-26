@@ -1,5 +1,5 @@
 async function productDetails(productId, productTitle) {
-  return  fetch(`/details/${productTitle}/${productId}`, {
+  return  fetch(`/details/${productId}`, {
         method:"GET"
     }).then(res=>res.json())
     .then(data =>{
