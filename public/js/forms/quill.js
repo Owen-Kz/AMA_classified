@@ -2,7 +2,7 @@ const quill = new Quill("#quill", {
   modules: {
     toolbar: [
       ["bold", "italic", "underline"],
-      ["link", "blockquote", "code-block"],
+      ["blockquote", "code-block"],
       [{ list: "ordered" }, { list: "bullet" }],
       // [{ header: [1, 2, false] }],
       // [{ align: [] }],

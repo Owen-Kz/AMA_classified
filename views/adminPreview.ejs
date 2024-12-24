@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon icon -->
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+        </script>
+    
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
+    <title><%= title  %></title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/preview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- QUILL JS  -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <link rel="stylesheet" href="/css/categories.css">
+    <!-- END QUILL JS  -->
+</head>
+<body>
+    <input type="hidden" id="fullnameContainer" value="<%=username%>">
+
+        <!-- Start Top Section  -->
+        <!-- <section class="topSection" id="topBarContainer">
+
+        </section> -->
+        <!-- End top section  -->
+               <!-- Start navbar   -->
+               <!-- <div class="navbar navbarContainer" id="navbarContainer">
+            </div>  -->
+
+            <!-- Start Horizontal Navbar  -->
+             <div class="containerForNav">
+                 <!-- Left  -->
+            <!-- <div class="navbar-left">
+                <div class="image_container">
+                    <img src="/assets/logo.png" alt="Amaslink Logo">
+                </div>
+            </div> -->
+            <!-- End Left  -->
+            <div class="horizontalNavbar navbarContainer">
+                
+
+            </div>
+             </div>
+             
+                <!-- End Horizontal navbar  -->
+                   <!-- END navbar Section  -->
+   
+        <!-- Start Ads Section  -->
+        <!-- <script src="/js/navbar.js" type="module"></script> -->
+        <!-- product Section  -->
+    <section class="products_preview_page" style="margin-top: 0px !important;">
+        <!-- left side of page -->
+        <div class="product_details">
+            <div class="top_section">
+                <div class="main_image_container">
+                     <!-- Start slides -->
+        <div class="ads-slide" id="imageSlideShowContainer">          
+            <!-- Add more slides as needed -->
+            <button class="arrow left-arrow">&lt;</button>
+            <button class="arrow right-arrow">&gt;</button>
+        </div>
+        
+        <!-- End slides  -->
+                </div>
+
+                <div class="image_previews" id="small_image_previews">
+                </div>
+                
+
+                <div class="image_previews" id="smalllVideoPreview">
+                </div>
+           
+            </div>
+            <!-- End top Sections and image containers  -->
+
+            
+            <div class="product_info">
+                <div class="product_title"></div>
+                <div class="location">
+                    <div class="mainLocationDetails">
+                        <div><i class="bi bi-map-fill"></i></div> 
+                        <div id="locationContainer"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Start Category container  -->
+            <div class="category_container">
+                <div class="container_header">Category</div>
+                <ul class="categoriesList" id="productCategory">
+               
+                </ul>
+            </div>
+            <!-- End Vategory container  -->
+                 <!-- Start Category container  -->
+            <div class="category_container">
+                <div class="container_header">Sub Category</div>
+                <ul class="categoriesList" id="SubCatContainer">
+                    <!-- <li>
+                        <div class="icon_container"><i class="categoryIcon"></i></div>
+                        <div class="text_container">Sub Category Text</div>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- End Vategory container  -->
+
+            <!-- Start condition container  -->
+             <div class="conditionContainer">
+                <div class="container_header">Condition</div>
+                <div class="condition_text" id="conditionContainer"></div>
+             </div>
+             <!-- End Condition Container  -->
+                  <!-- Start condition container  -->
+             <div class="conditionContainer">
+                <div class="container_header">Purpose</div>
+                <div class="condition_text" id="purposeContainer"></div>
+             </div>
+             <!-- End Condition Container  -->
+
+             <!-- Start description Container  --> 
+              <div class="description_container">
+                <div class="container_header">Description</div>
+                <div class="description" id="descriptionContainer">
+                   
+                </div>
+              </div>
+        </div>
+        <!-- end left side of page  -->
+
+        <!-- Start tight side of page  -->
+         <div class="right_side">
+            <div class="right_top_div">
+                <div class="small_text">Asking Price</div>
+                <div class="price"><span class="currency"></span> <span class="amount" id="priceContainer"></span></div>
+                <!-- <button>Make an Offer</button> -->
+            </div>
+
+            <!-- Edn first div  -->
+
+            <!-- Start seller profile  -->
+             <div class="seller_profile" id="sellerDetailsContainer">
+
+             </div>
+             <!-- End seller profile  -->
+         </div>
+        <!-- End right side of page  -->
+    </section>
+    <!-- sned product section  -->
+
+
+    <!-- <Footer id="footerContainer">
+
+    </Footer> -->
+    <!-- <script src="/js/footer.js"></script> -->
+
+    <script src="/js/queries/getProductInfo.js" type="module"></script>
+
+    <script src="/js/productPreviewSlide.js"></script>
+
+
+
+  <div id="google_translate_element2">
+        <div id="google_translate_element"></div>
+      </div>
+      <%- include ("googleTranslate") %>
+      <script src="/js/jquery-1.12.4.min.js"></script>
+      <script src="/js/googleTranslate.js"></script>
+</body>
+</html>

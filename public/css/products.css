@@ -445,3 +445,70 @@
       }
 
 }
+
+/* content preview modal  */
+.frameModal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(32, 32, 32, 0.486);
+    position: fixed;
+    z-index: 9999;
+}
+
+
+.frameModalBody{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    width: 50%;
+    height: 90%;
+    align-self: center;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+
+.frameModalHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 5px;
+}
+
+.frameModalHeader button{
+    padding: 10px;
+    border-radius: 50%;
+    border:none;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #aaaaaa;
+}
+.frameContent{
+    height: 90%;
+    width: 100%;
+    /* background-color: red; */
+}
+.frameContent iframe{
+    height: 100%;
+    width: 100%;
+}
+
+.btn-outline-danger {
+    border: 1px solid red;
+    color: red;
+}
+
+.btn-outline-danger:hover{
+    background-color: red;
+    border: 1px solid red;
+}

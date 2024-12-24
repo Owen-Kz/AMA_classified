@@ -170,9 +170,9 @@ function booksNavigation(totalPagesListings, currentPage) {
                                             <option value="">Actions</option>
                                             <option value="view">View</option>
                                            ${moreActions}
-                        
                                            
                                         </select>
+                                        
                                         
                                         </form>
                                     </td>
@@ -213,16 +213,34 @@ if(page && page >0){
 }
 
 // ACtions From function 
+const modalContainer = document.getElementById("modalContainer")
+const modalFrame = document.getElementById("modalFrame")
+const closeFrame = document.getElementById("closeFrame")
+const approveButton = document.getElementById("approveButton")
+const RejectButton = document.getElementById("rejectButton")
+if(closeFrame){
+    closeFrame.addEventListener("click", function(){
+        modalContainer.style.display = "none"
+    })
+}
+if(modalContainer){
+    modalContainer.addEventListener("click", function(){
+        modalContainer.style.display = "none"
+    })
+}
+
+
 document.addEventListener("change", function(event) {
+
     if (event.target.classList.contains("submitAction")) {
         const title = event.target.closest("tr").title 
         const id = event.target.closest("tr").id
         const action = event.target.value
-       
-        if(action === "view"){
-            window.location.href = `/l/${id}`
-        }else{
-            fetch(`/s/${action}/item/${id}`, {
+        
+
+
+        function CarryActionONItem(act){
+            fetch(`/s/${act}/item/${id}`, {
                 method:"POST", 
                 headers:{
                     "Content-type" : "application/JSON"
@@ -236,6 +254,23 @@ document.addEventListener("change", function(event) {
                     alert(data.error)
                 }
             })
+        }
+       
+        approveButton.addEventListener("click", function(e){
+            e.preventDefault()
+            CarryActionONItem("approve")
+        })
+        RejectButton.addEventListener("click", function(e){
+            e.preventDefault()
+            CarryActionONItem("reject")
+        })
+        
+        if(action === "view"){
+            // window.location.href = `/l/${id}`
+            modalFrame.setAttribute("src", `/previewItemAdmin/${id}`)
+            modalContainer.style.display = "flex"
+        }else{
+            CarryActionONItem(action)
             // window.location.href = `/s/${action}/item/${id}`
         }
     }

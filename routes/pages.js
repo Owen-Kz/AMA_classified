@@ -93,6 +93,7 @@ const referralsPage = require("../controllers/pages/referralsPage");
 const SaveAnalytics = require("../controllers/analytics/saveAnalytics");
 const getAnalytics = require("../controllers/analytics/getAnalytics");
 const analyticsPage = require("../controllers/admin/analyticsPage");
+const adminPreview = require("../controllers/admin/adminPreview");
 
 const router = express.Router();
 
@@ -145,6 +146,8 @@ router.get("/login",LoggedIN, (req,res) =>{
 })
 
 router.get("/l/:id",LoggedIN, opentToView, previewItem)
+router.get("/previewItemAdmin/:id",LoggedIN, adminPreview)
+
 router.get("/details/:id", GetProductinfo)
 router.get("/details/:productTitle/:id", GetProductinfo)
 
