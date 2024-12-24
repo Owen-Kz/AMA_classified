@@ -36,6 +36,11 @@
 
 body{
     top:0 !important;
+    background-image: url("../assets/bg.png") !important;
+    background-size:auto !important;
+    background-clip: border-box !important;
+    background-attachment: fixed !important;
+    background-repeat:no-repeat !important;
 }
 
 .bi-list{
