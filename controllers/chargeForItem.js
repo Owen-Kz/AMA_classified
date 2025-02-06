@@ -1,5 +1,6 @@
 const { config } = require("dotenv")
 const decryptText = require("./utils/decryptText")
+const createPaidAdvertEntry = require("./adsManagement/createPaidAdvertEntry")
 const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY)
 
 const ChargeForItem = async (req,res, itemId) =>{
@@ -28,6 +29,7 @@ const ChargeForItem = async (req,res, itemId) =>{
 
     console.log(_token, amount, currentPack)
 
+    
     if(amount <= 2.00 && _token !== 'brand_ad' && _token !== "business_ad"){
         package = "normal_package"
     }else if(amount >= 3.00 && _token !== 'brand_ad' && _token !== "business_ad"){
@@ -59,6 +61,7 @@ const ChargeForItem = async (req,res, itemId) =>{
       cancel_url: `${process.env.CURRENT_DOMAIN}/dashboard`,
     });
   
+    await createPaidAdvertEntry(req.cookies._usid, itemId, amount)
   
     res.cookie('sessionId', session.id, { maxAge: 7 * 24 * 60 * 60 * 1000 }); // Cookie valid for 7 days
     // res.cookie("_pay_advert", amount, {maxAge: 1 * 24 * 60 * 60 * 1000 })

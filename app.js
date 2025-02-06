@@ -62,7 +62,7 @@ function onConnected(socket) {
 
   })
   socket.on("message", async (data, roomId) => {
-    io.to(roomId).emit("chat-message", data);
+    // io.to(roomId).emit("chat-message", data);
 
     try {
 

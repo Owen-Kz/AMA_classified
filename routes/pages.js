@@ -94,6 +94,8 @@ const SaveAnalytics = require("../controllers/analytics/saveAnalytics");
 const getAnalytics = require("../controllers/analytics/getAnalytics");
 const analyticsPage = require("../controllers/admin/analyticsPage");
 const adminPreview = require("../controllers/admin/adminPreview");
+const checkFreeAds = require("../controllers/adsManagement/checkFreeAds");
+// const checkPaidAds = require("../controllers/adsManagement/checkPaidAds");
 
 const router = express.Router();
 
@@ -265,6 +267,9 @@ router.post("/userListings", userListings)
  
 // Create ADs 
 router.post("/postAd", LoggedIN, postAd)
+router.post("/checkFreeAds", LoggedIN, checkFreeAds)
+// router.post("/checkPaidAds", LoggedIN, checkPaidAds)
+
 router.post("/postBrandAdvert", LoggedIN, PostBrandAd)
 router.post("/postFullpageAdvert", LoggedIN, postFullpageAd)
 

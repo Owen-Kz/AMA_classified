@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { configDotenv } = require("dotenv");
 const ChargeForItem = require("./chargeForItem");
+const createFreeAdvertEntry = require("./adsManagement/createFreeAdvertEntry");
 const cloudinary = require('cloudinary').v2;
 
 // Load environment variables
@@ -137,6 +138,10 @@ const data = {
         if (responseData.success) {
           const itemId = responseData.item_id
        
+        
+          if(!req.cookies.__amnt){
+          console.log(await createFreeAdvertEntry(req.cookies._usid, itemId))
+          }
          
           const url = await ChargeForItem(req,res, itemId)
  
