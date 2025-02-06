@@ -1,4 +1,5 @@
 const { configDotenv } = require("dotenv");
+const setToExpired = require("../adsManagement/setToExpired");
 
 
 const adminLogin = async (req,res) =>{
@@ -22,6 +23,8 @@ const adminLogin = async (req,res) =>{
         res.cookie("_ama", responseData.userToken, cookieOptions)
         res.cookie('_superID', responseData.userId, cookieOptions)
         res.cookie('_usid', responseData.userId, cookieOptions)
+        await setToExpired(responseData.userId)
+        
         // res.redirect("/profile")
         return res.json({success:"UserLoggedIn", token:responseData.cookie, message:responseData.success})
     }else{
