@@ -248,8 +248,8 @@ document.addEventListener("change", function(event) {
             }).then(res=>res.json())
             .then(data=>{
                 if(data.success){
-                    alert(data.success)
-                    window.location.reload()
+                    // alert(data.success)
+                    // window.location.reload()
                 }else{
                     alert(data.error)
                 }
