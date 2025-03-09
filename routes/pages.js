@@ -95,6 +95,7 @@ const getAnalytics = require("../controllers/analytics/getAnalytics");
 const analyticsPage = require("../controllers/admin/analyticsPage");
 const adminPreview = require("../controllers/admin/adminPreview");
 const checkFreeAds = require("../controllers/adsManagement/checkFreeAds");
+const siteMap = require("../controllers/services/sitemap");
 // const checkPaidAds = require("../controllers/adsManagement/checkPaidAds");
 
 const router = express.Router();
@@ -442,6 +443,11 @@ router.get("/superadmin/logout", (req,res) => {
     res.clearCookie("_usid")
     res.redirect("/superadmin")
 })
+
+
+router.get('/sitemap.xml', siteMap)
+
+
 router.get("*", (req, res)=> { 
     res.redirect('/')
 })
