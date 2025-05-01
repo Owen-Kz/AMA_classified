@@ -178,7 +178,7 @@ fetch(`/listings?page=${page}`, {
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
             let ItemPrice = ""
-            let currency = "$"
+            let Currency_symbol = "$"
             let imageLink = ""
             const imagesArray = await GetProductFiles(ListingsList[i].id)
             if(imagesArray.length > 0){
@@ -265,7 +265,7 @@ fetch(`/listings?page=${page}`, {
                 for(let i =0; i < ItemLimit; i++ ){
                     let country = ""
                     let ItemPrice = ""
-                    let currency = "$"
+                    let Currency_symbol = "$"
                     let imageLink = ""                   
                     
            
@@ -350,7 +350,7 @@ fetch(`/listings?page=${page}`, {
             for(let i =10; i < 20; i++){
                 let country = ""
                 let ItemPrice = ""
-                let currency = "$"
+                let Currency_symbol = "$"
                 let imageLink = ""
                
                 const imagesArray = await GetProductFiles(ListingsList[i].id)

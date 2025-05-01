@@ -158,7 +158,7 @@ fetch(`/bookmarks?page=${page}`, {
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
             let ItemPrice = ""
-            let currency = "$"
+            let Currency_symbol = "$"
             let imageLink = ""
 
 

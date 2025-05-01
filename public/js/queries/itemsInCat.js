@@ -193,7 +193,7 @@ fetch(`/itemsInCat?page=${page}&cat=${category}`, {
         for(let i =0; i < ListingsList.length; i++){
             let country = ""
             let ItemPrice = ""
-            let currency = "$"
+            let Currency_symbol = "$"
             let imageLink = ""
            
             const imagesArray = await GetProductFiles(ListingsList[i].id)
@@ -276,7 +276,7 @@ fetch(`/itemsInCat?page=${page}&cat=${category}`, {
                 for(let i =10; i < 20; i++){
                     let country = ""
                     let ItemPrice = ""
-                    let currency = "$"
+                    let Currency_symbol = "$"
                     let imageLink = ""
                    
                     const imagesArray = await GetProductFiles(ListingsList[i].id)
@@ -359,7 +359,7 @@ fetch(`/itemsInCat?page=${page}&cat=${category}`, {
             for(let i =0; i < 10; i++){
                 let country = ""
                 let ItemPrice = ""
-                let currency = "$"
+                let Currency_symbol = "$"
                 let imageLink = ""
                
                 const imagesArray = await GetProductFiles(ListingsList[i].id)
