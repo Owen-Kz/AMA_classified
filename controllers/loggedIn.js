@@ -36,12 +36,14 @@ const LoggedIN = async (req,res, next) =>{
     if(response){
     const responseData = await response.json(); 
 if(responseData){
-  
+
     if(responseData.user){
         
         req.user = responseData.user
         req._token = userToken
         req.current_rates = responseData.CurrencyRate
+
+    
 
         next()
         // return response.user

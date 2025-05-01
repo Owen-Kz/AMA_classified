@@ -19,6 +19,7 @@ try{
       const ip = getClientIP(req)
     
       const location = await getLocationByIP(ip)
+      console.log(location.countryCode)
       
     //   req.userLocation = location
       const timeZone = formatTimezoneOffset(location.timezone) || "GMT + 1:00"

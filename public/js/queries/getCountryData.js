@@ -17,11 +17,15 @@
   let ExchangeRate = "1";
   (async () => {
     const currentExchangeRate = await getCountryData();
+    console.log(currentExchangeRate)
     if (currentExchangeRate) {
       Currency = currentExchangeRate.currency;
       ExchangeRate = currentExchangeRate.current_rate;
+      console.log(Currency)
     
     } else {
     //   alert("Failed to get exchange rate");
+    console.log("failed to get rate")
     }
   })();
+  console.log(Currency)

@@ -425,7 +425,7 @@ router.get("/verifyCode", async (req,res) =>{
 
 
 router.post("/getCountryData", LoggedIN, async (req,res) =>{
-
+    
     if(req.user){
         return res.json({country:req.current_rates})
     }else{
