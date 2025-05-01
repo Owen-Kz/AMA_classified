@@ -1,4 +1,6 @@
 const referralsContainer = document.getElementById("referralsContainer")
+
+
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -47,9 +49,24 @@ fetch(`/getReferrals`, {
         const referrals = data.referrals 
         if(referrals.length > 0){
             for(let i=0; i<referrals.length; i++){
+                let Status = ""
+                if(referrals[i].status === "approved" || referrals[i].status === "completed"){
+                    Status = `<span class="status-text status-green">Payment Completed</span>`
+                }else if(referrals[i].status === "rejected"){
+                    Status = `<span class="status-text status-red">Rejected</span>`
+
+                }else if(referrals[i].status === "pending"){
+                    Status = `<span class="status-text status-orange">Invited, Pending Advert Placement</span>`
+                }else if(referrals[i].status === "registered"){
+                    Status = `<span class="status-text status-orange">Registered, Pending Advert Placement</span>`
+                    
+                }
+
                 referralsContainer.innerHTML += `<tr>
                 <td>${await GetSellerDetails(referrals[i].referred_user)}</td>
                 <td>${formatTimestamp(referrals[i].date_referred)}</td>
+                <td>${Currency} ${new Number(referrals[i].bonus * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                <td>${Status}</td>
                 </tr>`
             }
         }else{

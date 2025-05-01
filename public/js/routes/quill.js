@@ -14,9 +14,9 @@ const quill = new Quill('#quilleditor', {
   });
   
  
-export {
-    quill
-}
+// export {
+//     quill
+// }
 //   form.addEventListener('formdata', (event) => {
 //     // Append Quill content before submitting
 //     event.formData.append('article_content', JSON.stringify(quill.getContents().ops));

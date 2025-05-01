@@ -171,7 +171,7 @@ fetch(`/bookmarks?page=${page}`, {
             if(ListingsList[i].price == null){
             ItemPrice = ``
             }else{
-                ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
             }
             const imagesArray = await GetProductFiles(ListingsList[i].id)
             if(imagesArray.length > 0){

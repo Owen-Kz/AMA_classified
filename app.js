@@ -10,13 +10,15 @@ const bcrypt = require("bcryptjs");
 const session = require('express-session');
 const bodyParser = require("body-parser");
 const SaveMessage = require("./controllers/sendMessage");
+const useragent = require('express-useragent');
+
 app.use(session({
   secret: process.env.JWT_SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // Set to true if using https
 })); 
-
+app.use(useragent.express());
 app.use(bodyParser.json({ limit: '100mb' })); // For JSON payloads
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 app.use(cookie());

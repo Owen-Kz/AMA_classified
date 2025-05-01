@@ -172,7 +172,7 @@ fetch(`/listings?page=${page}`, {
         if(paginationContainer){ 
             booksNavigation(totalPages, currentPage)
         }
-        if(listingsContainer){
+        if(listingsContainer && ListingsList.length > 0){
         listingsContainer.innerHTML = ""
  
         for(let i =0; i < ListingsList.length; i++){
@@ -180,7 +180,6 @@ fetch(`/listings?page=${page}`, {
             let ItemPrice = ""
             let currency = "$"
             let imageLink = ""
-           
             const imagesArray = await GetProductFiles(ListingsList[i].id)
             if(imagesArray.length > 0){
             if(imagesArray[0].file_url === ""){
@@ -211,7 +210,8 @@ fetch(`/listings?page=${page}`, {
             if(ListingsList[i].price == null){
             ItemPrice = ``
             }else{
-                ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                
+                ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
                <a href="/l/${ListingsList[i].id}"> <div class="product_item">
@@ -257,13 +257,19 @@ fetch(`/listings?page=${page}`, {
         //  For Bottom Listings 
         if(ListingsTopContainer){
                 ListingsTopContainer.innerHTML = ""
+                let ItemLimit = ListingsList.lngth
+                if(ListingsList.length > 10){
+                    ItemLimit = 10
+                }
          
-                for(let i =0; i < 10; i++ ){
+                for(let i =0; i < ItemLimit; i++ ){
                     let country = ""
                     let ItemPrice = ""
                     let currency = "$"
-                    let imageLink = ""
-                   
+                    let imageLink = ""                   
+                    
+           
+                
                     const imagesArray = await GetProductFiles(ListingsList[i].id)
                     if(imagesArray.length > 0){
                     if(imagesArray[0].file_url === ""){
@@ -294,7 +300,7 @@ fetch(`/listings?page=${page}`, {
                     if(ListingsList[i].price == null){
                     ItemPrice = ``
                     }else{
-                        ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                       ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                     }
                     ListingsTopContainer.innerHTML += `          <!-- start single_item  -->
                        <a href="/l/${ListingsList[i].id}"> <div class="product_item">
@@ -377,7 +383,7 @@ fetch(`/listings?page=${page}`, {
                 if(ListingsList[i].price == null){
                 ItemPrice = ``
                 }else{
-                    ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                 ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                 }
                 listingsBottomContainer.innerHTML += `          <!-- start single_item  -->
                    <a href="/l/${ListingsList[i].id}"> <div class="product_item">

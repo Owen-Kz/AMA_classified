@@ -13,8 +13,7 @@ ViewPassword.addEventListener("click", function(){
 
 registerForm.addEventListener("submit", function(e){
     e.preventDefault();
-    console.log("Login")
- 
+
     const data = {
         user:user.value,
         pass:password.value,

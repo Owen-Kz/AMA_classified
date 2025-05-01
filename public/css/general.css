@@ -85,10 +85,13 @@ a {
 } */
 html{
      /* background-color:  rgb(170, 0, 0); */
-
+     overflow-x: hidden;
+     overscroll-behavior: none;
+     scroll-behavior: smooth;
      background-color:  rgb(245, 245, 245);
 
 }
+
 body{
     /* background-color: rgb(241, 241, 241); */
     background: transparent;
@@ -100,6 +103,9 @@ body{
     /* align-items: center; */
     justify-content: center;
     flex-direction: column;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
     /* align-items: center; */
     margin: auto;
     /* overflow-y: scroll; */

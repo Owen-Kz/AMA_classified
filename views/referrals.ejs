@@ -56,6 +56,8 @@
     width:max-content !important;
 }
 </style>
+
+<script src="/js/queries/getCountryData.js" ></script>
 </head>
 
 <body>
@@ -179,6 +181,28 @@
                 <!-- ============================================================== -->
                 <!-- RECENT SALES -->
                 <!-- ============================================================== -->
+                <div class="row justify-content-space">
+
+                    <div class="col-lg-6 col-md-12 ">
+                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
+                             <!-- <i class=" fas fa-shopping-basket"></i> -->
+                             <i style="font-size: 30px; font-weight: bold;">
+                                <%= current_rates.currency %>
+                                <%= new Number(user.referral_bonus * current_rates.current_rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %> 
+                             </i>
+                             <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"></span> Referral Earnings</h6>
+                      
+
+                         </div>
+                     </div>
+            
+           
+           
+                    
+                  
+
+                </div>
+             
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
@@ -205,6 +229,9 @@
                                                 <tr>
                                                     <th class="text-left">Username</th>
                                                     <th class="text-left">Date Registered</th>
+                                                    <th class="text-left">Bonus</th>
+                                                    <th class="text-left">Status</th>
+
                                                  
                                                 </tr>
                                             </thead>

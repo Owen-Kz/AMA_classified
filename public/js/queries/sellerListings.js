@@ -212,7 +212,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
             if(ListingsList[i].price == null){
             ItemPrice = ``
             }else{
-                ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
             }
             listingsContainer.innerHTML += `          <!-- start single_item  -->
                <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
@@ -295,7 +295,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
                     if(ListingsList[i].price == null){
                     ItemPrice = ``
                     }else{
-                        ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                        ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                     }
                     listingsBottomContainer.innerHTML += `          <!-- start single_item  -->
                        <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">
@@ -378,7 +378,7 @@ fetch(`/sellerListings/${userId}?page=${page}`, {
                 if(ListingsList[i].price == null){
                 ItemPrice = ``
                 }else{
-                    ItemPrice = `${currency} ${ListingsList[i].price.toLocaleString()}`
+                    ItemPrice = `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                 }
                 ListingsTopContainer.innerHTML += `          <!-- start single_item  -->
                    <a href="/l/${ListingsList[i].title}/${ListingsList[i].id}"> <div class="product_item">

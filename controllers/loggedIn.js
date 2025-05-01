@@ -1,5 +1,7 @@
 const { configDotenv } = require("dotenv")
 
+
+
 const LoggedIN = async (req,res, next) =>{
     try{
     const userToken = req.cookies._t
@@ -9,12 +11,19 @@ const LoggedIN = async (req,res, next) =>{
         email: "",
         name: "",
         phone:"",
-        l_name:"",            
+        l_name:"",
+        location:"",
+        currency: "",
+        country:"",            
     }
 
     if(userToken){
+        
     const data = {
-        token: userToken
+        token: userToken,
+        country: "req.userLocation",
+        currency: "req.currency",
+        location:"req.timeZone"
     }
 
     const response = await fetch(`${process.env.ENDPOINT}/y/loggedIn`, {
@@ -27,14 +36,23 @@ const LoggedIN = async (req,res, next) =>{
     if(response){
     const responseData = await response.json(); 
 if(responseData){
+  
     if(responseData.user){
-        req.user = responseData.user
         
+        req.user = responseData.user
+        req._token = userToken
+        req.current_rates = responseData.CurrencyRate
+
         next()
         // return response.user
     }else{
   
         req.user = emptyArray
+        res.current_rates = {
+            currency : "USD",
+            current_rate: "1",
+            country: "USA"
+        }
         next()
     }
 }else{

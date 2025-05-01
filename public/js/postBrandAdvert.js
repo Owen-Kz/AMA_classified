@@ -1,4 +1,4 @@
-import { quill } from "./forms/quill.js";
+// import { quill } from "./forms/quill.js";
 
 const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');

@@ -11,7 +11,7 @@ const createPaidAdvertEntry = async (userID, item_id, amount) =>{
             headers:{
                 "Content-Type" : "application/json"
             },
-            body:JSON.stringify({user_id:userID, item_id:item_id, amount:amount})
+            body:JSON.stringify({token:userID, item_id:item_id, amount:amount})
         })
         const responseData = await response.json()
         if(responseData.success){

@@ -13,6 +13,6 @@ const quill = new Quill("#quill", {
   theme: "snow",
 });
 
-export {
-  quill
-}
+// export {
+//   quill
+// }

@@ -1,4 +1,3 @@
-import { quill } from "./forms/quil.jsl";
 
 const imageInput = document.getElementById('thumbnail');
 const imagePreview = document.getElementById('image-preview');
@@ -21,8 +20,7 @@ const videoFile = document.getElementById("videoFile")
 if(videoFile){
     videoFile.addEventListener("change", function(){
         if(this.files[0]){
-            console.log(this.files[0].size)
-
+   
             if(this.files[0].size > 5000000){
                 alert("File is too large, Choose a file below less than 5MB")
                 this.value = ""
@@ -139,10 +137,8 @@ fetch(`/allSubCategories`, {
     }
 })
 
-console.log("ADvert")
 // Sumit the Ad 
 const thumbnail = document.getElementById("thumbnail")
-console.log(thumbnail)
 // const postAdForm = document.getElementById("postAdForm")
 const postAdForm = document.getElementById("postAdForm");
 const preloader = document.querySelector(".preloader")
@@ -154,8 +150,7 @@ postAdForm.addEventListener("submit", function(e) {
     const videoFile = document.getElementById("videoFile")
  
     let error = false
-    console.log(thumbnail)
-    console.log(thumbnail.files[0])
+  
     if(thumbnail.files[0].size < 1){
         alert("Add an Thumbnail file to continue")
     }
@@ -179,6 +174,7 @@ postAdForm.addEventListener("submit", function(e) {
             
         }else{
             preloader.removeAttribute("style")
+            preloader.setAttribute("style", "display:none;")
             alert(data.error)
         }
          })
