@@ -89,7 +89,7 @@ function GetProductDetails(productId) {
             
         }
             const productTitle = productDetails.title
-            const priceMain = productDetails.price
+            const priceMain = `${Currency} ${new Number(productDetails.price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
             purposeContainer.innerText = productDetails.purpose;
             locationContainer.innerText = productDetails.country;
             conditionContainer.innerText = productDetails.condition;
@@ -128,7 +128,7 @@ function GetProductDetails(productId) {
             const titleContainer = document.querySelector(".product_title")
             titleContainer.innerText = productTitle
             if(priceMain && priceMain != null){
-                priceContainer.innerText = `$ ${productDetails.price.toLocaleString()}`
+                priceContainer.innerText =  `${Currency} ${new Number(productDetails.price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
             }else{
                 priceContainer.innerText = `Contact Seller For Price`
             }
