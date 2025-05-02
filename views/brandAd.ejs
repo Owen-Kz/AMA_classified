@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/ads.css">
 
-<script src="/js/queries/getCountryData.js" ></script>
+<script src="/js/queries/updateAmount.js" ></script>
 </head>
 <body>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
@@ -99,7 +99,7 @@
                             <img src="/assets/service.png" alt="">
                             <div class="panel-body">
                                 <h4>Things to know</h4>
-                                <li>Users who wish to give their Ads top priority (i.e to appear on top of recent Ads)  can do this anytime by using the boost Ads button on their dashboard. This comes with an additional cost of $3.</li>
+                                <li>Users who wish to give their Ads top priority (i.e to appear on top of recent Ads)  can do this anytime by using the boost Ads button on their dashboard. This comes with an additional cost of ><span class="amount"> $3</span>.</li>
                             </div>
                     </div>
         
@@ -110,7 +110,7 @@
                             <h4 class="">Sponsored Advert</h4>
                             <h6> 3 Months</h6>
               
-                            <h2><span>$</span><%=sponsored_3months%></h2>
+                            <h2><span class="amount">$ <%=sponsored_3months%></span></h2>
                                 <ul>
                                   
                                 </ul>
@@ -134,7 +134,7 @@
                             <h4 class="">Sponsored Advert </h4>
                             <h6>6 Months</h6>
               
-                            <h2><span>$</span><%=sponsored_6months%></h2>
+                            <h2><span class="amount">$ <%=sponsored_6months%></span></h2>
                                 <ul>
                                
                                 </ul>
@@ -155,7 +155,7 @@
                             <h4 class="">Slideshow advert</h4>
                             <h6>3 Months</h6>
               
-                            <h2><span>$</span><%=slideshow_3months%></h2>
+                            <h2><span class="amount">$ <%=slideshow_3months%></span></h2>
                                 <ul>
                                     <li></li>
                                    
@@ -177,7 +177,7 @@
                             <h4 class="">Slideshow Advert</h4>
                             <h6>6 Months</h6>
               
-                            <h2><span>$</span><%=slideshow_6months%></h2>
+                            <h2><span class="amount">$<%=slideshow_6months%></span></h2>
                                 <ul>
                                   
                                 </ul>
@@ -198,7 +198,7 @@
                             <h4 class="">Static Advert </h4>
                             <h6>3 Months</h6>
               
-                            <h2><span>$</span><%=static_3months%></h2>
+                            <h2><span class="amount">$<%=static_3months%></span></h2>
                                 <ul>
                               
                                 </ul>
@@ -220,7 +220,7 @@
                             <h4 class="">Static Advert </h4>
                             <h6>6 Months</h6>
               
-                            <h2><span>$</span><%=static_6months%></h2>
+                            <h2><span class="amount">$<%=static_6months%></span></h2>
                                 <ul>
                         
                                 </ul>
@@ -244,7 +244,7 @@
                             <h4 class="">Full Page Advert</h4>
                             <h6>3 Months</h6>
               
-                            <h2><span>$</span><%=fullpage_3months%></h2>
+                            <h2><span class="amount">$<%=fullpage_3months%></span></h2>
                                 <ul>
                                   
                                 </ul>
@@ -267,7 +267,7 @@
                             <h4 class="">Full Page Advert </h4>
                             <h6>6 Months</h6>
               
-                            <h2><span>$</span><%=fullpage_6months%></h2>
+                            <h2><span class="amount">$<%=fullpage_6months%></span></h2>
                                 <ul>
                         
                                 </ul>

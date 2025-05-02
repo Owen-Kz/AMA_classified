@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/ads.css">
 
-<script src="/js/queries/getCountryData.js" ></script>
+<script src="/js/queries/updateAmount.js" ></script>
 </head>
 <body>
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
@@ -100,7 +100,7 @@
                             <h4>Things to know</h4>
                             <ul>
                             <li>Users who wish to have more features (like more Ad pictures/images) should use any of the other packages.</li>
-                            <li>Users who wish to give their Ads top priority (i.e to appear on top of recent Ads)  can do this anytime by using the boost Ads button on their dashboard. This comes with an additional cost of $3.</li>
+                            <li>Users who wish to give their Ads top priority (i.e to appear on top of recent Ads)  can do this anytime by using the boost Ads button on their dashboard. This comes with an additional cost of <span class="amount">$3</span>.</li>
                        </ul>
                         </div>
                 </div>
@@ -112,7 +112,7 @@
                     <div class="panel-body">
                         <h4 class="">Normal Package</h4>
           
-                        <h2><span>$</span>0.00</h2>
+                        <h2><span class="amount">$ 0.00</span></h2>
                             <ul>
                                 <li><i class="bi bi-check2"></i>Never Expire</li>
                                 <li><i class="bi bi-x"></i>Unlimited ADS</li>
@@ -140,7 +140,7 @@
                     <div class="panel-body">
                         <h4 class="">Boosted Package</h4>
           
-                        <h2><span>$</span>3.00</h2>
+                        <h2><span class="amount">$ 3.00</span></h2>
                             <ul>
                                 <li><i class="bi bi-check2"></i>Never Expire</li>
                                 <li><i class="bi bi-check2"></i>Unlimited ADS</li>

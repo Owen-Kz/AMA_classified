@@ -4,9 +4,9 @@ const updateExchangeRates = require('./updateExchangeRates');
 
 const getCurrencyFromCountryCode = async (code) => {
   const country = countries[code];
-  const currency = country.currencies[0] ? country.currencies[0] : "USD"
-  const callingCodes = country.countryCallingCodes[0]
-  const countryName = country.name
+  const currency = country ? country.currencies[0] : "USD"
+  const callingCodes = country ? country.countryCallingCodes[0] : "+1"
+  const countryName = country ? country.name : "USA"
   const ExchangeRate = await getExchangeRateToUSD(currency)
 
 
