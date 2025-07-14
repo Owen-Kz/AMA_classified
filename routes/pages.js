@@ -455,6 +455,10 @@ router.get("/superadmin/logout", (req,res) => {
 })
 
 
+router.get("/mobi", (req,res) =>{
+    res.render("mobile-navbar")
+})
+
 router.get('/sitemap.xml', siteMap)
 
 

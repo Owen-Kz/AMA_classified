@@ -1,0 +1,97 @@
+<style>
+.mobile-navbar {
+    position: fixed;
+    bottom: 0;
+    display: none;
+    /* flex-direction: row; */
+    width: 100%;
+    background-color: #b70000;
+    /* border-top: 1px solid #dee2e6; */
+    z-index: 1000;
+    
+    align-items: center;
+    justify-content: center;
+    
+}
+.container{
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+.mobileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.row{
+    width: 100%;
+    display: flex;
+}
+.mobile-navbar .container {
+    padding: 10px 0;
+}
+.mobile-navbar a {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    user-select: none;
+}
+
+.mobile-navbar a span{
+    font-size: 12px;
+    user-select: none;
+    margin-top: 5px;
+}
+.plusContainer{
+  
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 50%;
+    color: #b70000;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 768px), (max-width: 240px), (max-width: 360px), (max-width: 480px) {
+    .mobile-navbar {
+        display: flex;
+    }
+
+    
+}
+</style>
+
+<div class="mobile-navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mobileContainer">
+                <a href="/">
+                    <i class="bi bi-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="/listings"><i class="bi bi-grid"></i>
+                    <span>Explore</span></a>
+                <a href="/createAd" title="createAd">
+                    <button class="plusContainer">
+                    <i class="bi bi-plus"></i>
+                    </button>
+                    <!-- <span>Create Ad</span> -->
+                </a>
+                <a href="/profile"><i class="bi bi-person"></i>
+                    <span>Profile</span></a>
+                <a href="javascript:void()" id="mobileNav"><i class="bi bi-list"></i>
+                    <span>More</span></a>
+            </div>
+        </div>
+    </div>
+
+</div>

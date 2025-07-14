@@ -53,7 +53,7 @@ topBarContainer.innerHTML = `        <!-- start top bar  -->
             ${isLoggedINProfile}
             </div>
             
-            <div class='mobileNav' id="mobileNav">
+            <div class='mobileNav' >
             <i class="bi bi-list" aria-hidden="true"></i>
             </div>
         </div>

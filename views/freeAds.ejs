@@ -112,7 +112,7 @@
                     <div class="panel-body">
                         <h4 class="">Normal Package</h4>
           
-                        <h2><span class="amount">$ 0.00</span></h2>
+                        <h2><span class="amount">$ 1.00</span></h2>
                             <ul>
                                 <li><i class="bi bi-check2"></i>Never Expire</li>
                                 <li><i class="bi bi-x"></i>Unlimited ADS</li>
@@ -124,13 +124,21 @@
                                 <li><i class="bi bi-x"></i>AD Video</li>
                             </ul>
                         <hr class="hrr">
-                        <p class="text-center">
+                        <!-- <p class="text-center">
                             </p><form method="GET" action="/createAd" accept-charset="UTF-8">
-                             <input name="amount" type="hidden" value="0">
+                             <input name="amount" type="hidden" value="1">
                              <input name="package" type="hidden" value="Free">
                              <input class="btn btn-success" style="text-transform:uppercase;" type="submit" value="Subscribe To Free Package">
                             </form>
-                        <p></p>
+                        <p></p> -->
+
+                             <p class="text-center">
+                            <form method="POST" action="/charge" accept-charset="UTF-8">
+                                <input name="_token" type="hidden" value="basic_advert">
+                             <input name="amount" type="hidden" value="1">
+                             <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Package">
+                            </form>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -153,12 +161,12 @@
                             </ul>
                         <hr class="hrr">
                         <p class="text-center">
-                            </p><form method="POST" action="/charge" accept-charset="UTF-8">
+                            <form method="POST" action="/charge" accept-charset="UTF-8">
                                 <input name="_token" type="hidden" value="basic_advert">
                              <input name="amount" type="hidden" value="3">
                              <input class="btn btn-success" name="submit" style="text-transform:uppercase;" type="submit" value="Subscribe To Boosted Package">
                             </form>
-                        <p></p>
+                        </p>
                     </div>
                 </div>
             </div>

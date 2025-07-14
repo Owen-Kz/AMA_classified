@@ -30,7 +30,7 @@ app.use(express.urlencoded({ limit: '100mb', extended: true })); // For URL-enco
 
 app.set("view engine", "ejs");
 
-app.set("views", ["views", "/views", "./views", "./views/admin"]);
+app.set("views", ["views", "/views", "./views", "./views/admin", "./views/user", "./views/partials", "./views/pages", "./views/components", "./views/modals", "./views/widgets"]);
 
 app.use("/css", express.static(__dirname + "/public/css", { type: 'text/css' }))
 app.use("/js", express.static(__dirname + "/public/js", { type: 'text/javascript' }))
