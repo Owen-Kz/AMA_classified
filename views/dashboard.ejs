@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRGBWSXVX2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YRGBWSXVX2');
 </script>
 
@@ -20,7 +17,6 @@
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
-
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
@@ -29,369 +25,600 @@
     <meta name="title" Content="Amaslink Classified - Dashboard">
 
     <link rel="shortcut icon" href="/plugins/images/favicon.png" type="image/x-icon">
-    
     <link rel="apple-touch-icon" href="/plugins/images/favicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaslink Classifed - Home">
-
     <meta itemprop="image" content="/assets/logo.png">
-    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Amaslink Classified">
-   
     <meta property="og:image" content="/assets/logo.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
     <meta property="og:image:height" content="600" />
     <meta property="og:url" content="www.amaslink.com/dashboard">
-    
     <meta name="twitter:card" content="summary_large_image">
-
     <meta name="robots" content="noindex,nofollow">
    
-        <!-- Favicon icon -->
+    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
-    <!-- Custom CSS -->
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS (keeping essential styles) -->
     <link href="/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
-    <!-- Custom CSS -->
     <link href="/css/style.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/css/general.css"> -->
-     <link rel="stylesheet" href="/css/style.css">
-     <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/products.css">
     <link href="/css/table.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
-
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<script src="/js/queries/getCountryData.js" ></script>
-</head>
-
-<body>
-    <input type="hidden" id="fullnameContainer" value="<%=username%>">
+    
+    <script src="/js/queries/getCountryData.js" ></script>
+    
     <style>
-        #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5]{
-            background-color: var(--AmasLinkColor);
+        /* Custom color variable */
+        :root {
+            --AmasLinkColor: #b70000;
         }
-        .btn-danger{
-            background-color: var(--AmasLinkColor);
-            border-radius: 50px;
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lds-ripple {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .lds-ripple div {
+            position: absolute;
+            border: 4px solid var(--AmasLinkColor);
+            opacity: 1;
+            border-radius: 50%;
+            animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        
+        .lds-ripple div:nth-child(2) {
+            animation-delay: -0.5s;
+        }
+        
+        @keyframes lds-ripple {
+            0% {
+                top: 36px;
+                left: 36px;
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            4.9% {
+                top: 36px;
+                left: 36px;
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            5% {
+                top: 36px;
+                left: 36px;
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                top: 0px;
+                left: 0px;
+                width: 72px;
+                height: 72px;
+                opacity: 0;
+            }
+        }
+        
+        /* Modal styles */
+        .frameModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frameModalBody {
+            background: white;
+            border-radius: 1rem;
+            max-width: 500px;
+            width: 90%;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Hover effects */
+        .analytics-card {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .analytics-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Sidebar scroll */
+        .scroll-sidebar {
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+        
+        /* Custom scrollbar */
+        .scroll-sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .scroll-sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .scroll-sidebar::-webkit-scrollbar-thumb {
+            background: var(--AmasLinkColor);
+            border-radius: 10px;
+        }
+        
+        /* Active link styles will be handled by JavaScript */
+        .sidebar-link.active {
+            background-color: rgba(183, 0, 0, 0.1);
+            color: var(--AmasLinkColor);
+            border-left: 3px solid var(--AmasLinkColor);
         }
     </style>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
+</head>
+
+<body class="bg-gray-50 font-[Montserrat]">
+    <input type="hidden" id="fullnameContainer" value="<%=username%>">
+
+    <!-- Preloader -->
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
     </div>
+
+    <!-- Modal -->
     <div class="frameModal" id="modalContainer">
         <div class="frameModalBody">
-            <div class="frameModalHeader">
-                <button class="close_button" id="closeFrame">x</button>
-            </div>
-            
-            <div class="frameContent">
-                <form onsubmit="return false" id="fundWallet">
-                    <div  >
-                        <label for="amount"><b>Enter Amount in USD ($)</b></label>
-                        <input class="form-control" type="number" name="amount" id="amount" value="" required>
-                        <label for="">Minimum required amount is $5</label>
-                    </div>
-                </form>
-            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-2xl">
+                <div class="flex justify-between items-center p-6 border-b">
+                    <h3 class="text-xl font-semibold text-gray-800">Fund Wallet</h3>
+                    <button class="close_button text-gray-500 hover:text-[#b70000] text-2xl leading-none" id="closeFrame">&times;</button>
+                </div>
+                
+                <div class="p-6 frameContent">
+                    <form onsubmit="return false" id="fundWallet">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="amount" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Enter Amount in USD ($)
+                                </label>
+                                <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#b70000] focus:border-[#b70000] outline-none transition" 
+                                       type="number" 
+                                       name="amount" 
+                                       id="amount" 
+                                       value="" 
+                                       required>
+                                <p class="mt-2 text-sm text-gray-500">Minimum required amount is $5</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-            <div class="frameFooter">
-                <button id="submitButton" class="btn btn-danger">Submit</button>
-                <button id="cancelButton" class="btn btn-outline-danger"> Cancel</button>
+                <div class="flex justify-end gap-3 p-6 border-t bg-gray-50">
+                    <button id="submitButton" class="px-6 py-2 bg-[#b70000] text-white rounded-lg hover:bg-[#9a0000] transition duration-200 font-medium">Submit</button>
+                    <button id="cancelButton" class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition duration-200 font-medium">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin5" id="topbar">
 
-        </header>
-        <script src="/js/routes/topbar.js"></script>
-        <style>
-      
-            .box-shadow{
-                box-shadow: 0px 10px 30px 0px rgba(37, 37, 37, 0.10);
-            }
-            .align-center{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                color:rgb(81, 81, 81);
-                /* position: relative; */
-            }
-            .align-center i{
-                font-size:50px;
-            }
-            .analytics-info{
-                transition: 200ms ease-in-out;
-                cursor: pointer;
-                user-select: none;
-            }
-            .analytics-info:hover{
-                transform: scale(1.1);
-            }
-            .align-items-center{
-                    align-items: center;
-                    justify-content: center;
-                    float: center;
-                    margin: auto;
-                  }
-        </style>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6" style="transition: ease-in-out; position: fixed; overflow: scroll;">
-            <!-- Sidebar scroll-->
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="left-sidebar w-64 bg-white shadow-lg fixed h-full z-20" style="transition: ease-in-out; overflow-y: auto;">
             <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-
-                <nav class="sidebar-nav" id="sidebar_nav">
-                    
-
-                </nav>
-                <script type="module" src="/js/routes/dashboard/sidenav.js"></script>
-                <!-- End Sidebar navigation -->
+                <nav class="sidebar-nav py-4" id="sidebar_nav"></nav>
             </div>
-            <!-- End Sidebar scroll-->
-        </aside> 
-       
-       
-        <div class="page-wrapper">
+        </aside>
 
-            <div class="page-breadcrumb bg-white">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-    
-    <h4 class="page-title">Dashboard</h4>
-                    </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <div class="d-md-flex">
-                            <ol class="breadcrumb ms-auto">
-                                <li><a href="/Logout/" class="fw-normal">Dashboard</a></li>
-                            </ol>
+        <!-- Main Content Area -->
+        <div class="flex-1 ml-64">
+            <!-- Topbar -->
+            <header class="topbar bg-[#b70000] shadow-md sticky top-0 z-10" data-navbarbg="skin5" id="topbar"></header>
+            <script src="/js/routes/topbar.js"></script>
 
-                            
-                            <a href="/Logout/" target="_blank"
-                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Logout</a>
-                        </div>
+            <!-- Page Content -->
+            <div class="p-6">
+                <!-- Breadcrumb -->
+                <div class="flex justify-between items-center mb-6 bg-white p-4 rounded-lg shadow-sm">
+                    <h4 class="text-2xl font-semibold text-gray-800">Dashboard</h4>
+                    <div class="flex items-center gap-3">
+                        <a href="/Logout/" class="text-gray-600 hover:text-[#b70000] transition">Dashboard</a>
+                        <a href="/Logout/" target="_blank" class="bg-[#b70000] text-white px-4 py-2 rounded-lg hover:bg-[#9a0000] transition duration-200 text-sm font-medium">Logout</a>
                     </div>
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-                <div class="admin col">
-                    <h3><b>Welcome, <span class="userFullnameContainer"><%=username%></span></b>
-                
-                </h3>
-                </div>
-                <div class="row justify-content-space">
 
-                    <div class="col-lg-6 col-md-12 ">
-                       <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                            <!-- <i class=" fas fa-shopping-basket"></i> -->
-                            <i style="font-size: 30px; font-weight: bold;">
+                <!-- Welcome Section -->
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">
+                        Welcome, <span class="userFullnameContainer text-[#b70000]"><%=username%></span>
+                    </h3>
+                </div>
+
+                <!-- Stats Cards - Row 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Wallet Balance -->
+                    <div class="bg-white rounded-xl shadow-md p-6 analytics-card">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#b70000] mb-2">
                                 <%= current_rates.currency %>
-
-
                                 <%= new Number(user.wallet_balance * current_rates.current_rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %>
-
-                               
-                            </i>
-                            <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"></span> Wallet Balance</h6>
-                        <button class="btn btn-danger" onclick="openModal()">Add Money</button>
+                            </div>
+                            <p class="text-gray-600 mb-4">Wallet Balance</p>
+                            <button onclick="openModal()" class="bg-[#b70000] text-white px-6 py-2 rounded-lg hover:bg-[#9a0000] transition duration-200 text-sm font-medium">Add Money</button>
                         </div>
                     </div>
 
-
-                    <div class="col-lg-6 col-md-12 ">
-                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                             <!-- <i class=" fas fa-shopping-basket"></i> -->
-                             <i style="font-size: 30px; font-weight: bold;">
+                    <!-- Referral Earnings -->
+                    <div class="bg-white rounded-xl shadow-md p-6 analytics-card">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#b70000] mb-2">
                                 <%= current_rates.currency %>
-                                <%= new Number(user.referral_bonus * current_rates.current_rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %>  </i>
-                             <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"></span> Referral Earnings</h6>
-                        <button class="btn btn-danger" onclick="window.location.href='/referrals'">View Referrals</button>
-                        <!-- <h6>Earn $2 per referral</h6> -->
-
-                         </div>
-                     </div>
-            
-           
-           
-                    
-                  
-
+                                <%= new Number(user.referral_bonus * current_rates.current_rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %>
+                            </div>
+                            <p class="text-gray-600 mb-4">Referral Earnings</p>
+                            <button onclick="window.location.href='/referrals'" class="bg-[#b70000] text-white px-6 py-2 rounded-lg hover:bg-[#9a0000] transition duration-200 text-sm font-medium">View Referrals</button>
+                        </div>
+                    </div>
                 </div>
-             
-                <div class="row justify-content-space">
 
-                    <div class="col-lg-2 col-md-10 ">
-                    <a href="/mylistings">    <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                            <!-- <i class=" fas fa-shopping-basket"></i> -->
-                            <i class="bi bi-list-columns-reverse"></i>
-                            <h6 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="totalCount" ></span> Total Listings</h6>
-                        </div>
-                        </a>
-                    </div>
-           
-                   
-                    <div class="col-lg-2 col-md-10">
-                        <a href="#">
-                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                            <i class="bi bi-ui-checks"></i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="activeCount"></span> Active Listings</h3>
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-2 col-md-10">
-                       
-                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                           <i class="bi bi-exclamation-circle">
-                              </i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="soldOutCount"></span> Sold / Expired Listings</h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-10">
-                       <a href="#">
-                        <div class="white-box analytics-info box-shadow align-center" style="padding: 10px;">
-                            <i class="bi bi-hourglass-split"></i>
-                             <h3 class="box-title" style="font-size: 14px; text-align: center; line-height: normal;"><span class="pendingCount"></span> Pending Approval</h3>
-                        </div>
+                <!-- Stats Cards - Row 2 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <!-- Total Listings -->
+                    <a href="/mylistings" class="bg-white rounded-xl shadow-md p-4 analytics-card text-center group">
+                        <i class="bi bi-list-columns-reverse text-3xl text-[#b70000] group-hover:scale-110 transition"></i>
+                        <p class="text-gray-600 mt-2">Total Listings</p>
+                        <span class="totalCount font-semibold text-lg"></span>
                     </a>
+
+                    <!-- Active Listings -->
+                    <a href="#" class="bg-white rounded-xl shadow-md p-4 analytics-card text-center group">
+                        <i class="bi bi-ui-checks text-3xl text-[#b70000] group-hover:scale-110 transition"></i>
+                        <p class="text-gray-600 mt-2">Active Listings</p>
+                        <span class="activeCount font-semibold text-lg"></span>
+                    </a>
+
+                    <!-- Sold/Expired -->
+                    <div class="bg-white rounded-xl shadow-md p-4 analytics-card text-center group">
+                        <i class="bi bi-exclamation-circle text-3xl text-[#b70000] group-hover:scale-110 transition"></i>
+                        <p class="text-gray-600 mt-2">Sold / Expired</p>
+                        <span class="soldOutCount font-semibold text-lg"></span>
                     </div>
-                    
-                        <!-- <div class="col-lg-2 col-md-10">
-                            
-                        <div class="white-box analytics-info box-shadow align-center">
-                            <i class="fas fa-book"></i>
-                             <h3 class="box-title"><span>0</span> Published</h3>
-                        </div>
-                    </div> -->
 
+                    <!-- Pending Approval -->
+                    <a href="#" class="bg-white rounded-xl shadow-md p-4 analytics-card text-center group">
+                        <i class="bi bi-hourglass-split text-3xl text-[#b70000] group-hover:scale-110 transition"></i>
+                        <p class="text-gray-600 mt-2">Pending Approval</p>
+                        <span class="pendingCount font-semibold text-lg"></span>
+                    </a>
                 </div>
-             
-                <!-- ============================================================== -->
-                <!-- RECENT SALES -->
-                <!-- ============================================================== -->
-                <!-- <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">Recent Submissions</h3>
-                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                                    <select class="form-select shadow-none row border-top">
-                                        <option>March 2021</option>
-                                        <option>April 2021</option>
-                                        <option>May 2021</option>
-                                        <option>June 2021</option>
-                                        <option>July 2021</option>
-                                    </select> 
-                                </div>
-                            </div>
-                            <div class="projects mb-4">
-                                <div class="projects-inner">
-                              
-                                    <table class="projects-table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-right">Submissions</th>
-                                                <th class="text-right">Date</th>
-                                                <th class="text-right">Status</th>
-                                                <th class="text-right">Reviewer Invitations</th>
-                                                <th class="text-right">Editor Invitations</th>
 
+                <!-- Google Translate -->
+                <div id="google_translate_element2" class="mb-4">
+                    <div id="google_translate_element"></div>
+                </div>
+                <%- include ("googleTranslate") %>
+            </div>
 
-                                        
-                                                
-                                                <th class="text-right">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="submissionsContainer">
-                                  
-                                        </tbody>
-                                    </table>
-                                </div>
-                       
-                            </div>
-
-        </div>
-     
-    </div> -->
-    <div id="google_translate_element2">
-        <div id="google_translate_element"></div>
-      </div>
-      <%- include ("googleTranslate") %>
-      </div>
-       <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center" id="footer"> 
-                
-            </footer>
+            <!-- Footer -->
+            <footer class="text-center py-4 border-t bg-white" id="footer"></footer>
             <script type="module" src="/js/routes/dashboard/footer.js"></script>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <!-- <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script> -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Bootstrap tether Core JavaScript -->
     <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/app-style-switcher.js"></script>
     <script src="/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <!--Wave Effects -->
     <script src="/js/waves.js"></script>
-    <!--Menu sidebar -->
     <script src="/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
     <script src="/js/custom.js"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
-
     <script src="/js/queries/countItems.js"></script>
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/googleTranslate.js"></script>
+    <script src="/js/fundWallet.js"></script>
 
-    <!-- <script type="module" src="/js/routes/dashboard/dashboard.js"></script> -->
+    <!-- Sidenav Script -->
+    <script>
+        // Cookie helper function
+        const GetCookie = function getCookie(cookieName) {
+            const name = cookieName + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookieArray = decodedCookie.split(';');
+            for (let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) == 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return null;
+        }
 
-      <script src="/js/jquery-1.12.4.min.js"></script>
-      <script src="/js/googleTranslate.js"></script>
-      <script src="/js/fundWallet.js"></script>
+        // Styled Admin Navigation
+        const admin_nav = `<ul id="sidebarnav" class="space-y-1">
+            <!-- User Profile-->
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/superadmin">
+                    <i class="bi bi-speedometer2 text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/profile">
+                    <i class="bi bi-person-lines-fill text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">View / Edit Profile</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/members">
+                    <i class="bi bi-people text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Members List</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/announcements">
+                    <i class="bi bi-megaphone text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Announcements</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/subscribers">
+                    <i class="bi bi-people text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Subscribed Users</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/email">
+                    <i class="bi bi-envelope text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Send Bulk Email</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/forum">
+                    <i class="bi bi-people text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Forums</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="https://dashboad.tawk.to">
+                    <i class="bi bi-people text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Blog and Correspondence</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/messages">
+                    <i class="bi bi-chat-right text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Messages</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/all">
+                    <i class="bi bi-list-columns-reverse text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">All Listings</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/brands">
+                    <i class="bi bi-list-columns-reverse text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Brand Adverts</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/fullpage">
+                    <i class="bi bi-list-columns-reverse text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Full Page Advert</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/pending">
+                    <i class="bi bi-hourglass-split text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Pending Listings</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/mylistings">
+                    <i class="bi bi-list-columns-reverse text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">My Listings</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/transactions">
+                    <i class="bi bi-bar-chart text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Recent Transactions</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/s/analytics">
+                    <i class="bi bi-graph-up text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Analytics</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/">
+                    <i class="bi bi-house text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Back To Home</span>
+                </a>
+            </li>
+            <li class="px-3 py-4 mt-4 border-t">
+                <a href="/superadmin/logout" class="flex items-center justify-center px-4 py-3 bg-[#b70000] text-white rounded-lg hover:bg-[#9a0000] transition duration-200 font-medium">
+                    <i class="bi bi-box-arrow-right mr-2"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>`;
+
+        // Styled Editor Navigation
+        const editor_nav = `<ul id="sidebarnav" class="space-y-1">
+            <!-- User Profile-->
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/dashboard">
+                    <i class="bi bi-speedometer2 text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/profile">
+                    <i class="bi bi-person-lines-fill text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">View / Edit Profile</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/announcements">
+                    <i class="bi bi-megaphone text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Announcements</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/messages">
+                    <i class="bi bi-chat-right text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Messages</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="https://amaslink.tawk.help/category/frequently-asked-questions" target="_blank">
+                    <i class="bi bi-newspaper text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">FAQs</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/bookmarks">
+                    <i class="bi bi-bookmark-fill text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Bookmarks</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/mylistings">
+                    <i class="bi bi-list-columns-reverse text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">My Listings</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/adintro">
+                    <i class="bi bi-badge-ad-fill text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Post AD</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/contact">
+                    <i class="bi bi-person-rolodex text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Contact</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/referrals">
+                    <i class="bi bi-people text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Referrals</span>
+                </a>
+            </li>
+            <li class="px-3 py-1">
+                <a class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-red-50 hover:text-[#b70000] transition-all duration-200 group" href="/">
+                    <i class="bi bi-house text-xl mr-3 text-gray-500 group-hover:text-[#b70000] transition"></i>
+                    <span class="font-medium">Back To Home</span>
+                </a>
+            </li>
+            <li class="px-3 py-4 mt-4 border-t">
+                <a href="/logout" class="flex items-center justify-center px-4 py-3 bg-[#b70000] text-white rounded-lg hover:bg-[#9a0000] transition duration-200 font-medium">
+                    <i class="bi bi-box-arrow-right mr-2"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>`;
+
+        // Render sidenav
+        const navbar_container = document.getElementById("sidebar_nav");
+        navbar_container.innerHTML = editor_nav;
+
+        const isAdminToken = GetCookie("_ama");
+        const isAupser = GetCookie("_superID");
+
+        if(isAdminToken && isAupser) {
+            navbar_container.innerHTML = admin_nav;
+        }
+
+        // Set active link based on current URL
+        setTimeout(() => {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll('.sidebar-link');
+            
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && currentPath.includes(href) && href !== '/') {
+                    link.classList.add('active', 'bg-red-50', 'text-[#b70000]', 'border-l-4', 'border-[#b70000]');
+                    const icon = link.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('text-[#b70000]');
+                    }
+                } else if (href === '/' && currentPath === '/') {
+                    link.classList.add('active', 'bg-red-50', 'text-[#b70000]', 'border-l-4', 'border-[#b70000]');
+                    const icon = link.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('text-[#b70000]');
+                    }
+                }
+            });
+        }, 100);
+
+        // Hide preloader when page is loaded
+        window.addEventListener('load', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
 </body>
-
 </html>

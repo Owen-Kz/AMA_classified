@@ -2,178 +2,997 @@
 <html lang="en">
 
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YRGBWSXVX2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YRGBWSXVX2');
-</script>
-
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<meta charset="utf-8">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRGBWSXVX2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YRGBWSXVX2');
     </script>
 
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
-	<meta name="author" content="Benson Michael Owen - OwenKz">
-    <title>Amaslnk - Best Free Classified Ads</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AMASLINK is fast-growing free online classifieds with advanced security system. We provide a simple hassle-free solution to sell and buy almost anything, anytime,anywhere.">
+    <meta name="author" content="Benson Michael Owen - OwenKz">
+    <title>Amaslink - Best Free Classified Ads</title>
     <meta name="title" Content="Amaslink Classified - Home">
 
     <link rel="shortcut icon" href="/plugins/images/favicon.png" type="image/x-icon">
-    
     <link rel="apple-touch-icon" href="/plugins/images/favicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaslink Classifed - Home">
-
     <meta itemprop="image" content="/assets/logo.png">
-    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Amaslink Classified">
-   
-    <meta property="og:image" content="/assets/logo.png"/>
-    <meta property="og:image:type" content="png"/>
+    <meta property="og:image" content="/assets/logo.png" />
+    <meta property="og:image:type" content="png" />
     <meta property="og:image:width" content="1180" />
     <meta property="og:image:height" content="600" />
     <meta property="og:url" content="www.amaslink.com">
-    
     <meta name="twitter:card" content="summary_large_image">
 
-        <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/css/line-awesome.min.css">
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap">
+    
+    <!-- Custom CSS (keeping essential animations) -->
     <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="/css/slick.min.css">
     <link rel="stylesheet" href="/css/venobox.min.css">
     <link rel="stylesheet" href="/css/splitting.css">
     <link rel="stylesheet" href="/css/keyframe-animation.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/general.css">
+    
+    <script src="/js/queries/getCountryData.js"></script>
 
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/products.css">
-<link rel="stylesheet" href="/css/categories.css">
+    <style>
+        :root {
+            --AmasLinkColor: #b70000;
+        }
 
-<link rel="stylesheet" href="/css/homeSlide.css">
+        /* Custom animations */
+        @keyframes fade-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#lgd1vnrv4g0o1724681507247.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#lgd1vnrv4g0o1724681507247.closed{animation: tawkMaxClose .25s ease!important}</style>
-<script src="/js/queries/getCountryData.js" ></script>
+        @keyframes fade-in-bottom {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes reveal-text {
+            0% {
+                clip-path: inset(0 100% 0 0);
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .fade-in-right {
+            animation: fade-in-right 1s ease forwards;
+        }
+
+        .fade-in-bottom {
+            animation: fade-in-bottom 1s ease forwards;
+        }
+
+        .reveal-text {
+            animation: reveal-text 1.5s ease forwards;
+        }
+
+        /* Slider styles */
+        .main-slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .single-slide {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .slider-content-wrap {
+            position: relative;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .slider-content {
+            color: white;
+        }
+
+        .slide-caption.medium {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
+
+        .slide-caption.big {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
+
+        .slide-caption.small {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
+
+        .slide-btn-group {
+            opacity: 0;
+        }
+
+        .slide-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--AmasLinkColor);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .slide-btn:hover {
+            background: #9a0000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(183, 0, 0, 0.3);
+        }
+
+        /* Category styles */
+        .category_container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+
+        .categoriesList {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+            min-width: max-content;
+        }
+
+        .categoriesList li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .categoriesList li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .categoriesList .icon_container {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .categoriesList .text_container {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        /* Product card styles */
+        .product_item {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product_item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .image_container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .productImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .actions {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            left: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .viewsCount, .save_item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .save_item button {
+            padding: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .save_item .bi-heart-fill {
+            color: var(--AmasLinkColor);
+            font-size: 1.1rem;
+        }
+
+        .product_info {
+            padding: 1rem;
+            flex: 1;
+        }
+
+        .product_name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .product_name:first-child {
+            color: var(--AmasLinkColor);
+            font-size: 1.1rem;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .limited-text {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Loading state */
+        .loadingItem {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Ads slider */
+        .ads-slide {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .ads-slide .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .ads-slide .slide.active {
+            opacity: 1;
+        }
+
+        .ads-slide .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .ads-slide .arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .ads-slide .left-arrow {
+            left: 1rem;
+        }
+
+        .ads-slide .right-arrow {
+            right: 1rem;
+        }
+
+        /* Static ad */
+        .static-ad {
+            width: 100%;
+            min-height: 200px;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .static-ad img, .static-ad video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Full page ad */
+        .fullpageAd {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .fullpageAd.inner {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .fullpageAd.inner img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination_item {
+            display: inline-block;
+        }
+
+        .pagination_item li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pagination_item:hover li {
+            background: var(--AmasLinkColor);
+            color: white;
+        }
+
+        .pagination_item.active li {
+            background: var(--AmasLinkColor);
+            color: white;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-caption.medium {
+                font-size: 1.2rem;
+            }
+            
+            .slide-caption.big {
+                font-size: 2.5rem;
+            }
+            
+            .slide-caption.small {
+                font-size: 1rem;
+            }
+            
+            .categoriesList li {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .products_list {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-caption.big {
+                font-size: 2rem;
+            }
+            
+            .products_list {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
-    <body class="content" style="position: relative; min-height: 100%; top: 0px;">
 
+<body class="font-[Montserrat] bg-gray-50" style="position: relative; min-height: 100%; top: 0px;">
     <input type="hidden" id="fullnameContainer" value="<%=username%>">
-    <%- include('partials/mobile-navbar.ejs') %>
 
+    <!-- Mobile Navbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-[#b70000] z-50 block md:hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <a href="/" class="flex flex-col items-center text-white text-xs">
+                    <i class="bi bi-house text-xl"></i>
+                    <span class="mt-1">Home</span>
+                </a>
+                <a href="/listings" class="flex flex-col items-center text-white text-xs">
+                    <i class="bi bi-grid text-xl"></i>
+                    <span class="mt-1">Explore</span>
+                </a>
+                <a href="/createAd" class="flex flex-col items-center">
+                    <button class="w-12 h-12 bg-white rounded-full text-[#b70000] text-2xl font-bold flex items-center justify-center shadow-lg hover:scale-110 transition">
+                        <i class="bi bi-plus"></i>
+                    </button>
+                </a>
+                <a href="/profile" class="flex flex-col items-center text-white text-xs">
+                    <i class="bi bi-person text-xl"></i>
+                    <span class="mt-1">Profile</span>
+                </a>
+                <a href="javascript:void()" id="mobileNav" class="flex flex-col items-center text-white text-xs">
+                    <i class="bi bi-list text-xl"></i>
+                    <span class="mt-1">More</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Start Top Section  -->
-     <section class="topSection " id="topBarContainer">
+    <!-- Top Section -->
+    <section class="bg-white shadow-sm" id="topBarContainer"></section>
 
-     </section>
-     <!-- End top section  -->
-            <!-- Start navbar   -->
-             <!-- <div class="backgroundParent"> -->
-            <div class="navbar navbarContainer " id="navbarContainer">
-                </div> 
-            <!-- </div> -->
-                <!-- Start Horizontal Navbar  -->
-                 <div class="containerForNav">
-                     <!-- Left  -->
-                <!-- <div class="navbar-left">
-                    <div class="image_container">
-                        <img src="/assets/logo.png" alt="Amaslink Logo">
+    <!-- Navbar Container -->
+    <div class="bg-white shadow-md sticky top-0 z-40" id="navbarContainer"></div>
+
+    <!-- Horizontal Navbar -->
+    <div class="container mx-auto px-4 py-4 hidden md:block" id="horizontalNavbar"></div>
+<!-- Top Bar Section -->
+<section class="topSection bg-[#b70000] text-white sticky top-0 z-50" id="topBarContainer">
+    <div class="container mx-auto px-4">
+        <!-- Top Bar -->
+        <div class="flex items-center justify-between py-2">
+            <div class="topBarLeft">
+                <ul class="flex items-center space-x-4 text-sm">
+                    <!-- Dynamic content will be inserted here -->
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class='mobileNav cursor-pointer md:hidden'>
+                <i class="bi bi-list text-2xl" aria-hidden="true"></i>
+            </div>
+        </div>
+        
+        <!-- Secondary Top Bar (Search) -->
+        <div class='secondaryTopBar py-3 border-t border-red-700 hidden md:block'>
+            <div class='flex items-center justify-between'>
+                <!-- Search Container -->
+                <div class='flex-1 max-w-2xl'>
+                    <div class="searchContainer">
+                        <form action="/q/listings" class="flex">
+                            <input type="text" 
+                                   name="q" 
+                                   placeholder="Search for an item by name, keyword or category" 
+                                   class="flex-1 px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                                   required>
+                            <button type="submit" 
+                                    class="bg-white text-[#b70000] px-6 py-2 rounded-r-lg hover:bg-gray-100 transition duration-200">
+                                <i class="bi bi-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </div>
-                </div> -->
-                <!-- End Left  -->
-                <div class="horizontalNavbar navbarContainer">
-                    
-
                 </div>
-                 </div>
-              
-                 <!-- End Horizontal navbar  -->
-         <!-- END navbar Section  -->
+                
+                <!-- Map Link -->
+                <div class="right ml-4">
+                    <a href="/map" class="flex items-center text-white hover:text-gray-200 transition">
+                        <i class="bi bi-map mr-1"></i>
+                        <span>Map</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<seciton>
-    <div id="main-slider" class="main-slider">
+<!-- Main Navbar -->
+<div class="navbar navbarContainer bg-white shadow-md sticky top-[88px] z-40 hidden md:block" id="navbarContainer">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
+            <!-- Left - Logo -->
+            <div class="navbar-left">
+                <a href="/" class="image_container block">
+                    <img src="/plugins/images/logo.png" 
+                         alt="Amaslink Logo" 
+                         class="h-12 w-auto">
+                </a>
+            </div>
+
+            <!-- Right - Navigation -->
+            <div class="nav_right">
+                <ul class="flex items-center space-x-6">
+                    <li class="navigationLink">
+                        <a href="/" class="text-gray-700 hover:text-[#b70000] transition font-medium">Home</a>
+                    </li>
+                    
+                    <li class="dropdown relative group">
+                        <a href="#" class="dropdown-toggle text-gray-700 hover:text-[#b70000] transition font-medium flex items-center">
+                            Explore 
+                            <i class="arrow-down bi bi-chevron-down ml-1 text-sm"></i>
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+                            <li>
+                                <a href="/categories" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-[#b70000] transition">Categories</a>
+                            </li>
+                            <li>
+                                <a href="/listings" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-[#b70000] transition">Listings</a>
+                            </li>
+                            <li>
+                                <a href="/auctions" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-[#b70000] transition">Auctions</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="/forum" class="text-gray-700 hover:text-[#b70000] transition font-medium">Forum</a>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="https://amaslink.tawk.help/category/frequently-asked-questions" 
+                           class="text-gray-700 hover:text-[#b70000] transition font-medium">FAQs</a>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="/privacy" class="text-gray-700 hover:text-[#b70000] transition font-medium">Privacy Policy</a>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="/contact" class="text-gray-700 hover:text-[#b70000] transition font-medium">Contact</a>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="https://amaslink.tawk.help/category/amaslink-blog" 
+                           class="text-gray-700 hover:text-[#b70000] transition font-medium">Blog</a>
+                    </li>
+                    
+                    <li class="navigationLink">
+                        <a href="/adintro">
+                            <button class="post_add bg-[#b70000] text-white px-6 py-2 rounded-lg hover:bg-[#9a0000] transition duration-200 font-medium">
+                                Post AD
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Expanded Menu -->
+<div class="containerForNav fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between p-4 border-b">
+            <img src="/plugins/images/logo.png" alt="Amaslink Logo" class="h-10">
+            <button class="close-mobile-nav text-2xl text-gray-600">
+                <i class="bi bi-x"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Links -->
+        <div class="flex-1 overflow-y-auto p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="/" class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">Home</a>
+                </li>
+                
+                <li>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition flex items-center justify-between">
+                            Explore
+                            <i class="bi bi-chevron-down text-sm"></i>
+                        </button>
+                        <ul class="mobile-dropdown-menu hidden pl-6 mt-2 space-y-2">
+                            <li>
+                                <a href="/categories" class="block py-2 px-4 text-gray-600 hover:text-[#b70000] transition">Categories</a>
+                            </li>
+                            <li>
+                                <a href="/listings" class="block py-2 px-4 text-gray-600 hover:text-[#b70000] transition">Listings</a>
+                            </li>
+                            <li>
+                                <a href="/auctions" class="block py-2 px-4 text-gray-600 hover:text-[#b70000] transition">Auctions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <a href="/forum" class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">Forum</a>
+                </li>
+                
+                <li>
+                    <a href="https://amaslink.tawk.help/category/frequently-asked-questions" 
+                       class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">FAQs</a>
+                </li>
+                
+                <li>
+                    <a href="/privacy" class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">Privacy Policy</a>
+                </li>
+                
+                <li>
+                    <a href="/contact" class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">Contact</a>
+                </li>
+                
+                <li>
+                    <a href="https://amaslink.tawk.help/category/amaslink-blog" 
+                       class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-[#b70000] rounded-lg transition">Blog</a>
+                </li>
+                
+                <li class="pt-4">
+                    <a href="/adintro">
+                        <button class="w-full bg-[#b70000] text-white py-3 rounded-lg hover:bg-[#9a0000] transition font-medium">
+                            Post AD
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Mobile Menu Footer with User Info -->
+        <div class="border-t p-4">
+            <!-- User info will be dynamically inserted here -->
+            <div class="mobile-user-section"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Original JavaScript with Tailwind classes applied dynamically
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        const topBar = document.querySelector('.topSection');
+        if (window.scrollY > 50) {
+            // Optional: Add shadow when scrolled
+            navbar?.classList.add('shadow-lg');
+            topBar?.classList.add('shadow-md');
+        } else {
+            navbar?.classList.remove('shadow-lg');
+            topBar?.classList.remove('shadow-md');
+        }
+    });
+
+    const navbarContainer = document.querySelectorAll(".navbarContainer");
+    const topBarContainer = document.getElementById("topBarContainer");
+
+    async function ProfileData() {
+        return fetch(`/profile/details/informative`, {})
+            .then(res => res.json())
+            .then(data => {
+                if (data.userDetails) {
+                    return data.userDetails;
+                } else {
+                    return null;
+                }
+            });
+    }
+
+    const userLogged = await ProfileData();
+    let isLoggedINProfile = "";
+
+    if (userLogged && userLogged.id && userLogged.id != null && userLogged.id !== "" && userLogged.id != "2209102") {
+        isLoggedINProfile = ` 
+            <ul class="flex items-center space-x-4 text-sm">
+                <li><a href="/dashboard" class="text-white hover:text-gray-200 transition">Welcome Back, <b class="font-semibold">${userLogged.u_name}</b></a></li>
+                <li><a href="/announcements" class="text-white hover:text-gray-200 transition"><i class="bi bi-bell mr-1"></i><span class="hidden sm:inline">Announcements</span></a></li>
+                <li><a href="/messages" class="text-white hover:text-gray-200 transition"><i class="bi bi-chat-right mr-1"></i><span class="hidden sm:inline">Messages</span></a></li>
+                <li><a href="/mylistings" class="text-white hover:text-gray-200 transition"><i class="bi bi-list-columns-reverse mr-1"></i><span class="hidden sm:inline">Listings</span></a></li>
+            </ul>`;
+    } else {
+        isLoggedINProfile = `    
+            <ul class="flex items-center space-x-4 text-sm">
+                <li><a href="/login" class="text-white hover:text-gray-200 transition">Login</a></li>
+                <li><b><a href="/register" class="text-white hover:text-gray-200 transition font-semibold">Register</a></b></li>
+            </ul>`;
+    }
+
+    // Update top bar with user info
+    if (topBarContainer) {
+        const topBarLeft = topBarContainer.querySelector('.topBarLeft ul');
+        if (topBarLeft) {
+            topBarLeft.outerHTML = isLoggedINProfile;
+        }
+    }
+
+    // Update mobile user section
+    const mobileUserSection = document.querySelector('.mobile-user-section');
+    if (mobileUserSection) {
+        if (userLogged && userLogged.id) {
+            mobileUserSection.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-[#b70000] rounded-full flex items-center justify-center text-white font-bold">
+                        ${userLogged.u_name?.charAt(0).toUpperCase() || 'U'}
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-800">${userLogged.u_name}</p>
+                        <div class="flex space-x-2 mt-1">
+                            <a href="/dashboard" class="text-xs text-[#b70000] hover:underline">Dashboard</a>
+                            <a href="/logout" class="text-xs text-gray-500 hover:underline">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            mobileUserSection.innerHTML = `
+                <div class="flex space-x-2">
+                    <a href="/login" class="flex-1 text-center py-2 border border-[#b70000] text-[#b70000] rounded-lg hover:bg-red-50 transition">Login</a>
+                    <a href="/register" class="flex-1 text-center py-2 bg-[#b70000] text-white rounded-lg hover:bg-[#9a0000] transition">Register</a>
+                </div>
+            `;
+        }
+    }
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavToggle = document.querySelector('.mobileNav');
+        const containerForNav = document.querySelector('.containerForNav');
+        const closeMobileNav = document.querySelector('.close-mobile-nav');
+        
+        if (mobileNavToggle && containerForNav) {
+            mobileNavToggle.addEventListener('click', function() {
+                containerForNav.classList.remove('translate-x-full');
+            });
+            
+            if (closeMobileNav) {
+                closeMobileNav.addEventListener('click', function() {
+                    containerForNav.classList.add('translate-x-full');
+                });
+            }
+        }
+
+        // Mobile dropdown toggle
+        const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+        const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+        
+        if (mobileDropdownToggle && mobileDropdownMenu) {
+            mobileDropdownToggle.addEventListener('click', function() {
+                mobileDropdownMenu.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('bi-chevron-down');
+                    icon.classList.toggle('bi-chevron-up');
+                }
+            });
+        }
+    });
+
+    // Set active link based on current URL
+    setTimeout(() => {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navigationLink a, .mobile-dropdown-menu a');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href !== '#' && currentPath.includes(href) && href !== '/') {
+                link.classList.add('text-[#b70000]', 'font-semibold');
+                if (link.closest('.navigationLink')) {
+                    link.classList.add('border-b-2', 'border-[#b70000]');
+                }
+            } else if (href === '/' && currentPath === '/') {
+                link.classList.add('text-[#b70000]', 'font-semibold');
+                if (link.closest('.navigationLink')) {
+                    link.classList.add('border-b-2', 'border-[#b70000]');
+                }
+            }
+        });
+    }, 100);
+</script>
+
+<style>
+    /* Additional styles for smooth transitions */
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .dropdown-menu {
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+    }
+    
+    .containerForNav {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Sticky navbar behavior */
+    .topSection {
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .navbar {
+        transition: box-shadow 0.3s ease;
+    }
+    
+    /* Mobile menu animations */
+    .mobile-dropdown-menu {
+        transition: all 0.3s ease;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .topSection .secondaryTopBar {
+            display: block !important;
+            padding: 1rem 0;
+        }
+        
+        .topSection .secondaryTopBar .searchContainer form {
+            width: 100%;
+        }
+        
+        .topSection .secondaryTopBar input {
+            width: 100%;
+        }
+    }
+</style>
+    <!-- Main Slider -->
+    <section class="main-slider" id="main-slider">
         <div class="single-slide">
             <div class="bg-img" style="background-image: url(/assets/slide1.png);"></div>
-            <div class="slider-content-wrap d-flex align-items-center text-left">
-                <div class="container">
+            <div class="slider-content-wrap flex items-center">
+                <div class="container mx-auto px-4">
                     <div class="slider-content">
                         <div class="slide-caption medium">
                             <div class="inner-layer">
-                                <div data-animation="fade-in-right" data-delay="1s">Your Local Marketplace, Reimagined.</div>
+                                <div data-animation="fade-in-right" data-delay="1s" class="fade-in-right">Your Local Marketplace, Reimagined.</div>
                             </div>
                         </div>
                         <div class="slide-caption big">
                             <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="1s"><span style="animation-delay: 1s;"></span>Find, Buy, <br>Sell with Ease</div>
+                                <div data-animation="reveal-text" data-delay="1s" class="reveal-text"><span style="animation-delay: 1s;"></span>Find, Buy, <br>Sell with Ease</div>
                             </div>
                         </div>
-                        <!-- <div class="slide-caption big">
-                            <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="2s"><span style="animation-delay: 2s;"></span>From Amaslink !</div>
-                            </div>
-                        </div> -->
                         <div class="slide-caption small">
                             <div class="inner-layer">
-                                <div data-animation="fade-in-bottom" data-delay="3s">
-                                    Connect with your community and and find what you need nearby.
+                                <div data-animation="fade-in-bottom" data-delay="3s" class="fade-in-bottom">
+                                    Connect with your community and find what you need nearby.
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="slide-btn-group">
-                            <div class="inner-layer">
-                                <a href="/login" class="slide-btn" data-animation="fade-in-bottom" data-delay="3.5s">Get Started</a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="single-slide">
             <div class="bg-img" style="background-image: url(/assets/11.png);"></div>
-            <div class="slider-content-wrap d-flex align-items-center text-left">
-                <div class="container">
+            <div class="slider-content-wrap flex items-center">
+                <div class="container mx-auto px-4">
                     <div class="slider-content">
-                        <div class="slide-caption medium">
+                        <div class="slide-caption big">
                             <div class="inner-layer">
-                                <!-- <div data-animation="fade-in-right" data-delay="1s">We have a better sense of investment.</div> -->
+                                <div data-animation="reveal-text" data-delay="1s" class="reveal-text"><span style="animation-delay: 1s;"></span>We will provide support</div>
                             </div>
                         </div>
                         <div class="slide-caption big">
                             <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="1s"><span style="animation-delay: 1s;"></span>we will provide support</div>
-                            </div>
-                        </div>
-                        <div class="slide-caption big">
-                            <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="2s"><span style="animation-delay: 2s;"></span>and expert assistance</div>
+                                <div data-animation="reveal-text" data-delay="2s" class="reveal-text"><span style="animation-delay: 2s;"></span>and expert assistance</div>
                             </div>
                         </div>
                         <div class="slide-caption small">
                             <div class="inner-layer">
-                                <div data-animation="fade-in-bottom" data-delay="3s">
+                                <div data-animation="fade-in-bottom" data-delay="3s" class="fade-in-bottom">
                                     Need help? Our experts are ready to provide personalized support and guidance.
-                                    <br>
                                     From troubleshooting to expert advice, we're committed to helping you achieve your goals.
-                                    
                                 </div>
                             </div>
                         </div>
@@ -187,28 +1006,23 @@
                     </div>
                 </div>
             </div>
-        </div><!-- Slide 01 -->
-    
+        </div>
+
         <div class="single-slide">
             <div class="bg-img" style="background-image: url(/assets/10.png);"></div>
-            <div class="slider-content-wrap d-flex align-items-center text-left">
-                <div class="container">
+            <div class="slider-content-wrap flex items-center">
+                <div class="container mx-auto px-4">
                     <div class="slider-content">
                         <div class="slide-caption medium">
                             <div class="inner-layer">
-                                <div data-animation="fade-in-right" data-delay="1s">
+                                <div data-animation="fade-in-right" data-delay="1s" class="fade-in-right">
                                     Wide-ranging Categories.
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="slide-caption big">
-                            <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="1s"><span style="animation-delay: 1s;"></span>Doing business with us is</div>
-                            </div>
-                        </div> -->
                         <div class="slide-caption big">
                             <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="2s">
+                                <div data-animation="reveal-text" data-delay="2s" class="reveal-text">
                                     <span style="animation-delay: 2s;"></span>We Sell Anything, 
                                     <br>Anywhere
                                 </div>
@@ -216,8 +1030,8 @@
                         </div>
                         <div class="slide-caption small">
                             <div class="inner-layer">
-                                <div data-animation="fade-in-bottom" data-delay="3s">
-                                    Explore a vast selection of products, from electronics and fashion to home goods and more. <br>We source the best deals from trusted sellers worldwide, ensuring you find what you need, when you need it.
+                                <div data-animation="fade-in-bottom" data-delay="3s" class="fade-in-bottom">
+                                    Explore a vast selection of products, from electronics and fashion to home goods and more. <br>We source the best deals from trusted sellers worldwide.
                                 </div>
                             </div>
                         </div>
@@ -231,164 +1045,439 @@
                     </div>
                 </div>
             </div>
-        </div><!-- Slide 02 -->
-        <!-- Slide 03 -->
-    </div>
-    
-</section>
-    <!-- Start Products Section  -->
-    <section class="productsSection backgroundParent catCont">
-        <!-- start listings  -->
-        <div class="listings cat_cont">
-            <div class="product_header">Categories</div>
-            <!-- start list  -->
-            <div class="products_list" id="categoriesContainer">
-      <!-- Products goes here  -->
-            
-             <!-- Start Category container  -->
-             <div class="category_container">
-                <ul class="categoriesList" id="productCategory">
-               
-                </ul>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Categories</h2>
             </div>
-            <!-- End Vategory container  -->
-            
-            </div>
-            <!-- end list  -->
-                     
-           
-
-         
-        </div>
-        <div >
-       
-          
-        </div>
-        <!-- End listings  -->
-         </section>
-
-
-
-     <!-- Start Ads Section  -->
-      <section class="AdsSection backgroundParent">
-        <!-- Start slides -->
-        <div class="ads-slide" id="slideAdvertContainer">
-           <!-- <div class="slide slide-one"></div> -->
-            <!-- <div class="slide slide-two"></div>
-            <div class="slide slide-three"></div>
-       -->
-            <!-- Add more slides as needed -->
-            <button class="arrow left-arrow"><i class="bi bi-arrow-left"></i></button>
-            <button class="arrow right-arrow"><i class="bi bi-arrow-right"></i></button>
-        </div>
-        
-        <!-- End slides  -->
-
-        <!-- Start static banner  -->
-         <div class="static-ad" id="staticAdvertContainer" style="background: #333;">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1575587309087755"
-            crossorigin="anonymous"></script> 
-         </div>
-       
-        <!-- End Ad Static Banner  -->
-      </section>
-      <!-- End Ads Section  -->
-
-   
-<!-- Start Products  Section  -->
-      <section class="productsSection ">
-<!-- start listings top  -->
-<div class="listings backgroundParent" style=" border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
-    <div class="product_header">Listings</div>
-    <!-- start list  -->
-    <div class="products_list" id="listingsTopContainer" style="padding-bottom: 10px;">
-<!-- Products goes here  -->            
-    </div>
-    <!-- end list  -->
-</div>
-<!-- End top  -->
-        <!-- Start fullpage Ad  -->
-        <div class="fullpageAd fixed" >
-            <div class="fullpageAd inner" id="innerFullPage">
-               
+            <div class="category_container">
+                <ul class="categoriesList" id="productCategory"></ul>
             </div>
         </div>
+    </section>
 
-        <div class="fullpageAd transparent">
-          
-        </div>
-         <!-- end full page ad  -->
- 
-        <!-- start listings bottom  -->
-        <div class="listings backgroundParent" style="margin-top: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
-            <!-- <div class="product_header">More Listings</div> -->
-            <!-- start list  -->
-            <div class="products_list" id="listingsBottomContainer">
-      <!-- Products goes here  -->            
+    <!-- Ads Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="ads-slide mb-8" id="slideAdvertContainer">
+                <button class="arrow left-arrow"><i class="bi bi-arrow-left"></i></button>
+                <button class="arrow right-arrow"><i class="bi bi-arrow-right"></i></button>
             </div>
-            <!-- end list  -->
-     
-                <div class="list_footer ">
-                    <a href="/listings">See More</a>
-                  
+            <div class="static-ad" id="staticAdvertContainer"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Top Listings -->
+            <div class="bg-white rounded-2xl shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Latest Listings</h2>
+                <div class="products_list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="listingsTopContainer"></div>
+            </div>
+
+            <!-- Full Page Ad -->
+            <div class="fullpageAd fixed" id="fullpageAd">
+                <div class="fullpageAd inner" id="innerFullPage"></div>
+            </div>
+            <div class="fullpageAd transparent"></div>
+
+            <!-- Bottom Listings -->
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <div class="products_list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="listingsBottomContainer"></div>
+                <div class="flex justify-center mt-8">
+                    <a href="/listings" class="inline-block px-8 py-3 bg-[#b70000] text-white rounded-lg hover:bg-[#9a0000] transition duration-200 font-medium">
+                        See More
+                    </a>
                 </div>
-                <br>
-        </div>
-        <!-- End bottom  -->
-     
-      
+            </div>
 
-        <div class="sponsored_ads backgroundParent">
-            <div class="product_header">Sponsored Ads</div>
-            <div class="sponsoredAdsList" id="sponsoredAdverts">
-           
-           
+            <!-- Sponsored Ads -->
+            <div class="mt-8">
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Sponsored Ads</h2>
+                    <div class="sponsoredAdsList grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="sponsoredAdverts"></div>
+                </div>
             </div>
         </div>
-      </section>
-      <!-- End Products Section  -->
+    </section>
 
+    <!-- Footer -->
+    <footer id="footerContainer" class="bg-gray-900 text-white py-12"></footer>
 
-<!-- <div class="backgroundParent"> -->
-      <Footer id="footerContainer">
-
-      </Footer>
-      <!-- </div> -->
-      <script src="/js/footer.js"></script>
-      <div id="google_translate_element2">
+    <!-- Google Translate -->
+    <div id="google_translate_element2" class="hidden">
         <div id="google_translate_element"></div>
-      </div>
-      <%- include ("googleTranslate") %>
-      
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/66c02dbd146b7af4a43b6c6e/1i5fb5bab';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-<!--   <div id="google_translate_element"></div> -->
+    </div>
+    <%- include("googleTranslate") %>
 
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/66c02dbd146b7af4a43b6c6e/1i5fb5bab';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!-- Scripts -->
     <script src="/js/jquery-1.12.4.min.js"></script>
     <script src="/js/slick.min.js"></script>
     <script src="/js/venobox.min.js"></script>
     <script src="/js/slideMain.js"></script>
+    <script src="/js/adsSlide.js"></script>
+    <script src="/js/queries/getSlideShowAdverts.js"></script>
+    <script src="/js/navbar.js" type="module"></script>
+    <script src="/js/queries/listings.js"></script>
+    <script src="/js/queries/categories.js"></script>
+    <script src="/js/queries/fullpageadvert.js"></script>
+    <script src="/js/queries/sponsored.js"></script>
+    <script src="/js/queries/getStaticAd.js"></script>
+    <script src="/js/googleTranslate.js"></script>
 
-    <!--End of Tawk.to Script-->
-      <script src="/js/adsSlide.js"></script>
-<script src="/js/queries/getSlideShowAdverts.js"></script>
+    <!-- Listings Script -->
+    <script>
+        const staticAdvertsContainer = document.getElementById("staticAdvertContainer");
+        const SLideShowAdvertsContainer = document.getElementById("slideAdvertContainer");
+        const listingsContainer = document.getElementById("listingsContainer");
+        const paginationContainer = document.getElementById("pagination");
+        const listingsBottomContainer = document.getElementById("listingsBottomContainer");
+        const ListingsTopContainer = document.getElementById("listingsTopContainer");
+        const maxLength = 50;
+        let ExchangeRate = 1;
+        let Currency = "$";
 
-      <script src="/js/navbar.js" type="module"></script>
-      <script src="/js/queries/listings.js"></script>
-      <script src="/js/queries/categories.js"></script>
-      <script src="/js/queries/fullpageadvert.js"></script>
-      <script src="/js/queries/sponsored.js"></script>
-      <script src="/js/queries/getStaticAd.js"></script>
-      <script src="/js/googleTranslate.js"></script>
+        // Initialize slides
+        SLideShowAdvertsContainer.innerHTML += `
+            <a href="#">
+                <div class="slide slide-four active" style="background-image: url(/uploads/AMAS.png);"></div>
+            </a>`;
+
+        // Static Adverts
+        fetch(`/staticAdverts`, {
+            method: "POST",
+            header: {
+                "Content-type": "application/JSON"
+            }
+        }).then(res => res.json())
+            .then(data => {
+                if (data && data.success) {
+                    const staticAdverts = data.adverts;
+                    if (staticAdverts) {
+                        const advert = staticAdverts;
+                        fetch(`/details/brand/${advert.title}/${advert.item_id}`, {
+                            method: "GET"
+                        }).then(res => res.json())
+                            .then(async (data) => {
+                                if (data.success) {
+                                    const prodFiles = data.productFiles;
+                                    let ImageContainer = "";
+                                    if (prodFiles.length > 0) {
+                                        const file = prodFiles[0];
+                                        if ((file.file_type === "image_file" || file.file_type === "") && file.file_status === "old_submission") {
+                                            ImageContainer = `<img src="/uploads/${file.file_url}" alt="${advert.title}" class="w-full h-auto rounded-lg"/>`;
+                                        } else if ((file.file_type === "image_file" || file.file_type === "") && file.file_status === "new_submission") {
+                                            ImageContainer = `<a href="/brand/${advert.title}/${advert.item_id}"><img src="${file.file_url}" alt="${advert.title}" class="w-full h-auto rounded-lg"/></a>`;
+                                        }
+                                    } else {
+                                        ImageContainer = `<a href="/brand/${advert.title}/${advert.item_id}"><img src="/uploads/AMAS.png" alt="${advert.title}" class="w-full h-auto rounded-lg"/></a>`;
+                                    }
+                                    staticAdvertsContainer.innerHTML += ImageContainer;
+                                }
+                            });
+                    }
+                } else {
+                    staticAdvertsContainer.innerHTML += `<a href="/adintro"><video class="w-full rounded-lg" autoplay muted loop>
+                        <source src="https://res.cloudinary.com/dswliutlf/video/upload/v1729831711/t2xel3qhfui3oncuv5qo.mp4" type="video/mp4">
+                    </video></a>`;
+                }
+            });
+
+        // Slide Show Adverts
+        fetch(`/SlideShowAdverts`, {
+            method: "GET",
+        }).then(res => res.json())
+            .then(async data => {
+                if (data && data.success) {
+                    const SLideShowAdverts = data.adverts;
+                    if (SLideShowAdverts.length > 0) {
+                        for (let i = 0; i < SLideShowAdverts.length; i++) {
+                            const advert = SLideShowAdverts[i];
+                            await fetch(`/details/brand/${advert.title}/${advert.item_id}`, {
+                                method: "GET"
+                            }).then(res => res.json())
+                                .then(async (data) => {
+                                    if (data.success) {
+                                        const prodFiles = data.productFiles;
+                                        if (prodFiles.length > 0) {
+                                            for (let b = 0; b < prodFiles.length; b++) {
+                                                const file = prodFiles[b];
+                                                if ((file.file_type === "image_file" || file.file_type === "") && file.file_status === "new_submission") {
+                                                    SLideShowAdvertsContainer.innerHTML += `<a href="/brand/${advert.title}/${advert.item_id}">
+                                                        <div class="slide" style="background-image: url('${file.file_url}');"></div>
+                                                    </a>`;
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                        }
+                        // Initialize first slide as active
+                        const slides = document.querySelectorAll('.ads-slide .slide');
+                        if (slides.length > 0) {
+                            slides[0].classList.add('active');
+                        }
+                    }
+                }
+            });
+
+        // Views Count Function
+        async function GetViewsCount(id) {
+            return fetch(`/countViews/${id}`, {
+                method: "GET"
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        return data.viewsCount;
+                    } else {
+                        return 0;
+                    }
+                });
+        }
+
+        // Product Files Function
+        async function GetProductFiles(productId) {
+            return fetch(`/listingFiles/${productId}`, {
+                method: "GET"
+            }).then(res => res.json())
+                .then(data => {
+                    if (data && data.success) {
+                        return data.productFiles;
+                    } else {
+                        return [];
+                    }
+                });
+        }
+
+        // Loading State
+        const demoData = `<div class="product_item loadingItem">
+            <div class="image_container bg-gray-200"></div>
+            <div class="p-4">
+                <div class="h-4 bg-gray-200 rounded mb-2"></div>
+                <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+            </div>
+        </div>`;
+
+        // New Page Function
+        function NewPage(page) {
+            if (listingsContainer) {
+                for (let i = 0; i < 40; i++) {
+                    listingsContainer.innerHTML += demoData;
+                }
+            }
+            if (listingsBottomContainer) {
+                for (let i = 0; i < 20; i++) {
+                    listingsBottomContainer.innerHTML += demoData;
+                }
+            }
+            if (ListingsTopContainer) {
+                for (let i = 0; i < 20; i++) {
+                    ListingsTopContainer.innerHTML += demoData;
+                }
+            }
+
+            fetch(`/listings?page=${page}`, {
+                method: "POST"
+            }).then(res => res.json())
+                .then(async (data) => {
+                    if (data.success) {
+                        const ListingsList = data.listings;
+
+                        // Top Listings
+                        if (ListingsTopContainer && ListingsList.length > 0) {
+                            ListingsTopContainer.innerHTML = "";
+                            let ItemLimit = Math.min(ListingsList.length, 10);
+                            for (let i = 0; i < ItemLimit; i++) {
+                                let country = ListingsList[i].country || "N/A";
+                                let ItemPrice = ListingsList[i].price ? `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "";
+                                let imageLink = "/uploads/AMAS.png";
+
+                                const imagesArray = await GetProductFiles(ListingsList[i].id);
+                                if (imagesArray.length > 0) {
+                                    if (imagesArray[0].file_url && imagesArray[0].file_status === "old_submission") {
+                                        imageLink = `/uploads/${imagesArray[0].file_url}`;
+                                    } else if (imagesArray[0].file_url && imagesArray[0].file_status === "new_submission") {
+                                        imageLink = imagesArray[0].file_url;
+                                    }
+                                }
+
+                                ListingsTopContainer.innerHTML += `
+                                    <a href="/l/${ListingsList[i].id}">
+                                        <div class="product_item">
+                                            <div class="image_container" style="background-image:url(${imageLink});">
+                                                <img class="productImage" src="${imageLink}" alt="Product image">
+                                            </div>
+                                            <div class="actions">
+                                                <div class="viewsCount">
+                                                    <i class="bi bi-eye"></i>
+                                                    <span>${await GetViewsCount(ListingsList[i].id)}</span>
+                                                </div>
+                                                <div class="save_item">
+                                                    <form class="bookMarkItem">
+                                                        <input type="hidden" name="itemID" value="${ListingsList[i].id}">
+                                                        <button class="focus:outline-none">
+                                                            <i class="bi bi-heart-fill"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="product_info">
+                                                <div class="product_name text-[#b70000]">${ItemPrice}</div>
+                                                <div class="product_name limited-text">${ListingsList[i].title}</div>
+                                                <div class="location"><i class="bi bi-map-fill mr-1"></i>${country}</div>
+                                            </div>
+                                        </div>
+                                    </a>`;
+                            }
+                        }
+
+                        // Bottom Listings
+                        if (listingsBottomContainer && ListingsList.length > 10) {
+                            listingsBottomContainer.innerHTML = "";
+                            for (let i = 10; i < Math.min(20, ListingsList.length); i++) {
+                                let country = ListingsList[i].country || "N/A";
+                                let ItemPrice = ListingsList[i].price ? `${Currency} ${new Number(ListingsList[i].price * ExchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "";
+                                let imageLink = "/uploads/AMAS.png";
+
+                                const imagesArray = await GetProductFiles(ListingsList[i].id);
+                                if (imagesArray.length > 0) {
+                                    if (imagesArray[0].file_url && imagesArray[0].file_status === "old_submission") {
+                                        imageLink = `/uploads/${imagesArray[0].file_url}`;
+                                    } else if (imagesArray[0].file_url && imagesArray[0].file_status === "new_submission") {
+                                        imageLink = imagesArray[0].file_url;
+                                    }
+                                }
+
+                                listingsBottomContainer.innerHTML += `
+                                    <a href="/l/${ListingsList[i].id}">
+                                        <div class="product_item">
+                                            <div class="image_container" style="background-image:url(${imageLink});">
+                                                <img class="productImage" src="${imageLink}" alt="Product image">
+                                            </div>
+                                            <div class="actions">
+                                                <div class="viewsCount">
+                                                    <i class="bi bi-eye"></i>
+                                                    <span>${await GetViewsCount(ListingsList[i].id)}</span>
+                                                </div>
+                                                <div class="save_item">
+                                                    <form class="bookMarkItem">
+                                                        <input type="hidden" name="itemID" value="${ListingsList[i].id}">
+                                                        <button class="focus:outline-none">
+                                                            <i class="bi bi-heart-fill"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="product_info">
+                                                <div class="product_name text-[#b70000]">${ItemPrice}</div>
+                                                <div class="product_name limited-text">${ListingsList[i].title}</div>
+                                                <div class="location"><i class="bi bi-map-fill mr-1"></i>${country}</div>
+                                            </div>
+                                        </div>
+                                    </a>`;
+                            }
+                        }
+
+                        // Bookmark Forms
+                        const bookMarkForms = document.getElementsByClassName("bookMarkItem");
+                        for (let k = 0; k < bookMarkForms.length; k++) {
+                            bookMarkForms[k].addEventListener("submit", function (e) {
+                                e.preventDefault();
+                                const inputField = bookMarkForms[k].querySelector('input[name="itemID"]');
+                                fetch(`/bookMarkItem`, {
+                                    method: "POST",
+                                    body: JSON.stringify({ itemID: inputField.value }),
+                                    headers: { 'Content-Type': 'application/JSON' },
+                                }).then(res => res.json())
+                                    .then(data => {
+                                        if (data.success) {
+                                            console.log("Bookmarked successfully");
+                                        } else {
+                                            console.log(data.error);
+                                        }
+                                    });
+                            });
+                        }
+                    }
+                });
+        }
+
+        // URL Parameter Function
+        function GetParameters(href) {
+            const url = new URL(href);
+            return new URLSearchParams(url.search);
+        }
+
+        // Initial Load
+        const page = GetParameters(window.location.href).get("page");
+        NewPage(page && page > 0 ? page : 1);
+
+        // Categories
+        const categoriesContainer = document.getElementById("productCategory");
+        fetch(`/allCategories`, {
+            method: "POST",
+            body: JSON.stringify({ email: "amaslink@gmail.com" }),
+            headers: { "Content-type": "application/JSON" }
+        }).then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    const Cats = data.categories;
+                    categoriesContainer.innerHTML = `<a href="/adIntro">
+                        <li class="bg-[#b70000] text-white hover:scale-105 transition">
+                            <div class="icon_container"><i class="bi bi-link-45deg text-white"></i></div>
+                            <div class="text_container">Post Ad</div>
+                        </li></a>`;
+                    for (let i = 0; i < Cats.length; i++) {
+                        const category = Cats[i];
+                        categoriesContainer.innerHTML += `<a href="/cat?c=${category.category_name}">
+                            <li class="hover:scale-105 transition">
+                                <div class="icon_container"><i>${category.icon}</i></div>
+                                <div class="text_container">${category.category_name}</div>
+                            </li></a>`;
+                    }
+                }
+            });
+
+        // Full Page Ad
+        const fullpageAd = document.querySelectorAll(".fullpageAd");
+        const innerFullPage = document.getElementById("innerFullPage");
+        fullpageAd.forEach(advertContainer => {
+            advertContainer.style.display = "none";
+        });
+
+        fetch(`/fullpageAd`)
+            .then(res => res.json())
+            .then(data => {
+                try {
+                    if (data.success && data.fullpageAd.length > 0 && data.fullpageAd[0].status === "approved") {
+                        fullpageAd.forEach(advertContainer => {
+                            advertContainer.style.display = "flex";
+                        });
+                        innerFullPage.innerHTML = `<img src="${data.fullpageAd[0].file_url}" alt="Full Page Advert" class="rounded-lg shadow-2xl"/>`;
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+    </script>
 </body>
+
 </html>

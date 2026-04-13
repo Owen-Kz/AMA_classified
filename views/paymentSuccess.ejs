@@ -1,12 +1,210 @@
-<html>
-  <head><title>Thanks for your order!</title><script src="/js/queries/getCountryData.js" ></script>
+<!-- views/paymentSuccess.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Payment Successful - Amaslink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes checkmark {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .checkmark-animation {
+            animation: checkmark 0.6s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+        .delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+        .delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
 </head>
-  <body>
-    <h1>Thanks for your order!</h1>
-    <p>
-      We appreciate your business!
-      If you have any questions, please email
-      <a href="mailto:orders@example.com">orders@example.com</a>.
-    </p>
-  </body>
+<body class="bg-emerald-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        <div class="max-w-2xl mx-auto">
+            <!-- Success Card -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in-up">
+                <!-- Header with gradient based on payment type -->
+                <div class="bg-emerald-600 px-6 py-8 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-4 checkmark-animation">
+                        <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">Payment Successful!</h1>
+                    <p class="text-green-100">
+                        <%= paymentType === 'wallet' ? 'Your wallet has been topped up successfully' : 'Your transaction has been completed successfully' %>
+                    </p>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 md:p-8">
+                    <!-- Success Message based on payment type -->
+                    <div class="text-center mb-8 fade-in-up delay-1">
+                        <% if (paymentType === 'wallet') { %>
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                                <p class="text-green-800 text-sm md:text-base">
+                                    <strong>$<%= amount %></strong> has been successfully added to your wallet.
+                                    Your new balance is <strong>$<%= newBalance %></strong>.
+                                </p>
+                            </div>
+                        <% } else if (paymentType === 'listing') { %>
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                                <p class="text-green-800 text-sm md:text-base">
+                                    Your listing <strong><%= title %></strong> has been published successfully!
+                                    Our team will review your listing within 24 hours.
+                                </p>
+                            </div>
+                            <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="text-amber-800 text-sm">
+                                        <strong>Approval Time:</strong> Your listing will be reviewed within 24 hours. 
+                                        You will receive an email notification once it's approved.
+                                    </p>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                                <p class="text-green-800 text-sm md:text-base">
+                                    Your payment of <strong>$<%= amount %></strong> has been processed successfully.
+                                    Thank you for your transaction!
+                                </p>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <!-- Transaction Details -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-8 fade-in-up delay-2">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Transaction Details
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Transaction ID:</span>
+                                <span class="font-mono text-sm text-gray-900"><%= transactionId %></span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Amount:</span>
+                                <span class="font-bold text-green-600">$<%= amount %></span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Date:</span>
+                                <span class="text-gray-900"><%= date %></span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600">Payment Status:</span>
+                                <span class="inline-flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full pulse"></span>
+                                    Completed
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons based on payment type -->
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in-up delay-3">
+                        <% if (paymentType === 'wallet') { %>
+                            <a href="https://amaslink.com/wallet" class="flex-1 text-center bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg">
+                                Go to Wallet
+                            </a>
+                            <a href="https://amaslink.com/dashboard" class="flex-1 text-center bg-white border-2 border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200">
+                                Go to Dashboard
+                            </a>
+                        <% } else if (paymentType === 'listing') { %>
+                            <a href="https://amaslink.com/dashboard" class="flex-1 text-center bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg">
+                                Go to Dashboard
+                            </a>
+                            <a href="https://amaslink.com/listings/<%= listingId %>" class="flex-1 text-center bg-white border-2 border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200">
+                                View Your Listing
+                            </a>
+                        <% } else { %>
+                            <a href="https://amaslink.com/dashboard" class="flex-1 text-center bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg">
+                                Go to Dashboard
+                            </a>
+                            <a href="https://amaslink.com/" class="flex-1 text-center bg-white border-2 border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200">
+                                Return Home
+                            </a>
+                        <% } %>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="mt-8 pt-6 border-t border-gray-200 text-center fade-in-up delay-3">
+                        <p class="text-sm text-gray-500">
+                            A confirmation email has been sent to your registered email address.
+                        </p>
+                        <p class="text-xs text-gray-400 mt-2">
+                            Need help? <a href="https://amaslink.com/support" class="text-green-600 hover:underline">Contact Support</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-redirect Script -->
+            <script>
+                // Auto redirect after 5 seconds
+                setTimeout(function() {
+                    <% if (paymentType === 'wallet') { %>
+                        window.location.href = 'https://amaslink.com/wallet';
+                    <% } else if (paymentType === 'listing') { %>
+                        window.location.href = 'https://amaslink.com/dashboard';
+                    <% } else { %>
+                        window.location.href = 'https://amaslink.com/dashboard';
+                    <% } %>
+                }, 5000);
+            </script>
+        </div>
+    </div>
+</body>
 </html>

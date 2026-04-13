@@ -103,32 +103,110 @@ const router = express.Router();
 
 router.use(express.json());
 
-
-
-router.get("/", LoggedIN, (req,res) =>{
-    if(req.cookies._t){
-        res.render("home", {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
-    }else{
-    res.render("home", {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
-
+// Payment success page (handles both wallet and listing)
+router.get('/payment/success', (req, res) => {
+    const { 
+        session_id, 
+        listing_id, 
+        title, 
+        amount, 
+        payment_type,
+        new_balance,
+        transaction_id 
+    } = req.query;
+    
+    // Determine payment type
+    let paymentType = payment_type || 'general';
+    
+    // If listing_id exists, it's a listing payment
+    if (listing_id) {
+        paymentType = 'listing';
     }
-})
-router.get("/fullpageAd", fullpageAd)
+    // If new_balance exists and no listing_id, it's a wallet top-up
+    else if (new_balance) {
+        paymentType = 'wallet';
+    }
+    
+    const currentDate = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    res.render('paymentSuccess', {
+        paymentType: paymentType,
+        transactionId: transaction_id || session_id,
+        listingId: listing_id,
+        title: title ? decodeURIComponent(title) : 'Your Transaction',
+        amount: amount || '0.00',
+        newBalance: new_balance || '0.00',
+        date: currentDate
+    });
+});
 
+// Payment cancelled page
+router.get('/payment/cancelled', (req, res) => {
+    const { 
+        listing_id, 
+        title, 
+        amount, 
+        payment_type,
+        transaction_id 
+    } = req.query;
+    
+    // Determine payment type
+    let paymentType = payment_type || 'general';
+    
+    if (listing_id) {
+        paymentType = 'listing';
+    }
+    
+    res.render('paymentCancelled', {
+        paymentType: paymentType,
+        transactionId: transaction_id,
+        listingId: listing_id,
+        title: title ? decodeURIComponent(title) : null,
+        amount: amount || '0.00'
+    });
+});
 
-router.get("/privacy", LoggedIN, (req,res) =>{
-    res.render("privacyPolicy", {username:req.user.u_name, current_rates:req.current_rates})
-})
+//LISTING Payment success page
+router.get('/listing-payment/success', (req, res) => {
+    const { session_id, listing_id, title, amount } = req.query;
+    res.render('listingPaymentSuccess', {
+        listingId: listing_id,
+        title: title || 'Your Listing',
+        amount: amount || '0.00',
+        sessionId: session_id
+    });
+});
 
-router.get("/contact", LoggedIN, (req,res) =>{
-    res.render("contact", {username:req.user.u_name, current_rates:req.current_rates})
-})
+//LISTING Payment cancelled page
+router.get('/listing-payment/cancelled', (req, res) => {
+    const { listing_id, title, amount } = req.query;
+    res.render('listingPaymentCancelled', {
+        listingId: listing_id,
+        title: title || 'Your Listing',
+        amount: amount || '0.00'
+    });
+});
+
+// router.get("/", LoggedIN, (req,res) =>{
+//     if(req.cookies._t){
+//         res.render("home", {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
+//     }else{
+//     res.render("home", {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
+
+//     }
+// })
+// router.get("/fullpageAd", fullpageAd)
+
 
 router.post("/seller/profile/details/", SellerProfileDetails)
 
-router.get("/profile/details/informative", LoggedIN, (req,res) => {
-    res.json({userDetails:req.user})
-})
+
 
 router.get("/register",LoggedIN,  (req,res) =>{
     if(req.cookies._t && req.user){
@@ -165,29 +243,7 @@ router.get('/q/listings', LoggedIN, (req,res)=>{
     res.render("searchListings", {username:req.user.u_name, current_rates:req.current_rates})
 })
 
-router.post("/listings", listings)
 
-
-
-router.post("/login", login)
-
-
-router.get("/dashboard", LoggedIN, (req,res) => {
-    if(req.cookies._t){
-        res.render("dashboard", {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, user: req.user})
-    }else{
-        res.render("login")
-    }
-})
-router.get("/countMyListings", LoggedIN, countMyListings)
-
-router.get("/profile", LoggedIN, (req,res) =>{
-    if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
-    res.render("profile",  {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id, facebook:req.user.fb, twitter:req.user.twitter, flickr:req.user.flickr, instagram:req.user.insta, youtube:req.user.ytube, vimeo:req.user.vimeo, behance:req.user.behance, linkedin: req.user.linkd, website:req.user.web, referral_id:req.user.referral_code, user: req.user})
-}else{
-    res.render("login")
-}
-})
 
 router.get("/s/profile", AdminLoggedIn, (req,res) =>{
     if(req.cookies._t || (req.cookies._superID && req.cookies._ama)){
@@ -196,9 +252,6 @@ router.get("/s/profile", AdminLoggedIn, (req,res) =>{
     res.render("login")
 }
 })
-// Save Profile Info 
-router.post("/saveProfile/:field/:value", LoggedIN, saveProfile)
-router.post("/updateProfileImage", LoggedIN, UpdateProfileImage)
 
 router.get("/announcements",LoggedIN, AdminLoggedIn, (req,res)=>{
     if(req.cookies._t || req.cookies._ama){
@@ -207,11 +260,7 @@ router.get("/announcements",LoggedIN, AdminLoggedIn, (req,res)=>{
         res.render("login")
     }
 })
-router.post("/getAnnouncements", LoggedIN, getAnnouncements)
-router.post("/getForums", LoggedIN, getforums)
-router.post('/getForumComments', LoggedIN, getcomments)
-router.post("/createComment", LoggedIN, CreateComments)
-router.post("/createForum", LoggedIN, CreateForums)
+
 router.get("/category_result", async (req,res) =>{
     if(req.query.category){
         res.redirect(`/cat?c=${req.query.category}`)
@@ -227,31 +276,16 @@ router.get("/messages", LoggedIN, AdminLoggedIn,  (req,res) =>{
         res.render("login")
     }
 })
-router.get("/messages/:id", LoggedIN, (req,res) =>{
-    if(req.cookies._t){
-    res.render("chats", {username: req.user.u_name, current_rates:req.current_rates, userId:req.user.id, chatWith:req.params.id})
-    }else{
-        res.render("login")
-    }
-})
-router.get('/myChats', LoggedIN, MyChats)
-router.post("/chatHistory", chatHistory)
 
-router.get('/bookmarks',LoggedIN, (req,res)=>{
-    if(req.cookies._t){
-    res.render('bookmarks', {email:req.user.email, username:req.user.u_name, current_rates:req.current_rates, firstname:req.user.name, lastname:req.user.l_name, country:req.user.country, phonenumber: req.user.phone, profilePhoto:req.user.pp, user_id:req.user.id})
-    }else{
-        res.render("login")
-    }
-})
+
 router.post("/bookmarks", LoggedIN, bookmarks)
 // Add To bookmarks 
 router.post("/bookMarkItem", LoggedIN, addToBookMarks)
 // Count Views 
-router.get("/countViews/:id", LoggedIN, ViewsCount)
-router.get("/categories", LoggedIN, categories)
-router.post("/allCategories",  AllCategories)
-router.post("/allSubCategories", AllSubCategories)
+// router.get("/countViews/:id", LoggedIN, ViewsCount)
+// router.get("/categories", LoggedIN, categories)
+// router.post("/allCategories",  AllCategories)
+// router.post("/allSubCategories", AllSubCategories)
 // render listings page 
 router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
     if(req.cookies._t || req.cookies._ama){
@@ -262,20 +296,10 @@ router.get("/mylistings", LoggedIN,AdminLoggedIn, (req,res) =>{
     }
 }) 
 
-router.get("/referrals", LoggedIN, referralsPage)
 
 // get Listings for user 
 router.post("/userListings", userListings)
  
-// Create ADs 
-router.post("/postAd", LoggedIN, postAd)
-router.post("/checkFreeAds", LoggedIN, checkFreeAds)
-// router.post("/checkPaidAds", LoggedIN, checkPaidAds)
-
-router.post("/postBrandAdvert", LoggedIN, PostBrandAd)
-router.post("/postFullpageAdvert", LoggedIN, postFullpageAd)
-
-router.post("/updateAdvert", LoggedIN, UpdateAdvert)
 
 // Item Actions 
 router.get("/:do/item/:id", LoggedIN, CarryAction)
@@ -300,51 +324,29 @@ router.get("/api/uploads/find/:imageName", async (req,res) =>{
     await checkImageExists(imageFile)
 })
 
-router.get("/forum", LoggedIN, async (req,res) =>{
-    if(req.cookies._t){
-    res.render("forum", {username:req.user.u_name, current_rates:req.current_rates})
-    }else{
-        res.render("login")
-    }
-})
-
-router.get("/map", LoggedIN, async (req,res) =>{
-    res.render("map", {username:req.user.u_name, current_rates:req.current_rates})
-
-    // res.render("comingSoon")
-})
-router.get("/mapDev", LoggedIN,  async(req,res) =>{
-    res.render("map", {username:req.user.u_name, current_rates:req.current_rates})
-})
 
 router.get("/adintro", LoggedIN, async(req,res) =>{
-    if(req.cookies._t && req.cookies._usid){
-    res.render("adsIntro.ejs", {username:req.user.u_name, current_rates:req.current_rates})
-    }else{
-        res.render("login")
-    }
+   res.redirect("https://amaslink.com/adintro")
 })
 
 router.get("/ad_packs_free",LoggedIN, async (req,res)=>{
-    if(req.cookies._t && req.cookies._usid){
-    res.render("freeAds", {username:req.user.username})
-    }else{
-        res.render("login")
-    }
+    res.redirect("https://amaslink.com/adintro")
+
 })
 
-router.post("/ad_packs", LoggedIN, adsPacksPage)
+// router.post("/ad_packs", LoggedIN, adsPacksPage)
 
-router.post("/auction_item", async (req,res) =>{
-    res.render("comingSoon")
+router.post("/auctions", async (req,res) =>{
+      res.redirect("https://amaslink.com/auctions")
+
 })
 router.get("/listingFiles/:id", listingFiles)
-router.get("/auctions", LoggedIN, auctionsPage)
-// Seller Profile 
-router.get("/seller/:id", LoggedIN,async(req,res) =>{
-    res.render("sellerProfile", {username:req.user.username, sellerId:req.params.id})
-})
-router.get("/sellerListings/:id", LoggedIN, SellerProfile)
+// router.get("/auctions", LoggedIN, auctionsPage)
+// // Seller Profile 
+// router.get("/seller/:id", LoggedIN,async(req,res) =>{
+//     res.render("sellerProfile", {username:req.user.username, sellerId:req.params.id})
+// })
+// router.get("/sellerListings/:id", LoggedIN, SellerProfile)
 
 router.get("/Logout", (req,res) => {
     res.clearCookie('_t')
@@ -356,8 +358,9 @@ router.get("/Logout", (req,res) => {
 router.get("/cat", LoggedIN, (req, res) =>{
     res.render("itemsInCat", {username:req.user.u_name, current_rates:req.current_rates})
 })
-router.post("/itemsInCat", LoggedIN, ItemsInCategory)
-router.get("/createAd", LoggedIN, createAdPage)
+// router.post("/itemsInCat", LoggedIN, ItemsInCategory)
+// router.get("/createAd", LoggedIN, createAdPage)
+
 router.post("/newsLetter/subscribe", SubscribeToNewsLetter)
 router.post("/sponsoredAdverts", sponsoredAdverts)
 
@@ -401,45 +404,45 @@ router.post("/stripe/key", LoggedIN, getKeys)
 router.post("/s/:action/fullpage/:id", AdminLoggedIn, fullpageActions)
 router.get("/paid/:itemId", LoggedIN, updateItem)
 
-router.post("/create-payment-intent", LoggedIN, paymentintent)
-router.post("/charge", LoggedIN, charge)
-router.get("/post/advert", LoggedIN, paidAdvertPage)
-router.get("/post/advert/slideshow", LoggedIN, slideshowAdvertPage)
-router.get("/post/advert/sponsored", LoggedIN, sponsoredAdvertPage)
-router.get("/post/advert/fullpage", LoggedIN, FullPageAdvertPage)
-router.get("/post/advert/static", LoggedIN, StaticAdvertPage)
-router.post("/staticAdverts", getStaticAds)
-router.get("/SlideShowAdverts", getSlideShowAdverts)
-router.get("/forgot-password", (req,res) =>{
-    res.render("forgotPassword")
-})
-router.get("/verifyCode", async (req,res) =>{
-    if(req.cookies._sessionCode && req.cookies._user){
-        res.render("createPassword")
-    }else if(req.cookies._user && !req.cookies._sessionCode){
-        res.render("verifyCode")
-    }else{
-        res.render("forgotPassword")
-    }
-})
+// router.post("/create-payment-intent", LoggedIN, paymentintent)
+// router.post("/charge", LoggedIN, charge)
+// router.get("/post/advert", LoggedIN, paidAdvertPage)
+// router.get("/post/advert/slideshow", LoggedIN, slideshowAdvertPage)
+// router.get("/post/advert/sponsored", LoggedIN, sponsoredAdvertPage)
+// router.get("/post/advert/fullpage", LoggedIN, FullPageAdvertPage)
+// router.get("/post/advert/static", LoggedIN, StaticAdvertPage)
+// router.post("/staticAdverts", getStaticAds)
+// router.get("/SlideShowAdverts", getSlideShowAdverts)
+// router.get("/forgot-password", (req,res) =>{
+//     res.render("forgotPassword")
+// })
+// router.get("/verifyCode", async (req,res) =>{
+//     if(req.cookies._sessionCode && req.cookies._user){
+//         res.render("createPassword")
+//     }else if(req.cookies._user && !req.cookies._sessionCode){
+//         res.render("verifyCode")
+//     }else{
+//         res.render("forgotPassword")
+//     }
+// })
 
 
-router.post("/getCountryData", LoggedIN, async (req,res) =>{
+// router.post("/getCountryData", LoggedIN, async (req,res) =>{
     
-    if(req.user){
-        return res.json({country:req.current_rates})
-    }else{
-        return null
-    }
-})
+//     if(req.user){
+//         return res.json({country:req.current_rates})
+//     }else{
+//         return null
+//     }
+// })
 
-router.post("/forgot-password", forgotPassword)
+// router.post("/forgot-password", forgotPassword)
 
-router.post("/verify-code", verifyCode)
-router.post("/create-password", createPassword)
+// router.post("/verify-code", verifyCode)
+// router.post("/create-password", createPassword)
 
 // Get Referrals 
-router.post("/getReferrals", LoggedIN, getReferrals)
+// router.post("/getReferrals", LoggedIN, getReferrals)
 
 // External Advert Analytics
 router.get("/promo/:source", SaveAnalytics)
