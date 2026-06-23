@@ -1,9 +1,9 @@
+// NOTICE: Stripe operations migrated to ama_endpoint.
+// const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY)
 const CheckForFullPage = require('../checkForFullpage');
 const FormatDate = require('../FormatDate');
 const decryptText = require('../utils/decryptText');
 const getFutureDate = require('./fuureDates');
-
-const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY)
 
 const FullPageAdvertPage = async (req,res) =>{
     // const sessionId = req.cookies.sessionId;  // Retrieve session ID from URL or stored data
